@@ -16,7 +16,7 @@ You may ***never***:
 - claim ownership of our hacks (Just stop bragging about it 😠)
 - modify it slightly just to add your own ads 🤨
 
-If you're gonna talk about our hacks (on YouTube or other social media platforms), please please pretty please [credit us properly](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/blob/master/YOUTUBE_ATTRIBUTION.md).
+If you're gonna talk about our hacks (on YouTube or other social media platforms), please please pretty please [credit us properly](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/YOUTUBE_ATTRIBUTION.md).
 
 It hurts our souls when skids take credit for our hacks and don't even link us.
 
