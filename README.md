@@ -1,4 +1,3 @@
-<h1 align = "center"><a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/announcement.md">Hacks are being shut down. Thanks for everything.</a></h1>
 <h1 align="center">
 	<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/wiki/How-to-install-hacks">
 		<img align="center"
@@ -159,13 +158,16 @@ All of our hacks are *open-source*, and only located under our [Github Organizat
 
 
 
+## Components
 
-## Important Folders
-
-- [ProdigyMathGameHacking](https://github.com/ProdigyPNP/ProdigyMathGameHacking)
-  - Our main repo, used as an issue tracker, things we're working on, documentation, and central hub. You're currently on it.
-- [PHEx](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/PHEx)
-  - The Prodigy Hacking Extension, used to inject our modified gamefiles into Prodigy.
+- [ProdigyMathGameHacking](https://github.com/ProdigyPNP/ProdigyMathGameHacking) - The ProdigyMathGameHacking Repository
+- [PHEx](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/PHEx) - The Prodigy Hacking Extension, used to inject our modified gamefiles into Prodigy.
+- [willsCheatMenu](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/willsCheatMenu) - The cheat GUI, for user convinience
+- [docs](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/docs) - Our documentation of Prodigy, used to find functions to build the hacks.
+- [meta](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/meta) - Information on this repository
+- [oldguard](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/oldguard) - oldguard
+- [.vscode](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/.vscode) - Code snippets, to make creating new hacks easier and faster
+- [.github](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/.github) - Repository information for GitHub
   
 <br/>
 
