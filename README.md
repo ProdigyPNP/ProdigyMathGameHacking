@@ -1,10 +1,10 @@
-<h1 align = "center"><a href="https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/blob/master/announcement.md">Hacks are being shut down. Thanks for everything.</a></h1>
+<h1 align = "center"><a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/announcement.md">Hacks are being shut down. Thanks for everything.</a></h1>
 <h1 align="center">
-	<a href="https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/wiki/How-to-install-hacks">
+	<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/wiki/How-to-install-hacks">
 		<img align="center"
 			width="175"
 			alt="Installation"
-			src="https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/blob/master/.github/fixedlogo.png?raw=true">
+			src="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/fixedlogo.png?raw=true">
 	</a>
 </h1>
 
@@ -17,7 +17,7 @@
 		•
 		<a href="https://discord.gg/XQDfbfq">Discord</a>
 		•
-		<a href="https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/wiki/How-to-install-hacks">Installation</a>
+		<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/wiki/How-to-install-hacks">Installation</a>
 		•
 		<a href="https://www.youtube.com/channel/UCr6WNMDW-bytEVGL1Vna7Lw">Youtube</a>
 	</strong>
@@ -40,7 +40,7 @@
 </a>
 
 <a href="https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/pulse">
-	<img src="https://img.shields.io/github/commit-activity/m/Prodigy-Hacking/ProdigyMathGameHacking">
+	<img src="https://img.shields.io/github/commit-activity/m/ProdigyPNP/ProdigyMathGameHacking">
 </a>
 
 </p>
@@ -133,35 +133,29 @@ All of our hacks are *open-source*, and only located under our [Github Organizat
 
 
 
-## Current Collaborators
-- [PatheticMustan](https://github.com/PatheticMustan)
-- [Arcerion](https://github.com/ArcerionDev)
-- [Yama](https://github.com/vibinyama)
-- [BoredFish](https://github.com/BoredFishRE)
-- [Hostedposted](https://github.com/hostedposted)
-- [Spacebar](https://github.com/00100000)
-- Noot (Anonymous User)
+## The Team
 
-
-
-
-
-## Retired Collaborators
-
-- [MelnCat](https://github.com/MelnCat)
-- [Exoticc](https://github.com/Exoticc)
-- [Rus](https://github.com/UntrustableRus)
-- [Rubberduck55](https://github.com/Rubberduck55)
-- [Whimpers](https://github.com/KryptoCrash)
+- [gemsvidø](https://github.com/afkvido) - Reuploader of PMGH
+- [PatheticMustan](https://github.com/PatheticMustan) - Original Creator of PMGH
+- [Arcerion](https://github.com/ArcerionDev) - Official Owner of PMGH
+- [Yama](https://github.com/vibinyama) - Collaborator
+- [BoredFish](https://github.com/BoredFishRE) - Collaborator
+- [Hostedposted](https://github.com/hostedposted) - Collaborator who made the Prodigy Cheat Dashboard
+- [Spacebar](https://github.com/00100000) - Collaborator
+- [MelnCat](https://github.com/MelnCat) - Original Creator of Will's Cheat Menu
+- [Exoticc](https://github.com/Exoticc) - Collaborator
+- [Rus](https://github.com/UntrustableRus) - Original Creator of PHEx
+- [Rubberduck55](https://github.com/Rubberduck55) - Collaborator
+- [Whimpers](https://github.com/KryptoCrash) - Collaborator
 
 
 
 
 ## Important Folders
 
-- [ProdigyMathGameHacking](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking)
+- [ProdigyMathGameHacking](https://github.com/ProdigyPNP/ProdigyMathGameHacking)
   - Our main repo, used as an issue tracker, things we're working on, documentation, and central hub. You're currently on it.
-- [PHEx](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/PHEx)
+- [PHEx](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/PHEx)
   - The Prodigy Hacking Extension, used to inject our modified gamefiles into Prodigy.
   
 <br/>
