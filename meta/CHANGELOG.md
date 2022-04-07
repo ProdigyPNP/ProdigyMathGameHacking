@@ -2,7 +2,7 @@
 
 
 ### PIXI Ages
-`9/21/19 - 03/25/2020`
+`9/21/2019 - 03/25/2020`
 
 During these times, `PIXI.game` was a thing. However, Prodigy hacks were not well known.
 <br><br><br>
@@ -10,7 +10,7 @@ During these times, `PIXI.game` was a thing. However, Prodigy hacks were not wel
 
 
 ### Phaser Day
-`03/25/20 - 03/26/2020`
+`03/25/2020 - 03/26/2020`
  
 On this day, we used `Phaser.GAMES[0]`, only for it to be patched the day after.
 <br><br><br>
@@ -34,7 +34,7 @@ This method worked for longer. However, it was also quickly patched.
  
 
 ### Cheat Dashboard Day
-`03/30/20 - 03/30/2020`
+`03/30/2020 - 03/30/2020`
 
 A cheat dashboard was developed. However, it was not very good, which caused it to be unsupported the day after.
 <br><br><br>
@@ -42,7 +42,7 @@ A cheat dashboard was developed. However, it was not very good, which caused it 
 
 
 ### Dark Ages
-`04/01/20 - 04/07/2020`
+`04/01/2020 - 04/07/2020`
 
 The first week of April was a sad week for Prodigy hacking. All known hacking methods were patched. Had PMGH achived it's goal of telling Prodigy to make better and more secure code? No. Hacks would be back up and running on `04/07/2020`
 <br><br><br>
