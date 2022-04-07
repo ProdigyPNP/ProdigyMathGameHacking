@@ -1,0 +1,23 @@
+{
+    "Create Hack": {
+        "scope": "typescript",
+        "prefix": "ch",
+        "body": [
+            "new Hack(category.$1, \"\", \"\").setClick(async () => {",
+            "    ",
+            "});"
+        ],
+        "description": "Create new hack",
+    },
+    "Create Toggler": {
+        "scope": "typescript",
+        "prefix": "ct",
+        "body": [
+            "new Toggler(category.$1, \"\", \"\").setEnabled(async () => {",
+            "    ",
+            "}).setDisabled(async() => {",
+            "    ",
+            "});"
+        ]
+    }
+}

@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Arvo:400,700|Sen:400,700,800&display=swap&subset=latin-ext");
+#game-wrapper {
+	font-family: "Sen", sans-serif;
+	#cheat-menu {
+		height: 465px;
+		background-color: #eeeb;
+		padding: 2px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		transition: top 0.35s;
+		padding: 10px;
+		border: #fffa 2px solid;
+		overflow-y: scroll;
+		resize: vertical;
+		overflow: auto;
+	}
+	.menu-left {
+		width: 70%;
+		height: 100%;
+		float: left;
+	}
+	#menu-toggler {
+		z-index: 1;
+		position: absolute;
+		background-color: #fffb;
+		transition: background-color 0.15s;
+		&:hover {
+			background-color: #dddb;
+		}
+		&:active {
+			background-color: #bbbb;
+		}
+	}
+	.menu-area {
+		h1 {
+			font-family: "Sen", sans-serif;
+			font-size: 30px;
+			font-weight: 700;
+			color: #111;
+			margin: 10px;
+		}
+		button {
+			background-color: black;
+			color: white;
+			border-radius: 5px;
+			border: 1px solid #eee;
+			padding: 1%;
+			transition: all 0.15s;
+			margin: 5px 5px;
+			transition-property: border-color, background-color;
+			&:hover {
+				border-color: #777d;
+				background-color: #ddd;
+			}
+			&:active {
+				border-color: #555;
+				background-color: #bbb;
+			}
+			&[status="true"] {
+				border-color: #5a5d;
+				background-color: #9bee9b;
+				&:hover {
+					border-color: #b3bbb0dd;
+					background-color: #bffebf;
+				}
+				&:active {
+					border-color: #4e5c50;
+					background-color: #24be6a;
+				}
+			}
+			&[status="false"] {
+				border-color: #766d;
+				background-color: #9b9b9b;
+				&:hover {
+					border-color: #858585dd;
+					background-color: #bfbfbf;
+				}
+				&:active {
+					border-color: #4c3e40;
+					background-color: #be246a;
+				}
+			}
+		}
+	}
+	.menu-title {
+		font-family: "Arvo", sans-serif;
+		font-size: 35px;
+		font-weight: 900;
+	}
+}
+
+.radioDiv {
+	width: 125px;
+	height: 125px;
+	display: inline-block;
+	margin: 7px;
+	background-color: #5a7e3f;
+	color: black;
+	background-size: cover;
+	outline: black 5px solid;
+	vertical-align: top;
+	font-weight: 700;
+	user-select: none;
+	-webkit-user-drag: none;
+	cursor: pointer;
+	&:hover {
+		background-blend-mode: overlay;
+		color: lightgray;
+	}
+	&:active {
+		background-blend-mode: multiply;
+		color: white;
+	}
+	&[checked] {
+		background-blend-mode: color-dodge;
+		color: blanchedalmond;
+	}
+	&[checked]:active {
+		background-blend-mode: color-burn;
+		color: cyan;
+	}
+}
+.radioSwal {
+	width: fit-content !important;
+	min-width: 32em !important;
+	max-width: 46em !important;
+}

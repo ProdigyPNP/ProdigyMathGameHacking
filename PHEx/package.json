@@ -1,0 +1,25 @@
+{
+  "name": "pmgh-phex",
+  "version": "2.0.0",
+  "description": "",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UntrustableRus/PMGH-ext.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/issues"
+  },
+  "homepage": "https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/blob/master/PHEx/README.md",
+  "dependencies": {
+    "dir-archiver": "^1.1.2",
+    "simple-archiver": "^1.0.1",
+    "zip-dir": "^2.0.0"
+  }
+}
