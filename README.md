@@ -136,17 +136,26 @@ All of our hacks are *open-source*, and only located under our [Github Organizat
 ## The Team
 
 - [gemsvidø](https://github.com/afkvido) - Reuploader of PMGH
-- [PatheticMustan](https://github.com/PatheticMustan) - Original Creator of PMGH
+- [Natsumi](https://github.com/PatheticMustan) - Original Creator of PMGH
 - [Arcerion](https://github.com/ArcerionDev) - Official Owner of PMGH
+- [donaldli2020](https://github.com/donaldli2020) - Contributor
 - [Yama](https://github.com/vibinyama) - Collaborator
 - [BoredFish](https://github.com/BoredFishRE) - Collaborator
-- [Hostedposted](https://github.com/hostedposted) - Collaborator who made the Prodigy Cheat Dashboard
-- [Spacebar](https://github.com/00100000) - Collaborator
+- [Hostedposted](https://github.com/hostedposted) - Owner of the Prodigy Cheat Dashboard
+- [Spacebar](https://github.com/00100000) - Code Collaborator
 - [MelnCat](https://github.com/MelnCat) - Original Creator of Will's Cheat Menu
 - [Exoticc](https://github.com/Exoticc) - Collaborator
 - [Rus](https://github.com/UntrustableRus) - Original Creator of PHEx
 - [Rubberduck55](https://github.com/Rubberduck55) - Collaborator
 - [Whimpers](https://github.com/KryptoCrash) - Collaborator
+- [Sacred](https://github.com/sacredofficial) - Contributor
+- [NX721](https://github.com/NX721) - Contributor
+- [HellOnEarth](https://github.com/hellonearth311) - Contributor
+- [Shane](https://github.com/Shane-CS) - Contributor
+- [HackintoshDev](https://github.com/Hackintosh-dev) - Contributor
+- [coolbot123](https://github.com/coolbot123) - Contributor
+- [IhackProdigy](https://github.com/IhackProdigy) - Contributor
+- [Finality](https://github.com/TheFinality) - Contributor
 
 
 
