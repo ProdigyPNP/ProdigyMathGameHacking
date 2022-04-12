@@ -1,9 +1,9 @@
 <h1 align="center">
-	<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/wiki/How-to-install-hacks">
+	<a href="../../wiki/How-to-install-hacks">
 		<img align="center"
 			width="175"
 			alt="Installation"
-			src="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/fixedlogo.png?raw=true">
+			src="/.github/fixedlogo.png?raw=true">
 	</a>
 </h1>
 
@@ -29,7 +29,7 @@
 	<img src="https://img.shields.io/discord/683793361123016755.svg?color=7289da&label=Discord&logo=discord&style=flat-square">
 </a>
 
-<a href="https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/pulse">
+<a href="../../pulse">
 	<img src="https://img.shields.io/github/commit-activity/m/ProdigyPNP/ProdigyMathGameHacking">
 </a>
 
@@ -151,14 +151,14 @@ All of our hacks are *open-source*, and only located under our [Github Organizat
 
 ## Components
 
-- [ProdigyMathGameHacking](https://github.com/ProdigyPNP/ProdigyMathGameHacking) - The ProdigyMathGameHacking Repository
-- [PHEx](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/PHEx) - The Prodigy Hacking Extension, used to inject our modified gamefiles into Prodigy.
-- [willsCheatMenu](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/willsCheatMenu) - The cheat GUI, for user convinience
-- [docs](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/docs) - Our documentation of Prodigy, used to find functions to build the hacks.
-- [meta](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/meta) - Information on this repository
-- [oldguard](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/oldguard) - oldguard
-- [.vscode](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/.vscode) - Code snippets, to make creating new hacks easier and faster
-- [.github](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/.github) - Repository information for GitHub
+- [ProdigyMathGameHacking](../..) - The ProdigyMathGameHacking Repository
+- [PHEx](../../tree/master/PHEx) - The Prodigy Hacking Extension, used to inject our modified gamefiles into Prodigy.
+- [willsCheatMenu](../../tree/master/willsCheatMenu) - The cheat GUI, for user convinience
+- [docs](../../tree/master/docs) - Our documentation of Prodigy, used to find functions to build the hacks.
+- [meta](../../tree/master/meta) - Information on this repository
+- [oldguard](../../tree/master/oldguard) - oldguard
+- [.vscode](../../tree/master/.vscode) - Code snippets, to make creating new hacks easier and faster
+- [.github](../../tree/master/.github) - Repository information for GitHub
   
 <br/>
 
