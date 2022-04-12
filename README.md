@@ -21,19 +21,10 @@
 		<a href="https://www.youtube.com/channel/UCr6WNMDW-bytEVGL1Vna7Lw">Youtube</a>
 	</strong>
 </p>
-<p align="center">
-	<a href="https://chrome.google.com/webstore/detail/gjabpajagbgoifbkflgojeojmnlmioea/">
-		<img alt="Chrome Web Store Rating" src="https://img.shields.io/chrome-web-store/stars/gjabpajagbgoifbkflgojeojmnlmioea?label=Extension%20Rating">
-</a>
-	
 <a>
-<img alt="Extension Downloads" src="https://visitor-badge.glitch.me/badge?page_id=page.id">
+<img alt="Visitors" src="https://visitor-badge.glitch.me/badge?page_id=page.id">
 </a>
 	
-<a href="https://chrome.google.com/webstore/detail/gjabpajagbgoifbkflgojeojmnlmioea/">
-<img alt="Extension Downloads" src="https://img.shields.io/chrome-web-store/users/gjabpajagbgoifbkflgojeojmnlmioea?color=red&label=Extension%20Downloads">
-</a>
-
 <a href="https://discord.gg/XQDfbfq">
 	<img src="https://img.shields.io/discord/683793361123016755.svg?color=7289da&label=Discord&logo=discord&style=flat-square">
 </a>
