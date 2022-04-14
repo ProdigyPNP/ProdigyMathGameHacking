@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UntrustableRus/PMGH-ext.git"
+    "url": "git+https://github.com/ProdigyPNP/P-NP.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MPL",
   "bugs": {
-    "url": "https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/issues"
+    "url": "https://github.com/ProdigyPNP/ProdigyMathGameHacking/issues"
   },
-  "homepage": "https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/blob/master/PHEx/README.md",
+  "homepage": "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/PHEx/README.md",
   "dependencies": {
     "dir-archiver": "^1.1.2",
     "simple-archiver": "^1.0.1",
