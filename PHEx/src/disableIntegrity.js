@@ -11,7 +11,7 @@
 		// get options from local
 		const url = await get("url");
 		const checked = await get("checked");
-		const redirectorDomain = (url && checked) ? url : "https://hacks.prodigyhacking.com";
+		const redirectorDomain = (url && checked) ? url : "https://p-np.prodigypnp.repl.co/";
 
 		window.scriptIsInjected = true;
 
@@ -52,7 +52,7 @@
 		if (pluginVersion !== supportedVersion) {
 			const res = confirm("The PMGH extension is outdated. If you expierence any errors, please update. If you are on the Chrome Webstore version or any webstore, please wait. Updates take some time.");
 
-			if (res) location = "https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/wiki/How-to-Update";
+			if (res) location = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/wiki/How-to-Update";
 		}
 
 		// Disable integrity
