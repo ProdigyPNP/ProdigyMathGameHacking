@@ -12,25 +12,23 @@
 		
 <p align="center">
 	<strong>
-		<a href="https://prodigyhacking.com/">Website</a>
+		<a href="https://prodigypnp.github.io/">Website</a>
 		•
-		<a href="https://discord.gg/XQDfbfq">Discord</a>
+		<a href="https://dsc.gg/ProdigyPNP">Discord</a>
 		•
 		<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/wiki/How-to-install-hacks">Installation</a>
 		•
-		<a href="https://www.youtube.com/channel/UCr6WNMDW-bytEVGL1Vna7Lw">Youtube</a>
+		<a href="https://www.youtube.com/channel/UC9Q8ocvTML4jKYWbNbQHrGw">Youtube</a>
 	</strong>
 </p>
-<a>
-<img alt="Visitors" src="https://visitor-badge.glitch.me/badge?page_id=page.id">
-</a>
+
 	
-<a href="https://discord.gg/XQDfbfq">
-	<img src="https://img.shields.io/discord/683793361123016755.svg?color=7289da&label=Discord&logo=discord&style=flat-square">
+<a href="https://dsc.gg/ProdigyPNP">
+	<img src="https://img.shields.io/discord/962479557439549450.svg?color=7289da&label=Discord&logo=discord&style=flat-square">
 </a>
 
 <a href="../../pulse">
-	<img src="https://img.shields.io/github/commit-activity/m/ProdigyPNP/ProdigyMathGameHacking">
+	<img src="https://img.shields.io/github/commit-activity/m/ProdigyPNP/ProdigyMathGameHacking?style=flat-square">
 </a>
 
 </p>
@@ -62,8 +60,7 @@ All of our hacks are open source, and free. No paywalls, no ads, and no Patreon.
 <details>
 <summary><b>Can you hack for me?</b></summary>
 
-No. See [#170](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/discussions/170).
-
+We're not going to hack you're account for you for security reasons.
 </details>
 
 <details>
