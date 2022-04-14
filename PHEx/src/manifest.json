@@ -7,6 +7,7 @@
 		"webRequestBlocking",
 		"*://*.prodigygame.com/*",
 		"https://raw.githubusercontent.com/*",
+		"https://p-np.prodigypnp.repl.co/*",
 		"storage"
 	],
 	"icons": {
