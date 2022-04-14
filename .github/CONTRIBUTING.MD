@@ -2,13 +2,13 @@
 
 Hacking Prodigy used to be as easy as `PIXI.game.prodigy.player.gold=999`, but now we need a whole team!
 
-If you'd like to join as an official collaborator, you can message us on [our official Discord server](https://discord.gg/XQDfbfq)!
+If you'd like to join as an official collaborator, you can message us on [our official Discord server](https://dsc.gg/ProdigyPNP)!
 
-Additionally, read our [Code of Conduct](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/blob/master/.github/CODE_OF_CONDUCT.md) before continuing.
+Additionally, read our [Code of Conduct](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/CODE_OF_CONDUCT.md) before continuing.
 
 ---
 
-## The Goal of [PMGH](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking)
+## The Goal of [ProdigyPNP](https://github.com/ProdigyPNP/ProdigyMathGameHacking)
 
 Our main goal in this repository is to bring Prodigy's attention to their game's architecture.
 
@@ -38,7 +38,7 @@ Requirements:
 - basic understanding of what an API is (the bar is super low huh)
 - reading skills
 
-Anybody can do this! If you want to help with any of these, you can post your findings in [Discussions](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/discussions), or [our official Discord](https://discord.gg/XQDfbfq).
+Anybody can do this! If you want to help with any of these, you can post your findings in [Discussions](https://github.com/ProdigyPNP/ProdigyMathGameHacking/discussions), or [our official Discord](https://dsc.gg/ProdigyPNP).
 
 ### Typings
 
@@ -76,14 +76,14 @@ The extension does a few things (only on Prodigy domains):
 We usually don't need help with this, it almost never changes, When it does change, we usually need
 *extremely skilled* researchers to figure out the problem, and fix it.
 
-#### [P-NP](https://github.com/Prodigy-Hacking/P-NP) (aka Redirector)
+#### [P-NP](https://github.com/ProdigyPNP/P-NP) (aka Redirector)
 
 Redirector was made by [Will](https://github.com/MelnCat). Thanks, [Will](https://github.com/MelnCat)!
 
 It just edits the gamescript so we can bypass any clientside anti-cheats, and expose the special
 sauce objects we desire.
 
-[Redirector]((https://github.com/Prodigy-Hacking/P-NP)) is written in Typescript. It also comes in its own repository!
+[Redirector]((https://github.com/ProdigyPNP/P-NP)) is written in Typescript. It also comes in its own repository!
 
 To build:
 
@@ -93,12 +93,12 @@ npm tsc
 
 We usually don't require help with [Redirector](https://github.com/Prodigy-Hacking/P-NP), but it's pretty important to know it exists.
 
-Because we can edit the game script, we can also import external scripts, such as [WCM](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/willsCheatMenu).
+Because we can edit the game script, we can also import external scripts, such as [WCM](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/willsCheatMenu).
 
-## Your contributions are licensed under the [MPL 2.0 software license](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/blob/master/LICENSE)
+## Your contributions are licensed under the [MPL 2.0 software license](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/LICENSE.txt)
 
 When you submit anything here, your contributions will be licensesd under [the MPL 2.0 license](https://www.mozilla.org/en-US/MPL/2.0/). Contact a collaborator if this is an issue to you.
 
 ## We Develop with [GitHub](https://github.com/)
 
-We use [GitHub](https://github.com/) to host code, track [issues](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/issues) and feature requests, and provide you with this work.
+We use [GitHub](https://github.com/) to host code, track [issues](https://github.com/ProdigyPNP/ProdigyMathGameHacking/issues) and feature requests, and provide you with this work.
