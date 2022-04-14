@@ -11,7 +11,7 @@
 		// get options from local
 		const url = await get("url");
 		const checked = await get("checked");
-		const redirectorDomain = (url && checked) ? url : "https://p-np.prodigypnp.repl.co/";
+		const redirectorDomain = (url && checked) ? url : "https://p-np.prodigypnp.repl.co";
 
 		window.scriptIsInjected = true;
 
