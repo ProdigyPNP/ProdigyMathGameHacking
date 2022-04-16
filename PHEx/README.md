@@ -1,10 +1,10 @@
 # Prodigy Hacking Extension (PHEx)
 
-Combined with [P-NP](https://github.com/Prodigy-Hacking/P-NP) to inject modified game files into Prodigy.
+Combined with [P-NP](https://github.com/ProdigyPNP/P-NP) to inject modified game files into Prodigy.
 
 Made of the Redirector extension, no-csp, and a little extra spice ;)
 
-## [Usage](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/wiki/How-to-install-hacks)
+## [Usage](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md)
 
 ## Building
 
@@ -16,6 +16,6 @@ npm run build
 
 ## Credit
 
-Originally created by [Rus](https://github.com/UntrustableRus/)
+Originally created by [Rus](https://github.com/UntrustableRus)
 
-Maintained by the PMGH organization.
+Maintained by [ProdigyPNP](https://github.com/ProdigyPNP).
