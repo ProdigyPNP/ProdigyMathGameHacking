@@ -53,7 +53,7 @@ title.innerText = "Prodigy Hacks";
 menuleft.append(title);
 const disc = document.createElement("h2");
 disc.style.fontSize = "30px";
-disc.innerHTML = "Join our Discord<a href='https://discord.gg/XQDfbfq'>https://dsc.gg/ProdigyPNP</a>! <br> Press SHIFT to show/hide the menu.";
+disc.innerHTML = "Join our Discord <a href='https://dsc.gg/ProdigyPNP'>https://dsc.gg/ProdigyPNP</a>! <br> Press SHIFT to show/hide the menu.";
 menuleft.append(disc);
 const subtitle = document.createElement("h3");
 subtitle.style.fontSize = "20px";
