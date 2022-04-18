@@ -51,12 +51,10 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
     // Set the players level to 100
     const level = 100;
-    	if (level.value === undefined) return;
-    	if (level.value === 1) return 0;
     	const h = level.value - 2;
     	const xpConstant = 1.042;
     	_.player.data.stars = Math.round((1 - Math.pow(xpConstant, h)) / (1 - xpConstant) * 20 + 10);
-    	_.player.data.level = +level.value;
+    	_.player.data.level = 100;
     	_.player.getLevel = () => { return _.player.data.level; };
 
 
