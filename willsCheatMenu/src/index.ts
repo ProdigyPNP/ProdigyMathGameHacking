@@ -13,9 +13,9 @@ wrapper?.prepend(menu);
 
 export const toggler = document.createElement("button");
 toggler.id = "menu-toggler";
-toggler.style.fontSize = "35px"
-toggler.style.height = "35px"
-toggler.style.width = "70px"
+toggler.style.fontSize = "25px"
+toggler.style.height = "25px"
+toggler.style.width = "50px"
 
 let visible = false;
 wrapper?.prepend(toggler);
