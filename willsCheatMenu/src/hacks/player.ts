@@ -11,10 +11,13 @@ new Hack(category.player, "Max Account").setClick(async () => {
     // ============================================
     // PRE MAXING PROCESS
 
-     /* if (!(
-    		await Confirm.fire("Are you sure that you want to max your account?", "Your account might break.")
-    ).value) return; */
+    /*
 
+     if (!(
+    		await Confirm.fire("Are you sure that you want to max your account?", "Your account might break.")
+    ).value) return;
+
+    */
 
     // FIRST, Escape any battle to prevent random glitching.
     const currentState = game.state.current;
@@ -162,25 +165,6 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
 
     // INVENTORY HACKS
-    // ============================================
-    // ============================================
-    // LOCATION HACKS
-
-
-        // no location hacks are relevant to maxing an account, let's move along...
-
-
-    // LOCATION HACKS
-    // ============================================
-    // ============================================
-    // MINIGAME HACKS
-
-
-    // 69x dyno dig walkspeed
-    _.instance.game.state.states.get("DinoDig").walkSpeed = 69;
-
-
-    // MINIGAME HACKS
     // ============================================
     // ============================================
     // PET HACKS
