@@ -3,7 +3,7 @@
 <hr>
 
 This is the main cheat menu UI for ProdigyMathGameHacking.
-Originally made by [MelnDev](https://github.com/MelnDev) and maintained by [ArcerionDev](https://github.com/ArcerionDev) and [PatheticMustan](https://github.com/PatheticMustan), and now maintained by
+Originally made by [Will](https://github.com/MelnCat) and maintained by [ArcerionDev](https://github.com/ArcerionDev) and [PatheticMustan](https://github.com/PatheticMustan), and now maintained by
 
 <hr>
 
