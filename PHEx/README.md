@@ -3,19 +3,34 @@
 Combined with [P-NP](https://github.com/ProdigyPNP/P-NP) to inject modified game files into Prodigy.
 
 Made of the Redirector extension, no-csp, and a little extra spice ;)
+<br><br>
+
+
+
 
 ## [Usage](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md)
+See our guide: https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md
+<br><br>
+
+
+
 
 ## Building
 
-Remember to run `npm i` first in the PHEx directory to download the required packages needed for the build command. You only need to do this once.
-
-```cmd
+```shell
+npm i
 npm run build
 ```
 
+The output will be in `/PHEx/build/`. The generated files are `extension.zip`, `extension.xpi`, and `extension.crx`.
+
+<br><br>
+
+
+
+
 ## Credit
 
-Originally created by [Rus](https://github.com/UntrustableRus)
+Originally created by [UnstableRus](https://github.com/UntrustableRus). Thanks, [Rus](https://github.com/UntrustableRus)!
 
-Maintained by [ProdigyPNP](https://github.com/ProdigyPNP).
+Currently maintained by [ProdigyPNP](https://github.com/ProdigyPNP).

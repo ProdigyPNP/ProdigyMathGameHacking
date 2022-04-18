@@ -51,7 +51,7 @@ new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
 	Toast.fire("Success!", "All mythical epics have been added!", "success");
-});
+}); // btw this hack was made by gemsvidø (afkvido on github)
 
 
 new Hack(category.pets, "Fix Battle Crash").setClick(async () => {

@@ -139,7 +139,7 @@ On November 13th, [Prodigy](https://prodigy.com) added extra security via integr
 ### SHA256 Sumchecks bypassed
 `11/19/2020`
 
-On November 19th, Natsiumi](https://github.com/Patheticmustan) bypassed the [SHA256 sumcheck](https://help.ubuntu.com/community/HowToSHA256SUM), which fixed the hacks.
+On November 19th, [Natsumi](https://github.com/Patheticmustan) bypassed the [SHA256 sumcheck](https://help.ubuntu.com/community/HowToSHA256SUM), which fixed the hacks.
 <br><br><br>
 
 
@@ -147,5 +147,22 @@ On November 19th, Natsiumi](https://github.com/Patheticmustan) bypassed the [SHA
 ### The end of PMGH
 `04/06/2022`
 
-On April 6, 2022, [Prodigy-Hacking/](https://github.com/Prodigy-Hacking)[ProdigyMathGameHacking](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking) and [Prodigy-Hacking/](https://github.com/Prodigy-Hacking)[P-NP](https://github.com/Prodigy-Hacking/P-NP) were deleted due to a DMCA takedown. [P-NP](https://github.com/Prodigy-Hacking/P-NP) techically hosts a copy of Prodigy's code, except it's modified to allow the running of hacks. [PHEx](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/PHEx/build/extension.zip) was [taken off the Chrome Web Store](https://chrome.google.com/webstore/detail/gjabpajagbgoifbkflgojeojmnlmioea).
+On April 6, 2022, [Prodigy-Hacking/](https://github.com/Prodigy-Hacking)[ProdigyMathGameHacking](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking) and [Prodigy-Hacking/](https://github.com/Prodigy-Hacking)[P-NP](https://github.com/Prodigy-Hacking/P-NP) were deleted due to a DMCA takedown. [P-NP](https://github.com/Prodigy-Hacking/P-NP) technically hosts a copy of Prodigy's code, except it's modified to allow the running of hacks. [PHEx](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/PHEx/build) was [taken off the Chrome Web Store](https://chrome.google.com/webstore/detail/gjabpajagbgoifbkflgojeojmnlmioea).
+<br><br><br>
+
+
+
+### The rise of ProdigyPNP
+`04/07/2022`
+
+Not too late after [Prodigy Hacking Official](https://github.com/Prodigy-Hacking)'s repositories were taken down by the DMCA, [gemsvidø](https://github.com/afkvido), [Eris](https://github.com/Erisfiregamer1), [donaldli2020](https://github.com/donaldli2020), and [Apocalyptic](I forgot your link) came together and formed a new organization called [ProdigyPNP](https://github.com/ProdigyPNP). This organization was dedicated to keeping Prodigy hacks alive, no matter what DMCA comes at us. *bless the demon king that gemsvido had many local clones, also the github fork network is a thing.*
+<br><br><br>
+
+
+
+
+### The return of PHEx
+`04/16/2022`
+
+After fixing the broken P-NP and PHEx, Prodigy hacks were back up, just like before.
 <br><br><br>

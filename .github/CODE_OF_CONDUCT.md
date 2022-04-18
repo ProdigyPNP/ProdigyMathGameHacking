@@ -1,4 +1,4 @@
-# Citizen Code of Conduct
+# PMGH Code of Conduct
 
 Our goal was to improve Prodigy's security, not ruining the game for profit. We won't sell our hacks, or put ads.
 
@@ -8,13 +8,11 @@ Our hacks will **always** be open-source, and free to use.
 
 You may ***never***:
 
-- sell our hacks in any way shape or form
-- hide our hacks behind a paywall/subscribewall of any kind
+- Sell our hacks in any way shape or form. **This includes selling hacked accounts**.
+- Hide our hacks behind a paywall/subscribewall of any kind
   - This includes adfly 😐
-- use our hacks to leak private information
-- use our hacks to steal user login information or tokens
-- claim ownership of our hacks (Just stop bragging about it 😠)
-- modify it slightly just to add your own ads 🤨
+- Claim ownership of our hacks 😠
+- Modify our hacks slightly just to add your own ads 🤨
 
 If you're gonna talk about our hacks (on YouTube or other social media platforms), please please pretty please [credit us properly](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/YOUTUBE_ATTRIBUTION.md).
 

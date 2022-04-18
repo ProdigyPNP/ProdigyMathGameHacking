@@ -1,7 +1,7 @@
 {
-	"name": "Prodigy Hacking Extension (PHEx)",
+	"name": "Prodigy Hacking Extension | PHEx",
 	"version": "2.1.8",
-	"description": "PHEx is an extension made to raise awareness of security issues for Prodigy",
+	"description": "Free and open source hacks for Prodigy Math Game",
 	"permissions": [
 		"webRequest",
 		"webRequestBlocking",

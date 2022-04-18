@@ -1,7 +1,7 @@
 {
-  "name": "pmgh-phex",
+  "name": "PHEx",
   "version": "2.1.8",
-  "description": "",
+  "description": "Open source Prodigy hacks",
   "main": "build.js",
   "scripts": {
     "build": "node build.js"
@@ -11,8 +11,8 @@
     "url": "git+https://github.com/ProdigyPNP/P-NP.git"
   },
   "keywords": [],
-  "author": "UnstableRus",
-  "license": "MPL",
+  "author": "ProdigyPNP",
+  "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/ProdigyPNP/ProdigyMathGameHacking/issues"
   },

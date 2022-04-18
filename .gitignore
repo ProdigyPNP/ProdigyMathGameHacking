@@ -1,14 +1,21 @@
-.git
-.gitignore
+# Generated Config files
 config.json
+
+# Generated Log files
 *.log
+
+# NodeJS/npm modules
 node_modules/
 
+# Extension Private Key files
 *.pem
+
+# Not sure what this is, i'll probbably remove it soon
 PHEx/src/web-ext-artifacts/prodigy_hacking_extension_phex_-2.0.1.zip
 
-# macOS
+# MacOS
 **/.DS_Store
 
 # IntelliJ IDEA
 /.idea/
+*.iml

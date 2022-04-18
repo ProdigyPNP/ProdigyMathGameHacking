@@ -1,12 +1,12 @@
 {
   "name": "oldguard",
-  "version": "1.0.0",
+  "version": "2.1.8",
   "description": "cheats anew",
   "main": "index.js",
   "scripts": {
     "start": "node build.js && node server.js"
   },
-  "author": "PatheticMustan",
+  "author": "ProdigyPNP",
   "license": "ISC",
   "dependencies": {
     "esbuild": "^0.14.2",

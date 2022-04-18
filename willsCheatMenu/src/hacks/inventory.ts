@@ -155,7 +155,7 @@ new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
 	Toast.fire("Furniture Added!", "All furniture has been added to your inventory!", "success");
 });
 
-new Hack(category.inventory, "Obtain All Mounts", "This gives you the Fluffy Cloud and the Rainbow Cloud.").setClick(async () => {
+new Hack(category.inventory, "Obtain All Mounts", "This gives you all of the mounts in the game.").setClick(async () => {
 	_.player.backpack.data.mount = itemify(_.gameData.mount, 1);
 	Toast.fire("Mounts Added!", "All mounts have been added to your inventory!");
 });

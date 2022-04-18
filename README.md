@@ -2,7 +2,7 @@
 	<a href="../../wiki/How-to-install-hacks">
 		<img align="center"
 			width="175"
-			alt="Installation"
+			alt="Prodigy Math Game Hacking"
 			src="/.github/fixedlogo.png?raw=true">
 	</a>
 </h1>
@@ -18,49 +18,45 @@
 		•
 		<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/wiki/How-to-install-hacks">Installation</a>
 		•
-		<a href="https://www.youtube.com/channel/UC9Q8ocvTML4jKYWbNbQHrGw">Youtube</a>
+		<a href="https://www.youtube.com/channel/UC9Q8ocvTML4jKYWbNbQHrGw">YouTube</a>
 	</strong>
 </p>
 
 	
 <a href="https://dsc.gg/ProdigyPNP">
-	<img src="https://img.shields.io/discord/962479557439549450.svg?color=7289da&label=Discord&logo=discord&style=flat-square">
+	<img alt="Discord Members" src="https://img.shields.io/discord/962479557439549450.svg?color=7289da&label=Discord&logo=discord&style=flat-square">
 </a>
 
 <a href="../../pulse">
 	<img src="https://img.shields.io/github/commit-activity/m/ProdigyPNP/ProdigyMathGameHacking?style=flat-square">
 </a>
 
-</p>
+<p/>
 
 
 
 ## How to install
 
-1.) Install the [extension](https://chrome.google.com/webstore/detail/prodigyhacking/gjabpajagbgoifbkflgojeojmnlmioea) (also known as PHEx) from the Chrome Web Store.
-<br/>
-2.) Visit https://prodigygame.com
-<br/>
-3.) <b>Make a second account</b> and log in. DO NOT USE HACKS ON YOUR PRIMARY ACCOUNT. Hacks can damage your account if used improperly or excessively, and most hacks can't be undone.
-<br/>
-4.) A dropdown arrow will appear after 15-20 seconds.
+See our [Quickstart Guide]().
 
-## Motivation
+## Info
 
 <details>
-<summary><b>We aren't evil. Everything is open source, forever free, and without ads.</b></summary>
+<summary><b>We aren't evil.</b></summary>
 <br>
+We aren't evil. Everything is open source, forever free, and without ads.
+
 We're not trying to break the game because we're evil. We wanted to help Prodigy become more secure, but they've ignored our emails and our requests to talk. They've even gone as far as to ban a user from their official Zendesk.
 
-Because of that, we're publicly showing hacks! That, and it's also just fun :)
+Because of that, we're publicly showing hacks! To be honest, it's just fun ;)
 
-All of our hacks are open source, and free. No paywalls, no ads, and no Patreon. If you really want to support us, you can Nitro boost our Discord server [here](https://discord.gg/XQDfbfq)!
+All of our hacks are open source, and free. No paywalls, no ads, and no viruses.
 </details>
 
 <details>
 <summary><b>Can you hack for me?</b></summary>
 
-We're not going to hack you're account for you for security reasons.
+We're not going to hack your account for you for security reasons. Giving someone else your credentials allows them to mess around on your account,
 </details>
 
 <details>
@@ -83,52 +79,29 @@ Again, our code is open source, and you're always free to read any of it. If you
 
 <details>
 <summary><b>Legal</b></summary>
-If you have any legal problems, please email support@prodigyhacking.com
+If you have any legal problems, please email prodigypnp@gmail.com
 </details>
 
 
 
 ## Disclaimer
 
-<details>
-<summary><b>Always use an alt, just to be safe.</b></summary>
-<br>
-While our hacks are completely safe, <strong>you should never use hacks on your main account</strong>.
+We recommend that you use an alternate Prodigy account when using our Prodigy hacks.
+Using hacks on your main account could get it hacker-tagged, reset, banned, or most likely broken.
 
-There's an <b>extremely small</b> chance your account will be hacker-tagged, reset, or <b>banned</b>. Luckily, it almost never happens. The only incidents PMGH knows of users being banned for hacking were contributors or staff of PMGH itself.
-
-We will <b>never<b/> ask you for your password. If somebody asks you for personal/sensitive information, report it to the staff on our [Discord server](https://dsc.gg/ProdigyPNP).
-
-All of our hacks are *open-source*, and only located under our [Github Organization](https://github.com/ProdigyPNP).
-*If it's not an official repository or a fork, it may not be safe!*
-</details>
-
-
-
-<details>
-<summary><b>We're not liable for damage to your account.</b></summary>
-<br>
-- All hacks, exploits, or other files hosted here may damage your account if used improperly or excessively. We can't stress enough, do not use <i>any</i> of these hacks on your primary account, as you risk your account becoming damaged beyond repair, preventing you from accessing Prodigy Math Game in that account. You have been warned.
-<br>
-- We are not liable for any damages of any kind, as our license states:
-
-> Limitation of Liability
-> Under no circumstances and under no legal theory, whether tort (including negligence), contract, or otherwise, shall any Contributor, or anyone who distributes Covered Software as permitted above, be liable to You for any direct, indirect, special, incidental, or consequential damages of any character including, without limitation, damages for lost profits, loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses, even if such party shall have been informed of the possibility of such damages. This limitation of liability shall not apply to liability for death or personal injury resulting from such party’s negligence to the extent applicable law prohibits such limitation. Some jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so this exclusion and limitation may not apply to You.
-</details>
-
-
+We are not liable for any damage to your accounts, see our [license](../../blob/master/LICENSE.txt) for more information.
 
 
 
 ## The Team
 
-- [gemsvidø](https://github.com/afkvido) - Reuploader of PMGH
+- [gemsvidø](https://github.com/afkvido) - Current Owner of PMGH
 - [Natsumi](https://github.com/PatheticMustan) - Original Creator of PMGH
-- [Arcerion](https://github.com/ArcerionDev) - Official Owner of PMGH
-- [donaldli2020](https://github.com/donaldli2020) - Contributor
+- [Arcerion](https://github.com/ArcerionDev) - Former official Owner of PMGH
+- [donaldli2020](https://github.com/donaldli2020) - Part of the ProdigyPNP team, also a Contributor.
 - [Yama](https://github.com/vibinyama) - Collaborator
 - [BoredFish](https://github.com/BoredFishRE) - Collaborator
-- [Hostedposted](https://github.com/hostedposted) - Owner of the Prodigy Cheat Dashboard
+- [hostedposted](https://github.com/hostedposted) - Owner of the Prodigy Cheat Dashboard
 - [Spacebar](https://github.com/00100000) - Code Collaborator
 - [MelnCat](https://github.com/MelnCat) - Original Creator of Will's Cheat Menu
 - [Exoticc](https://github.com/Exoticc) - Collaborator
@@ -149,8 +122,8 @@ All of our hacks are *open-source*, and only located under our [Github Organizat
 ## Components
 
 - [ProdigyMathGameHacking](../..) - The ProdigyMathGameHacking Repository
-- [PHEx](../../tree/master/PHEx) - The Prodigy Hacking Extension, used to inject our modified gamefiles into Prodigy.
-- [willsCheatMenu](../../tree/master/willsCheatMenu) - The cheat GUI, for user convinience
+- [PHEx](../../tree/master/PHEx) - The Prodigy Hacking Extension, used to inject our modified game files into Prodigy.
+- [willsCheatMenu](../../tree/master/willsCheatMenu) - The cheat GUI, for user convenience
 - [docs](../../tree/master/docs) - Our documentation of Prodigy, used to find functions to build the hacks.
 - [meta](../../tree/master/meta) - Information on this repository
 - [oldguard](../../tree/master/oldguard) - oldguard
@@ -160,9 +133,9 @@ All of our hacks are *open-source*, and only located under our [Github Organizat
 <br/>
 
 <h1 align="center">
-<img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
+<a href = "https://dsc.gg/ProdigyPNP"><img src="https://readme-jokes.vercel.app/api" alt="Jokes Card"/></a>
 	</h1>
 
 
 ----
-***All hacks and software are licensed under the Mozilla Public License (MPL) V2.0, unless stated otherwise with a separate license. Any violation of the policy of this licence may result in a DMCA takedown.***
+***All hacks are licensed under the Mozilla Public License (MPL) V2.0, unless stated otherwise with a separate license. Any violation of the policy of this licence may result in a DMCA takedown.***

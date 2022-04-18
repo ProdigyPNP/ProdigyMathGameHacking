@@ -1,9 +1,7 @@
-## Description
 <!--
-Describe your PR here
--->
 
-## Screenshots
-<!--
-If this PR touches the interface of anything in this repository, add screenshots here.
+PLEASE MAKE SURE TO READ THE CONTRIBUTING GUIDELINES OF THIS REPOSITORY BEFORE SUBMITTING YOUR PULL REQUEST.
+
+https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/CONTRIBUTING.md
+
 -->

@@ -1,7 +1,278 @@
 // @ts-nocheck
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal";
 import { Hack, category, Toggler } from "../index";
-import { _, getItem, VERY_LARGE_NUMBER, prodigy } from "../utils/util";
+import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";
+import { Item } from "../../../typings/item";
+import { TODO } from "../../../typings/util";
+
+
+new Hack(category.player, "Max Account").setClick(async () => {
+
+    // ============================================
+    // PRE MAXING PROCESS
+
+     if (!(
+    		await Confirm.fire("Are you sure that you want to max your account?", "Your account might break.")
+    ).value) return;
+
+
+    // FIRST, Escape any battle to prevent random glitching.
+    const currentState = game.state.current;
+    	if (currentState === "PVP") Object.fromEntries(_.instance.game.state.states).PVP.endPVP();
+    	else if (currentState === "CoOp") prodigy.world.$(_.player.data.zone);
+    	else if (!["Battle", "SecureBattle"].includes(currentState)) {
+    	} else {
+    		Object.fromEntries(_.instance.game.state.states)[currentState].runAwayCallback();
+    	}
+
+
+    // NOW, fix the morph crash bug
+    _.player.getPlayerData().playerTransformation = undefined;
+    _.player.appearanceChanged = true;
+
+
+    // ALSO, fix the battle crash bug
+    _.player.kennel.petTeam.forEach((v: any) => {
+		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
+	});
+
+    // PRE MAXING PROCESS
+    // ============================================
+    // ============================================
+    // PLAYER HACKS
+
+    // Set the players gold to 09900000
+    _.player.data.gold = 9900000;
+
+
+
+    // Set the players level to 100
+    const level = 100;
+    	if (level.value === undefined) return;
+    	if (level.value === 1) return 0;
+    	const h = level.value - 2;
+    	const xpConstant = 1.042;
+    	_.player.data.stars = Math.round((1 - Math.pow(xpConstant, h)) / (1 - xpConstant) * 20 + 10);
+    	_.player.data.level = +level.value;
+    	_.player.getLevel = () => { return _.player.data.level; };
+
+
+
+    // Set the players bounty points to 100 (max)
+    _.player.data.bountyScore = 100;
+
+
+    // Set the players conjure cubes to 100 (max)
+	for (let i = 0; i < Math.min(99, 100); i++) { prodigy.giftBoxController.receiveGiftBox(null, getItem("giftBox", 1)); }
+
+
+    // Set the player's wins to VERY_LARGE_NUMBER
+    _.player.data.win = VERY_LARGE_NUMBER;
+
+
+
+    // Set the player's losses to -9223372036854775808 (Java long limit, ik its irrelevant)
+    _.player.data.loss = -9223372036854775808;
+
+
+
+    // Set the players damage multiplier to VERY_LARGE_NUMBER
+    _.player.modifiers.damage = VERY_LARGE_NUMBER;
+
+
+    // Set the players PVP health to VERY_LARGE_NUMBER
+    _.player.pvpHP = VERY_LARGE_NUMBER;
+    _.player.getMaxHearts = () => VERY_LARGE_NUMBER;
+
+
+    // Enable premium membership
+    function getMemberModule () { return _.player.hasMembership.toString().split("\"")[1]; }
+    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
+    _.player.appearanceChanged = true;
+
+
+    // Get all achievements
+    for (var i = 0; i < 100; i ++) {
+    	_.player.achievements.data.progress[i] = 10;
+    }
+
+    // Set the players dark tower floor to 100
+    _.player.data.tower = 100;
+
+
+    // PLAYER HACKS
+    // ============================================
+    // ============================================
+    // BATTLE HACKS
+
+
+
+    // Disable Math
+    _.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = false;
+
+
+    // Max out the players HP
+    _.player.getMaxHearts = () => VERY_LARGE_NUMBER;
+    _.player.pvpHP = VERY_LARGE_NUMBER;
+    _.player.data.hp = VERY_LARGE_NUMBER;
+
+
+    // BATTLE HACKS
+    // ============================================
+    // ============================================
+    // INVENTORY HACKS
+
+
+    // load sum typings and stuff
+    const names = ["Boots", "Buddies", "Fossils", "Hats", "Items", "Key Items", "Tower Town Frames", "Tower Town Interiors", "Mounts", "Outfits", "Relics", "Weapons", "Currencies"];
+    const ids = ["boots", "follow", "fossil", "hat", "item", "key", "mathTownFrame", "mathTownInterior", "mount", "outfit", "spellRelic", "weapon", "currency"];
+    const itemify = (item: Item[], amount: number) =>
+    	item.map(x => ({
+    		ID: x.ID,
+    		N: amount
+    	})).filter(v => v !== undefined);
+
+
+    // Get 990000 of all items
+    const num = 990000;
+
+    	ids.forEach(id => {
+    		_.player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125,126,127,128,129,134,135,136,137].includes(l.ID) : l), num.value);
+    	});
+    	_.gameData.dorm.forEach(x =>
+    		_.player.house.data.items[x.ID] = { A: [], N: num.value }
+    	);
+
+    	// Remove bounty notes
+    	const bountyIndex = () => _.player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
+    	while (bountyIndex() > -1) _.player.backpack.data.item.splice(bountyIndex(), 1);
+    	Toast.fire("Success!", "All items added!", "success");
+
+
+
+    // Get all Mounts
+    _.player.backpack.data.mount = itemify(_.gameData.mount, 1);
+
+
+    // Get 990000 of all furniture
+    const amt = 990000;
+    	_.gameData.dorm.forEach(x =>
+    		_.player.house.data.items[x.ID] = { A: [], N: amt.value }
+    	);
+
+
+    // INVENTORY HACKS
+    // ============================================
+    // ============================================
+    // LOCATION HACKS
+
+
+        // no location hacks are relevant to maxing an account, let's move along...
+
+
+    // LOCATION HACKS
+    // ============================================
+    // ============================================
+    // MINIGAME HACKS
+
+
+    // 69x dyno dig walkspeed
+    _.instance.game.state.states.get("DinoDig").walkSpeed = 69;
+
+
+    // MINIGAME HACKS
+    // ============================================
+    // ============================================
+    // PET HACKS
+
+
+    // Get All Pets
+
+        // add pets
+    	_.gameData.pet.forEach(x => {
+    		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+    	});
+
+    	// add encounter info
+    	_.player.kennel._encounterInfo._data.pets = [];
+    	_.gameData.pet.map((pet: {ID: number}) => {
+    		_.player.kennel._encounterInfo._data.pets.push({
+    			firstSeenDate: Date.now(),
+    			ID: pet.ID,
+    			timesBattled: 1,
+    			timesRescued: 1
+    		});
+    	});
+    	// Fix broken pets
+    	_.player.kennel.petTeam.forEach((v: any) => {
+    		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
+    	});
+
+
+    // Get all Legacy Epics
+    const epics = _.gameData.pet.filter(x => [125, 126, 127, 128, 129, 130, 131, 132, 133].includes(x.ID));
+    	epics.forEach(x => {
+    		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+    	});
+    	// Fix broken pets
+    	_.player.kennel.petTeam.forEach((v: any) => {
+    		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
+    	});
+
+
+    // Get all Mythical Epics
+    const mythepics = _.gameData.pet.filter(x => [158, 166, 168].includes(x.ID));
+	mythepics.forEach(x => {
+		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+	});
+	// Fix broken pets
+	_.player.kennel.petTeam.forEach((v: any) => {
+		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
+	});
+
+
+    // PET HACKS
+    // ============================================
+    // ============================================
+    // UTILITY HACKS
+
+
+    // Disable Inactivity Kick
+    _.constants.constants["GameConstants.Inactivity.LOG_OUT_TIMER_SECONDS"] = 0;
+
+    // 420x walkspeed
+    _.player._playerContainer.walkSpeed = 420;
+
+
+    // UTILITY HACKS
+    // ============================================
+    // ============================================
+    // POST MAXING PROCESS
+
+
+    // Save the player data to make sure that the max worked
+    saveCharacter();
+
+
+    // Refresh the players appearance
+    _.player.appearanceChanged = true;
+
+
+    // Close all popups
+    _.instance.prodigy.open.menuCloseAll();
+
+    // Save again after closing popups, for good measure.
+    saveCharacter();
+
+
+
+    // POST MAXING PROCESS
+    // ============================================
+
+
+	Toast.fire("Success", `Your account is now maxed!`, "success");
+});
+
 
 new Hack(category.player, "Set Gold").setClick(async () => {
 	const gold = await NumberInput.fire("Gold Amount", "What number do you want to set your gold to?", "question");
@@ -10,6 +281,8 @@ new Hack(category.player, "Set Gold").setClick(async () => {
 	_.player.data.gold = +gold.value;
 	Toast.fire("Success!", `You now have ${gold.value} gold.`, "success");
 });
+
+
 new Hack(category.player, "Set Level").setClick(async () => {
 	const level = await NumberInput.fire("Level", "What number do you want to set your level to?", "question");
 	if (level.value === undefined) return;
@@ -194,7 +467,7 @@ new Hack(category.player, "Change Name", "Change the name of your wizard.").setC
 });
 
 new Hack(category.player, "Uncap player level (client side only)").setClick(async () => {
-	const level = await NumberInput.fire("Level", "What would you like to set your level to? (Can be 100+)", "question");
+	const level = await NumberInput.fire("Level", "What would you like to set your level to? (Can be >100)", "question");
 	if (!level.value) return;
 	localStorage.setItem("level", level.value);
 	eval(`_.player.getLevel = () => {return ${level.value}}`);

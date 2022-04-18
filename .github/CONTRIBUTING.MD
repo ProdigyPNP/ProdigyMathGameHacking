@@ -4,7 +4,7 @@ Hacking Prodigy used to be as easy as `PIXI.game.prodigy.player.gold=999`, but n
 
 If you'd like to join as an official collaborator, you can message us on [our official Discord server](https://dsc.gg/ProdigyPNP)!
 
-Additionally, read our [Code of Conduct](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/CODE_OF_CONDUCT.md) before continuing.
+Additionally, please read our [Code of Conduct](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/CODE_OF_CONDUCT.md) before continuing.
 
 ---
 
@@ -27,16 +27,16 @@ There are lots of things to do! (Ranked from easiest to hardest)
 
 As the name indicates, research. Research includes:
 
-- looking for new endpoints to mess around with
-- reading the Prodigy source extensively
-- reporting broken hacks
-- suggesting new hack ideas
+- Looking for new endpoints to mess around with
+- Reading the Prodigy source extensively
+- Reporting broken hacks
+- Suggesting new hack ideas
 
 Requirements:
 
-- basic coding skills
-- basic understanding of what an API is (the bar is super low huh)
-- reading skills
+- Basic coding skills, mainly in JavaScript and TypeScript
+- Basic understanding of what an API is (the bar is super low huh)
+- Reading skills ;p
 
 Anybody can do this! If you want to help with any of these, you can post your findings in [Discussions](https://github.com/ProdigyPNP/ProdigyMathGameHacking/discussions), or [our official Discord](https://dsc.gg/ProdigyPNP).
 
@@ -50,9 +50,12 @@ Requirements:
 
 If you make a PR with Typings, [Will](https://github.com/MelnCat) will will you into his Will will. <3
 
-### [Will's Cheat Menu](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/willsCheatMenu)
 
-[Will's Cheat Menu](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/willsCheatMenu)! Written in Typescript, it gives a visual cheat menu, with tons of handy dandy hacks in one place. No more copy pasting required!
+
+
+### [The Hack GUI](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/willsCheatMenu)
+
+[The Hack GUI](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/willsCheatMenu)! Written in Typescript, it gives a visual cheat menu, with tons of handy dandy hacks in one place. No more copy pasting required!
 
 Requirements:
 
@@ -70,7 +73,7 @@ We used to rely on the Chrome extension "Redirector", and "Anti-CSP", but due to
 The extension does a few things (only on Prodigy domains):
 
 - disable CSP, so we can inject our scripts
-- disable Prodigy's official game files, and inject our hacked files
+- disable Prodigy's official game files, and load our hacked files
 - hehehehehehe
 
 We usually don't need help with this, it almost never changes, When it does change, we usually need
@@ -80,8 +83,7 @@ We usually don't need help with this, it almost never changes, When it does chan
 
 Redirector was made by [Will](https://github.com/MelnCat). Thanks, [Will](https://github.com/MelnCat)!
 
-It just edits the gamescript so we can bypass any clientside anti-cheats, and expose the special
-sauce objects we desire.
+It just edits the game's script so we can bypass any clientside anti-cheats, and expose the special sauce objects we desire.
 
 [Redirector]((https://github.com/ProdigyPNP/P-NP)) is written in Typescript. It also comes in its own repository!
 
@@ -93,12 +95,12 @@ npm tsc
 
 We usually don't require help with [Redirector](https://github.com/Prodigy-Hacking/P-NP), but it's pretty important to know it exists.
 
-Because we can edit the game script, we can also import external scripts, such as [WCM](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/willsCheatMenu).
+Because we can edit the game script, we can also import external scripts, such as the [Cheat GUI](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/willsCheatMenu).
 
 ## Your contributions are licensed under the [MPL 2.0 software license](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/LICENSE.txt)
 
-When you submit anything here, your contributions will be licensesd under [the MPL 2.0 license](https://www.mozilla.org/en-US/MPL/2.0/). Contact a collaborator if this is an issue to you.
+When you submit anything here, your contributions will be licensed under [the MPL 2.0 license](https://www.mozilla.org/en-US/MPL/2.0/). Contact a collaborator if this is an issue to you.
 
-## We Develop with [GitHub](https://github.com/)
+## We Develop with [GitHub](https://github.com)
 
-We use [GitHub](https://github.com/) to host code, track [issues](https://github.com/ProdigyPNP/ProdigyMathGameHacking/issues) and feature requests, and provide you with this work.
+We use [GitHub](https://github.com) to host code, track [issues](https://github.com/ProdigyPNP/ProdigyMathGameHacking/issues) and feature requests, and provide you with this work.
