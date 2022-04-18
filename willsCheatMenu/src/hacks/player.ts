@@ -216,7 +216,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
     _.constants.constants["GameConstants.Inactivity.LOG_OUT_TIMER_SECONDS"] = 0;
 
     // 420x walkspeed
-    _.player._playerContainer.walkSpeed = 420;
+    _.player._playerContainer.walkSpeed = 20;
 
 
     // UTILITY HACKS
