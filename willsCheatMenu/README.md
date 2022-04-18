@@ -1,16 +1,16 @@
-# Will's Cheat Menu
+# Cheat GUI
 
 <hr>
 
 This is the main cheat menu UI for ProdigyMathGameHacking.
-Originally made by [MelnDev](https://github.com/MelnDev), now maintained by [ArcerionDev](https://github.com/ArcerionDev) and [PatheticMustan](https://github.com/PatheticMustan).
+Originally made by [MelnDev](https://github.com/MelnDev) and maintained by [ArcerionDev](https://github.com/ArcerionDev) and [PatheticMustan](https://github.com/PatheticMustan), and now maintained by
 
 <hr>
 
 Usage: Install the hacks, the dropdown should appear in the top left corner after a moment.
 
-Build / Development: Install dependencies and run `webpack` in the command prompt to compile it.
 
+Build / Development:
 ```
 npm i
 npm run build
