@@ -11,13 +11,13 @@ new Hack(category.player, "Max Account").setClick(async () => {
     // ============================================
     // PRE MAXING PROCESS
 
-    /*
+
 
      if (!(
     		await Confirm.fire("Are you sure that you want to max your account?", "Your account might break.")
     ).value) return;
 
-    */
+
 
     // FIRST, Escape any battle to prevent random glitching.
     const currentState = game.state.current;
@@ -27,17 +27,20 @@ new Hack(category.player, "Max Account").setClick(async () => {
     	} else {
     		Object.fromEntries(_.instance.game.state.states)[currentState].runAwayCallback();
     	}
+    console.log("Escaped any battle.");
 
 
     // NOW, fix the morph crash bug
     _.player.getPlayerData().playerTransformation = undefined;
     _.player.appearanceChanged = true;
+    console.log("Fixed morph crash");
 
 
     // ALSO, fix the battle crash bug
     _.player.kennel.petTeam.forEach((v: any) => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
+	console.log("Fixed battle crash.")
 
     // PRE MAXING PROCESS
     // ============================================
@@ -46,7 +49,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
     // Set the players gold to 09900000
     _.player.data.gold = 9900000;
-
+    console.log("Set player gold to 9900000.")
 
 
     // Set the players level to 100
@@ -56,50 +59,57 @@ new Hack(category.player, "Max Account").setClick(async () => {
     	_.player.data.stars = Math.round((1 - Math.pow(xpConstant, h)) / (1 - xpConstant) * 20 + 10);
     	_.player.data.level = 100;
     	_.player.getLevel = () => { return _.player.data.level; };
-
+    console.log("Set player level to 100");
 
 
     // Set the players bounty points to 100 (max)
     _.player.data.bountyScore = 100;
+    console.log("Set player's bounty points to 100.");
 
 
     // Set the players conjure cubes to 100 (max)
 	for (let i = 0; i < Math.min(99, 100); i++) { prodigy.giftBoxController.receiveGiftBox(null, getItem("giftBox", 1)); }
+    console.log("Obtained 100 conjure cubes.");
 
 
     // Set the player's wins to VERY_LARGE_NUMBER
     _.player.data.win = VERY_LARGE_NUMBER;
-
+    console.log("Set player's wins to VERY_LARGE_NUMBER");
 
 
     // Set the player's losses to -9223372036854775808 (Java long limit, ik its irrelevant)
     _.player.data.loss = -9223372036854775808;
+    console.log("Set player's losses to -9223372036854775808.");
 
 
 
     // Set the players damage multiplier to VERY_LARGE_NUMBER
     _.player.modifiers.damage = VERY_LARGE_NUMBER;
+    console.log("Enabled damage multiplier.");
 
 
     // Set the players PVP health to VERY_LARGE_NUMBER
     _.player.pvpHP = VERY_LARGE_NUMBER;
     _.player.getMaxHearts = () => VERY_LARGE_NUMBER;
+    console.log("PvP health obtained.")
 
 
     // Enable premium membership
     function getMemberModule () { return _.player.hasMembership.toString().split("\"")[1]; }
     _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
     _.player.appearanceChanged = true;
+    console.log("Premium membership enabled.");
 
 
     // Get all achievements
     for (var i = 0; i < 100; i ++) {
     	_.player.achievements.data.progress[i] = 10;
     }
+    console.log("Obtained all achievements.");
 
     // Set the players dark tower floor to 100
     _.player.data.tower = 100;
-
+    console.log("Set tower floor to 100.");
 
     // PLAYER HACKS
     // ============================================
@@ -110,12 +120,13 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
     // Disable Math
     _.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = false;
-
+    console.log("Math Disabled.");
 
     // Max out the players HP
     _.player.getMaxHearts = () => VERY_LARGE_NUMBER;
     _.player.pvpHP = VERY_LARGE_NUMBER;
     _.player.data.hp = VERY_LARGE_NUMBER;
+    console.log("Maxed out PvE health.");
 
 
     // BATTLE HACKS
@@ -149,10 +160,13 @@ new Hack(category.player, "Max Account").setClick(async () => {
     	while (bountyIndex() > -1) _.player.backpack.data.item.splice(bountyIndex(), 1);
     	Toast.fire("Success!", "All items added!", "success");
 
+    console.log("All items added!");
+
 
 
     // Get all Mounts
     _.player.backpack.data.mount = itemify(_.gameData.mount, 1);
+    console.log("Added all mounts.");
 
 
     // Get 990000 of all furniture
@@ -160,6 +174,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
     	_.gameData.dorm.forEach(x =>
     		_.player.house.data.items[x.ID] = { A: [], N: amt.value }
     	);
+    console.log("Added 990000 of all furniture.");
 
 
     // INVENTORY HACKS
@@ -189,6 +204,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
     	_.player.kennel.petTeam.forEach((v: any) => {
     		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
     	});
+    	console.log("Added all pets.");
 
 
 
@@ -202,6 +218,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
 	_.player.kennel.petTeam.forEach((v: any) => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
+	console.log("Added Mythical Epics.");
 
 
     // PET HACKS
@@ -212,9 +229,11 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
     // Disable Inactivity Kick
     _.constants.constants["GameConstants.Inactivity.LOG_OUT_TIMER_SECONDS"] = 0;
+    console.log("Inactivity Kick Disabled.");
 
-    // 420x walkspeed
+    // 20x walkspeed
     _.player._playerContainer.walkSpeed = 20;
+    console.log("Player walkspeed set to 20.");
 
 
     // UTILITY HACKS
@@ -225,23 +244,25 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
     // Save the player data to make sure that the max worked
     saveCharacter();
-
+    console.log("Character Saved.");
 
     // Refresh the players appearance
     _.player.appearanceChanged = true;
+    console.log("Appearance Refreshed.");
 
 
     // Close all popups
     _.instance.prodigy.open.menuCloseAll();
+    console.log("Popups closed.");
 
     // Save again after closing popups, for good measure.
     saveCharacter();
-
+    console.log("Character Saved.");
 
 
     // POST MAXING PROCESS
     // ============================================
-
+    console.log("Max Account Successful.");
 
 	Toast.fire("Success", `Your account is now maxed!`, "success");
 });
