@@ -11,9 +11,9 @@ new Hack(category.player, "Max Account").setClick(async () => {
     // ============================================
     // PRE MAXING PROCESS
 
-     if (!(
+     /* if (!(
     		await Confirm.fire("Are you sure that you want to max your account?", "Your account might break.")
-    ).value) return;
+    ).value) return; */
 
 
     // FIRST, Escape any battle to prevent random glitching.
