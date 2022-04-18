@@ -121,43 +121,6 @@ new Hack(category.inventory, "Selector (Advanced)", "Choose a specific object an
 
 
 
-new Hack(category.inventory, "Get all runes").setClick(async () => {
-	if (!(await Confirm.fire({
-		title: "Hang on!",
-		html: "This feature is in <strong>beta</strong>. Using this could break your account in a specific way. This should be used for experimentation <strong>only</strong>.<br><br>Proceed?",
-		icon: "warning"
-	})).value) return;
-
-	const amount = parseInt((await NumberInput.fire({
-		title: "Amount",
-		text: "How many of each would you like?",
-		icon: "question",
-		inputValidator: (res: any) => res ? "" : "Please select which you'd like to get."
-	})).value);
-	if (isNaN(amount)) return;
-	let mod;
-
-	Array.from(_.instance.prodigy.gameContainer._inversifyContainer._bindingDictionary._map).forEach(e => {
-		try {
-			if (_.instance.prodigy.gameContainer.get(e[0]).battleData) {
-				mod = e[0];
-			}
-		} catch {
-			console.log(`Error for ${e[0]}`);
-		}
-	});
-
-	const runeify = (item, amount) =>
-		item.map(x => ({
-			ID: x.ID,
-			quantity: amount
-		})).filter(v => v !== undefined);
-
-	_.instance.prodigy.gameContainer.get(mod).battleData._secureCharacterState._data.inventory.orb = runeify(_.gameData.orb, amount);
-	Toast.fire("Runes Added!", "Your runes have been added!", "success");
-});
-
-
 
 new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
 	const amt = await NumberInput.fire("Amount", "How many of each piece of furniture would you like?", "question");

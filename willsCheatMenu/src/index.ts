@@ -154,15 +154,16 @@ export const category = {
 	location: addArea("Location Hacks"),
 	pets: addArea("Pet Hacks"),
 	battle: addArea("Battle Hacks"),
-	minigames: addArea("Minigames"),
+	minigames: addArea("Minigame Hacks"),
 	misc: addArea("Miscellaneous Hacks"),
-	utility: addArea("Utility Hacks")
+	utility: addArea("Utility Hacks"),
+	beta: addArea("Beta Testing | Beta Hacks may damage your account")
 };
 
 if(!localStorage.hasTip){
 	(async () => {
 	Swal.fire({
-		title: 'Hey!',
+		title: 'Welcome!',
 		html: `To get started with the hacks, click this dropdown!`,
 	  icon: 'info',
 		backdrop: `
