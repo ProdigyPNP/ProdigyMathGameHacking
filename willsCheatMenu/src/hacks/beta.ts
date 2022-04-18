@@ -7,7 +7,7 @@ import { TODO } from "../../../typings/util";
 
 
 // made by gemsvidø
-new Hack(category.player, "Max Account [BETA]").setClick(async () => {
+new Hack(category.beta, "Max Account [BETA]").setClick(async () => {
 
     // ============================================
     // PRE MAXING PROCESS
@@ -264,7 +264,7 @@ new Hack(category.player, "Max Account [BETA]").setClick(async () => {
 
 
 // DANGEROUS HACK made by gemsvidø
-new Hack(category.player, "Hypermax Account [BETA]").setClick(async () => {
+new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
     // ============================================
     // PRE MAXING PROCESS
@@ -586,7 +586,7 @@ new Hack(category.player, "Hypermax Account [BETA]").setClick(async () => {
 
 
 
-new Hack(category.inventory, "Get all runes [BETA]").setClick(async () => {
+new Hack(category.beta, "Get all runes [BETA]").setClick(async () => {
 	if (!(await Confirm.fire({
 		title: "Hang on!",
 		html: "This feature is in <strong>beta</strong>. Using this could break your account in a specific way. This should be used for experimentation <strong>only</strong>.<br><br>Proceed?",
