@@ -282,7 +282,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
     // ============================================
     console.log("Max Account Successful.");
 
-	Toast.fire("Success", `Your account is now maxed!`, "success");
+	Toast.fire("Maxed!", `Check your backpack!`, "success");
 });
 
 
