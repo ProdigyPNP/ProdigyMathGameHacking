@@ -37,7 +37,7 @@
 
 ## How to install
 
-See our [Quickstart Guide]().
+See our [Quickstart Guide](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md).
 
 ## Info
 
