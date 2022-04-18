@@ -49,6 +49,8 @@ new Hack(category.utility, "Load local character", "Loads your character locally
 	}
 });
 
+
+
 new Hack(category.utility, "Save Character", "Helps fix bugs where not all hacks save.").setClick(async () => {
 	saveCharacter();
 	Toast.fire("Success!", "Your character has been saved!", "success");

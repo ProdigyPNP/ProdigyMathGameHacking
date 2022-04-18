@@ -8,6 +8,8 @@ new Toggler(category.battle, "Disable math").setEnabled(async () => {
 	_.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = true;
 });
 
+
+
 new Hack(category.battle, "Escape Battle", "Escape any battle!").setClick(async () => {
 	const currentState = game.state.current;
 	if (currentState === "PVP") Object.fromEntries(_.instance.game.state.states).PVP.endPVP();
@@ -27,6 +29,8 @@ new Hack(category.battle, "Escape Battle", "Escape any battle!").setClick(async 
 		);
 	}
 });
+
+
 
 new Hack(category.battle, "Win Battle", "Instantly win a monster battle.").setClick(async () => {
 	const currentState = game.state.current;
@@ -59,6 +63,8 @@ new Hack(category.battle, "Win Battle", "Instantly win a monster battle.").setCl
 	}
 });
 
+
+
 new Hack(category.battle, "Set Battle Hearts", "Sets your hearts in battle. Automatically raises max hearts.").setClick(async () => {
 	const hp = await NumberInput.fire("Health Amount", "How much HP do you want?", "question");
 	if (hp.value === undefined) return;
@@ -67,12 +73,16 @@ new Hack(category.battle, "Set Battle Hearts", "Sets your hearts in battle. Auto
 	_.player.data.hp = +hp.value;
 	Toast.fire("Success!", "Your hearts have been set.", "success");
 });
+
+
 new Hack(category.battle, "Fill Battle Energy", "Fills up your battle energy.").setClick(async () => {
 	const state = game.state.getCurrentState();
 	if (!("teams" in state)) return Toast.fire("Error", "You are currently not in a battle.", "error");
 	state.teams[0].setEnergy(99);
 	Toast.fire("Success!", "Your battle energy has been filled.", "success");
 });
+
+
 
 new Hack(category.battle, "Heal Team").setClick(async () => {
 	const currentState = game.state.current;

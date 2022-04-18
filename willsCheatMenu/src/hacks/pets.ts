@@ -28,6 +28,8 @@ new Hack(category.pets, "Get All Pets").setClick(async () => {
 	Toast.fire("Success!", "All pets have been added!", "success");
 });
 
+
+
 new Hack(category.pets, "Get All Legacy Epics").setClick(async () => {
 	const epics = _.gameData.pet.filter(x => [125, 126, 127, 128, 129, 130, 131, 132, 133].includes(x.ID));
 	epics.forEach(x => {
@@ -39,6 +41,8 @@ new Hack(category.pets, "Get All Legacy Epics").setClick(async () => {
 	});
 	Toast.fire("Success!", "All legacy epics have been added!", "success");
 });
+
+
 
 // TODO: I need Aura's ID
 new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
@@ -54,6 +58,7 @@ new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
 }); // btw this hack was made by gemsvidø (afkvido on github)
 
 
+
 new Hack(category.pets, "Fix Battle Crash").setClick(async () => {
 	_.player.kennel.petTeam.forEach((v: any) => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
@@ -62,11 +67,15 @@ new Hack(category.pets, "Fix Battle Crash").setClick(async () => {
 	Toast.fire("Success!", "Fixed kennel attack bug!", "success");
 });
 
+
+
 new Hack(category.pets, "Clear Pets").setClick(async () => {
 	_.player.kennel.data.length = 0;
 
 	Toast.fire("Success!", "Your pets have been cleared!", "success");
 });
+
+
 
 new Hack(category.pets, "Add Pet", "Adds a pet from a list.").setClick(async () => {
 	const pet = await Swal.fire({
@@ -88,6 +97,8 @@ new Hack(category.pets, "Add Pet", "Adds a pet from a list.").setClick(async () 
 	Toast.fire("Success!", "Your chosen pet has been added to your pets!", "success");
 });
 
+
+
 new Hack(category.pets, "Uncap pet level (client side only, doesn't save on reload)", "Change your pet's level to anything, even over 100.").setClick(async () => {
 	const petTeam = _.player.kennel.petTeam.slice(0);
 	petTeam.shift();
@@ -108,6 +119,8 @@ new Hack(category.pets, "Uncap pet level (client side only, doesn't save on relo
 	Toast.fire("Updated!", "The level of your pet was successfully updated.", "success");
 });
 
+
+
 const getPet = async (text: string): Promise<number | undefined> => {
 	const pet = await Swal.fire({
 		input: "select",
@@ -122,6 +135,8 @@ const getPet = async (text: string): Promise<number | undefined> => {
 	});
 	return pet.value;
 };
+
+
 
 new Hack(category.pets, "Edit Pet (BETA)", "Edit a pet.").setClick(async () => {
 	if (!(await Confirm.fire({
@@ -182,6 +197,8 @@ new Hack(category.pets, "Edit Pet (BETA)", "Edit a pet.").setClick(async () => {
 		await Swal.fire("Successfully renamed!", "The name of the pet has been changed.", "success");
 	}
 });
+
+
 
 new Hack(category.pets, "Delete Pet", "Delete a pet.").setClick(async () => {
 	const pet = await getPet("Which pet do you wish to delete?");

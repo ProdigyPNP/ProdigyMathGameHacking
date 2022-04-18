@@ -19,11 +19,14 @@ new Hack(category.misc, "Skip Tutorial").setClick(async () => {
 	_.player.onTutorialComplete();
 	_.player.data.level = Math.max(_.player.data.level, 5);
 });
+
+
 /*
 new Hack(category.misc, "Disable Timeout Dialog").setClick(async () => {
 	prodigy.debugMisc.disableTimeoutDialogue();
 });
 */
+
 
 new Toggler(category.misc, "Disable Monster Encounters").setEnabled(async () => {
 	_.constants.constants["GameConstants.Debug.SCALE_ENCOUNTER_DISTANCE"] = 0;
@@ -31,11 +34,15 @@ new Toggler(category.misc, "Disable Monster Encounters").setEnabled(async () => 
 	_.constants.constants["GameConstants.Debug.SCALE_ENCOUNTER_DISTANCE"] = 1;
 });
 
+
+
 new Toggler(category.misc, "Skip enemy turn").setEnabled(async () => {
 	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = true;
 }).setDisabled(() => {
 	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = false;
 });
+
+
 
 new Hack(category.misc, "Bobbify", "Converts your account into Bobby Fancywoman.").setClick(async () => {
 	if (!(
@@ -61,6 +68,8 @@ new Hack(category.misc, "Bobbify", "Converts your account into Bobby Fancywoman.
 	_.player.equipment.setWeapon(19);
 	Toast.fire("Bobbified!", "You are now Bobby Fancywoman.", "success");
 });
+
+
 
 new Hack(category.misc, "Reset Account", "Completely resets your account.").setClick(async () => {
 	if (!(await Confirm.fire("Are you sure you want to reset your account?", "This action is not reversible.")).value) return;

@@ -32,11 +32,16 @@ new Hack(category.inventory, "Item stacker").setClick(async () => {
 	while (bountyIndex() > -1) _.player.backpack.data.item.splice(bountyIndex(), 1);
 	Toast.fire("Success!", "All items added!", "success");
 });
+
+
+
 new Hack(category.inventory, "Clear inventory").setClick(async () => {
 if (!(await Confirm.fire("Are you sure you want to clear your inventory?")).value) return;
 Object.keys(_.player.backpack.data).forEach(d => _.player.backpack.data[d] = [])
 Toast.fire("Success!", "Inventory cleared.", "success");
-})
+});
+
+
 
 new Hack(category.inventory, "Selector (Basic)").setClick(async () => {
 	// @ts-ignore
@@ -65,6 +70,9 @@ new Hack(category.inventory, "Selector (Basic)").setClick(async () => {
 		saveCharacter();
 	});
 });
+
+
+
 new Hack(category.inventory, "Selector (Advanced)", "Choose a specific object and quantity to obtain.").setClick(async () => {
 	// @ts-ignore
 	const val = await Swal.fire({
@@ -109,6 +117,10 @@ new Hack(category.inventory, "Selector (Advanced)", "Choose a specific object an
 		});
 	});
 });
+
+
+
+
 new Hack(category.inventory, "Get all runes").setClick(async () => {
 	if (!(await Confirm.fire({
 		title: "Hang on!",
@@ -145,6 +157,8 @@ new Hack(category.inventory, "Get all runes").setClick(async () => {
 	Toast.fire("Runes Added!", "Your runes have been added!", "success");
 });
 
+
+
 new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
 	const amt = await NumberInput.fire("Amount", "How many of each piece of furniture would you like?", "question");
 	if (!amt.value) return;
@@ -155,10 +169,14 @@ new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
 	Toast.fire("Furniture Added!", "All furniture has been added to your inventory!", "success");
 });
 
+
+
 new Hack(category.inventory, "Obtain All Mounts", "This gives you all of the mounts in the game.").setClick(async () => {
 	_.player.backpack.data.mount = itemify(_.gameData.mount, 1);
 	Toast.fire("Mounts Added!", "All mounts have been added to your inventory!");
 });
+
+
 
 /*
 	const inventoryHack = (name: string, id: BackpackItemType, amount: number = 1) => {
@@ -196,6 +214,7 @@ new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
 
 	});
 */
+
 
 new Hack(category.inventory, "Remove item").setClick(async () => {
 	const category = await Swal.fire({

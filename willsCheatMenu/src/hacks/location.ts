@@ -57,6 +57,8 @@ new Hack(category.location, "Teleport To Map (interactive)").setClick(
 	}
 );
 
+
+
 function toHouse (userID: number) {
 	if (_.player.userID !== userID) {
 		const friendCount = _.instance.prodigy.friendsListNetworkHandler.friendsList.length;
@@ -70,6 +72,8 @@ function toHouse (userID: number) {
 	if (!zone) return Swal.fire({ title: "Error", text: "You are not in a zone!", icon: "error" });
 	zone.handleLeaving(2, () => teleportToHouse(userID));
 }
+
+
 
 function teleportToHouse (userID: number) {
 	_.instance.prodigy.loading(true);
@@ -91,12 +95,16 @@ function teleportToHouse (userID: number) {
 	_.network.getCharData(userID.toString(), ["house", "data"], responseCallback, responseCallback);
 }
 
+
+
 new Hack(category.location, "Teleport to house by userID").setClick(async () => {
 	const userID = (await NumberInput.fire("Please enter the userID.")).value;
 	if (!userID) return;
 	toHouse(userID);
 	Toast.fire("Teleported!", "You have been teleported!", "success");
 });
+
+
 
 new Hack(category.location, "Get Map Location").setClick(async () => {
 	Swal.fire({
@@ -105,6 +113,8 @@ new Hack(category.location, "Get Map Location").setClick(async () => {
 		icon: "info"
 	});
 });
+
+
 
 /*
 new Hack(category.location, "Teleport To Dark Tower Floor").setClick(
@@ -122,6 +132,8 @@ new Hack(category.location, "Teleport To Dark Tower Floor").setClick(
 		);
 	}
 );
+
+
 
 new Hack(
 	category.location,
