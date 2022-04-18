@@ -209,15 +209,6 @@ new Hack(category.player, "Max Account").setClick(async () => {
     	});
 
 
-    // Get all Legacy Epics
-    const epics = _.gameData.pet.filter(x => [125, 126, 127, 128, 129, 130, 131, 132, 133].includes(x.ID));
-    	epics.forEach(x => {
-    		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
-    	});
-    	// Fix broken pets
-    	_.player.kennel.petTeam.forEach((v: any) => {
-    		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
-    	});
 
 
     // Get all Mythical Epics
