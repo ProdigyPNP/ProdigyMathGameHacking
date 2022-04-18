@@ -224,6 +224,19 @@ new Hack(category.player, "Max Account").setClick(async () => {
 	console.log("Added Mythical Epics.");
 
 
+
+    // Get all Legacy Epics
+	const legepics = _.gameData.pet.filter(x => [125, 126, 127, 128, 129, 130, 131, 132, 133].includes(x.ID));
+    	legepics.forEach(x => {
+    		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+    	});
+    	// Fix broken pets
+    	_.player.kennel.petTeam.forEach((v: any) => {
+    		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
+    	});
+    console.log("Added Legacy Epics.");
+
+
     // PET HACKS
     // ============================================
     // ============================================
