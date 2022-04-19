@@ -123,47 +123,6 @@ new Hack(category.player, "Set name (Client side only)").setClick(async () => {
 
 
 
-/*
-
-let interval: unknown | null = null;
-
-new Hack(category.player, "Arena Point Increaser").setClick(async () => {
-	if (interval)
-		return Swal.fire(
-			"Already Enabled",
-			"Arena Point Increaser is already enabled.",
-			"error"
-		);
-	interval = setInterval(async () => {
-		const data = await (
-			await fetch(
-				`https://api.prodigygame.com/leaderboard-api/season/${prodigy.pvpNetworkHandler.seasonID}/user/${_.player.userID}/pvp?userID=${_.player.userID}`,
-				{
-					headers: {
-						authorization: `Bearer ${prodigy.network.jwtAuthProvider.getToken()}`,
-						"content-type":
-							"application/x-www-form-urlencoded; charset=UTF-8",
-					},
-					body: `seasonID=${prodigy.pvpNetworkHandler.seasonID}&action=win`,
-					method: "POST",
-					mode: "cors",
-				}
-			)
-		).text();
-		if (data !== "") {
-			const jsoned: {
-				points: number;
-				weeklyPoints: number;
-				modifiedDate: string;
-				seasonID: number;
-				numMatches: number;
-			} = JSON.parse(data);
-			console.log(`[API] ${jsoned.points} Points (+100)`);
-		} else console.log(`[API] Failed to add points.`);
-	}, 60500);
-	await Swal.fire("Enabled", "Arena Point Increaser has been enabled.", "success");
-});
-*/
 
 
 
@@ -239,52 +198,7 @@ for (var i = 0; i < 100; i ++) {
 	Toast.fire("Success!", "Obtained all achievements!", "success");
 });
 
-new Hack(category.player, "Morph Player (DEV)", "Morph into a pet, furnishing, or follow.").setClick(async () => {
-	const morphType = await Swal.fire({
-		title: "Which morph type?",
-		input: "select",
-		inputOptions: {
-			pet: "Pet",
-			dorm: "Furniture",
-			follow: "Follow"
-		},
-		inputPlaceholder: "Morph Type",
-		inputValidator: res => res ? "" : "Please select a morph type.",
-		showCancelButton: true
-	});
 
-	if (!morphType?.value) return;
-
-	// swal inputOptions accepts an object, the property being the value it returns, the value being what it displays
-	// kinda weird to explain, just look at how morphType does it
-	// we want it to display a pretty string, and return the petID
-	const morphOptions = {};
-	// fuck you typescript, I'll do what I want
-	// @ts-ignore
-	_.gameData[morphType.value].forEach((morph) => morphOptions[morph.ID] = `${morph.name} (${morph.ID})`);
-
-	const morphID = await Swal.fire({
-		title: "Which morph?",
-		input: "select",
-		inputOptions: morphOptions,
-		inputPlaceholder: "Morph ID",
-		inputValidator: res => res ? "" : "Please select a morph ID.",
-		showCancelButton: true
-	});
-
-	if (!morphID?.value) return;
-	// shut up typescript, I don't need you on my nuts every time I use Swal
-	// typescript makes me cry
-	_.player.getPlayerData().playerTransformation = {
-		transformType: morphType.value,
-		transformID: morphID.value,
-		maxTime: 60 * 60 * 1000,
-		timeRemaining: 60 * 60 * 1000
-	};
-	_.player.appearanceChanged = true;
-
-	Toast.fire("Morphed!", "You've been morphed.", "success");
-});
 
 
 

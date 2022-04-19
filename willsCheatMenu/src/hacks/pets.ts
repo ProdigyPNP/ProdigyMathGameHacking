@@ -138,65 +138,7 @@ const getPet = async (text: string): Promise<number | undefined> => {
 
 
 
-new Hack(category.pets, "Edit Pet (BETA)", "Edit a pet.").setClick(async () => {
-	if (!(await Confirm.fire({
-		title: "Hang on!",
-		html: "This feature is in <strong>beta</strong>. Using this could break your account in a specific way. This should be used for experimentation <strong>only</strong>.<br><br>Proceed?",
-		icon: "warning"
-	})).value) { return; }
-	const pet = await getPet("Choose the pet to edit.");
-	if (pet === undefined) return;
-	const selected = _.player.kennel.data[pet];
-	const opt = await Swal.fire({
-		input: "select",
-		inputOptions: { level: "Level", attacks: "Attacks", name: "Name" },
-		title: "Edit Property",
-		text: "What do you want to edit?"
-	});
-	if (opt.value === undefined) return;
-	if (opt.value === "level") {
-		const level = await NumberInput.fire(
-			"Level Number",
-			"What level do you want to set your pet to?",
-			"question"
-		);
-		if (level.value === undefined) return;
-		selected.level = +level.value;
-		Toast.fire("Success!", "The pet's level has been set.", "success");
-	} else if (opt.value === "attacks") {
-		const attackList = _.gameData.spell;
-		const div = document.createElement("div");
-		const select = document.createElement("select");
-		select.classList.add("selectSpell");
-		for (const spell of attackList) {
-			const spellElement = document.createElement("option");
-			spellElement.value = spell.ID.toString();
-			spellElement.innerText = `${spell.ID}: ${spell.name} (${spell.data.element}) - Damage: ${spell.data.damage}`;
-			select.options.add(spellElement);
-		}
-		div.append(select);
-		div.append(select.cloneNode(true));
-		const attacks = await Swal.fire({
-			title: "Attack List",
-			focusConfirm: false,
-			showCancelButton: true,
-			html: div,
-			preConfirm: () => {
-				return Array.prototype.slice
-					.call(document.querySelectorAll(".selectSpell"))
-					.map((x: HTMLSelectElement) => x.options[x.selectedIndex].value);
-			}
-		});
-		if (attacks.value === undefined) return;
-		(selected.foreignSpells as number[]).splice(0, 2, ...attacks.value.map((x: string) => +x));
-		Toast.fire("Attacks updated!", "The attack list of the pet you selected has been edited.", "success");
-	} else if (opt.value === "name") {
-		const name = await Input.fire("Input Name", "What do you want to name the pet?", "question");
-		if (name.value === undefined) return;
-		selected.nickname = name.value;
-		await Swal.fire("Successfully renamed!", "The name of the pet has been changed.", "success");
-	}
-});
+
 
 
 

@@ -516,13 +516,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     // RUNES
 
 
-    const amount = parseInt((await NumberInput.fire({
-    		title: "Amount of Runes",
-    		text: "How many of each rune would you like?",
-    		icon: "question",
-    		inputValidator: (res: any) => res ? "" : "Please select which you'd like to get."
-    	})).value);
-    	if (isNaN(amount)) return;
+    const amount = 100;
     	let mod;
 
     	Array.from(_.instance.prodigy.gameContainer._inversifyContainer._bindingDictionary._map).forEach(e => {
@@ -620,4 +614,157 @@ new Hack(category.beta, "Get all runes [BETA]").setClick(async () => {
 
 	_.instance.prodigy.gameContainer.get(mod).battleData._secureCharacterState._data.inventory.orb = runeify(_.gameData.orb, amount);
 	Toast.fire("Runes Added!", "Your runes have been added!", "success");
+});
+
+
+
+new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
+	if (!(await Confirm.fire({
+		title: "Hang on!",
+		html: "This feature is in <strong>beta</strong>. Using this could break your account in a specific way. This should be used for experimentation <strong>only</strong>.<br><br>Proceed?",
+		icon: "warning"
+	})).value) { return; }
+	const pet = await getPet("Choose the pet to edit.");
+	if (pet === undefined) return;
+	const selected = _.player.kennel.data[pet];
+	const opt = await Swal.fire({
+		input: "select",
+		inputOptions: { level: "Level", attacks: "Attacks", name: "Name" },
+		title: "Edit Property",
+		text: "What do you want to edit?"
+	});
+	if (opt.value === undefined) return;
+	if (opt.value === "level") {
+		const level = await NumberInput.fire(
+			"Level Number",
+			"What level do you want to set your pet to?",
+			"question"
+		);
+		if (level.value === undefined) return;
+		selected.level = +level.value;
+		Toast.fire("Success!", "The pet's level has been set.", "success");
+	} else if (opt.value === "attacks") {
+		const attackList = _.gameData.spell;
+		const div = document.createElement("div");
+		const select = document.createElement("select");
+		select.classList.add("selectSpell");
+		for (const spell of attackList) {
+			const spellElement = document.createElement("option");
+			spellElement.value = spell.ID.toString();
+			spellElement.innerText = `${spell.ID}: ${spell.name} (${spell.data.element}) - Damage: ${spell.data.damage}`;
+			select.options.add(spellElement);
+		}
+		div.append(select);
+		div.append(select.cloneNode(true));
+		const attacks = await Swal.fire({
+			title: "Attack List",
+			focusConfirm: false,
+			showCancelButton: true,
+			html: div,
+			preConfirm: () => {
+				return Array.prototype.slice
+					.call(document.querySelectorAll(".selectSpell"))
+					.map((x: HTMLSelectElement) => x.options[x.selectedIndex].value);
+			}
+		});
+		if (attacks.value === undefined) return;
+		(selected.foreignSpells as number[]).splice(0, 2, ...attacks.value.map((x: string) => +x));
+		Toast.fire("Attacks updated!", "The attack list of the pet you selected has been edited.", "success");
+	} else if (opt.value === "name") {
+		const name = await Input.fire("Input Name", "What do you want to name the pet?", "question");
+		if (name.value === undefined) return;
+		selected.nickname = name.value;
+		await Swal.fire("Successfully renamed!", "The name of the pet has been changed.", "success");
+	}
+});
+
+
+
+
+let interval: unknown | null = null;
+
+new Hack(category.beta, "Arena Point Increaser [DEV]").setClick(async () => {
+	if (interval)
+		return Swal.fire(
+			"Already Enabled",
+			"Arena Point Increaser is already enabled.",
+			"error"
+		);
+	interval = setInterval(async () => {
+		const data = await (
+			await fetch(
+				`https://api.prodigygame.com/leaderboard-api/season/${prodigy.pvpNetworkHandler.seasonID}/user/${_.player.userID}/pvp?userID=${_.player.userID}`,
+				{
+					headers: {
+						authorization: `Bearer ${prodigy.network.jwtAuthProvider.getToken()}`,
+						"content-type":
+							"application/x-www-form-urlencoded; charset=UTF-8",
+					},
+					body: `seasonID=${prodigy.pvpNetworkHandler.seasonID}&action=win`,
+					method: "POST",
+					mode: "cors",
+				}
+			)
+		).text();
+		if (data !== "") {
+			const jsoned: {
+				points: number;
+				weeklyPoints: number;
+				modifiedDate: string;
+				seasonID: number;
+				numMatches: number;
+			} = JSON.parse(data);
+			console.log(`[API] ${jsoned.points} Points (+100)`);
+		} else console.log(`[API] Failed to add points.`);
+	}, 60500);
+	await Swal.fire("Enabled", "Arena Point Increaser has been enabled.", "success");
+});
+
+
+
+new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or follow.").setClick(async () => {
+	const morphType = await Swal.fire({
+		title: "Which morph type?",
+		input: "select",
+		inputOptions: {
+			pet: "Pet",
+			dorm: "Furniture",
+			follow: "Follow"
+		},
+		inputPlaceholder: "Morph Type",
+		inputValidator: res => res ? "" : "Please select a morph type.",
+		showCancelButton: true
+	});
+
+	if (!morphType?.value) return;
+
+	// swal inputOptions accepts an object, the property being the value it returns, the value being what it displays
+	// kinda weird to explain, just look at how morphType does it
+	// we want it to display a pretty string, and return the petID
+	const morphOptions = {};
+	// fuck you typescript, I'll do what I want
+	// @ts-ignore
+	_.gameData[morphType.value].forEach((morph) => morphOptions[morph.ID] = `${morph.name} (${morph.ID})`);
+
+	const morphID = await Swal.fire({
+		title: "Which morph?",
+		input: "select",
+		inputOptions: morphOptions,
+		inputPlaceholder: "Morph ID",
+		inputValidator: res => res ? "" : "Please select a morph ID.",
+		showCancelButton: true
+	});
+
+	if (!morphID?.value) return;
+	// shut up typescript, I don't need you on my nuts every time I use Swal
+	// typescript makes me cry
+	_.player.getPlayerData().playerTransformation = {
+		transformType: morphType.value,
+		transformID: morphID.value,
+		maxTime: 60 * 60 * 1000,
+		timeRemaining: 60 * 60 * 1000
+	};
+	_.player.appearanceChanged = true;
+
+	Toast.fire("Morphed!", "You've been morphed.", "success");
 });
