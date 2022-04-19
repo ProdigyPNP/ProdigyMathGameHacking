@@ -16,7 +16,7 @@
 		•
 		<a href="https://dsc.gg/ProdigyPNP">Discord</a>
 		•
-		<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/wiki/How-to-install-hacks">Installation</a>
+		<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md">Installation</a>
 		•
 		<a href="https://www.youtube.com/channel/UC9Q8ocvTML4jKYWbNbQHrGw">YouTube</a>
 	</strong>
