@@ -1,6 +1,6 @@
 {
 	"name": "Prodigy Hacking Extension | PHEx",
-	"version": "2.1.8",
+	"version": "2.1.9",
 	"description": "Free and open source hacks for Prodigy Math Game",
 	"permissions": [
 		"webRequest",

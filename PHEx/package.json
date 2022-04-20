@@ -1,6 +1,6 @@
 {
   "name": "PHEx",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "description": "Open source Prodigy hacks",
   "main": "build.js",
   "scripts": {
