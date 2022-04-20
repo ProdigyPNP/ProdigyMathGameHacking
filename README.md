@@ -97,10 +97,10 @@ We are not liable for any damage to your accounts, see our [license](../../blob/
 
 - [gemsvidø](https://github.com/afkvido) - Current Owner of ProdigyMathGameHacking
 - [Natsumi](https://github.com/PatheticMustan) - Original Creator of ProdigyMathGameHacking
-- [Arcerion](https://github.com/ArcerionDev) - Collaborator
+- [Arcerion](https://github.com/ArcerionDev) - Original Collaborator
 - [donaldli2020](https://github.com/donaldli2020) - Part of the ProdigyPNP team, also a Contributor.
-- [Yama](https://github.com/vibinyama) - Collaborator
-- [BoredFish](https://github.com/BoredFishRE) - Collaborator
+- [Yama](https://github.com/vibinyama) - Original Collaborator
+- [BoredFish](https://github.com/BoredFishRE) - Original Collaborator
 - [hostedposted](https://github.com/hostedposted) - Owner of the Prodigy Cheat Dashboard
 - [Spacebar](https://github.com/00100000) - Code Collaborator
 - [MelnCat](https://github.com/MelnCat) - Original Creator of Will's Cheat Menu
