@@ -95,9 +95,9 @@ We are not liable for any damage to your accounts, see our [license](../../blob/
 
 ## The Team
 
-- [gemsvidø](https://github.com/afkvido) - Current Owner of PMGH
-- [Natsumi](https://github.com/PatheticMustan) - Original Creator of PMGH
-- [Arcerion](https://github.com/ArcerionDev) - Former official Owner of PMGH
+- [gemsvidø](https://github.com/afkvido) - Current Owner of ProdigyMathGameHacking
+- [Natsumi](https://github.com/PatheticMustan) - Original Creator of ProdigyMathGameHacking
+- [Arcerion](https://github.com/ArcerionDev) - Collaborator
 - [donaldli2020](https://github.com/donaldli2020) - Part of the ProdigyPNP team, also a Contributor.
 - [Yama](https://github.com/vibinyama) - Collaborator
 - [BoredFish](https://github.com/BoredFishRE) - Collaborator
