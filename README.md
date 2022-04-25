@@ -54,7 +54,7 @@ All of our hacks are open source, and free. No paywalls, no ads, and no viruses.
 </details>
 
 
-<br>
+<p/>
 
 
 <details>
@@ -96,7 +96,7 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 
 <details>
 <summary><b>Legal</b></summary>
-<p>If you have any legal problems to us, please email <a href = "mailto:prodigypnp@gmail.com">prodigypnp@gmail.com</a></p>
+<p>If you have any legal problems to us, please email <a href = "mailto:prodigypnp@gmail.com">ProdigyPNP@gmail.com</a></p>
 </details>
 
 
@@ -148,7 +148,7 @@ We are not liable for any damage to your accounts, see our [license](../../blob/
 - [.vscode](../../tree/master/.vscode) - Code snippets, to make creating new hacks easier and faster
 - [.github](../../tree/master/.github) - Repository information for GitHub
   
-<br/>
+<br>
 
 <h1 align="center">
 <a href = "https://dsc.gg/ProdigyPNP"><img src="https://readme-jokes.vercel.app/api" alt="Jokes Card"/></a>
