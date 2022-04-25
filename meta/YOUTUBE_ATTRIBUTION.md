@@ -1,4 +1,6 @@
-# To make a public video on our hacks, please copy the format below
+## To make a public video on our hacks, please copy the format below
+
+If you're posting a video with our hacks, please make sure to add this to your video description.
 
 ```tx
 Hacks are by ProdigyPNP - https://github.com/ProdigyPNP
