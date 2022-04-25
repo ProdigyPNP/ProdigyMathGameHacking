@@ -1,5 +1,5 @@
 <h1 align="center">
-	<a href="../../wiki/How-to-install-hacks">
+	<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md">
 		<img align="center"
 			width="175"
 			alt="Prodigy Math Game Hacking"
