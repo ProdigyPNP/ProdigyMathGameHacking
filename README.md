@@ -65,7 +65,7 @@ Even worse, anyone with your credentials could potentially log into your actual 
 </details>
 
 
-<br>
+<p/>
 
 
 <details>
@@ -82,7 +82,7 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 </details>
 
 
-<br>
+<p/>
 
 
 <details>
@@ -91,7 +91,7 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 </details>
 
 
-<br>
+<p/>
 
 
 <details>
