@@ -157,7 +157,8 @@ export const category = {
 	minigames: addArea("Minigame Hacks"),
 	misc: addArea("Miscellaneous Hacks"),
 	utility: addArea("Utility Hacks"),
-	beta: addArea("Beta Testing | Beta Hacks may damage your account")
+	beta: addArea("Beta Testing | Beta Hacks may damage your account"),
+	patched : addArea("Patched Hacks")
 };
 
 if(!localStorage.hasTip){
