@@ -53,33 +53,50 @@ Because of that, we're publicly showing hacks! To be honest, it's just fun ;)
 All of our hacks are open source, and free. No paywalls, no ads, and no viruses.
 </details>
 
+
+<br>
+
+
 <details>
 <summary><b>Can you hack for me?</b></summary>
-
-We're not going to hack your account for you for security reasons. Giving someone else your credentials allows them to mess around on your account,
+<p>We're not going to hack your account for you for security reasons.
+Giving someone else your credentials allows them to mess around on your account.
+Even worse, anyone with your credentials could potentially log into your actual email.</p>
 </details>
+
+
+<br>
+
 
 <details>
 <summary><b>How do I know you won't steal my account?</b></summary>
+<p>
 Of course, with trusting any hacks, comes the risk that we're actually bad actors that will steal all your info.
-It's impossible to prove with absolute certainty to anyone reading this that we aren't bad faith, but we can open source our things, and try to be transparent.
+It's impossible to prove with absolute certainty to anyone reading this that we aren't bad faith, but we open source our things.
+</p>
 
-- We do not want your account.
+<b>We do not want your account.</b>
 
-Not only do we not want your account, but we will actively ban you from our organization if you share your credentials online. It's bad security, and we really can't be bothered.
-
-- But what if you steal my personal info?
-
-We do not want your personal info. Please do not share it. Even if we wanted to, there's not much we could do with it. "Wow, John Doe is in 5th grade and has mastered fractions!"
-
-- How do I know what code is running in the hacks?
-
-Again, our code is open source, and you're always free to read any of it. If you have trouble understanding what a certain thing does, feel free to ask any of the administrators on our official Discord.
+<p><i>But what if you steal my personal info?</i>
+We do not want your personal info. Please do not share it. Even if we wanted to, there's not much we could do with it. "Wow, John Doe is in 5th grade and has mastered fractions!"</p>
 </details>
+
+
+<br>
+
+
+<details>
+<summary><b>How do I know what code is running in the hacks?</b></summary>
+<p>Our code is open source, and you're always free to read any of it. If you have trouble understanding what a certain thing does, feel free to ask any of the administrators on our Discord.</p>
+</details>
+
+
+<br>
+
 
 <details>
 <summary><b>Legal</b></summary>
-If you have any legal problems, please email prodigypnp@gmail.com
+<p>If you have any legal problems to us, please email <a href = "mailto:prodigypnp@gmail.com">prodigypnp@gmail.com</a></p>
 </details>
 
 
@@ -91,6 +108,7 @@ Using hacks on your main account could get it hacker-tagged, reset, banned, or m
 
 We are not liable for any damage to your accounts, see our [license](../../blob/master/LICENSE.txt) for more information.
 
+**All hacks are licensed under the Mozilla Public License (MPL) V2.0, unless stated otherwise with a separate license.**
 
 
 ## The Team
@@ -102,12 +120,12 @@ We are not liable for any damage to your accounts, see our [license](../../blob/
 - [Yama](https://github.com/vibinyama) - Original Collaborator
 - [BoredFish](https://github.com/BoredFishRE) - Original Collaborator
 - [hostedposted](https://github.com/hostedposted) - Owner of the Prodigy Cheat Dashboard
-- [Spacebar](https://github.com/00100000) - Code Collaborator
+- [Spacebar](https://github.com/00100000) - Original Collaborator
 - [MelnCat](https://github.com/MelnCat) - Original Creator of Will's Cheat Menu
-- [Exoticc](https://github.com/Exoticc) - Collaborator
+- [Exoticc](https://github.com/Exoticc) - Original Collaborator
 - [Rus](https://github.com/UntrustableRus) - Original Creator of PHEx
-- [Rubberduck55](https://github.com/Rubberduck55) - Collaborator
-- [Whimpers](https://github.com/KryptoCrash) - Collaborator
+- [Rubberduck55](https://github.com/Rubberduck55) - Original Collaborator
+- [Whimpers](https://github.com/KryptoCrash) - Original Collaborator
 - [Sacred](https://github.com/sacredofficial) - Contributor
 - [NX721](https://github.com/NX721) - Contributor
 - [HellOnEarth](https://github.com/hellonearth311) - Contributor
@@ -135,7 +153,3 @@ We are not liable for any damage to your accounts, see our [license](../../blob/
 <h1 align="center">
 <a href = "https://dsc.gg/ProdigyPNP"><img src="https://readme-jokes.vercel.app/api" alt="Jokes Card"/></a>
 	</h1>
-
-
-----
-***All hacks are licensed under the Mozilla Public License (MPL) V2.0, unless stated otherwise with a separate license. Any violation of the policy of this licence may result in a DMCA takedown.***
