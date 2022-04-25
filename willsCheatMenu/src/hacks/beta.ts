@@ -484,9 +484,19 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 
 
 
-new Hack(category.beta, "Eval [BETA]").setClick(async () => {
+new Hack(category.beta, "Eval Console [BETA]").setClick(async () => {
 	const code = await Input.fire("Code:", "Enter the code you want to evaluate.");
 	if (!code.value) return;
-	eval(code.value);
-	Toast.fire("Evaluated!", "Code was evaluated.");
+	try {
+		eval(code.value);
+	}
+	catch (err) {
+		if (err) {
+			Swal.fire({
+				title: "Error",
+				html: `Oops! There was an error with the code! <br> <code>&nbsp;${err}&nbsp;</code>`,
+				icon: "error"
+			});
+			return;
+	Toast.fire("Evaluated!", "Code was evaluated.", "success");
 });
