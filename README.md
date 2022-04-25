@@ -35,9 +35,16 @@
 
 
 
+
+
 ## How to install
 
 See our [Quickstart Guide](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md).
+
+
+
+
+
 
 ## Info
 
@@ -101,6 +108,9 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 
 
 
+
+
+
 ## Disclaimer
 
 We recommend that you use an alternate Prodigy account when using our Prodigy hacks.
@@ -109,6 +119,9 @@ Using hacks on your main account could get it hacker-tagged, reset, banned, or m
 We are not liable for any damage to your accounts, see our [license](../../blob/master/LICENSE.txt) for more information.
 
 **All hacks are licensed under the Mozilla Public License (MPL) V2.0, unless stated otherwise with a separate license.**
+
+
+
 
 
 ## The Team
@@ -134,6 +147,9 @@ We are not liable for any damage to your accounts, see our [license](../../blob/
 - [coolbot123](https://github.com/coolbot123) - Contributor
 - [IhackProdigy](https://github.com/IhackProdigy) - Contributor
 - [Finality](https://github.com/TheFinality) - Contributor
+
+
+
 
 
 
