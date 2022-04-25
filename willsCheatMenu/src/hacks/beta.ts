@@ -489,14 +489,16 @@ new Hack(category.beta, "Eval Console [BETA]").setClick(async () => {
 	if (!code.value) return;
 	try {
 		eval(code.value);
-	}
-	catch (err) {
+	} catch (err) {
+
 		if (err) {
 			Swal.fire({
 				title: "Error",
 				html: `Oops! There was an error with the code! <br> <code>&nbsp;${err}&nbsp;</code>`,
 				icon: "error"
 			});
-			return;
+
+			return; }}
+
 	Toast.fire("Evaluated!", "Code was evaluated.", "success");
 });
