@@ -1,0 +1,42 @@
+# See https://help.github.com/en/articles/about-code-owners
+# to learn more about code owners.
+# Order is important; the last matching pattern takes the most
+# precedence. You may specify either a GitHub username, or an
+# email address if you prefer, as the code owner.
+
+
+# ------- BEGIN CODEOWNERS -------
+
+
+
+# GitHub config was set up by gemsvido
+/.github/ @afkvido
+
+
+# PHEx was originally created by UnstableRus, now maintained by ProdigyPNP.
+/PHEx/ @UnstableRus @akfvido @donaldli2020 @Erisfiregamer1
+
+
+# The Cheat GUI was originally created by MelnCat, now maintained by ProdigyPNP.
+/willsCheatMenu/ @MelnCat @akfvido @donaldli2020 @Erisfiregamer1
+
+
+# Oldguard was created by Natsumi
+/oldguard/ @PatheticMustan
+
+
+# Repository metadata & wiki is managed by ProdigyPNP
+/meta/ @afkvido @donaldli2020 @Erisfiregamer1
+
+
+# Code snippets were made by --------- (IM STILL TRYNNA FIND WHO)
+# /.vscode/
+
+
+# Typings were made by --------- (IM STILL TRYNNA FIND WHO)
+# /typings/
+
+
+
+
+# ------- END CODEOWNERS -------
