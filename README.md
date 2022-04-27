@@ -138,7 +138,7 @@ ProdigyMathGameHacking is made by [all the people who have contributed to it](..
 - [willsCheatMenu](../../tree/master/willsCheatMenu) - The cheat GUI, for user convenience
 - [docs](../../tree/master/docs) - Our documentation of Prodigy, used to find functions to build the hacks.
 - [meta](../../tree/master/meta) - Information on this repository
-- [oldguard](../../tree/master/oldguard) - oldguard
+- [oldguard](../../tree/master/oldguard) - An old and outdated cheat menu.
 - [.vscode](../../tree/master/.vscode) - Code snippets, to make creating new hacks easier and faster
 - [.github](../../tree/master/.github) - Repository information for GitHub
   
