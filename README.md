@@ -49,15 +49,14 @@ See our [Quickstart Guide](https://github.com/ProdigyPNP/ProdigyMathGameHacking/
 ## Info
 
 <details>
-<summary><b>We aren't evil.</b></summary>
-<br>
-We aren't evil. Everything is open source, forever free, and without ads.
+<summary><b>We aren't evil.</b></summary><br>
+<p>We aren't evil. Everything is open source, forever free, and without ads.
 
 We're not trying to break the game because we're evil. We wanted to help Prodigy become more secure, but they've ignored our emails and our requests to talk. They've even gone as far as to ban a user from their official Zendesk.
 
 Because of that, we're publicly showing hacks! To be honest, it's just fun ;)
 
-All of our hacks are open source, and free. No paywalls, no ads, and no viruses.
+All of our hacks are open source, and free. No paywalls, no ads, and no viruses.</p>
 </details>
 
 
@@ -65,7 +64,7 @@ All of our hacks are open source, and free. No paywalls, no ads, and no viruses.
 
 
 <details>
-<summary><b>Can you hack for me?</b></summary>
+<summary><b>Can you hack for me?</b></summary><br>
 <p>We're not going to hack your account for you for security reasons.
 Giving someone else your credentials allows them to mess around on your account.
 Even worse, anyone with your credentials could potentially log into your actual email.</p>
@@ -76,9 +75,8 @@ Even worse, anyone with your credentials could potentially log into your actual 
 
 
 <details>
-<summary><b>How do I know you won't steal my account?</b></summary>
-<p>
-Of course, with trusting any hacks, comes the risk that we're actually bad actors that will steal all your info.
+<summary><b>How do I know you won't steal my account?</b></summary><br>
+<p>Of course, with trusting any hacks, comes the risk that we're actually bad actors that will steal all your info.
 It's impossible to prove with absolute certainty to anyone reading this that we aren't bad faith, but we open source our things.
 </p>
 
@@ -93,7 +91,7 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 
 
 <details>
-<summary><b>How do I know what code is running in the hacks?</b></summary>
+<summary><b>How do I know what code is running in the hacks?</b></summary><br>
 <p>Our code is open source, and you're always free to read any of it. If you have trouble understanding what a certain thing does, feel free to ask any of the administrators on our Discord.</p>
 </details>
 
@@ -102,7 +100,7 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 
 
 <details>
-<summary><b>Legal</b></summary>
+<summary><b>Legal</b></summary><br>
 <p>If you have any legal problems to us, please email <a href = "mailto:prodigypnp@gmail.com">ProdigyPNP@gmail.com</a></p>
 </details>
 
