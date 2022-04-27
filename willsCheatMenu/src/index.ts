@@ -1,17 +1,19 @@
 // @ts-nocheck
-import { io } from "socket.io-client";
-import "./style.scss";
-import { saveCharacter, _ } from "./utils/util";
-import Swal from 'sweetalert2'
-export const menu = document.createElement("div");
-export const wrapper = document.getElementById("game-wrapper");
+// Prodigy Cheat GUI
 
-document.getElementById("cheat-menu")?.remove();
-document.getElementById("menu-toggler")?.remove();
-menu.id = "cheat-menu";
+import { io } from "socket.io-client"; // Import socket.io-client
+import "./style.scss"; // Import SCSS style
+import { saveCharacter, _ } from "./utils/util"; // Import Prodigy typings
+import Swal from 'sweetalert2' // Import Swal
+export const menu = document.createElement("div"); // Create cheat menu element
+export const wrapper = document.getElementById("game-wrapper"); // Create game wrapper
+
+document.getElementById("cheat-menu")?.remove(); // Remove any existing menu if present
+document.getElementById("menu-toggler")?.remove(); // Remove any existing menu togglers if present
+menu.id = "cheat-menu"; // Set menu ID to cheat-menu
 wrapper?.prepend(menu);
 
-export const toggler = document.createElement("button");
+export const toggler = document.createElement("button"); // Create toggler class
 toggler.id = "menu-toggler";
 toggler.style.fontSize = "25px"
 toggler.style.height = "25px"
