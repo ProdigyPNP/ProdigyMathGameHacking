@@ -3,6 +3,8 @@
   "version": "2.1.9",
   "description": "cheats anew",
   "main": "index.js",
+  "license": "MPL-2.0",
+  "author": "ProdigyPNP",
   "scripts": {
 
     "setup": "npm install",
@@ -19,8 +21,6 @@
     "quickstart": "npm install && node build.js && node index.js"
 
   },
-  "author": "ProdigyPNP",
-  "license": "MPL-2.0",
   "dependencies": {
     "esbuild": "^0.14.2",
     "esbuild-css-modules-plugin": "^2.0.9",
