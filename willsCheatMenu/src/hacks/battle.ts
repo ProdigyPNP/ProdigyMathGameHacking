@@ -1,15 +1,32 @@
-import { Toast, NumberInput } from "../utils/swal";
-import { Hack, category, Toggler } from "../index";
-import { _, prodigy, game } from "../utils/util";
+// Battle Hacks
 
+
+
+// BEGIN IMPORTS
+import { Toast, NumberInput } from "../utils/swal"; // Import Toast and NumberInput from swal
+import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
+import { _, prodigy, game } from "../utils/util"; // Import prodigy typings
+// END IMPORTS
+
+
+
+// BEGIN BATTLE HACKS
+
+// Begin Disable Math
 new Toggler(category.battle, "Disable math").setEnabled(async () => {
+
+    // Use Prodigy's debug stuff to set EDUCATION_ENABLED to false
 	_.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = false;
+
 }).setDisabled(async () => {
+
+    // Use Prodigy's debug stuff to set EDUCATION_ENABLED to true
 	_.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = true;
 });
+// End Disable Math
 
 
-
+// Begin Escape Battle
 new Hack(category.battle, "Escape Battle", "Escape any battle!").setClick(async () => {
 	const currentState = game.state.current;
 	if (currentState === "PVP") Object.fromEntries(_.instance.game.state.states).PVP.endPVP();
@@ -29,15 +46,19 @@ new Hack(category.battle, "Escape Battle", "Escape any battle!").setClick(async 
 		);
 	}
 });
+// End Escape Battle
 
 
 
+// Begin Win Battle
 new Hack(category.battle, "Win Battle", "Instantly win a monster battle.").setClick(async () => {
 	const currentState = game.state.current;
+	console.log("Current State: " + currentState);
+
 	if (currentState === "PVP" || currentState === "CoOp") {
 		return Toast.fire(
 			"Invalid State.",
-			"PVP is not supported for this hack.",
+			"PvP is not supported for this hack.",
 			"error"
 		);
 	} else if (currentState === "Battle") {
@@ -62,9 +83,12 @@ new Hack(category.battle, "Win Battle", "Instantly win a monster battle.").setCl
 		);
 	}
 });
+// End Win Battle
 
 
 
+
+// Begin Set Battle Hearts
 new Hack(category.battle, "Set Battle Hearts", "Sets your hearts in battle. Automatically raises max hearts.").setClick(async () => {
 	const hp = await NumberInput.fire("Health Amount", "How much HP do you want?", "question");
 	if (hp.value === undefined) return;
@@ -73,17 +97,23 @@ new Hack(category.battle, "Set Battle Hearts", "Sets your hearts in battle. Auto
 	_.player.data.hp = +hp.value;
 	Toast.fire("Success!", "Your hearts have been set.", "success");
 });
+// End Set Battle Hearts
 
 
+
+// Begin Fill Battle Energy
 new Hack(category.battle, "Fill Battle Energy", "Fills up your battle energy.").setClick(async () => {
 	const state = game.state.getCurrentState();
 	if (!("teams" in state)) return Toast.fire("Error", "You are currently not in a battle.", "error");
 	state.teams[0].setEnergy(99);
 	Toast.fire("Success!", "Your battle energy has been filled.", "success");
 });
+// End Fill Battle Energy
 
 
 
+
+// Begin Heal Team
 new Hack(category.battle, "Heal Team").setClick(async () => {
 	const currentState = game.state.current;
 	if (["Battle", "SecureBattle"].includes(currentState)) {
@@ -101,3 +131,7 @@ new Hack(category.battle, "Heal Team").setClick(async () => {
 		);
 	}
 });
+// End Heal Team
+
+
+// END BATTLE HACKS

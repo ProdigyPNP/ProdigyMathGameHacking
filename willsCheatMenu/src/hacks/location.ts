@@ -1,7 +1,17 @@
-import { Hack, category } from "../index";
-import { NumberInput, Swal, Toast } from "../utils/swal";
-import { _, locations, prodigy } from "../utils/util";
+// Location Hacks
 
+// BEGIN IMPORTS
+import { Hack, category } from "../index"; // Import the Cheat GUI bases.
+import { NumberInput, Swal, Toast } from "../utils/swal"; // Import Swal, Toast, and NumberInput from swal
+import { _, locations, prodigy } from "../utils/util"; // Import Prodigy typings
+// END IMPORTS
+
+
+// BEGIN LOCATION HACKS
+
+
+
+// Begin Teleport To Map (interactive)
 new Hack(category.location, "Teleport To Map (interactive)").setClick(
 	async () => {
 		const radioPopup = Swal.mixin({
@@ -56,9 +66,11 @@ new Hack(category.location, "Teleport To Map (interactive)").setClick(
 		Toast.fire("Teleported", "You have been teleported!", "success");
 	}
 );
+// End Teleport To Map (interactive)
 
 
 
+// Begin toHouse function
 function toHouse (userID: number) {
 	if (_.player.userID !== userID) {
 		const friendCount = _.instance.prodigy.friendsListNetworkHandler.friendsList.length;
@@ -72,9 +84,11 @@ function toHouse (userID: number) {
 	if (!zone) return Swal.fire({ title: "Error", text: "You are not in a zone!", icon: "error" });
 	zone.handleLeaving(2, () => teleportToHouse(userID));
 }
+// End toHouse function
 
 
 
+// Begin teleportToHouse function
 function teleportToHouse (userID: number) {
 	_.instance.prodigy.loading(true);
 
@@ -94,18 +108,22 @@ function teleportToHouse (userID: number) {
 
 	_.network.getCharData(userID.toString(), ["house", "data"], responseCallback, responseCallback);
 }
+// End teleportToHouse function
 
 
 
+// Begin Teleport To House by userID
 new Hack(category.location, "Teleport to house by userID").setClick(async () => {
 	const userID = (await NumberInput.fire("Please enter the userID.")).value;
 	if (!userID) return;
 	toHouse(userID);
 	Toast.fire("Teleported!", "You have been teleported!", "success");
 });
+// End Teleport To House by userID
 
 
 
+// Begin Get Map Location
 new Hack(category.location, "Get Map Location").setClick(async () => {
 	Swal.fire({
 		title: "Map Location",
@@ -113,7 +131,11 @@ new Hack(category.location, "Get Map Location").setClick(async () => {
 		icon: "info"
 	});
 });
+// End Get Map Location
 
+
+
+// END LOCATION HACKS
 
 
 /*

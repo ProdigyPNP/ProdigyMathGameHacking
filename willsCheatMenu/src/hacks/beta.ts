@@ -1,19 +1,27 @@
 // @ts-nocheck
-import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal";
-import { Hack, category, Toggler } from "../index";
-import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";
-import { Item } from "../../../typings/item";
-import { TODO } from "../../../typings/util";
+// Beta Hacks
 
 
 
 
+// BEGIN IMPORTS
+import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, NumberInput, Input, and Confirm from swal
+import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
+import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
+import { Item } from "../../../typings/item";  // Import prodigy Item typings
+import { TODO } from "../../../typings/util";  // Import TODO typings
+// END IMPORTS
 
 
 
 
-// DANGEROUS HACK made by gemsvidø
+// BEGIN BETA HACKS
+
+
+
+// Begin Hypermax Account
 new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
+    // Hypermax Account was made by gemsvidø.
 
     // ============================================
     // PRE MAXING PROCESS
@@ -324,12 +332,12 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 	Toast.fire("Maxed!", `Check your backpack!`, "success");
 });
+// End Hypermax Account
 
 
 
-
-
-new Hack(category.beta, "Get all runes [BETA]").setClick(async () => {
+// Begin get all Runes
+new Hack(category.beta, "Get all Runes [BETA]").setClick(async () => {
 	if (!(await Confirm.fire({
 		title: "Hang on!",
 		html: "This feature is in <strong>beta</strong>. Using this could break your account in a specific way. This should be used for experimentation <strong>only</strong>.<br><br>Proceed?",
@@ -364,9 +372,10 @@ new Hack(category.beta, "Get all runes [BETA]").setClick(async () => {
 	_.instance.prodigy.gameContainer.get(mod).battleData._secureCharacterState._data.inventory.orb = runeify(_.gameData.orb, amount);
 	Toast.fire("Runes Added!", "Your runes have been added!", "success");
 });
+// End get all Runes
 
 
-
+// Begin Edit Pet
 new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
 	if (!(await Confirm.fire({
 		title: "Hang on!",
@@ -427,13 +436,13 @@ new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
 		await Swal.fire("Successfully renamed!", "The name of the pet has been changed.", "success");
 	}
 });
+// End Edit Pet
 
 
 
 
 
-
-
+// Begin Morph Player
 new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or follow.").setClick(async () => {
 	const morphType = await Swal.fire({
 		title: "Which morph type?",
@@ -480,11 +489,11 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 
 	Toast.fire("Morphed!", "You've been morphed.", "success");
 });
+// End Morph Player
 
 
 
-
-
+// Begin Eval Console
 new Hack(category.beta, "Eval Console [BETA]").setClick(async () => {
 	const code = await Input.fire("Code:", "Enter the code you want to evaluate.");
 	if (!code.value) return;
@@ -519,3 +528,7 @@ const getPet = async (text: string): Promise<number | undefined> => {
 	});
 	return pet.value;
 };
+// End Eval Console
+
+
+// END BETA HACKS
