@@ -34,12 +34,6 @@ new Hack(category.misc, "Skip Tutorial").setClick(async () => {
 // End Skip Tutorial
 
 
-/*
-new Hack(category.misc, "Disable Timeout Dialog").setClick(async () => {
-	prodigy.debugMisc.disableTimeoutDialogue();
-});
-*/
-
 
 // Begin Disable Monster Encounters
 new Toggler(category.misc, "Disable Monster Encounters").setEnabled(async () => {

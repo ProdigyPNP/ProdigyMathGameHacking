@@ -165,4 +165,28 @@ new Toggler(category.utility, "Pause Game").setEnabled(async () => {
 // End Pause Game
 
 
+
+// Begin Eval Console
+new Hack(category.utility, "Eval Console", "Evaluate JavaScript code without opening F12").setClick(async () => {
+	const code = await Input.fire("Code:", "Enter the code you want to evaluate.");
+	if (!code.value) return;
+	try {
+		eval(code.value);
+	} catch (err) {
+
+		if (err) {
+			Swal.fire({
+				title: "Error",
+				html: `Oops! There was an error with the code! <br> <code>&nbsp;${err}&nbsp;</code>`,
+				icon: "error"
+			});
+
+			return; }}
+
+	Toast.fire("Evaluated!", "Code was evaluated.", "success");
+});
+// End Eval Console
+
+
+
 // END UTILITY HACKS

@@ -239,6 +239,21 @@ new Hack(category.beta, "Max Account").setClick(async () => {
     // UTILITY HACKS
     // ============================================
     // ============================================
+    // EQUIP CELESTIAL GEAR
+
+
+
+    _.player.equipment.setHat(200);
+	_.player.equipment.setBoots(93);
+	_.player.equipment.setOutfit(161);
+	_.player.equipment.setWeapon(196);
+
+
+
+
+    // EQUIP CELESTIAL GEAR
+    // ============================================
+    // ============================================
     // POST MAXING PROCESS
 
 

@@ -305,6 +305,21 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     // RUNES
     // ============================================
     // ============================================
+    // EQUIP CELESTIAL GEAR
+
+
+
+    _.player.equipment.setHat(200);
+	_.player.equipment.setBoots(93);
+	_.player.equipment.setOutfit(161);
+	_.player.equipment.setWeapon(196);
+
+
+
+
+    // EQUIP CELESTIAL GEAR
+    // ============================================
+    // ============================================
     // POST MAXING PROCESS
 
 
@@ -493,27 +508,7 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 
 
 
-// Begin Eval Console
-new Hack(category.beta, "Eval Console [BETA]").setClick(async () => {
-	const code = await Input.fire("Code:", "Enter the code you want to evaluate.");
-	if (!code.value) return;
-	try {
-		eval(code.value);
-	} catch (err) {
-
-		if (err) {
-			Swal.fire({
-				title: "Error",
-				html: `Oops! There was an error with the code! <br> <code>&nbsp;${err}&nbsp;</code>`,
-				icon: "error"
-			});
-
-			return; }}
-
-	Toast.fire("Evaluated!", "Code was evaluated.", "success");
-});
-
-// Required for the pet hack.
+// getPet function
 const getPet = async (text: string): Promise<number | undefined> => {
 	const pet = await Swal.fire({
 		input: "select",
@@ -528,7 +523,7 @@ const getPet = async (text: string): Promise<number | undefined> => {
 	});
 	return pet.value;
 };
-// End Eval Console
+
 
 
 // END BETA HACKS

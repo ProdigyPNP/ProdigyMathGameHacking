@@ -131,10 +131,13 @@ new Hack(category.inventory, "Selector (Advanced)", "Choose a specific object an
 					ID: _.gameData[ids[val.value]][correct].ID,
 					N: amt.value
 				});
+
 			} else {
 				// @ts-ignore
 				const num = _.player.backpack.data[ids[val.value]].findIndex(e => e.ID === _.gameData[ids[val.value]][correct].ID);
 			}
+
+			console.log(_.gameData[ids[val.value]][correct].ID);
 
 			Toast.fire(`${names[val.value]} Added!`, `Your selected ${names[val.value].toLowerCase()} have been added.`, "success");
 			saveCharacter();
