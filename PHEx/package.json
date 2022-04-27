@@ -4,7 +4,15 @@
   "description": "Open source Prodigy hacks",
   "main": "build.js",
   "scripts": {
-    "build": "node build.js"
+
+    "setup": "npm install",
+
+    "start": "node build.js",
+    "build": "node build.js",
+    "package": "node build.js",
+    "zip": "node build.js",
+
+    "quickstart": "npm install && node build.js"
   },
   "repository": {
     "type": "git",

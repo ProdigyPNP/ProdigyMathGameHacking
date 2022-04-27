@@ -1,0 +1,34 @@
+{
+  "name": "OldGuard",
+  "version": "2.1.9",
+  "description": "cheats anew",
+  "main": "index.js",
+  "scripts": {
+
+    "setup": "npm install",
+
+    "start": "node index.js",
+    "server": "node index.js",
+    "host": "node index.js",
+
+    "build": "node build.js",
+    "package": "node build.js",
+    "webpack": "node build.js",
+    "esbuild": "node build.js",
+
+    "quickstart": "npm install && node build.js && node index.js"
+
+  },
+  "author": "ProdigyPNP",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "esbuild": "^0.14.2",
+    "esbuild-css-modules-plugin": "^2.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sweetalert2": "^11.2.2"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}

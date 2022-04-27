@@ -1,24 +1,28 @@
 {
-  "name": "willscheatmenu",
+  "name": "ProdigyCheatGUI",
   "version": "2.1.9",
   "description": "Prodigy Hack GUI",
   "main": "dist/bundle.js",
   "scripts": {
+
     "setup": "npm install",
+
+    "start": "webpack --config webpack.config.js",
     "build": "webpack --config webpack.config.js",
-    "dev:start": "node hot-reload.mjs"
+    "webpack": "webpack --config webpack.config.js",
+    "package": "webpack --config webpack.config.js",
+
+    "server": "node hot-reload.mjs",
+
+    "quickstart": "npm install && webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/willsCheatMenu"
   },
-  "keywords": [
-    "wills",
-    "cheat",
-    "menu"
-  ],
-  "author": "Will",
-  "license": "MPL",
+  "keywords": [],
+  "author": "ProdigyPNP",
+  "license": "MPL-2.0",
   "dependencies": {
     "@babel/core": "^7.13.10",
     "@babel/plugin-proposal-optional-chaining": "^7.13.8",

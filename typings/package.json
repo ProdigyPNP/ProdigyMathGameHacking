@@ -1,4 +1,27 @@
 {
 	"name": "ProdigyMathGameHackingTypings",
-	"version": "2.1.9"
+	"version": "2.1.9",
+	"description": "Prodigy Math Game Typings",
+	"license": "MPL-2.0",
+	"author": "ProdigyPNP",
+
+	"scripts": {
+		"setup": "npm install",
+
+		"start": "npm install",
+
+		"quickstart": "npm install"
+	},
+
+	"dependencies": {
+		"typescript": "^2.3.4"
+	},
+	"devDependencies": {
+		"typescript": "^2.3.4"
+	},
+	"keywords": [],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/typings"
+	}
 }
