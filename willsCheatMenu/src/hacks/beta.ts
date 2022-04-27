@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal";
 import { Hack, category, Toggler } from "../index";
-import { _, getItem, getPet, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";
+import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";
 import { Item } from "../../../typings/item";
 import { TODO } from "../../../typings/util";
 
@@ -503,3 +503,19 @@ new Hack(category.beta, "Eval Console [BETA]").setClick(async () => {
 
 	Toast.fire("Evaluated!", "Code was evaluated.", "success");
 });
+
+// Required for the pet hack.
+const getPet = async (text: string): Promise<number | undefined> => {
+	const pet = await Swal.fire({
+		input: "select",
+		inputOptions: new Map(
+			_.player.kennel.data.map((x: TODO, i: number) => [
+				i.toString(),
+				`Level ${x.level} - ${x.nickname ?? _.gameData.pet.find(y => +y.ID === +x.ID)?.data.name ?? "Unknown"}`
+			]) as [string, string][]
+		),
+		title: "Choose Pet",
+		text: text
+	});
+	return pet.value;
+};
