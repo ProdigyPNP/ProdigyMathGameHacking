@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal";
 import { Hack, category, Toggler } from "../index";
-import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";
+import { _, getItem, getPet, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";
 import { Item } from "../../../typings/item";
 import { TODO } from "../../../typings/util";
 
@@ -373,6 +373,7 @@ new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
 		html: "This feature is in <strong>beta</strong>. Using this could break your account in a specific way. This should be used for experimentation <strong>only</strong>.<br><br>Proceed?",
 		icon: "warning"
 	})).value) { return; }
+
 	const pet = await getPet("Choose the pet to edit.");
 	if (pet === undefined) return;
 	const selected = _.player.kennel.data[pet];
