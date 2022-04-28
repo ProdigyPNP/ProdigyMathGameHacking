@@ -310,9 +310,9 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 
     _.player.equipment.setHat(200);
-	_.player.equipment.setBoots(93);
-	_.player.equipment.setOutfit(161);
-	_.player.equipment.setWeapon(196);
+    _.player.equipment.setBoots(93);
+    _.player.equipment.setOutfit(161);
+    _.player.equipment.setWeapon(196);
 
 
 
