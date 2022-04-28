@@ -13,7 +13,7 @@ import { _, prodigy, game } from "../utils/util"; // Import prodigy typings
 // BEGIN BATTLE HACKS
 
 // Begin Disable Math
-new Toggler(category.battle, "Disable math").setEnabled(async () => {
+new Toggler(category.battle, "Disable math [PvP, PvE]", "Disable math in PvP, PvE, anywhere! This doesn't work in the Floatling town.").setEnabled(async () => {
 
     // Use Prodigy's debug stuff to set EDUCATION_ENABLED to false
 	_.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = false;
@@ -27,7 +27,7 @@ new Toggler(category.battle, "Disable math").setEnabled(async () => {
 
 
 // Begin Escape Battle
-new Hack(category.battle, "Escape Battle", "Escape any battle!").setClick(async () => {
+new Hack(category.battle, "Escape Battle [PvP, PvE]", "Escape any battle!").setClick(async () => {
 	const currentState = game.state.current;
 	if (currentState === "PVP") Object.fromEntries(_.instance.game.state.states).PVP.endPVP();
 	else if (currentState === "CoOp") prodigy.world.$(_.player.data.zone);
@@ -51,7 +51,7 @@ new Hack(category.battle, "Escape Battle", "Escape any battle!").setClick(async 
 
 
 // Begin Win Battle
-new Hack(category.battle, "Win Battle", "Instantly win a monster battle.").setClick(async () => {
+new Hack(category.battle, "Win Battle [PvE]", "Instantly win a monster battle.").setClick(async () => {
 	const currentState = game.state.current;
 	console.log("Current State: " + currentState);
 
@@ -89,7 +89,7 @@ new Hack(category.battle, "Win Battle", "Instantly win a monster battle.").setCl
 
 
 // Begin Set Battle Hearts
-new Hack(category.battle, "Set Battle Hearts", "Sets your hearts in battle. Automatically raises max hearts.").setClick(async () => {
+new Hack(category.battle, "Set Battle Hearts [PvP, PvE]", "Sets your hearts in battle. Automatically raises max hearts.").setClick(async () => {
 	const hp = await NumberInput.fire("Health Amount", "How much HP do you want?", "question");
 	if (hp.value === undefined) return;
 	_.player.getMaxHearts = () => +hp.value;
@@ -102,7 +102,7 @@ new Hack(category.battle, "Set Battle Hearts", "Sets your hearts in battle. Auto
 
 
 // Begin Fill Battle Energy
-new Hack(category.battle, "Fill Battle Energy", "Fills up your battle energy.").setClick(async () => {
+new Hack(category.battle, "Fill Battle Energy [PvP, PvE]", "Fills up your battle energy.").setClick(async () => {
 	const state = game.state.getCurrentState();
 	if (!("teams" in state)) return Toast.fire("Error", "You are currently not in a battle.", "error");
 	state.teams[0].setEnergy(99);
@@ -114,22 +114,33 @@ new Hack(category.battle, "Fill Battle Energy", "Fills up your battle energy.").
 
 
 // Begin Heal Team
-new Hack(category.battle, "Heal Team").setClick(async () => {
+new Hack(category.battle, "Heal Team [PvE]").setClick(async () => {
+
+
 	const currentState = game.state.current;
-	if (["Battle", "SecureBattle"].includes(currentState)) {
-		_.player.heal();
-		Toast.fire(
-			"Success!",
-			"Your team has been healed successfully!",
-			"success"
-		);
-	} else {
-		Toast.fire(
-			"Invalid State.",
-			"Your are currently not in a battle.",
-			"error"
-		);
-	}
+
+
+	if (currentState === "PVP" || currentState === "CoOp") {
+    		return Toast.fire(
+    			"Invalid State.",
+    			"PvP is not supported for this hack.",
+    			"error"
+    		)
+
+    	} else if (["Battle", "SecureBattle"].includes(currentState)) {
+		    _.player.heal();
+		    Toast.fire(
+			    "Success!",
+			    "Your team has been healed successfully!",
+			    "success"
+		    );
+	    } else {
+		    Toast.fire(
+			    "Invalid State.",
+			    "Your are currently not in a battle.",
+			    "error"
+		    );
+	    }
 });
 // End Heal Team
 

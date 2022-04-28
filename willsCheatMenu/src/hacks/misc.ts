@@ -3,7 +3,7 @@
 
 
 // BEGIN IMPORTS
-import { Toast, Confirm } from "../utils/swal"; // Import Toast and Confirm from swal
+import { Toast, Confirm, Swal } from "../utils/swal"; // Import Toast and Confirm from swal
 import { Hack, category, Toggler } from "../index";  // Import the Cheat GUI bases.
 import { _ } from "../utils/util"; // Import Prodigy typings
 // END IMPORTS
@@ -79,14 +79,18 @@ new Hack(category.misc, "Bobbify", "Converts your account into Bobby Fancywoman.
 	_.player.equipment.setWeapon(19);
 	Toast.fire("Bobbified!", "You are now Bobby Fancywoman.", "success");
 });
+// End Bobbify
 
 
 
+// Begin Reset Account
 new Hack(category.misc, "Reset Account", "Completely resets your account.").setClick(async () => {
 	if (!(await Confirm.fire("Are you sure you want to reset your account?", "This action is not reversible.")).value) return;
 	_.player.resetAccount();
 });
-// End Bobbify
+// End Reset Account
+
+
 
 
 // Begin uwu
@@ -102,6 +106,137 @@ new Hack(category.misc, "uwu", "OwO").setClick(async () => {
 	Toast.fire("uwu", "Reload Prodigy to fix uwu.", "success");
 });
 // End uwu
+
+
+
+
+
+// Begin Chat Spammer
+let retard: unknown | null = null;
+let i : number = 0;
+
+new Hack(category.beta, "Chat Spammer [BETA]", "Cycles through chat messages pretty fast!").setClick(async () => {
+
+    if (retard) {
+    		return Swal.fire(
+    			"Already Enabled",
+    			"Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.",
+    			"error"
+    	)};
+
+
+
+    retard = setInterval(async () => {
+
+        _.player.chatID = i;
+        i++;
+
+        if (i > 1164) {
+            i = 0;
+        }
+
+    }, 90);
+
+
+
+});
+// End Chat Spammer
+
+
+
+
+
+
+
+
+
+
+
+// Begin High Chat Spammer
+let retards: unknown | null = null;
+let c : number = 0;
+
+new Hack(category.misc, "High Chat Spammer [BETA]", "Cycles through chat messages hella fast!").setClick(async () => {
+
+    if (retards) {
+    		return Swal.fire(
+    			"Already Enabled",
+    			"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
+    			"error"
+    	)};
+
+
+
+    if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
+               console.log("Cancelled");
+                return;
+    }
+
+
+
+    retards = setInterval(async () => {
+
+        _.player.chatID = c;
+        c++;
+
+        if (c > 1164) {
+            c = 0;
+        }
+
+    }, 30);
+
+
+
+});
+// End High Chat Spammer
+
+
+
+
+
+
+
+// Begin Chat Spammer on Meth
+let retarded: unknown | null = null;
+let b : number = 0;
+
+new Hack(category.misc, "Chat Spammer on Meth [BETA]", "Cycles through chat messages FAST ASF!").setClick(async () => {
+
+    if (retarded) {
+    		return Swal.fire(
+    			"Already Enabled",
+    			"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
+    			"error"
+    	)};
+
+
+
+    if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
+               console.log("Cancelled");
+                return;
+    }
+
+
+
+    retarded = setInterval(async () => {
+
+        _.player.chatID = b;
+        b++;
+
+        if (b > 1164) {
+            b = 0;
+        }
+
+    }, 1);
+
+
+
+});
+// End Chat Spammer
+
+
+
+
 
 
 // END MISCELLANEOUS HACKS

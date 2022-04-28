@@ -69,7 +69,7 @@ new Hack(category.patched, "Arena Point Increaser [Patched]").setClick(async () 
 
 
 // Begin Disable Timeout Dialog
-new Hack(category.beta, "Disable Timeout Dialog").setClick(async () => {
+new Hack(category.patched, "Disable Timeout Dialog [Patched]").setClick(async () => {
     if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
         console.log("Cancelled");
         return;
@@ -79,5 +79,36 @@ new Hack(category.beta, "Disable Timeout Dialog").setClick(async () => {
 // End Disable Timeout Dialog
 
 
+
+
+/* Old Inventory hacks, replaced by Selector
+
+const inventoryHack = (name: string, id: BackpackItemType, amount: number = 1) => {
+	new Hack(category.inventory, `Obtain All ${name}`).setClick(async () => {
+		if (!(await Confirm.fire(`Are you sure you want to get all ${name}?`)).value) return;
+		_.player.backpack.data[id] = itemify(_.gameData[id], amount);
+		Toast.fire(
+			`${name} Added!`,
+			`All ${name.toLowerCase()} have been added to your inventory!`,
+			"success"
+		);
+	});
+};
+inventoryHack("Boots", "boots");
+inventoryHack("Buddies", "follow");
+inventoryHack("Fossils", "fossil", VERY_LARGE_NUMBER);
+inventoryHack("Hats", "hat");
+inventoryHack("Items", "item", VERY_LARGE_NUMBER);
+inventoryHack("Key Items", "key", VERY_LARGE_NUMBER);
+inventoryHack("Math Town Frames", "mathTownFrame", VERY_LARGE_NUMBER);
+inventoryHack("Math Town Interiors", "mathTownInterior", VERY_LARGE_NUMBER);
+inventoryHack("Mounts", "mount");
+inventoryHack("Outfits", "outfit");
+inventoryHack("Relics", "relic");
+inventoryHack("Spell Relics", "spellRelic");
+inventoryHack("Weapons", "weapon");
+inventoryHack("Currency", "currency", VERY_LARGE_NUMBER);
+
+End Old Inventory Hacks */
 
 // END PATCHED HACKS

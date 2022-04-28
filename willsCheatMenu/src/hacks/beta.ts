@@ -532,143 +532,33 @@ const getPet = async (text: string): Promise<number | undefined> => {
 
 
 
+// Begin Toggle Close Popups
+
+let popupinterval: misc | null = null;
+
+new Toggler(category.beta, "Toggle Close Popups [BETA]", "Automaticaally closes popups in Prodigy.").setClick(async () => {
 
 
-// Begin Chat Spammer
-let retard: unknown | null = null;
-let i : Int = 0;
-
-new Hack(category.beta, "Chat Spammer [BETA]", "Cycles through chat messages pretty fast!").setClick(async () => {
-
-    if (retard) {
-    		return Swal.fire(
-    			"Already Enabled",
-    			"Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.",
-    			"error"
-    	)};
-
-    if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
-           console.log("Cancelled");
-            return;
-    }
-
-
-
-    retard = setInterval(async () => {
-
-        _.player.chatID = i;
-        i++;
-
-        if (i > 1164) {
-            i = 0;
-        }
-
-    }, 90);
-
-
-
-});
-// End Chat Spammer
-
-
-
-
-
-
-
-
-
-
-
-// Begin High Chat Spammer
-let retards: unknown | null = null;
-let c : Int = 0;
-
-new Hack(category.beta, "High Chat Spammer [BETA]", "Cycles through chat messages hella fast!").setClick(async () => {
-
-    if (retards) {
-    		return Swal.fire(
-    			"Already Enabled",
-    			"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
-    			"error"
-    	)};
+    if (popupinterval) {
+        	return Swal.fire(
+        		"Already Enabled",
+        		"Toggle Close Popups is already enabled. To disable popup closer, reload Prodigy.",
+        		"error"
+    )};
 
     if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
-           console.log("Cancelled");
-            return;
+        console.log("Cancelled");
+        return;
     }
 
 
-    if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
-               console.log("Cancelled");
-                return;
-    }
+    popupinterval = setInterval(async () => {
 
+        _.instance.prodigy.open.menuCloseAll();
 
-
-    retards = setInterval(async () => {
-
-        _.player.chatID = c;
-        c++;
-
-        if (c > 1164) {
-            c = 0;
-        }
-
-    }, 30);
-
-
+    }, 200);
 
 });
-// End High Chat Spammer
-
-
-
-
-
-
-
-// Begin Chat Spammer on Meth
-let retarded: unknown | null = null;
-let b : Int = 0;
-
-new Hack(category.beta, "Chat Spammer on Meth [BETA]", "Cycles through chat messages FAST ASF!").setClick(async () => {
-
-    if (retarded) {
-    		return Swal.fire(
-    			"Already Enabled",
-    			"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
-    			"error"
-    	)};
-
-    if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
-           console.log("Cancelled");
-            return;
-    }
-
-
-    if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
-               console.log("Cancelled");
-                return;
-    }
-
-
-
-    retarded = setInterval(async () => {
-
-        _.player.chatID = b;
-        b++;
-
-        if (b > 1164) {
-            b = 0;
-        }
-
-    }, 1);
-
-
-
-});
-// End Chat Spammer
 
 
 

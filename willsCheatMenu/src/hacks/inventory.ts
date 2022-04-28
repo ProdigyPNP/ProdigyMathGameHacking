@@ -214,39 +214,13 @@ new Hack(category.inventory, "Remove item").setClick(async () => {
 
 
 
-/*
-	const inventoryHack = (name: string, id: BackpackItemType, amount: number = 1) => {
-	new Hack(category.inventory, `Obtain All ${name}`).setClick(async () => {
-		if (!(await Confirm.fire(`Are you sure you want to get all ${name}?`)).value) return;
-		_.player.backpack.data[id] = itemify(_.gameData[id], amount);
-		Toast.fire(
-			`${name} Added!`,
-			`All ${name.toLowerCase()} have been added to your inventory!`,
-			"success"
-		);
-	});
-};
-inventoryHack("Boots", "boots");
-inventoryHack("Buddies", "follow");
-inventoryHack("Fossils", "fossil", VERY_LARGE_NUMBER);
-inventoryHack("Hats", "hat");
-inventoryHack("Items", "item", VERY_LARGE_NUMBER);
-inventoryHack("Key Items", "key", VERY_LARGE_NUMBER);
-inventoryHack("Math Town Frames", "mathTownFrame", VERY_LARGE_NUMBER);
-inventoryHack("Math Town Interiors", "mathTownInterior", VERY_LARGE_NUMBER);
-inventoryHack("Mounts", "mount");
-inventoryHack("Outfits", "outfit");
-inventoryHack("Relics", "relic");
-inventoryHack("Spell Relics", "spellRelic");
-inventoryHack("Weapons", "weapon");
-inventoryHack("Currency", "currency", VERY_LARGE_NUMBER);
 
+// Begin Obtain All Furniture
 new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
 	if (!(await Confirm.fire("Are you sure you want to get all furniture?")).value) return;
 		_.gameData.dorm.forEach(x =>
 			_.player.house.data.items[x.ID] = {A: [], N: VERY_LARGE_NUMBER}
 		)
 		Toast.fire("Furniture Added!", "All furniture have been added to your inventory!", "success");
-
-	});
-*/
+});
+// End Obtain All Furniture
