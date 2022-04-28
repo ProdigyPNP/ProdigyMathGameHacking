@@ -69,7 +69,7 @@ new Hack(category.patched, "Arena Point Increaser [Patched]").setClick(async () 
 
 
 // Begin Disable Timeout Dialog
-new Hack(category.misc, "Disable Timeout Dialog").setClick(async () => {
+new Hack(category.beta, "Disable Timeout Dialog").setClick(async () => {
     if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
         console.log("Cancelled");
         return;
