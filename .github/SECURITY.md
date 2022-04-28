@@ -4,12 +4,12 @@
 
 
 
-| Version | Supported           |
-|---------|---------------------|
-| = 2.1.9 | Fully operational   |
-| = 2.1.8 | Possibly broken     |
-| < 2.1.8 | Hacks don't work    |
-| < 2.1.5 | Major Vulnerability |
+| Version | Supported                           |
+|---------|-------------------------------------|
+| = 2.1.9 | Fully operational                   |
+| = 2.1.8 | Operational with "outdated" message |
+| < 2.1.8 | Hacks don't work                    |
+| < 2.1.5 | Major Vulnerability                 |
 
 ## Reporting a Vulnerability
 
