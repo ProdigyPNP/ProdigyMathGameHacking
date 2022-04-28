@@ -3,13 +3,22 @@
 
 
 // BEGIN IMPORTS
-import { Toast, Input } from "../utils/swal";  // Import Toast and Input from swal
+import { Toast, Input, Confirm, Swal } from "../utils/swal";  // Import Toast and Input from swal
 import { Hack, category, Toggler, dimensions } from "../index"; // Import the Cheat GUI bases and the dimensions to resize the menu
 import { _, saveCharacter } from "../utils/util";  // Import Prodigy typings
 // END IMPORTS
 
 
 // BEGIN UTILITY HACKS
+
+
+// Begin Close all Popups
+new Hack(category.utility, "Close all popups", "Closes all popups in Prodigy.").setClick(async () => {
+	_.instance.prodigy.open.menuCloseAll();
+	Toast.fire("Closed!", "All open popups were closed.", "success");
+});
+// End Close all Popups
+
 
 
 // Begin Save Character Locally
@@ -71,15 +80,6 @@ new Hack(category.utility, "Save Character", "Helps fix bugs where not all hacks
 	Toast.fire("Success!", "Your character has been saved!", "success");
 });
 // End Save Character
-
-
-
-// Begin Close all Popups
-new Hack(category.utility, "Close all popups", "Closes all popups in Prodigy.").setClick(async () => {
-	_.instance.prodigy.open.menuCloseAll();
-	Toast.fire("Closed!", "All open popups were closed.", "success");
-});
-// End Close all Popups
 
 
 
@@ -154,6 +154,8 @@ new Toggler(category.utility, "Toggle Click Teleporting").setEnabled(async () =>
 });
 // End Toggle Click Teleporting
 
+
+
 // Begin Pause Game
 new Toggler(category.utility, "Pause Game").setEnabled(async () => {
 	_.network.game._paused = true;
@@ -168,6 +170,16 @@ new Toggler(category.utility, "Pause Game").setEnabled(async () => {
 
 // Begin Eval Console
 new Hack(category.utility, "Eval Console", "Evaluate JavaScript code without opening F12").setClick(async () => {
+
+
+    if (!(await Confirm.fire({
+    		title: "Important",
+    		html: "This hack is potentially dangerous, as it evaluates plain JavaScript code, with access to Prodigy's typings. <strong>Please do not paste code from random people on the internet here, that may be dangerous.</strong><br><br>Proceed?",
+    		icon: "warning"
+    })).value) { return; }
+
+
+
 	const code = await Input.fire("Code:", "Enter the code you want to evaluate.");
 	if (!code.value) return;
 	try {

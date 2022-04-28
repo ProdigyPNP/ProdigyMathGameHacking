@@ -16,7 +16,7 @@ import { TODO } from "../../../typings/util"; // Import Prodigy Util typings
 
 
 // Begin Max Account
-new Hack(category.beta, "Max Account").setClick(async () => {
+new Hack(category.player, "Max Account").setClick(async () => {
     // max account made by gemsvidø
 
     // ============================================

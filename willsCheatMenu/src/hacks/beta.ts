@@ -28,12 +28,11 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 
 
-     if (!(
-    		await Confirm.fire("This hack may damage your account with various bugs, for example you may be unable to do Rune Run.", "We recommend you use an alt.")
-    ).value) {
-    console.log("Cancelled");
-    return;
-    }
+     if (!(await Confirm.fire({
+     		title: "Hang on!",
+     		html: "This hack may damage your account with various bugs, for example you may be unable to do Rune Run.<br><br>Proceed?",
+     		icon: "warning"
+     	})).value) { return; }
 
 
 
@@ -354,10 +353,10 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 // Begin get all Runes
 new Hack(category.beta, "Get all Runes [BETA]").setClick(async () => {
 	if (!(await Confirm.fire({
-		title: "Hang on!",
-		html: "This feature is in <strong>beta</strong>. Using this could break your account in a specific way. This should be used for experimentation <strong>only</strong>.<br><br>Proceed?",
-		icon: "warning"
-	})).value) return;
+    		title: "Hang on!",
+    		html: "This hack may damage your account with various bugs, for example you may be unable to do Rune Run.<br><br>Proceed?",
+    		icon: "warning"
+    	})).value) { return; }
 
 	const amount = parseInt((await NumberInput.fire({
 		title: "Amount",
@@ -394,7 +393,7 @@ new Hack(category.beta, "Get all Runes [BETA]").setClick(async () => {
 new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
 	if (!(await Confirm.fire({
 		title: "Hang on!",
-		html: "This feature is in <strong>beta</strong>. Using this could break your account in a specific way. This should be used for experimentation <strong>only</strong>.<br><br>Proceed?",
+		html: "This hack may damage your account with various bugs, for example you may be unable to do Rune Run.<br><br>Proceed?",
 		icon: "warning"
 	})).value) { return; }
 
@@ -459,6 +458,12 @@ new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
 
 // Begin Morph Player
 new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or follow.").setClick(async () => {
+
+    if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
+           console.log("Cancelled");
+            return;
+    }
+
 	const morphType = await Swal.fire({
 		title: "Which morph type?",
 		input: "select",
@@ -523,6 +528,147 @@ const getPet = async (text: string): Promise<number | undefined> => {
 	});
 	return pet.value;
 };
+// end getPet function
+
+
+
+
+
+// Begin Chat Spammer
+let retard: unknown | null = null;
+let i : Int = 0;
+
+new Hack(category.beta, "Chat Spammer [BETA]", "Cycles through chat messages pretty fast!").setClick(async () => {
+
+    if (retard) {
+    		return Swal.fire(
+    			"Already Enabled",
+    			"Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.",
+    			"error"
+    	)};
+
+    if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
+           console.log("Cancelled");
+            return;
+    }
+
+
+
+    retard = setInterval(async () => {
+
+        _.player.chatID = i;
+        i++;
+
+        if (i > 1164) {
+            i = 0;
+        }
+
+    }, 90);
+
+
+
+});
+// End Chat Spammer
+
+
+
+
+
+
+
+
+
+
+
+// Begin High Chat Spammer
+let retards: unknown | null = null;
+let c : Int = 0;
+
+new Hack(category.beta, "High Chat Spammer [BETA]", "Cycles through chat messages hella fast!").setClick(async () => {
+
+    if (retards) {
+    		return Swal.fire(
+    			"Already Enabled",
+    			"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
+    			"error"
+    	)};
+
+    if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
+           console.log("Cancelled");
+            return;
+    }
+
+
+    if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
+               console.log("Cancelled");
+                return;
+    }
+
+
+
+    retards = setInterval(async () => {
+
+        _.player.chatID = c;
+        c++;
+
+        if (c > 1164) {
+            c = 0;
+        }
+
+    }, 30);
+
+
+
+});
+// End High Chat Spammer
+
+
+
+
+
+
+
+// Begin Chat Spammer on Meth
+let retarded: unknown | null = null;
+let b : Int = 0;
+
+new Hack(category.beta, "Chat Spammer on Meth [BETA]", "Cycles through chat messages FAST ASF!").setClick(async () => {
+
+    if (retarded) {
+    		return Swal.fire(
+    			"Already Enabled",
+    			"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
+    			"error"
+    	)};
+
+    if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
+           console.log("Cancelled");
+            return;
+    }
+
+
+    if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
+               console.log("Cancelled");
+                return;
+    }
+
+
+
+    retarded = setInterval(async () => {
+
+        _.player.chatID = b;
+        b++;
+
+        if (b > 1164) {
+            b = 0;
+        }
+
+    }, 1);
+
+
+
+});
+// End Chat Spammer
 
 
 
