@@ -82,7 +82,7 @@ declare module "sweetalert2" {
 		 * Closes the currently open SweetAlert2 popup programmatically.
 		 *
 		 * @param result The promise originally returned by `Swal.fire()` will be resolved with this value.
-		 *               If no object is given, the promise is resolved with an empty `SweetAlertResult` object.
+		 *			   If no object is given, the promise is resolved with an empty `SweetAlertResult` object.
 		 */
 		function close(result?: SweetAlertResult): void;
 
@@ -290,7 +290,7 @@ declare module "sweetalert2" {
 		 *
 		 * @param step  The step configuration (same object as in the `Swal.fire()` call).
 		 * @param index The index to insert the step at.
-		 *              By default a popup will be added to the end of a queue.
+		 *			  By default a popup will be added to the end of a queue.
 		 */
 		function insertQueueStep(
 			step: SweetAlertOptions,
@@ -579,19 +579,19 @@ declare module "sweetalert2" {
 		 * ```
 		 * Swal.fire({
 		 *   customClass: {
-		 *     container: 'container-class',
-		 *     popup: 'popup-class',
-		 *     header: 'header-class',
-		 *     title: 'title-class',
-		 *     closeButton: 'close-button-class',
-		 *     icon: 'icon-class',
-		 *     image: 'image-class',
-		 *     content: 'content-class',
-		 *     input: 'input-class',
-		 *     actions: 'actions-class',
-		 *     confirmButton: 'confirm-button-class',
-		 *     cancelButton: 'cancel-button-class',
-		 *     footer: 'footer-class'
+		 *	 container: 'container-class',
+		 *	 popup: 'popup-class',
+		 *	 header: 'header-class',
+		 *	 title: 'title-class',
+		 *	 closeButton: 'close-button-class',
+		 *	 icon: 'icon-class',
+		 *	 image: 'image-class',
+		 *	 content: 'content-class',
+		 *	 input: 'input-class',
+		 *	 actions: 'actions-class',
+		 *	 confirmButton: 'confirm-button-class',
+		 *	 cancelButton: 'cancel-button-class',
+		 *	 footer: 'footer-class'
 		 *   }
 		 * })
 		 * ```
@@ -797,12 +797,12 @@ declare module "sweetalert2" {
 		 * Swal.fire({
 		 *   title: 'Multiple inputs',
 		 *   html:
-		 *     '<input id="swal-input1" class="swal2-input">' +
-		 *     '<input id="swal-input2" class="swal2-input">',
+		 *	 '<input id="swal-input1" class="swal2-input">' +
+		 *	 '<input id="swal-input2" class="swal2-input">',
 		 *   focusConfirm: false,
 		 *   preConfirm: () => [
-		 *     document.querySelector('#swal-input1').value,
-		 *     document.querySelector('#swal-input2').value
+		 *	 document.querySelector('#swal-input1').value,
+		 *	 document.querySelector('#swal-input2').value
 		 *   ]
 		 * }).then(result => Swal.fire(JSON.stringify(result));
 		 * ```
@@ -878,7 +878,7 @@ declare module "sweetalert2" {
 		 *   title: 'Select a file',
 		 *   input: 'file',
 		 *   inputAttributes: {
-		 *     accept: 'image/*'
+		 *	 accept: 'image/*'
 		 *   }
 		 * })
 		 * ```
