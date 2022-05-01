@@ -61,7 +61,7 @@ new Hack(category.pets, "Get All Legacy Epics").setClick(async () => {
 
 // Begin Get All Mythical Epics
 new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
-    // TODO: I need Aura's ID
+	// TODO: I need Aura's ID
 	const epics = _.gameData.pet.filter(x => [158, 166, 168].includes(x.ID));
 	epics.forEach(x => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);

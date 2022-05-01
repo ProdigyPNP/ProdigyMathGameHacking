@@ -15,12 +15,12 @@ import { _, prodigy, game } from "../utils/util"; // Import prodigy typings
 // Begin Disable Math
 new Toggler(category.battle, "Disable math [PvP, PvE]", "Disable math in PvP, PvE, anywhere! This doesn't work in the Floatling town.").setEnabled(async () => {
 
-    // Use Prodigy's debug stuff to set EDUCATION_ENABLED to false
+	// Use Prodigy's debug stuff to set EDUCATION_ENABLED to false
 	_.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = false;
 
 }).setDisabled(async () => {
 
-    // Use Prodigy's debug stuff to set EDUCATION_ENABLED to true
+	// Use Prodigy's debug stuff to set EDUCATION_ENABLED to true
 	_.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = true;
 });
 // End Disable Math
@@ -121,26 +121,26 @@ new Hack(category.battle, "Heal Team [PvE]").setClick(async () => {
 
 
 	if (currentState === "PVP" || currentState === "CoOp") {
-    		return Toast.fire(
-    			"Invalid State.",
-    			"PvP is not supported for this hack.",
-    			"error"
-    		)
+			return Toast.fire(
+				"Invalid State.",
+				"PvP is not supported for this hack.",
+				"error"
+			)
 
-    	} else if (["Battle", "SecureBattle"].includes(currentState)) {
-		    _.player.heal();
-		    Toast.fire(
-			    "Success!",
-			    "Your team has been healed successfully!",
-			    "success"
-		    );
-	    } else {
-		    Toast.fire(
-			    "Invalid State.",
-			    "Your are currently not in a battle.",
-			    "error"
-		    );
-	    }
+		} else if (["Battle", "SecureBattle"].includes(currentState)) {
+			_.player.heal();
+			Toast.fire(
+				"Success!",
+				"Your team has been healed successfully!",
+				"success"
+			);
+		} else {
+			Toast.fire(
+				"Invalid State.",
+				"Your are currently not in a battle.",
+				"error"
+			);
+		}
 });
 // End Heal Team
 
