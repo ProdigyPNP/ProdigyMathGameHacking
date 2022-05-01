@@ -2,6 +2,6 @@
 
 PLEASE MAKE SURE TO READ THE CONTRIBUTING GUIDELINES OF THIS REPOSITORY BEFORE SUBMITTING YOUR PULL REQUEST.
 
-https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/CONTRIBUTING.md
+https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/CONTRIBUTING.MD
 
 -->
