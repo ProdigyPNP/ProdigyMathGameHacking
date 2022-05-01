@@ -7,7 +7,14 @@ assignees: ''
 
 ---
 
-<!-- PLEASE BE SPECIFIC!!! -->
+<!--
+
+PLEASE BE SPECIFIC!!!
+ 
+Also, read this before submitting:
+https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/CONTRIBUTING.MD
+
+-->
 
 ***Description***:
 
