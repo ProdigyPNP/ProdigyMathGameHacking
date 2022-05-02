@@ -96,7 +96,7 @@ new Hack(category.misc, "Reset Account", "Completely resets your account.").setC
 // Begin uwu
 new Hack(category.misc, "uwu", "OwO").setClick(async () => {
 
-    if (!(
+	if (!(
 		await Confirm.fire("Are you sure that you want to UwU OwO?", "Reload Prodigy to revert UwU.")
 	).value) return;
 
@@ -117,25 +117,25 @@ let i : number = 0;
 
 new Hack(category.beta, "Chat Spammer [BETA]", "Cycles through chat messages pretty fast!").setClick(async () => {
 
-    if (retard) {
-    		return Swal.fire(
-    			"Already Enabled",
-    			"Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.",
-    			"error"
-    	)};
+	if (retard) {
+			return Swal.fire(
+				"Already Enabled",
+				"Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.",
+				"error"
+		)};
 
 
 
-    retard = setInterval(async () => {
+	retard = setInterval(async () => {
 
-        _.player.chatID = i;
-        i++;
+		_.player.chatID = i;
+		i++;
 
-        if (i > 1164) {
-            i = 0;
-        }
+		if (i > 1164) {
+			i = 0;
+		}
 
-    }, 90);
+	}, 90);
 
 
 
@@ -158,32 +158,32 @@ let c : number = 0;
 
 new Hack(category.misc, "High Chat Spammer [BETA]", "Cycles through chat messages hella fast!").setClick(async () => {
 
-    if (retards) {
-    		return Swal.fire(
-    			"Already Enabled",
-    			"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
-    			"error"
-    	)};
+	if (retards) {
+			return Swal.fire(
+				"Already Enabled",
+				"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
+				"error"
+		)};
 
 
 
-    if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
-               console.log("Cancelled");
-                return;
-    }
+	if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
+			   console.log("Cancelled");
+				return;
+	}
 
 
 
-    retards = setInterval(async () => {
+	retards = setInterval(async () => {
 
-        _.player.chatID = c;
-        c++;
+		_.player.chatID = c;
+		c++;
 
-        if (c > 1164) {
-            c = 0;
-        }
+		if (c > 1164) {
+			c = 0;
+		}
 
-    }, 30);
+	}, 30);
 
 
 
@@ -202,32 +202,32 @@ let b : number = 0;
 
 new Hack(category.misc, "Chat Spammer on Meth [BETA]", "Cycles through chat messages FAST ASF!").setClick(async () => {
 
-    if (retarded) {
-    		return Swal.fire(
-    			"Already Enabled",
-    			"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
-    			"error"
-    	)};
+	if (retarded) {
+			return Swal.fire(
+				"Already Enabled",
+				"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
+				"error"
+		)};
 
 
 
-    if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
-               console.log("Cancelled");
-                return;
-    }
+	if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
+			   console.log("Cancelled");
+				return;
+	}
 
 
 
-    retarded = setInterval(async () => {
+	retarded = setInterval(async () => {
 
-        _.player.chatID = b;
-        b++;
+		_.player.chatID = b;
+		b++;
 
-        if (b > 1164) {
-            b = 0;
-        }
+		if (b > 1164) {
+			b = 0;
+		}
 
-    }, 1);
+	}, 1);
 
 
 

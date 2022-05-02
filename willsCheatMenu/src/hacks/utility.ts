@@ -172,11 +172,11 @@ new Toggler(category.utility, "Pause Game").setEnabled(async () => {
 new Hack(category.utility, "Eval Console", "Evaluate JavaScript code without opening F12").setClick(async () => {
 
 
-    if (!(await Confirm.fire({
-    		title: "Important",
-    		html: "This hack is potentially dangerous, as it evaluates plain JavaScript code, with access to Prodigy's typings. <strong>Please do not paste code from random people on the internet here, that may be dangerous.</strong><br><br>Proceed?",
-    		icon: "warning"
-    })).value) { return; }
+	if (!(await Confirm.fire({
+			title: "Important",
+			html: "This hack is potentially dangerous, as it evaluates plain JavaScript code, with access to Prodigy's typings. <strong>Please do not paste code from random people on the internet here, that may be dangerous.</strong><br><br>Proceed?",
+			icon: "warning"
+	})).value) { return; }
 
 
 

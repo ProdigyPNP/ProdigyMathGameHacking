@@ -30,9 +30,9 @@ new Hack(category.patched, "Arena Point Increaser [Patched]").setClick(async () 
 
 
 	if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
-       console.log("Cancelled");
-        return;
-    }
+	   console.log("Cancelled");
+		return;
+	}
 
 
 
@@ -70,10 +70,10 @@ new Hack(category.patched, "Arena Point Increaser [Patched]").setClick(async () 
 
 // Begin Disable Timeout Dialog
 new Hack(category.patched, "Disable Timeout Dialog [Patched]").setClick(async () => {
-    if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
-        console.log("Cancelled");
-        return;
-    }
+	if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
+		console.log("Cancelled");
+		return;
+	}
 	prodigy.debugMisc.disableTimeoutDialogue();
 });
 // End Disable Timeout Dialog
