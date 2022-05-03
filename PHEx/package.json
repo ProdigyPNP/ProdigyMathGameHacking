@@ -4,16 +4,13 @@
   "description": "Prodigy Hacking Extension",
   "main": "build.js",
   "scripts": {
-
     "setup": "npm install",
-
     "start": "node build.js",
     "build": "node build.js",
     "package": "node build.js",
     "zip": "node build.js",
     "crx": "node build.js",
     "xpi": "node build.js",
-
     "quickstart": "npm install && node build.js"
   },
   "repository": {
@@ -30,6 +27,7 @@
   "dependencies": {
     "dir-archiver": "^1.1.2",
     "simple-archiver": "^1.0.1",
+    "typescript": "^4.6.4",
     "zip-dir": "^2.0.0"
   }
 }
