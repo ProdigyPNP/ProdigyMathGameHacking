@@ -1,7 +1,7 @@
 {
-  "name": "PHEx",
+  "name": "phex",
   "version": "2.1.9",
-  "description": "Open source Prodigy hacks",
+  "description": "Prodigy Hacking Extension",
   "main": "build.js",
   "scripts": {
 
@@ -11,6 +11,8 @@
     "build": "node build.js",
     "package": "node build.js",
     "zip": "node build.js",
+    "crx": "node build.js",
+    "xpi": "node build.js",
 
     "quickstart": "npm install && node build.js"
   },

@@ -1,24 +1,20 @@
 {
-  "name": "ProdigyCheatGUI",
+  "name": "prodigyhackgui",
   "version": "2.1.9",
   "description": "Prodigy Hack GUI",
   "main": "dist/bundle.js",
   "scripts": {
-
     "setup": "npm install",
-
     "start": "webpack --config webpack.config.js",
     "build": "webpack --config webpack.config.js",
     "webpack": "webpack --config webpack.config.js",
     "package": "webpack --config webpack.config.js",
-
     "server": "node hot-reload.mjs",
-
     "quickstart": "npm install && webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/willsCheatMenu"
+    "url": "git+https://github.com/ProdigyPNP/ProdigyMathGameHacking.git#master"
   },
   "keywords": [],
   "author": "ProdigyPNP",
@@ -50,5 +46,9 @@
     "@typescript-eslint/parser": "^4.4.1",
     "eslint": "^7.11.0",
     "eslint-config-standard": "^16.0.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ProdigyPNP/ProdigyMathGameHacking/issues"
+  },
+  "homepage": "https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master#readme"
 }
