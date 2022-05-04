@@ -1,0 +1,22 @@
+{
+  "name": "prodigy-typings",
+  "version": "2.1.9",
+  "description": "Documentation for the typings of Prodigy, the math game.",
+  "scripts": {
+    "setup": "npm install",
+
+    "start": "npm install",
+
+    "quickstart": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProdigyPNP/ProdigyMathGameHacking.git#master"
+  },
+  "author": "ProdigyPNP",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/ProdigyPNP/ProdigyMathGameHacking/issues"
+  },
+  "homepage": "https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/docs"
+}
