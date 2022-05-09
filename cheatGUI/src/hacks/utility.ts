@@ -88,7 +88,7 @@ new Hack(category.utility, "Update menu", "Updates menu to the latest version wi
 	document.getElementById("cheat-menu")?.remove();
 	document.getElementById("menu-toggler")?.remove();
 	(async () => {
-		eval(await (await fetch(`https://raw.githubusercontent.com/ProdigyPNP/ProdigyMathGameHacking/master/willsCheatMenu/dist/bundle.js?updated=${Date.now()}`)).text()); // updated parameter is so browser ignores cached version
+		eval(await (await fetch(`https://raw.githubusercontent.com/ProdigyPNP/ProdigyMathGameHacking/master/cheatGUI/dist/bundle.js?updated=${Date.now()}`)).text()); // updated parameter is so browser ignores cached version
 	})();
 	Toast.fire("Updated!", "Cheat menu was updated.", "success");
 });

@@ -135,7 +135,7 @@ ProdigyMathGameHacking is made by [all the people who have contributed to it](..
 
 - [ProdigyMathGameHacking](../..) - The ProdigyMathGameHacking Repository
 - [PHEx](../../tree/master/PHEx) - The Prodigy Hacking Extension, used to inject our modified game files into Prodigy.
-- [willsCheatMenu](../../tree/master/cheatGUI) - The cheat GUI, for user convenience
+- [cheatGUI](../../tree/master/cheatGUI) - The cheat GUI, for user convenience
 - [docs](../../tree/master/docs) - Our documentation of Prodigy, used to find functions to build the hacks.
 - [meta](../../tree/master/meta) - Information on this repository
 - [OldGuard](https://github.com/ProdigyPNP/OldGuard) - An old and outdated cheat menu.

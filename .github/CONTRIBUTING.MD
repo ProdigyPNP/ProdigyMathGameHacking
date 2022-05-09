@@ -53,9 +53,9 @@ If you make a PR with Typings, [Will](https://github.com/MelnCat) will will you 
 
 
 
-### [The Hack GUI](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/willsCheatMenu)
+### [The Hack GUI](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/cheatGUI)
 
-[The Hack GUI](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/willsCheatMenu)! Written in Typescript, it gives a visual cheat menu, with tons of handy dandy hacks in one place. No more copy pasting required!
+[The Hack GUI](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/cheatGUI)! Written in Typescript, it gives a visual cheat menu, with tons of handy dandy hacks in one place. No more copy pasting required!
 
 Requirements:
 
@@ -64,7 +64,7 @@ Requirements:
 - Basic knowledge of Node.js/npm syntax
 - A good personality
 
-you can build it from `./willsCheatMenu` with `webpack`.
+you can build it from `./cheatGUI` with `webpack`.
 
 ### [Browser Extension](https://chrome.google.com/webstore/detail/prodigy-hacking-extension/gjabpajagbgoifbkflgojeojmnlmioea)
 
@@ -95,7 +95,7 @@ npm tsc
 
 We usually don't require help with [Redirector](https://github.com/Prodigy-Hacking/P-NP), but it's pretty important to know it exists.
 
-Because we can edit the game script, we can also import external scripts, such as the [Cheat GUI](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/willsCheatMenu).
+Because we can edit the game script, we can also import external scripts, such as the [Cheat GUI](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/cheatGUI).
 
 ## Your contributions are licensed under the [MPL 2.0 software license](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/LICENSE.txt)
 
