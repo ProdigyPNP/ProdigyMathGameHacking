@@ -18,7 +18,7 @@ export const saveCharacter = () => {
 	_.player.forceSaveCharacter();
 };
 
-export const assetURL = "https://raw.githubusercontent.com/ProdigyPNP/ProdigyMathGameHacking/master/willsCheatMenu/src/assets/";
+export const assetURL = "https://raw.githubusercontent.com/ProdigyPNP/ProdigyMathGameHacking/master/cheatGUI/src/assets/";
 export const joinAsset = (asset: string) => `${assetURL}${asset}`;
 export const locations = {
 	academy: joinAsset("academy.png"),
