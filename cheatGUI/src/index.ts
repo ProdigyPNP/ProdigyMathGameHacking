@@ -23,7 +23,7 @@ toggler.style.fontSize = "25px"
 toggler.style.height = "25px"
 toggler.style.width = "50px"
 
-let visible = true;
+let visible = false;
 wrapper?.prepend(toggler);
 toggler.onclick = () => {
 	visible = !visible;
