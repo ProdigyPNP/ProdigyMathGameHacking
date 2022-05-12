@@ -11,6 +11,10 @@ export const wrapper = document.getElementById("game-wrapper"); // Create game w
 document.getElementById("cheat-menu")?.remove(); // Remove any existing menu if present
 document.getElementById("menu-toggler")?.remove(); // Remove any existing menu togglers if present
 menu.id = "cheat-menu"; // Set menu ID to cheat-menu
+
+
+menu.style = "position: fixed;top: -10%;left: 10%;right: 10%;width: 80%;height: 80%;z-index: 2;background-color: rgba(0, 0, 0, 0.5);backdrop-filter: blur(5px);"; // Set menu style
+
 wrapper?.prepend(menu);
 
 export const toggler = document.createElement("button"); // Create toggler class
@@ -19,7 +23,7 @@ toggler.style.fontSize = "25px"
 toggler.style.height = "25px"
 toggler.style.width = "50px"
 
-let visible = false;
+let visible = true;
 wrapper?.prepend(toggler);
 toggler.onclick = () => {
 	visible = !visible;
@@ -29,7 +33,7 @@ toggler.onclick = () => {
 		menu.style.top = "-100vh";
 	} else {
 		toggler.innerText = "▲";
-		menu.style.top = "";
+		menu.style.top = "10%";
 	}
 };
 toggler.onclick({} as any);
@@ -45,6 +49,8 @@ export const addArea = (title: string) => {
 
 	const header = document.createElement("h1");
 	header.innerText = title;
+	header.style.color = "white";
+
 	area.append(header);
 	return area;
 };
@@ -52,9 +58,11 @@ export const addArea = (title: string) => {
 const title = document.createElement("h1");
 title.classList.add("menu-title");
 title.innerText = "Prodigy Hacks";
+title.style.color = "white";
 menuleft.append(title);
 const disc = document.createElement("h2");
 disc.style.fontSize = "30px";
+disc.style.color = "white";
 disc.innerHTML = "Join our Discord <a href='https://dsc.gg/ProdigyPNP'>https://dsc.gg/ProdigyPNP</a>! <br> Press SHIFT to show/hide the menu.";
 menuleft.append(disc);
 const subtitle = document.createElement("h3");
@@ -62,6 +70,7 @@ subtitle.style.fontSize = "20px";
 subtitle.innerHTML = `On behalf of <a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/README.md">ProdigyPNP</a>.
 <hr>
 This is free and open-source software. If you paid for this or accessed this behind a paywall/AdFly link, demand a refund. If you sell this software, or otherwise make a commercial advantage from it, you are violating Github conduct by not cooperating with our license.`;
+subtitle.style.color = "white";
 menuleft.append(subtitle);
 
 export class Hack {

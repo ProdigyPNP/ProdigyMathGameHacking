@@ -126,3 +126,15 @@
 	min-width: 32em !important;
 	max-width: 46em !important;
 }
+
+.centeredMenu {
+  position: fixed;
+  top: -10%;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  height: 80%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
