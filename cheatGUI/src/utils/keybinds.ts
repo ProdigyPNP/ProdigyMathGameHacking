@@ -1,4 +1,26 @@
+import { _ } from "../utils/util";  // Import Prodigy typings
+
+
+
 window.addEventListener("keydown", event => {
+
+    // Close All Popups
+    if (event.code === "KeyX") {
+        _.instance.prodigy.open.menuCloseAll();
+    }
+    // Close All Popups
+
+
+
+
+
+
+
+
+
+
+
+
 	/*
 	if (event.code === "KeyL") {
 		Phaser.GAMES[0].state.states.Login._gameObj.user.x = Phaser.GAMES[0].input.mousePointer.position.x;

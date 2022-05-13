@@ -16,6 +16,14 @@ import { TODO } from "../../../typings/util"; // Import Prodigy Util typings
 
 // Begin Get All Pets
 new Hack(category.pets, "Get All Pets").setClick(async () => {
+
+
+    if (!(await Confirm.fire("Would you like to add all pets to your pets?")).value) {
+		   console.log("Cancelled");
+			return;
+	}
+
+
 	// add pets
 	_.gameData.pet.forEach(x => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
@@ -44,6 +52,14 @@ new Hack(category.pets, "Get All Pets").setClick(async () => {
 
 // Begin Get ALl Legacy Epics
 new Hack(category.pets, "Get All Legacy Epics").setClick(async () => {
+
+
+    if (!(await Confirm.fire("Would you like to add all legacy epics to your team?")).value) {
+        console.log("Cancelled");
+    	return;
+    }
+
+
 	const epics = _.gameData.pet.filter(x => [125, 126, 127, 128, 129, 130, 131, 132, 133].includes(x.ID));
 	epics.forEach(x => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
@@ -61,6 +77,15 @@ new Hack(category.pets, "Get All Legacy Epics").setClick(async () => {
 
 // Begin Get All Mythical Epics
 new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
+
+    if (!(await Confirm.fire("Would you like to add all mythical epics to your pets?")).value) {
+        console.log("Cancelled");
+        return;
+    }
+
+
+
+
 	// TODO: I need Aura's ID
 	const epics = _.gameData.pet.filter(x => [158, 166, 168].includes(x.ID));
 	epics.forEach(x => {
@@ -75,22 +100,21 @@ new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
 // End Get ALl Mythical Epics
 
 
-// Begin Fix Battle Crash
-new Hack(category.pets, "Fix Battle Crash").setClick(async () => {
-	_.player.kennel.petTeam.forEach((v: any) => {
-		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
-	});
 
-	Toast.fire("Success!", "Fixed kennel attack bug!", "success");
-});
-// End Fix Battle Crash
 
 
 // Begin Clear Pets
 new Hack(category.pets, "Clear Pets").setClick(async () => {
+
+    if (!(await Confirm.fire("Would you like to delete all of your pets?")).value) {
+            console.log("Cancelled");
+            return;
+    }
+
+
 	_.player.kennel.data.length = 0;
 
-	Toast.fire("Success!", "Your pets have been cleared!", "success");
+	return Toast.fire("Success!", "Your pets have been cleared!", "success");
 });
 // End Clear Pets
 
@@ -114,7 +138,7 @@ new Hack(category.pets, "Add Pet", "Adds a pet from a list.").setClick(async () 
 		timesRescued: 1
 	});
 
-	Toast.fire("Success!", "Your chosen pet has been added to your pets!", "success");
+	return Toast.fire("Success!", "Your chosen pet has been added to your pets!", "success");
 });
 // End Add Pet
 
@@ -171,7 +195,7 @@ new Hack(category.pets, "Delete Pet", "Delete a pet.").setClick(async () => {
 	const pet = await getPet("Which pet do you wish to delete?");
 	if (pet === undefined) return;
 	_.player.kennel.data.splice(pet, 1);
-	await Swal.fire("Successfully deleted!", "The selected pet was deleted successfully.", "success");
+	return Toast.fire("Successfully deleted!", "The selected pet was deleted successfully.", "success");
 });
 // End Delete Pet
 

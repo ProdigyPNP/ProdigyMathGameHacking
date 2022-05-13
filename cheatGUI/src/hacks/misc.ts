@@ -236,6 +236,24 @@ new Hack(category.misc, "Chat Spammer on Meth", "Cycles through chat messages FA
 
 
 
+// Begin Fix Battle Crash
+new Hack(category.misc, "[Fix] Fix Battle Crash").setClick(async () => {
+	_.player.kennel.petTeam.forEach((v: any) => {
+		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
+	});
+
+	Toast.fire("Success!", "Fixed kennel attack bug!", "success");
+});
+// End Fix Battle Crash
+
+
+
+// Begin Stuck in Unfinished Tower Fix
+new Hack(category.misc, "[Fix] Stuck in Unfinished Tower Fix", "Takes you out of an unfinished tower if you're stuck in one.").setClick(async () => {
+	_.instance.prodigy.world.zones["house"].teleport("exit");
+	Toast.fire("Success!", "You've been teleported outside of your house.", "success");
+});
+// End Stuck in Unfinished Tower Fix
 
 
 
