@@ -11,6 +11,10 @@ export const wrapper = document.getElementById("game-wrapper"); // Create game w
 document.getElementById("cheat-menu")?.remove(); // Remove any existing menu if present
 document.getElementById("menu-toggler")?.remove(); // Remove any existing menu togglers if present
 menu.id = "cheat-menu"; // Set menu ID to cheat-menu
+
+
+menu.style = "position: fixed;top: -10%;left: 10%;right: 10%;width: 80%;height: 80%;z-index: 2;background-color: rgba(0, 0, 0, 0.5);backdrop-filter: blur(5px);"; // Set menu style
+
 wrapper?.prepend(menu);
 
 export const toggler = document.createElement("button"); // Create toggler class
@@ -29,7 +33,7 @@ toggler.onclick = () => {
 		menu.style.top = "-100vh";
 	} else {
 		toggler.innerText = "▲";
-		menu.style.top = "";
+		menu.style.top = "10%";
 	}
 };
 toggler.onclick({} as any);
@@ -38,13 +42,27 @@ const menuleft = document.createElement("DIV");
 menuleft.classList.add("menu-left");
 menu.append(menuleft);
 
+let firstCategory = true;
 export const addArea = (title: string) => {
 	const area = document.createElement("div");
+
+    if (firstCategory == false) {
+        area.append(document.createElement("br"));
+        area.append(document.createElement("br"));
+    } else {
+        firstCategory = false;
+    }
+
+
 	area.classList.add("menu-area");
+	area.style.textAlign = "center";
 	menuleft.append(area);
 
 	const header = document.createElement("h1");
 	header.innerText = title;
+	header.style.textAlign = "center";
+	header.style.color = "white";
+
 	area.append(header);
 	return area;
 };
@@ -52,16 +70,30 @@ export const addArea = (title: string) => {
 const title = document.createElement("h1");
 title.classList.add("menu-title");
 title.innerText = "Prodigy Hacks";
+title.style.color = "white";
+title.style.textAlign = "center";
 menuleft.append(title);
+
 const disc = document.createElement("h2");
 disc.style.fontSize = "30px";
-disc.innerHTML = "Join our Discord <a href='https://dsc.gg/ProdigyPNP'>https://dsc.gg/ProdigyPNP</a>! <br> Press SHIFT to show/hide the menu.";
+disc.style.color = "white";
+disc.innerHTML = "Press SHIFT to show/hide the menu.";
 menuleft.append(disc);
+
 const subtitle = document.createElement("h3");
 subtitle.style.fontSize = "20px";
-subtitle.innerHTML = `On behalf of <a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/README.md">ProdigyPNP</a>.
+subtitle.innerHTML = `
+<p>Join our Discord <a href='https://dsc.gg/ProdigyPNP'>https://dsc.gg/ProdigyPNP</a>!</p>
+
+<p>
+<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/README.md">This is free and open-source software</a>.
+If you paid for this or accessed this behind a paywall/AdFly link, demand a refund. If you sell this software, or otherwise make a commercial advantage from it, you are violating
+<a href = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/LICENSE.txt">our license</a>.
+</p>
+
 <hr>
-This is free and open-source software. If you paid for this or accessed this behind a paywall/AdFly link, demand a refund. If you sell this software, or otherwise make a commercial advantage from it, you are violating Github conduct by not cooperating with our license.`;
+`;
+subtitle.style.color = "white";
 menuleft.append(subtitle);
 
 export class Hack {
@@ -183,16 +215,20 @@ if (localStorage.getItem("level")) {
 	_.player.getLevel = () => localStorage.getItem("level");
 }
 
+
+let shownMenu = visible.value;
 document.addEventListener("keydown", function (event) {
 	if (event.key == "Shift") {
-		if (document.getElementById("cheat-menu").style.display == "block" && document.getElementById("menu-toggler").style.display == "block") {
+		if (shownMenu == true) {
 			// Cheats are shown, so let's hide them.
 			document.getElementById("cheat-menu").style.display = "none";
 			document.getElementById("menu-toggler").style.display = "none";
+			shownMenu = false;
 		} else {
 			// Cheats are hidden, so let's show them.
 			document.getElementById("cheat-menu").style.display = "block";
 			document.getElementById("menu-toggler").style.display = "block";
+            shownMenu = true;
 		}
 	}
 });

@@ -585,11 +585,33 @@ new Hack(category.player, "Set Dark Tower Floor").setClick(async () => {
 
 // Begin Get UserID
 new Hack(category.player, "Get UserID").setClick(async () => {
-	Swal.fire({
-		title: "User ID",
-		html: `Here is your User ID: <br> <code> ${_.player.userID} </code> <br> You can use this for copying your account.`,
-		icon: "info"
-	});
+
+    const UserID : number = _.player.userID;
+    navigator.clipboard.writeText(UserID).then(function() {
+
+
+      console.log('Async: Copying to clipboard was successful!');
+
+      Swal.fire({
+      		title: "User ID",
+      		html: `Here is your User ID: <br> <code> ${UserID} </code> <br> You can use this for copying your account. <br> <br> Your UserID is has also been copied to your clipboard.`,
+      		icon: "info"
+      	});
+
+
+    }, function (err) {
+
+      console.error('Async: Could not copy text: ', err);
+
+      Swal.fire({
+      		title: "User ID",
+      		html: `Here is your User ID: <br> <code> ${UserID} </code> <br> You can use this for copying your account.`,
+      		icon: "info"
+      	});
+
+
+    });
+
 });
 // End Get UserID
 
