@@ -42,13 +42,25 @@ const menuleft = document.createElement("DIV");
 menuleft.classList.add("menu-left");
 menu.append(menuleft);
 
+let firstCategory = true;
 export const addArea = (title: string) => {
 	const area = document.createElement("div");
+
+    if (firstCategory == false) {
+        area.append(document.createElement("br"));
+        area.append(document.createElement("br"));
+    } else {
+        firstCategory = false;
+    }
+
+
 	area.classList.add("menu-area");
+	area.style.textAlign = "center";
 	menuleft.append(area);
 
 	const header = document.createElement("h1");
 	header.innerText = title;
+	header.style.textAlign = "center";
 	header.style.color = "white";
 
 	area.append(header);
@@ -202,6 +214,7 @@ if(!localStorage.hasTip){
 if (localStorage.getItem("level")) {
 	_.player.getLevel = () => localStorage.getItem("level");
 }
+
 
 let shownMenu = visible.value;
 document.addEventListener("keydown", function (event) {
