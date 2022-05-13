@@ -115,7 +115,7 @@ new Hack(category.misc, "uwu", "OwO").setClick(async () => {
 let retard: unknown | null = null;
 let i : number = 0;
 
-new Hack(category.beta, "Chat Spammer [BETA]", "Cycles through chat messages pretty fast!").setClick(async () => {
+new Hack(category.misc, "Chat Spammer", "Cycles through chat messages pretty fast!").setClick(async () => {
 
 	if (retard) {
 			return Swal.fire(
@@ -156,12 +156,12 @@ new Hack(category.beta, "Chat Spammer [BETA]", "Cycles through chat messages pre
 let retards: unknown | null = null;
 let c : number = 0;
 
-new Hack(category.misc, "High Chat Spammer [BETA]", "Cycles through chat messages hella fast!").setClick(async () => {
+new Hack(category.misc, "High Chat Spammer", "Cycles through chat messages hella fast!").setClick(async () => {
 
 	if (retards) {
 			return Swal.fire(
 				"Already Enabled",
-				"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
+				"High Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.",
 				"error"
 		)};
 
@@ -200,7 +200,7 @@ new Hack(category.misc, "High Chat Spammer [BETA]", "Cycles through chat message
 let retarded: unknown | null = null;
 let b : number = 0;
 
-new Hack(category.misc, "Chat Spammer on Meth [BETA]", "Cycles through chat messages FAST ASF!").setClick(async () => {
+new Hack(category.misc, "Chat Spammer on Meth", "Cycles through chat messages FAST ASF!").setClick(async () => {
 
 	if (retarded) {
 			return Swal.fire(
