@@ -1,5 +1,4 @@
-import { _, prodigy, locations,  } from "../utils/util";  // Import Prodigy typings
-import { Toast } from "../utils/swal";  // Import Toast from swal
+import { _ } from "../utils/util";  // Import Prodigy typings
 
 
 
