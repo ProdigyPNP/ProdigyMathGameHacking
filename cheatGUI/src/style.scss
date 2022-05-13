@@ -12,13 +12,13 @@
 		padding: 10px;
 		border: #fffa 2px solid;
 		overflow-y: scroll;
-		resize: vertical;
+		resize: none;
 		overflow: auto;
 	}
 	.menu-left {
-		width: 70%;
+		width: 100%;
 		height: 100%;
-		float: left;
+		float: center;
 	}
 	#menu-toggler {
 		z-index: 1;

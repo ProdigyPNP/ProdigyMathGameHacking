@@ -59,17 +59,28 @@ const title = document.createElement("h1");
 title.classList.add("menu-title");
 title.innerText = "Prodigy Hacks";
 title.style.color = "white";
+title.style.textAlign = "center";
 menuleft.append(title);
+
 const disc = document.createElement("h2");
 disc.style.fontSize = "30px";
 disc.style.color = "white";
-disc.innerHTML = "Join our Discord <a href='https://dsc.gg/ProdigyPNP'>https://dsc.gg/ProdigyPNP</a>! <br> Press SHIFT to show/hide the menu.";
+disc.innerHTML = "Press SHIFT to show/hide the menu.";
 menuleft.append(disc);
+
 const subtitle = document.createElement("h3");
 subtitle.style.fontSize = "20px";
-subtitle.innerHTML = `On behalf of <a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/README.md">ProdigyPNP</a>.
+subtitle.innerHTML = `
+<p>Join our Discord <a href='https://dsc.gg/ProdigyPNP'>https://dsc.gg/ProdigyPNP</a>!</p>
+
+<p>
+<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/README.md">This is free and open-source software</a>.
+If you paid for this or accessed this behind a paywall/AdFly link, demand a refund. If you sell this software, or otherwise make a commercial advantage from it, you are violating
+<a href = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/LICENSE.txt">our license</a>.
+</p>
+
 <hr>
-This is free and open-source software. If you paid for this or accessed this behind a paywall/AdFly link, demand a refund. If you sell this software, or otherwise make a commercial advantage from it, you are violating Github conduct by not cooperating with our license.`;
+`;
 subtitle.style.color = "white";
 menuleft.append(subtitle);
 
@@ -192,16 +203,19 @@ if (localStorage.getItem("level")) {
 	_.player.getLevel = () => localStorage.getItem("level");
 }
 
+let shownMenu = visible.value;
 document.addEventListener("keydown", function (event) {
 	if (event.key == "Shift") {
-		if (document.getElementById("cheat-menu").style.display == "block" && document.getElementById("menu-toggler").style.display == "block") {
+		if (shownMenu == true) {
 			// Cheats are shown, so let's hide them.
 			document.getElementById("cheat-menu").style.display = "none";
 			document.getElementById("menu-toggler").style.display = "none";
+			shownMenu = false;
 		} else {
 			// Cheats are hidden, so let's show them.
 			document.getElementById("cheat-menu").style.display = "block";
 			document.getElementById("menu-toggler").style.display = "block";
+            shownMenu = true;
 		}
 	}
 });
