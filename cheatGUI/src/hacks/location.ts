@@ -63,9 +63,8 @@ new Hack(category.location, "Teleport To Map (interactive)").setClick(
 		const y = (await NumberInput.fire("Please enter the y to teleport to. (Try 500?)")).value || 500;
 
 		prodigy.world.zones[zone.value].teleport(area.value, x, y, {}, {})
-		Toast.fire("Teleported", "You have been teleported!", "success");
-	}
-);
+		return Toast.fire("Teleported", "You have been teleported!", "success");
+});
 // End Teleport To Map (interactive)
 
 

@@ -108,7 +108,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
 	console.log("PvP health obtained.")
 
 
-	// Enable premium membership
+	// getMemberModule
 	function getMemberModule () { return _.player.hasMembership.toString().split("\"")[1]; }
 	_.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
 	_.player.appearanceChanged = true;
@@ -386,16 +386,6 @@ new Hack(category.player, "Set Losses").setClick(async () => {
 
 
 
-// Begin Instant Kill
-new Toggler(category.player, "Instant Kill").setEnabled(async () => {
-	_.player.modifiers.damage = VERY_LARGE_NUMBER;
-}).setDisabled(() => {
-	_.player.modifiers.damage = 1;
-});
-// End Instant Kill
-
-
-
 
 // Begin PvP Health
 new Hack(category.player, "PvP Health").setClick(async () => {
@@ -413,10 +403,12 @@ new Toggler(category.player, "Toggle membership").setEnabled(async () => {
 	function getMemberModule () { return _.player.hasMembership.toString().split("\"")[1]; }
 	_.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
 	_.player.appearanceChanged = true;
+	return Toast.fire("Success!", "You now have Prodigy membership!", "success");
 }).setDisabled(() => {
 	function getMemberModule () { return _.player.hasMembership.toString().split("\"")[1]; }
 	_.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = false;
 	_.player.appearanceChanged = true;
+	return Toast.fire("Success!", "You no longer have Prodigy membership!", "success");
 });
 // End Toggle membership
 
@@ -424,11 +416,12 @@ new Toggler(category.player, "Toggle membership").setEnabled(async () => {
 
 
 // Begin Set Name (Client Side only)
-new Hack(category.player, "Set name (Client side only)").setClick(async () => {
+new Hack (category.player, "Set name (Client side only)").setClick(async () => {
 	const name = await Input.fire("What would you like to set your name to?");
 	if (!name.value) return;
 	_.player.getName = () => { return name.value; };
-	Toast.fire("Changed!", "Your name was changed.");
+	_.player.appearanceChanged = true;
+	return Toast.fire("Changed!", "Your name was changed.");
 });
 // End Set Name (Client Side only)
 
@@ -436,7 +429,7 @@ new Hack(category.player, "Set name (Client side only)").setClick(async () => {
 
 
 // Begin Change Name
-new Hack(category.player, "Change Name", "Change the name of your wizard.").setClick(async () => {
+new Hack (category.player, "Change Name", "Change the name of your wizard.").setClick(async () => {
 	const names = _.gameData.name;
 	const div = document.createElement("div");
 	const createSelect = (arr: Map<string, string>, equalityFunc: (str: string) => boolean) => {
@@ -489,14 +482,15 @@ new Hack(category.player, "Change Name", "Change the name of your wizard.").setC
 		_.player.name.data.lastName,
 		_.player.name.data.nickname
 	] = (name.value as string[]).map(x => ((x as unknown) as number) && +x);
-	Toast.fire("Name Changed!", "Your name was successfully changed.", "success");
+	_.player.appearanceChanged = true;
+	return Toast.fire("Name Changed!", "Your name was successfully changed.", "success");
 });
 // End Change Name
 
 
 
 // Begin Uncap player level
-new Hack(category.player, "Uncap player level (client side only)").setClick(async () => {
+new Hack (category.player, "Uncap player level (client side only)").setClick(async () => {
 	const level = await NumberInput.fire("Level", "What would you like to set your level to? (Can be >100)", "question");
 	if (!level.value) return;
 	localStorage.setItem("level", level.value);
@@ -507,20 +501,20 @@ new Hack(category.player, "Uncap player level (client side only)").setClick(asyn
 
 
 
-// Begin get all achivements
-new Hack(category.player, "Get all achievements").setClick(async () => {
-for (var i = 0; i < 100; i ++) {
-	_.player.achievements.data.progress[i] = 10;
-}
+// Begin get all achievements
+new Hack (category.player, "Get all achievements").setClick(async () => {
+    for (var i = 0; i < 100; i ++) {
+	    _.player.achievements.data.progress[i] = 10;
+    }
 
-	Toast.fire("Success!", "Obtained all achievements!", "success");
+	return Toast.fire("Success!", "Obtained all achievements!", "success");
 });
-// End get all achivements
+// End get all achievements
 
 
 
 // Begin Fix Morph Crash
-new Hack(category.player, "Fix Morph Crash").setClick(async () => {
+new Hack (category.player, "Fix Morph Crash").setClick(async () => {
 	_.player.getPlayerData().playerTransformation = undefined;
 	_.player.appearanceChanged = true;
 
@@ -531,7 +525,7 @@ new Hack(category.player, "Fix Morph Crash").setClick(async () => {
 
 
 // Begin Permanent Morph
-new Hack(category.player, "Permanent Morph", "Makes Your Current Morph Last Forever.").setClick(async () => {
+new Hack (category.player, "Permanent Morph", "Makes Your Current Morph Last Forever.").setClick(async () => {
 	if (!_.player.data.playerTransformation) {
 		await Swal.fire("No Morph Active", "Please use a Morph Marble and try again.", "error");
 		return;
@@ -545,7 +539,7 @@ new Hack(category.player, "Permanent Morph", "Makes Your Current Morph Last Fore
 
 
 // Begin Complete Current Task in Quest
-new Hack(category.player, "Complete Current Task In Quest", "Completes current task in quest. (Use this button a lot to complete a quest.)").setClick(async () => {
+new Hack (category.player, "Complete Current Task In Quest", "Completes current task in quest. (Use this button a lot to complete a quest.)").setClick(async () => {
 	const zones = {};
 	Object.keys(_.instance.prodigy.world.zones).forEach(element => {
 		zones[element] = _.instance.prodigy.world.zones[element].name;
@@ -569,7 +563,7 @@ new Hack(category.player, "Complete Current Task In Quest", "Completes current t
 
 
 // Begin Set Dark Tower Floor
-new Hack(category.player, "Set Dark Tower Floor").setClick(async () => {
+new Hack (category.player, "Set Dark Tower Floor").setClick(async () => {
 	const floor = await NumberInput.fire({
 		title: "What floor do you want to be on, in the dark tower.",
 		icon: "question",
@@ -584,7 +578,7 @@ new Hack(category.player, "Set Dark Tower Floor").setClick(async () => {
 
 
 // Begin Get UserID
-new Hack(category.player, "Get UserID").setClick(async () => {
+new Hack (category.player, "Get UserID").setClick(async () => {
 
     const UserID : number = _.player.userID;
     navigator.clipboard.writeText(UserID).then(function() {
@@ -618,16 +612,16 @@ new Hack(category.player, "Get UserID").setClick(async () => {
 
 
 // Begin Copy Account
-new Hack(category.player, "Copy Account", "Copy Account From userID").setClick(async () => {
+new Hack (category.player, "Copy Account", "Copy Account From userID").setClick(async () => {
 	const userID = (await NumberInput.fire("What is the userID of the account you want to copy?", undefined, "question")).value;
 	if (!userID) return;
 	if (!(await Confirm.fire("Are you sure you want to copy the account?", "This will replace all data on your account with the account your copying."))) return;
-	const playerData = await (await fetch(`https://api.prodigygame.com/game-api/v2/characters/${userID}?fields=inventory%2Cdata%2CisMember%2Ctutorial%2Cpets%2Cencounters%2Cquests%2Cappearance%2Cequipment%2Chouse%2Cachievements%2Cstate&userID=${_.player.userID}`, {
+	const playerData = await (await fetch(`https://api.prodigygame.com/game-api/v2/characters/${userID}?fields=inventory%2Cdata%2CisMember%2Ctutorial%2Cpets%2Cencounters%2Cquests%2Cappearance%2Cequipment%2Chouse%2Cachievements%2Cstate&userID=${userID}`, {
 		headers: {
 			Authorization: localStorage.JWT_TOKEN
 		}
 	})).json();
-	await fetch(`https://api.prodigygame.com/game-api/v3/characters/${_.player.userID}`, {
+	await fetch(`https://api.prodigygame.com/game-api/v3/characters/${userID}`, {
 		headers: {
 			"Content-Type": "application/json",
 			Authorization: localStorage.JWT_TOKEN

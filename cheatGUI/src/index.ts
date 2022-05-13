@@ -70,14 +70,13 @@ export const addArea = (title: string) => {
 const title = document.createElement("h1");
 title.classList.add("menu-title");
 title.innerText = "Prodigy Hacks";
-title.style.color = "white";
 title.style.textAlign = "center";
 menuleft.append(title);
 
 const disc = document.createElement("h2");
-disc.style.fontSize = "30px";
+disc.style.fontSize = "25px";
 disc.style.color = "white";
-disc.innerHTML = "Press SHIFT to show/hide the menu.";
+disc.innerHTML = "<br>Press SHIFT to show/hide the menu. Scroll down in the menu for more hacks.";
 menuleft.append(disc);
 
 const subtitle = document.createElement("h3");
@@ -232,6 +231,7 @@ document.addEventListener("keydown", function (event) {
 		}
 	}
 });
+
 
 if (process.env.NODE_ENV === "development") {
 	const socket = io("http://localhost:3001");

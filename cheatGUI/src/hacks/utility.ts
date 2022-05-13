@@ -22,7 +22,7 @@ new Hack(category.utility, "Close all popups", "Closes all popups in Prodigy.").
 
 
 // Begin Save Character Locally
-new Hack(category.utility, "Save Character Locally", "Saves your character locally.").setClick(async () => {
+new Hack(category.utility, "Save Character Locally [Local]", "Saves your character locally.").setClick(async () => {
 	localStorage.setItem("playerData", JSON.stringify(_.player.getUpdatedData(true)));
 	Toast.fire("Success!", "Note: Load Character will only work on this device.", "success");
 });
@@ -30,17 +30,9 @@ new Hack(category.utility, "Save Character Locally", "Saves your character local
 
 
 
-// Begin Stuck in Unfinished Tower Fix
-new Hack(category.utility, "Stuck in Unfinished Tower Fix", "Takes you out of an unfinished tower if you're stuck in one.").setClick(async () => {
-	_.instance.prodigy.world.zones["house"].teleport("exit");
-	Toast.fire("Success!", "You've been teleported outside of your house.", "success");
-});
-// End Stuck in Unfinished Tower Fix
-
-
 
 // Begin Load local Character
-new Hack(category.utility, "Load local character", "Loads your character locally.").setClick(async () => {
+new Hack(category.utility, "Load local character [Local]", "Loads your character locally.").setClick(async () => {
 	if (!localStorage.getItem("playerData")) {
 		Toast.fire("Error", "No saved character.", "error");
 	} else {
@@ -106,19 +98,21 @@ new Hack(category.utility, "Disable inactivity kick", "Keeps you from being logg
 
 
 // Begin Enable menu resize drag
-new Toggler(category.utility, "Enable menu resize drag (bottom right corner)", "Allows you to resize the menu via dragging.").setEnabled(async () => {
+new Toggler(category.utility, "Enable menu resize", "Allows you to resize the menu via dragging the bottom right corner.").setEnabled(async () => {
 	document.getElementById("cheat-menu").style.resize = "both";
+	return Toast.fire("Success!", "Drag the bottom right corner of the menu to resize it.", "success");
 }).setDisabled(() => {
 	document.getElementById("cheat-menu").style.resize = "none";
-	document.getElementById("cheat-menu").style.height = dimensions.height;
-	document.getElementById("cheat-menu").style.width = dimensions.width;
+	// document.getElementById("cheat-menu").style.height = dimensions.height;
+	// document.getElementById("cheat-menu").style.width = dimensions.width;
+	return Toast.fire("Success!", "The menu position is now locked.", "success");
 });
 // End Enable menu resize drag
 
 
 
 // Begin Edit walkSpeed
-new Hack(category.utility, "Edit walkspeed").setClick(async () => {
+new Hack(category.utility, "Edit walkspeed", "Lets you set your walkspeed.").setClick(async () => {
 	const walkSpeed = await Input.fire("What do you want to set your walk speed to?");
 	if (!walkSpeed.value) return;
 	if (!_.player._playerContainer) {
