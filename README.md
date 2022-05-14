@@ -37,14 +37,14 @@
 
 
 
-## How to install
+## [How to hack Prodigy](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md)
 
-See our [Quickstart Guide](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md).
-
-
+Read our [Quickstart Guide](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md).
 
 
 
+
+<br>
 
 ## Info
 
@@ -57,7 +57,8 @@ We're not trying to break the game because we're evil. We wanted to help Prodigy
 Because of that, we're publicly showing hacks! To be honest, it's just fun ;)
 
 All of our hacks are open source, and free. No paywalls, no ads, and no viruses.</p>
-</details>
+
+<br></details>
 
 
 <p/>
@@ -68,7 +69,7 @@ All of our hacks are open source, and free. No paywalls, no ads, and no viruses.
 <p>We're not going to hack your account for you for security reasons.
 Giving someone else your credentials allows them to mess around on your account.
 Even worse, anyone with your credentials could potentially log into your actual email.</p>
-</details>
+<br></details>
 
 
 <p/>
@@ -84,7 +85,7 @@ It's impossible to prove with absolute certainty to anyone reading this that we 
 
 <p><i>But what if you steal my personal info?</i>
 We do not want your personal info. Please do not share it. Even if we wanted to, there's not much we could do with it. "Wow, John Doe is in 5th grade and has mastered fractions!"</p>
-</details>
+<br></details>
 
 
 <p/>
@@ -93,7 +94,7 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 <details>
 <summary><b>How do I know what code is running in the hacks?</b></summary><br>
 <p>Our code is open source, and you're always free to read any of it. If you have trouble understanding what a certain thing does, feel free to ask any of the administrators on our Discord.</p>
-</details>
+<br></details>
 
 
 <p/>
@@ -102,9 +103,9 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 <details>
 <summary><b>Legal</b></summary><br>
 <p>If you have any legal problems to us, please email <a href = "mailto:prodigypnp@gmail.com">ProdigyPNP@gmail.com</a></p>
-</details>
+<br></details>
 
-
+<br>
 
 
 
@@ -118,7 +119,7 @@ We are not liable for any damage to your accounts, see our [license](../../blob/
 
 **All hacks are licensed under the Mozilla Public License (MPL) V2.0, unless stated otherwise with a separate license.**
 
-
+<br>
 
 
 
@@ -126,8 +127,16 @@ We are not liable for any damage to your accounts, see our [license](../../blob/
 
 ProdigyMathGameHacking is made by [all the people who have contributed to it](../../blob/master/meta/CONTRIBUTORS.md).
 
+<br>
 
 
+
+## Development
+You can find our in-development code on an official fork of this repo: [**ProdigyMathGame/development**](https://github.com/ProdigyMathGame/development)
+
+If you're interested in simple beta testing, open the hacks as usual, scroll down to "Beta Testing", and you can find a bunch of beta/WIP hacks.
+
+<br>
 
 
 
