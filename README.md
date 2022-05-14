@@ -37,14 +37,14 @@
 
 
 
-## How to install
+## [How to hack Prodigy](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md)
 
-See our [Quickstart Guide](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md).
-
-
+Read our [Quickstart Guide](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md).
 
 
 
+
+<br>
 
 ## Info
 
@@ -60,7 +60,7 @@ All of our hacks are open source, and free. No paywalls, no ads, and no viruses.
 </details>
 
 
-<p/>
+<br>
 
 
 <details>
@@ -71,7 +71,7 @@ Even worse, anyone with your credentials could potentially log into your actual 
 </details>
 
 
-<p/>
+<br>
 
 
 <details>
@@ -87,7 +87,7 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 </details>
 
 
-<p/>
+<br>
 
 
 <details>
@@ -96,7 +96,7 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 </details>
 
 
-<p/>
+<br>
 
 
 <details>
@@ -127,8 +127,10 @@ We are not liable for any damage to your accounts, see our [license](../../blob/
 ProdigyMathGameHacking is made by [all the people who have contributed to it](../../blob/master/meta/CONTRIBUTORS.md).
 
 
+## Development
+You can find our in-development code on an official fork of this repo: [**ProdigyMathGame/development**](https://github.com/ProdigyMathGame/development)
 
-
+If you're interested in simple beta testing, open the hacks as usual, scroll down to "Beta Testing", and you can find a bunch of beta/WIP hacks.
 
 
 ## Components
