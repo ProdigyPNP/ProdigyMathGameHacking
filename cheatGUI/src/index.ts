@@ -19,9 +19,11 @@ wrapper?.prepend(menu);
 
 export const toggler = document.createElement("button"); // Create toggler class
 toggler.id = "menu-toggler";
-toggler.style.fontSize = "25px"
-toggler.style.height = "25px"
+toggler.style.fontSize = "23px"
+toggler.style.height = "26px"
 toggler.style.width = "50px"
+toggler.style.border = "1px solid rgba(0, 0, 0, 0.1)";
+
 
 let visible = false;
 wrapper?.prepend(toggler);
@@ -84,16 +86,12 @@ subtitle.style.fontSize = "20px";
 subtitle.innerHTML = `
 <p>Join our Discord <a href='https://dsc.gg/ProdigyPNP'>https://dsc.gg/ProdigyPNP</a>!</p>
 
-<p>
-<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/README.md">This is free and open-source software</a>.
-If you paid for this or accessed this behind a paywall/AdFly link, demand a refund. If you sell this software, or otherwise make a commercial advantage from it, you are violating
-<a href = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/LICENSE.txt">our license</a>.
-</p>
-
 <hr>
 `;
 subtitle.style.color = "white";
 menuleft.append(subtitle);
+
+
 
 export class Hack {
 	public element: HTMLButtonElement;
@@ -194,21 +192,26 @@ export const category = {
 	patched : addArea("Patched Hacks")
 };
 
-if(!localStorage.hasTip){
-	(async () => {
-	Swal.fire({
-		title: 'Welcome!',
-		html: `To get started with the hacks, click this dropdown!`,
-	  icon: 'info',
-		backdrop: `
-		  url("https://i.imgur.com/CdV9piu.png")
-		  left top
-		  no-repeat
-		`
-	  })})()
-	  localStorage.hasTip = true;
 
-}
+
+
+if (!localStorage.hasTip) {
+	(async () => {
+	    await Swal.fire({
+		    title: 'Welcome!',
+		    html: `To get started with the hacks, click this dropdown!`,
+	        icon: 'info',
+		    backdrop: `
+		        url("https://i.imgur.com/CdV9piu.png")
+		        left top
+		        no-repeat
+		    `
+       })})();
+	  localStorage.hasTip = true;
+};
+// POPUP FOR PRODIGYPNP LICENSE IS AT THE BOTTOM OF PLAYER.TS.
+
+
 
 if (localStorage.getItem("level")) {
 	_.player.getLevel = () => localStorage.getItem("level");
@@ -245,3 +248,7 @@ if (process.env.NODE_ENV === "development") {
 		eval(data);
 	});
 }
+
+
+
+
