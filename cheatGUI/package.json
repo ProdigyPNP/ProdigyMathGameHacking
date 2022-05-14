@@ -5,12 +5,19 @@
   "main": "dist/bundle.js",
   "scripts": {
     "setup": "npm install",
-    "start": "webpack --config webpack.config.js",
-    "build": "webpack --config webpack.config.js",
-    "webpack": "webpack --config webpack.config.js",
-    "package": "webpack --config webpack.config.js",
+
+    "build": "npx webpack --config webpack.config.js",
+    "webpack": "npm run build",
+    "package": "npm run build",
+
     "server": "node hot-reload.mjs",
-    "quickstart": "npm install && webpack --config webpack.config.js"
+    "start": "npm run server",
+    "dev": "npm run server",
+
+    "quickstart": "npm run setup && npm run build",
+
+    "quickserver": "npm run setup && npm run server"
+
   },
   "repository": {
     "type": "git",

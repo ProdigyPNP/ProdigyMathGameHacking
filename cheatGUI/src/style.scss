@@ -24,6 +24,7 @@
 	#menu-toggler {
 		z-index: 1;
 		position: absolute;
+		border-radius: 3px;
 		background-color: #fffb;
 		transition: background-color 0.15s;
 		&:hover {

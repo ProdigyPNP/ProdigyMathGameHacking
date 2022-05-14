@@ -650,3 +650,20 @@ new Hack(category.player, "Set Grade").setClick(async () => {
 
 
 // END PLAYER HACKS
+
+
+
+
+
+(async () => {
+        Swal.fire({
+            title: "ProdigyPNP",
+    	    html: `
+    	        <p>
+                <a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/README.md">This is free and open-source software</a>.
+                If you paid for this or accessed this behind a paywall/AdFly link, demand a refund. If you sell this software, or otherwise make a commercial advantage from it, you are violating
+                <a href = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/LICENSE.txt">our license</a>.
+                </p>
+    	    `,
+    	    icon: "info"
+})})();
