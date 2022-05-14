@@ -1,5 +1,5 @@
 {
-  "name": "prodigyhackgui",
+  "name": "cheatgui",
   "version": "2.1.9",
   "description": "Prodigy Hack GUI",
   "main": "dist/bundle.js",
