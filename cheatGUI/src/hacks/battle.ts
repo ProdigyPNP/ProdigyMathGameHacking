@@ -145,7 +145,7 @@ new Hack(category.battle, "Fill Battle Energy [PvP, PvE]", "Fills up your battle
 new Hack(category.battle, "Heal Team [PvE]", "Instantly heals you and your pets, if you are in PvE.").setClick(async () => {
 
 
-	const currentState = game.state.current;
+	const currentState : string = game.state.current;
 
 
 	if (currentState === "PVP" || currentState === "CoOp") {
