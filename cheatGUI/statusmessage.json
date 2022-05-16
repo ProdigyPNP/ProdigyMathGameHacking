@@ -1,6 +1,6 @@
 {
   "enabled": true,
-  "title": "Status Message",
+  "title": "Updates",
   "icon": "info",
-  "html": "<a>We are aware some hacks do not function in general, and most hacks don't work on Harmony Island.</a>"
+  "html": "<a>We've redesigned the hack menu!</a>"
 }
