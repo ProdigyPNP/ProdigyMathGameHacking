@@ -8,8 +8,8 @@
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, NumberInput, Input, and Confirm from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
 import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
-import { Item } from "../../../typings/item";  // Import prodigy Item typings
 import { TODO } from "../../../typings/util";  // Import TODO typings
+import { ids, itemify, runeify } from "../utils/hackify"; // Import runeify and some arrays
 // END IMPORTS
 
 
@@ -152,15 +152,6 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 	// INVENTORY HACKS
 
 
-	// load sum typings and stuff
-	const names = ["Boots", "Buddies", "Fossils", "Hats", "Items", "Key Items", "Tower Town Frames", "Tower Town Interiors", "Mounts", "Outfits", "Relics", "Weapons", "Currencies"];
-	const ids = ["boots", "follow", "fossil", "hat", "item", "key", "mathTownFrame", "mathTownInterior", "mount", "outfit", "spellRelic", "weapon", "currency"];
-	const itemify = (item: Item[], amount: number) =>
-		item.map(x => ({
-			ID: x.ID,
-			N: amount
-		})).filter(v => v !== undefined);
-
 
 	// Get 990000 of all items
 	const num = 990000;
@@ -285,11 +276,6 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 			}
 		});
 
-		const runeify = (item, amount) =>
-			item.map(x => ({
-				ID: x.ID,
-				quantity: amount
-			})).filter(v => v !== undefined);
 
 		_.instance.prodigy.gameContainer.get(mod).battleData._secureCharacterState._data.inventory.orb = runeify(_.gameData.orb, amount);
 
@@ -376,12 +362,6 @@ new Hack(category.beta, "Get all Runes [BETA]").setClick(async () => {
 			console.log(`Error for ${e[0]}`);
 		}
 	});
-
-	const runeify = (item, amount) =>
-		item.map(x => ({
-			ID: x.ID,
-			quantity: amount
-		})).filter(v => v !== undefined);
 
 	_.instance.prodigy.gameContainer.get(mod).battleData._secureCharacterState._data.inventory.orb = runeify(_.gameData.orb, amount);
 	return Toast.fire("Runes Added!", "Your runes have been added!", "success");

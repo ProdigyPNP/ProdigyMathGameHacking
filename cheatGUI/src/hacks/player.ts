@@ -8,6 +8,8 @@ import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI base
 import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
 import { Item } from "../../../typings/item";  // Import Prodigy Item typings
 import { TODO } from "../../../typings/util"; // Import Prodigy Util typings
+import { getMemberModule, names, ids, itemify } from "../utils/hackify";  // Import useful arrays and functions
+
 // END IMPORTS
 
 
@@ -144,16 +146,6 @@ new Hack(category.player, "Max Account").setClick(async () => {
 	// ============================================
 	// ============================================
 	// INVENTORY HACKS
-
-
-	// load sum typings and stuff
-	const names = ["Boots", "Buddies", "Fossils", "Hats", "Items", "Key Items", "Tower Town Frames", "Tower Town Interiors", "Mounts", "Outfits", "Relics", "Weapons", "Currencies"];
-	const ids = ["boots", "follow", "fossil", "hat", "item", "key", "mathTownFrame", "mathTownInterior", "mount", "outfit", "spellRelic", "weapon", "currency"];
-	const itemify = (item: Item[], amount: number) =>
-		item.map(x => ({
-			ID: x.ID,
-			N: amount
-		})).filter(v => v !== undefined);
 
 
 	// Get 990000 of all items
@@ -387,12 +379,10 @@ new Hack(category.player, "Set Losses").setClick(async () => {
 
 // Begin Toggle membership
 new Toggler(category.player, "Toggle membership").setEnabled(async () => {
-	function getMemberModule () { return _.player.hasMembership.toString().split("\"")[1]; }
 	_.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
 	_.player.appearanceChanged = true;
 	return Toast.fire("Success!", "You now have Prodigy membership!", "success");
 }).setDisabled(() => {
-	function getMemberModule () { return _.player.hasMembership.toString().split("\"")[1]; }
 	_.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = false;
 	_.player.appearanceChanged = true;
 	return Toast.fire("Success!", "You no longer have Prodigy membership!", "success");
@@ -636,46 +626,3 @@ new Hack(category.player, "Set Grade").setClick(async () => {
 
 
 // END PLAYER HACKS
-
-
-
-
-
-(async () => {
-        await Swal.fire({
-            title: "ProdigyPNP",
-    	    html: `
-    	        <p>
-                <a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/README.md">This is free and open-source software</a>.
-                If you paid for this or accessed this behind a paywall/AdFly link, demand a refund. If you sell this software, or otherwise make a commercial advantage from it, you are violating
-                <a href = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/LICENSE.txt">our license</a>.
-                </p>
-    	    `,
-    	    icon: "info"
-    });
-
-
-
-    fetch(`https://raw.githubusercontent.com/ProdigyMathGame/development/master/cheatGUI/statusmessage.json?updated=${Date.now()}`).then(response => response.json()).then(async data => {
-
-        const enabled : boolean = data.enabled;
-
-        if (enabled.value === false) {
-            return console.log("Status message is disabled.");
-        } else {
-
-            await Swal.fire({
-                        title: data.title,
-                	    html: data.html,
-                	    icon: data.icon,
-                });
-
-        }
-
-    });
-
-
-
-
-
-})();

@@ -4,7 +4,9 @@
 import { io } from "socket.io-client"; // Import socket.io-client
 import "./style.scss"; // Import SCSS style
 import { saveCharacter, _ } from "./utils/util"; // Import Prodigy typings
-import Swal from 'sweetalert2' // Import Swal
+import { displayPopups } from "./utils/hackify"; // Import some useful functions
+import Swal from "sweetalert2"; // Import Swal
+
 export const menu = document.createElement("div"); // Create cheat menu element
 export const wrapper = document.getElementById("game-wrapper"); // Create game wrapper
 
@@ -209,7 +211,6 @@ if (!localStorage.hasTip) {
        })})();
 	  localStorage.hasTip = true;
 };
-// POPUP FOR PRODIGYPNP LICENSE IS AT THE BOTTOM OF PLAYER.TS.
 
 
 
@@ -236,6 +237,11 @@ document.addEventListener("keydown", function (event) {
 });
 
 
+displayPopups().then (() => {
+    console.log("Popups loaded.");
+});
+
+
 if (process.env.NODE_ENV === "development") {
 	const socket = io("http://localhost:3001");
 	let used = false;
@@ -248,6 +254,8 @@ if (process.env.NODE_ENV === "development") {
 		eval(data);
 	});
 }
+
+
 
 
 

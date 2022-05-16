@@ -7,6 +7,7 @@ import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal";  // Im
 import { Hack, category } from "../index";  // Import the Cheat GUI bases.
 import { _, VERY_LARGE_NUMBER } from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
 import { TODO } from "../../../typings/util"; // Import Prodigy Util typings
+import { getPet } from "../utils/hackify"; // Import getPet
 // END IMPORTS
 
 
@@ -27,6 +28,7 @@ new Hack (category.pets, "Get All Pets").setClick(async () => {
 	_.gameData.pet.forEach(x => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
 	});
+
 
 	// add encounter info
 	_.player.kennel._encounterInfo._data.pets = [];
@@ -162,25 +164,6 @@ new Hack (category.pets, "Uncap pet level [Client Side]", "Change your pet's lev
 });
 // End Uncap pet level
 
-
-
-
-// Begin getPet function
-const getPet = async (text: string): Promise<number | undefined> => {
-	const pet = await Swal.fire({
-		input: "select",
-		inputOptions: new Map(
-			_.player.kennel.data.map((x: TODO, i: number) => [
-				i.toString(),
-				`Level ${x.level} - ${x.nickname ?? _.gameData.pet.find(y => +y.ID === +x.ID)?.data.name ?? "Unknown"}`
-			]) as [string, string][]
-		),
-		title: "Choose Pet",
-		text: text
-	});
-	return pet.value;
-};
-// End getPet function
 
 
 

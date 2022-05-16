@@ -7,22 +7,9 @@
 import { Hack, category } from "../index"; // Import the Cheat GUI bases.
 import { Swal, Toast, Confirm, NumberInput } from "../utils/swal"; // Import Swal, Toast, NumberInput, and Confirm from swal
 import { _, saveCharacter } from "../utils/util"; // Import Prodigy typings
-import { Item } from "../../../typings/item"; // Import Prodigy Item typings
+import { names, ids, itemify } from "../utils/hackify"; // Import some conversion functions and arrays
 // END IMPORTS
 
-
-// Item Categories
-const names = ["Boots", "Buddies", "Fossils", "Hats", "Items", "Key Items", "Tower Town Frames", "Tower Town Interiors", "Mounts", "Outfits", "Relics", "Weapons", "Currencies"];
-
-// Item Category IDs
-const ids = ["boots", "follow", "fossil", "hat", "item", "key", "mathTownFrame", "mathTownInterior", "mount", "outfit", "spellRelic", "weapon", "currency"];
-
-// Make a selection into an item.
-const itemify = (item: Item[], amount: number) =>
-	item.map(x => ({
-		ID: x.ID,
-		N: amount
-	})).filter(v => v !== undefined);
 
 
 
