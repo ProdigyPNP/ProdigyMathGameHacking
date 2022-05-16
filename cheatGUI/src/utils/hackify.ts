@@ -59,9 +59,9 @@ export const getPet = async (text: string): Promise<number | undefined> => {
 
 
 // Display license information
-export const licensePopup = async () => {
+export function licensePopup () {
 
-    await Swal.fire({
+    Swal.fire({
         title: "ProdigyPNP",
         html: `
             <p>
@@ -78,10 +78,10 @@ export const licensePopup = async () => {
 
 
 // Display status message
-export const statusMessage = async () => {
+export function statusMessage () {
 
 
-    await fetch(`https://raw.githubusercontent.com/ProdigyMathGame/development/master/cheatGUI/statusmessage.json?updated=${Date.now()}`).then(response => response.json()).then(async data => {
+    fetch(`https://raw.githubusercontent.com/ProdigyMathGame/development/master/cheatGUI/statusmessage.json?updated=${Date.now()}`).then(response => response.json()).then(async data => {
 
             const enabled : boolean = data.enabled;
 
@@ -102,16 +102,3 @@ export const statusMessage = async () => {
 
 
 };
-
-
-
-// Display License and Status Message
-export function displayPopups () {
-
-    licensePopup().then(async () => {
-
-        statusMessage();
-
-    });
-
-}

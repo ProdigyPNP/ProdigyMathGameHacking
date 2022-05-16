@@ -4,7 +4,7 @@
 import { io } from "socket.io-client"; // Import socket.io-client
 import "./style.scss"; // Import SCSS style
 import { saveCharacter, _ } from "./utils/util"; // Import Prodigy typings
-import { displayPopups } from "./utils/hackify"; // Import some useful functions
+import { licensePopup, statusMessage } from "./utils/hackify"; // Import some useful functions
 import Swal from "sweetalert2"; // Import Swal
 
 export const menu = document.createElement("div"); // Create cheat menu element
@@ -47,7 +47,7 @@ menuleft.classList.add("menu-left");
 menu.append(menuleft);
 
 let firstCategory = true;
-export const addArea = (title: string) => {
+const addArea = (title: string) => {
 	const area = document.createElement("div");
 
     if (firstCategory == false) {
@@ -253,14 +253,5 @@ if (process.env.NODE_ENV === "development") {
 
 
 
-
-
-(async () => {
-
-    try {
-        displayPopups();
-    } catch (err) {
-        console.log(err);
-    }
-
-})();
+licensePopup();
+statusMessage();
