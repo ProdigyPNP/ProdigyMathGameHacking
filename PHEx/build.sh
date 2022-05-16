@@ -1,5 +1,12 @@
 # PHEx Build Script
 
+echo ""
+echo "This script is currently broken, we'll bring it back soon. For now, just use the build.js script."
+echo ""
+exit 0
+
+
+
 # Prefix
 PREFIX="[PHEx Builder] "
 
