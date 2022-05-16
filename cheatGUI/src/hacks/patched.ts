@@ -6,6 +6,8 @@
 import { Swal, Confirm } from "../utils/swal";
 import { Hack, category} from "../index"; // Import the Cheat GUI bases.
 import { _, prodigy} from "../utils/util"; // Import Prodigy typings and VERY_LARGE_NUMBER
+import { displayPopups } from "../utils/hackify"; // Import popup thing
+
 // END IMPORTS
 
 

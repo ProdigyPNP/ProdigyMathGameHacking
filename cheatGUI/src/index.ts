@@ -237,10 +237,6 @@ document.addEventListener("keydown", function (event) {
 });
 
 
-displayPopups().then (() => {
-    console.log("Popups loaded.");
-});
-
 
 if (process.env.NODE_ENV === "development") {
 	const socket = io("http://localhost:3001");
@@ -259,4 +255,12 @@ if (process.env.NODE_ENV === "development") {
 
 
 
+(async () => {
 
+    try {
+        displayPopups();
+    } catch (err) {
+        console.log(err);
+    }
+
+})();
