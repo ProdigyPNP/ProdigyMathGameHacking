@@ -1,5 +1,5 @@
 // @ts-nocheck
-// Player Hacks
+// Player Hacks ⬛️🟧
 
 
 // BEGIN IMPORTS
@@ -387,16 +387,6 @@ new Hack(category.player, "Set Losses").setClick(async () => {
 
 
 
-// Begin PvP Health
-new Hack(category.player, "PvP Health").setClick(async () => {
-	_.player.pvpHP = VERY_LARGE_NUMBER;
-	_.player.getMaxHearts = () => VERY_LARGE_NUMBER;
-	Toast.fire("Success!", "You now have lots of health!", "success");
-});
-// End PvP Health
-
-
-
 
 // Begin Toggle membership
 new Toggler(category.player, "Toggle membership").setEnabled(async () => {
@@ -656,7 +646,7 @@ new Hack(category.player, "Set Grade").setClick(async () => {
 
 
 (async () => {
-        Swal.fire({
+        await Swal.fire({
             title: "ProdigyPNP",
     	    html: `
     	        <p>
@@ -666,4 +656,30 @@ new Hack(category.player, "Set Grade").setClick(async () => {
                 </p>
     	    `,
     	    icon: "info"
-})})();
+    });
+
+
+
+    fetch(`https://raw.githubusercontent.com/ProdigyMathGame/development/master/cheatGUI/statusmessage.json?updated=${Date.now()}`).then(response => response.json()).then(async data => {
+
+        const enabled : boolean = data.enabled;
+
+        if (enabled.value === false) {
+            return console.log("Status message is disabled.");
+        } else {
+
+            await Swal.fire({
+                        title: data.title,
+                	    html: data.html,
+                	    icon: data.icon,
+                });
+
+        }
+
+    });
+
+
+
+
+
+})();

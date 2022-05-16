@@ -1,4 +1,6 @@
 {
   "enabled": true,
-  "message": "<a>We are aware some hacks do not function in general, and most hacks don't work on Harmony Island.</a>"
+  "title": "Status Message",
+  "icon": "info",
+  "html": "<a>We are aware some hacks do not function in general, and most hacks don't work on Harmony Island.</a>"
 }
