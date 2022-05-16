@@ -44,6 +44,16 @@ new Toggler(category.battle, "Instant Kill [PvE]", "Makes your spells do insane 
 
 
 
+// Begin PvP Health
+new Hack(category.battle, "PvP Health [PvP]", "Increases your HP in PvP by a hell ton.").setClick(async () => {
+	_.player.pvpHP = VERY_LARGE_NUMBER;
+	_.player.getMaxHearts = () => VERY_LARGE_NUMBER;
+	Toast.fire("Success!", "You now have lots of health!", "success");
+});
+// End PvP Health
+
+
+
 // Begin Escape Battle
 new Hack(category.battle, "Escape Battle [PvP, PvE]", "Escape any battle, PvP or PvE!").setClick(async () => {
 	const currentState = game.state.current;
