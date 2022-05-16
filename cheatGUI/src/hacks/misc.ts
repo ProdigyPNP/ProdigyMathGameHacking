@@ -118,24 +118,24 @@ let i : number = 0;
 new Hack(category.misc, "Chat Spammer", "Cycles through chat messages pretty fast!").setClick(async () => {
 
 	if (retard) {
-			return Swal.fire(
-				"Already Enabled",
-				"Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.",
-				"error"
-		)};
+        return Swal.fire("Already Enabled", "Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.","error");
+    } else {
 
 
+	    retard = setInterval(async () => {
 
-	retard = setInterval(async () => {
+		    _.player.chatID = i;
+		    i++;
 
-		_.player.chatID = i;
-		i++;
+		    if (i > 1164) {
+			    i = 0;
+		    }
 
-		if (i > 1164) {
-			i = 0;
-		}
+	    }, 90);
 
-	}, 90);
+	    return Toast.fire("Spamming!", "You're now sending a chat message every 90 milliseconds!", "success");
+
+	}
 
 
 
@@ -159,31 +159,33 @@ let c : number = 0;
 new Hack(category.misc, "High Chat Spammer", "Cycles through chat messages hella fast!").setClick(async () => {
 
 	if (retards) {
-			return Swal.fire(
-				"Already Enabled",
-				"High Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.",
-				"error"
-		)};
+	    return Swal.fire("Already Enabled", "High Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.", "error")
+
+    }
+    else if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
+			   return console.log("Cancelled");
+
+	} else {
+
+	    retards = setInterval(async () => {
+
+    		    _.player.chatID = c;
+    		    c++;
+
+    		    if (c > 1164) {
+    			    c = 0;
+    		    }
+
+    	}, 30);
+
+        return Toast.fire("Spamming!", "You're now sending a chat message every 30 milliseconds!", "success");
 
 
-
-	if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
-			   console.log("Cancelled");
-				return;
 	}
 
 
 
-	retards = setInterval(async () => {
 
-		_.player.chatID = c;
-		c++;
-
-		if (c > 1164) {
-			c = 0;
-		}
-
-	}, 30);
 
 
 
@@ -203,36 +205,32 @@ let b : number = 0;
 new Hack(category.misc, "Chat Spammer on Meth", "Cycles through chat messages FAST ASF!").setClick(async () => {
 
 	if (retarded) {
-			return Swal.fire(
-				"Already Enabled",
-				"Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.",
-				"error"
-		)};
+	    return Swal.fire("Already Enabled", "Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.", "error")
+	}
+    else if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
+	    return console.log("Cancelled");
 
+	} else {
 
+	    retarded = setInterval(async () => {
 
-	if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
-			   console.log("Cancelled");
-				return;
+    		_.player.chatID = b;
+    		b++;
+
+    		if (b > 1164) {
+    			b = 0;
+    		}
+
+    	}, 1);
+
+        return Toast.fire("Spamming!", "You're now sending a chat message every 1 millisecond!", "success");
+
 	}
 
 
 
-	retarded = setInterval(async () => {
-
-		_.player.chatID = b;
-		b++;
-
-		if (b > 1164) {
-			b = 0;
-		}
-
-	}, 1);
-
-
-
 });
-// End Chat Spammer
+// End Chat Spammer on Meth
 
 
 
@@ -242,7 +240,7 @@ new Hack(category.misc, "[Fix] Fix Battle Crash").setClick(async () => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
 
-	Toast.fire("Success!", "Fixed kennel attack bug!", "success");
+	return Toast.fire("Success!", "Fixed kennel attack bug!", "success");
 });
 // End Fix Battle Crash
 
@@ -251,7 +249,7 @@ new Hack(category.misc, "[Fix] Fix Battle Crash").setClick(async () => {
 // Begin Stuck in Unfinished Tower Fix
 new Hack(category.misc, "[Fix] Stuck in Unfinished Tower Fix", "Takes you out of an unfinished tower if you're stuck in one.").setClick(async () => {
 	_.instance.prodigy.world.zones["house"].teleport("exit");
-	Toast.fire("Success!", "You've been teleported outside of your house.", "success");
+	return Toast.fire("Success!", "You've been teleported outside of your house.", "success");
 });
 // End Stuck in Unfinished Tower Fix
 

@@ -415,7 +415,7 @@ new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
 		);
 		if (level.value === undefined) return;
 		selected.level = +level.value;
-		Toast.fire("Success!", "The pet's level has been set.", "success");
+		return Toast.fire("Success!", "The pet's level has been set.", "success");
 	} else if (opt.value === "attacks") {
 		const attackList = _.gameData.spell;
 		const div = document.createElement("div");
@@ -442,12 +442,12 @@ new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
 		});
 		if (attacks.value === undefined) return;
 		(selected.foreignSpells as number[]).splice(0, 2, ...attacks.value.map((x: string) => +x));
-		Toast.fire("Attacks updated!", "The attack list of the pet you selected has been edited.", "success");
+		return Toast.fire("Attacks updated!", "The attack list of the pet you selected has been edited.", "success");
 	} else if (opt.value === "name") {
 		const name = await Input.fire("Input Name", "What do you want to name the pet?", "question");
 		if (name.value === undefined) return;
 		selected.nickname = name.value;
-		await Swal.fire("Successfully renamed!", "The name of the pet has been changed.", "success");
+		return Toast.fire("Successfully renamed!", "The name of the pet has been changed.", "success");
 	}
 });
 // End Edit Pet
@@ -507,7 +507,7 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 	};
 	_.player.appearanceChanged = true;
 
-	Toast.fire("Morphed!", "You've been morphed.", "success");
+	return Toast.fire("Morphed!", "You've been morphed.", "success");
 });
 // End Morph Player
 
@@ -533,33 +533,31 @@ const getPet = async (text: string): Promise<number | undefined> => {
 
 
 // Begin Toggle Close Popups
-
 let popupinterval: misc | null = null;
 
-new Toggler(category.beta, "Toggle Close Popups [BETA]", "Automaticaally closes popups in Prodigy.").setClick(async () => {
+new Toggler(category.beta, "Toggle Close Popups [BETA]", "Automatically closes popups in Prodigy.").setClick(async () => {
 
 
 	if (popupinterval) {
-			return Swal.fire(
-				"Already Enabled",
-				"Toggle Close Popups is already enabled. To disable popup closer, reload Prodigy.",
-				"error"
-	)};
 
-	if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
+		return Swal.fire("Already Enabled", "Toggle Close Popups is already enabled. To disable popup closer, reload Prodigy.", "error");
+    }
+    else if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
 		console.log("Cancelled");
 		return;
+	} else {
+
+	    popupinterval = setInterval(async () => {
+
+        		_.instance.prodigy.open.menuCloseAll();
+
+        	}, 200);
+
+        return Toast.fire("Enabled", "Toggle Close Popups is now enabled.", "success");
 	}
 
-
-	popupinterval = setInterval(async () => {
-
-		_.instance.prodigy.open.menuCloseAll();
-
-	}, 200);
-
 });
-
+// End Toggle Close Popups
 
 
 // END BETA HACKS
