@@ -2,7 +2,7 @@
 
 import { TODO } from "../../../typings/util"; // Import Prodigy Util typings
 import { _ } from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
-import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal";  // Import Swal, Toast, Confirm, Input, and NumberInput from swal
+import { Swal } from "../utils/swal";  // Import Swal, Toast, Confirm, Input, and NumberInput from swal
 
 
 

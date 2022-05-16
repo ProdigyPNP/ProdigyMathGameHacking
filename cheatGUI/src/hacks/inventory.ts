@@ -7,7 +7,6 @@
 import { Hack, category } from "../index"; // Import the Cheat GUI bases.
 import { Swal, Toast, Confirm, NumberInput } from "../utils/swal"; // Import Swal, Toast, NumberInput, and Confirm from swal
 import { _, saveCharacter } from "../utils/util"; // Import Prodigy typings
-import { Item } from "../../../typings/item"; // Import Prodigy Item typings
 import { names, ids, itemify } from "../utils/hackify"; // Import some conversion functions and arrays
 // END IMPORTS
 
