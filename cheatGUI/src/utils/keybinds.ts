@@ -1,14 +1,44 @@
 import { _ } from "../utils/util";  // Import Prodigy typings
+import { Confirm, Toast } from "../utils/swal"; // Import Swal, Toast, Confirm, Input, and NumberInput from swal
 
 
 
 window.addEventListener("keydown", event => {
 
-    // Close All Popups
-    if (event.code === "KeyX") {
-        _.instance.prodigy.open.menuCloseAll();
+
+
+
+    switch (event.code) {
+
+        case "KeyX":
+            // Close All Popups
+            _.instance.prodigy.open.menuCloseAll();
+            break;
+
+        case "KeyK":
+            // Gets you kitted up in Celestial Gear
+            const k = async () => {
+
+
+
+                if (!(
+                    await Confirm.fire("Kit", "Would you like to equip Celestial Gear?")
+                ).value) {
+           	        return console.log("Cancelled");;
+                }
+
+                _.player.equipment.setHat(200);
+                _.player.equipment.setBoots(93);
+                _.player.equipment.setOutfit(161);
+                _.player.equipment.setWeapon(196);
+
+                _.player.appearanceChanged = true;
+
+                Toast.fire("Success!", "You are now wearing Celestial Armor and wielding a Dual Blade.", "success");
+            };
+            k();
+            break;
     }
-    // Close All Popups
 
 
 

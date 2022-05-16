@@ -15,7 +15,7 @@ import { TODO } from "../../../typings/util"; // Import Prodigy Util typings
 
 
 // Begin Get All Pets
-new Hack(category.pets, "Get All Pets").setClick(async () => {
+new Hack (category.pets, "Get All Pets").setClick(async () => {
 
 
     if (!(await Confirm.fire("Would you like to add all pets to your pets?")).value) {
@@ -51,7 +51,7 @@ new Hack(category.pets, "Get All Pets").setClick(async () => {
 
 
 // Begin Get ALl Legacy Epics
-new Hack(category.pets, "Get All Legacy Epics").setClick(async () => {
+new Hack (category.pets, "Get All Legacy Epics").setClick(async () => {
 
 
     if (!(await Confirm.fire("Would you like to add all legacy epics to your team?")).value) {
@@ -76,7 +76,7 @@ new Hack(category.pets, "Get All Legacy Epics").setClick(async () => {
 
 
 // Begin Get All Mythical Epics
-new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
+new Hack (category.pets, "Get All Mythical Epics").setClick(async () => {
 
     if (!(await Confirm.fire("Would you like to add all mythical epics to your pets?")).value) {
         console.log("Cancelled");
@@ -104,7 +104,7 @@ new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
 
 
 // Begin Clear Pets
-new Hack(category.pets, "Clear Pets").setClick(async () => {
+new Hack (category.pets, "Clear Pets").setClick(async () => {
 
     if (!(await Confirm.fire("Would you like to delete all of your pets?")).value) {
             console.log("Cancelled");
@@ -121,7 +121,7 @@ new Hack(category.pets, "Clear Pets").setClick(async () => {
 
 
 // Begin Add Pet
-new Hack(category.pets, "Add Pet", "Adds a pet from a list.").setClick(async () => {
+new Hack (category.pets, "Add Pet", "Adds a pet from a list.").setClick(async () => {
 	const pet = await Swal.fire({
 		input: "select",
 		inputOptions: new Map(_.gameData.pet.map(x => [x.ID.toString(), `${x.ID}: ${x.data.name}`])),
@@ -145,7 +145,7 @@ new Hack(category.pets, "Add Pet", "Adds a pet from a list.").setClick(async () 
 
 
 // Begin Uncap pet level
-new Hack(category.pets, "Uncap pet level [Client Side]", "Change your pet's level to anything, even over 100. This hack won't save when you reload Prodigy.").setClick(async () => {
+new Hack (category.pets, "Uncap pet level [Client Side]", "Change your pet's level to anything, even over 100. This hack won't save when you reload Prodigy.").setClick(async () => {
 	const petTeam = _.player.kennel.petTeam.slice(0);
 	petTeam.shift();
 	const names = petTeam.map(pet => pet.getName());
