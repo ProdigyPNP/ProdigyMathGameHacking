@@ -106,6 +106,7 @@ function teleportToHouse (userID: number) {
 	};
 
 	_.network.getCharData(userID.toString(), ["house", "data"], responseCallback, responseCallback);
+	return Toast.fire("Teleported to house", "You have been teleported to the house!", "success");
 }
 // End teleportToHouse function
 
@@ -116,7 +117,7 @@ new Hack(category.location, "Teleport to house by userID").setClick(async () => 
 	const userID = (await NumberInput.fire("Please enter the userID.")).value;
 	if (!userID) return;
 	toHouse(userID);
-	Toast.fire("Teleported!", "You have been teleported!", "success");
+	return Toast.fire("Teleported!", "You have been teleported!", "success");
 });
 // End Teleport To House by userID
 
@@ -124,11 +125,35 @@ new Hack(category.location, "Teleport to house by userID").setClick(async () => 
 
 // Begin Get Map Location
 new Hack(category.location, "Get Map Location").setClick(async () => {
-	Swal.fire({
-		title: "Map Location",
-		html: `You are at <br> <code> ${_.player.data.zone} </code>. <br> You can save this to get to the same zone.`,
-		icon: "info"
-	});
+
+
+	const Location : string = _.player.data.zone;
+
+    navigator.clipboard.writeText(Location).then(function() {
+
+          console.log("Async: Copying to clipboard was successful!");
+
+          return Swal.fire({
+          		title: "Map Location",
+          		html: `You are at <br> <code> ${Location} </code>. <br> You can save this to get to the same zone. <br> <br> Your location is has also been copied to your clipboard.`,
+          		icon: "info"
+          	});
+
+
+        }, function (err) {
+
+            console.error("Async: Could not copy text: ", err);
+
+            return Swal.fire({
+                title: "Map Location",
+                html: `You are at <br> <code> ${Location} </code>. <br> You can save this to get to the same zone.`,
+                icon: "info"
+            });
+
+
+        });
+
+
 });
 // End Get Map Location
 

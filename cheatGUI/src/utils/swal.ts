@@ -6,6 +6,7 @@ export const Input = Swal.mixin({
 	showConfirmButton: true
 });
 export const NumberInput = Input.mixin({
+    toast: false,
 	input: "number"
 });
 export const Toast = Swal.mixin({
@@ -17,4 +18,9 @@ export const Confirm = Swal.mixin({
 	showCancelButton: true,
 	confirmButtonText: "Confirm",
 	cancelButtonText: "Cancel"
+});
+export const Info = Swal.mixin({
+    toast: false,
+	icon: "info",
+	showCancelButton: false,
 });
