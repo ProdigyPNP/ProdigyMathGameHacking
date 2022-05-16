@@ -19,8 +19,7 @@ new Hack (category.pets, "Get All Pets").setClick(async () => {
 
 
     if (!(await Confirm.fire("Would you like to add all pets to your pets?")).value) {
-		   console.log("Cancelled");
-			return;
+		   return console.log("Cancelled");
 	}
 
 
@@ -44,7 +43,7 @@ new Hack (category.pets, "Get All Pets").setClick(async () => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
 
-	Toast.fire("Success!", "All pets have been added!", "success");
+	return Toast.fire("Success!", "All pets have been added!", "success");
 });
 // End Get All Pets
 
@@ -55,8 +54,7 @@ new Hack (category.pets, "Get All Legacy Epics").setClick(async () => {
 
 
     if (!(await Confirm.fire("Would you like to add all legacy epics to your team?")).value) {
-        console.log("Cancelled");
-    	return;
+        return console.log("Cancelled");
     }
 
 
@@ -68,7 +66,7 @@ new Hack (category.pets, "Get All Legacy Epics").setClick(async () => {
 	_.player.kennel.petTeam.forEach((v: any) => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
-	Toast.fire("Success!", "All legacy epics have been added!", "success");
+	return Toast.fire("Success!", "All legacy epics have been added!", "success");
 });
 // End Get ALl Legacy Epics
 
@@ -79,8 +77,7 @@ new Hack (category.pets, "Get All Legacy Epics").setClick(async () => {
 new Hack (category.pets, "Get All Mythical Epics").setClick(async () => {
 
     if (!(await Confirm.fire("Would you like to add all mythical epics to your pets?")).value) {
-        console.log("Cancelled");
-        return;
+        return console.log("Cancelled");
     }
 
 
@@ -95,7 +92,7 @@ new Hack (category.pets, "Get All Mythical Epics").setClick(async () => {
 	_.player.kennel.petTeam.forEach((v: any) => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
-	Toast.fire("Success!", "All mythical epics have been added!", "success");
+	return Toast.fire("Success!", "All mythical epics have been added!", "success");
 }); // btw this hack was made by gemsvidø (afkvido on github)
 // End Get ALl Mythical Epics
 
@@ -107,8 +104,7 @@ new Hack (category.pets, "Get All Mythical Epics").setClick(async () => {
 new Hack (category.pets, "Clear Pets").setClick(async () => {
 
     if (!(await Confirm.fire("Would you like to delete all of your pets?")).value) {
-            console.log("Cancelled");
-            return;
+            return console.log("Cancelled");
     }
 
 
@@ -162,7 +158,7 @@ new Hack (category.pets, "Uncap pet level [Client Side]", "Change your pet's lev
 	const num = amt.value;
 	// sorry in advance
 	eval(`_.player.kennel.petTeam[parseInt(${pet.value})+1].getLevel = () => {return ${num}}`);
-	Toast.fire("Updated!", "The level of your pet was successfully updated. Note: this hack is client-side.", "success");
+	return Toast.fire("Updated!", "The level of your pet was successfully updated. Note: this hack is client-side.", "success");
 });
 // End Uncap pet level
 

@@ -344,7 +344,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 	// ============================================
 	console.log("Max Account Successful.");
 
-	Toast.fire("Maxed!", `Check your backpack!`, "success");
+	return Toast.fire("Maxed!", `Check your backpack!`, "success");
 });
 // End Hypermax Account
 
@@ -384,7 +384,7 @@ new Hack(category.beta, "Get all Runes [BETA]").setClick(async () => {
 		})).filter(v => v !== undefined);
 
 	_.instance.prodigy.gameContainer.get(mod).battleData._secureCharacterState._data.inventory.orb = runeify(_.gameData.orb, amount);
-	Toast.fire("Runes Added!", "Your runes have been added!", "success");
+	return Toast.fire("Runes Added!", "Your runes have been added!", "success");
 });
 // End get all Runes
 
@@ -395,7 +395,7 @@ new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
 		title: "Hang on!",
 		html: "This hack may damage your account with various bugs, for example you may be unable to do Rune Run.<br><br>Proceed?",
 		icon: "warning"
-	})).value) { return; }
+	})).value) { return console.log("Cancelled."); }
 
 	const pet = await getPet("Choose the pet to edit.");
 	if (pet === undefined) return;
@@ -460,8 +460,7 @@ new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
 new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or follow.").setClick(async () => {
 
 	if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
-		   console.log("Cancelled");
-			return;
+	    return console.log("Cancelled");;
 	}
 
 	const morphType = await Swal.fire({
@@ -543,8 +542,7 @@ new Toggler(category.beta, "Toggle Close Popups [BETA]", "Automatically closes p
 		return Swal.fire("Already Enabled", "Toggle Close Popups is already enabled. To disable popup closer, reload Prodigy.", "error");
     }
     else if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
-		console.log("Cancelled");
-		return;
+		return console.log("Cancelled");;
 	} else {
 
 	    popupinterval = setInterval(async () => {
