@@ -152,7 +152,8 @@ If you're interested in simple beta testing, open the hacks as usual, scroll dow
 - [.github](../../tree/master/.github) - Repository information for GitHub
   
 <br>
+<hr>
 
 <h1 align="center">
-<a href = "https://dsc.gg/ProdigyPNP"><img src="https://readme-jokes.vercel.app/api" alt="Jokes Card"/></a>
+<a href = "https://dsc.gg/ProdigyPNP"><img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" width=700/></a>
 	</h1>
