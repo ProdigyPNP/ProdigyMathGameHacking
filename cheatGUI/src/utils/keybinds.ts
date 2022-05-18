@@ -8,14 +8,14 @@ window.addEventListener("keydown", event => {
 
 
 
-    switch (event.code) {
+    switch (event.which) {
 
-        case "KeyX":
+        case 192: // --- 192 = ` -- Grave Accent
             // Close All Popups
             _.instance.prodigy.open.menuCloseAll();
             break;
 
-        case "KeyK":
+        case 220: // --- 220 = \ -- Backslash
             // Gets you kitted up in Celestial Gear
             const k = async () => {
 

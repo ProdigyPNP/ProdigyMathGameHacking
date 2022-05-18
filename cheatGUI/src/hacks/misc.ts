@@ -156,11 +156,6 @@ new Hack(category.misc, "Chat Spammer", "Cycles through chat messages pretty fas
 
 
 
-
-
-
-
-
 // Begin High Chat Spammer
 let retards: unknown | null = null;
 let c : number = 0;
