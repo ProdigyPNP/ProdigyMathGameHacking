@@ -4,6 +4,7 @@
 import { Hack, category } from "../index"; // Import the Cheat GUI bases.
 import { NumberInput, Swal, Toast } from "../utils/swal"; // Import Swal, Toast, and NumberInput from swal
 import { _, locations, prodigy } from "../utils/util"; // Import Prodigy typings
+import { toHouse } from "../utils/hackify"; // Import toHouse
 // END IMPORTS
 
 
@@ -69,46 +70,6 @@ new Hack(category.location, "Teleport To Map (interactive)").setClick(
 
 
 
-// Begin toHouse function
-function toHouse (userID: number) {
-	if (_.player.userID !== userID) {
-		const friendCount = _.instance.prodigy.friendsListNetworkHandler.friendsList.length;
-		const classMates = _.instance.prodigy.friendsListNetworkHandler.classList.length;
-
-		_.instance.prodigy.gameContainer.get("2e1-e659")
-			.create("house-visit", "click", "hub", friendCount, classMates, null, null, userID)
-			.broadcast();
-	}
-	const zone = _.instance.prodigy.world.getZone(_.instance.prodigy.world.getCurrentZone());
-	if (!zone) return Swal.fire({ title: "Error", text: "You are not in a zone!", icon: "error" });
-	zone.handleLeaving(2, () => teleportToHouse(userID));
-}
-// End toHouse function
-
-
-
-// Begin teleportToHouse function
-function teleportToHouse (userID: number) {
-	_.instance.prodigy.loading(true);
-
-	const responseCallback = (data: any) => {
-		const playerData = data !== null && data !== undefined ? data[userID] : null;
-
-		if (playerData !== null && playerData.house !== undefined && playerData.house !== null) {
-			_.instance.prodigy.loading(false);
-			const house = _.cloneDeep(_.player.house);
-			house.setItems(playerData.house);
-			if (!(playerData.data.allowsHouseVisitors !== undefined && playerData.data.allowsHouseVisitors !== null ? playerData.data.allowsHouseVisitors : false)) {
-				return Swal.fire(`Teleporting to ${userID} is not allowed.`, "Try another user.", "error");
-			}
-			_.instance.prodigy.world._("house", null, null, { house, getAllowsHouseVisitors: () => playerData.data.allowsHouseVisitors !== undefined && playerData.data.allowsHouseVisitors !== null ? playerData.data.allowsHouseVisitors : false, setAllowsHouseVisitors: (v: boolean) => { playerData.data.allowsHouseVisitors = v; } });
-		}
-	};
-
-	_.network.getCharData(userID.toString(), ["house", "data"], responseCallback, responseCallback);
-	return Toast.fire("Teleported to house", "You have been teleported to the house!", "success");
-}
-// End teleportToHouse function
 
 
 

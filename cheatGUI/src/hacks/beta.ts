@@ -8,8 +8,7 @@
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, NumberInput, Input, and Confirm from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
 import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
-import { TODO } from "../../../typings/util";  // Import TODO typings
-import { ids, itemify, runeify } from "../utils/hackify"; // Import runeify and some arrays
+import { ids, itemify, runeify, getPet } from "../utils/hackify"; // Import runeify and some arrays
 // END IMPORTS
 
 
@@ -491,23 +490,6 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 // End Morph Player
 
 
-
-// getPet function
-const getPet = async (text: string): Promise<number | undefined> => {
-	const pet = await Swal.fire({
-		input: "select",
-		inputOptions: new Map(
-			_.player.kennel.data.map((x: TODO, i: number) => [
-				i.toString(),
-				`Level ${x.level} - ${x.nickname ?? _.gameData.pet.find(y => +y.ID === +x.ID)?.data.name ?? "Unknown"}`
-			]) as [string, string][]
-		),
-		title: "Choose Pet",
-		text: text
-	});
-	return pet.value;
-};
-// end getPet function
 
 
 
