@@ -4,7 +4,7 @@
 import { Hack, category } from "../index"; // Import the Cheat GUI bases.
 import { NumberInput, Swal, Toast } from "../utils/swal"; // Import Swal, Toast, and NumberInput from swal
 import { _, locations, prodigy } from "../utils/util"; // Import Prodigy typings
-import { toHouse, teleportToHouse } from "../utils/hackify"; // Import toHouse
+import { toHouse } from "../utils/hackify"; // Import toHouse
 // END IMPORTS
 
 
