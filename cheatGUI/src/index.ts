@@ -6,6 +6,7 @@ import "./style.scss"; // Import SCSS style
 import { saveCharacter, _ } from "./utils/util"; // Import Prodigy typings
 import { licensePopup, statusMessage } from "./utils/hackify"; // Import some useful functions
 import Swal from "sweetalert2"; // Import Swal
+import { License, NoLicense } from "./utils/swal";
 
 export const menu = document.createElement("div"); // Create cheat menu element
 export const wrapper = document.getElementById("game-wrapper"); // Create game wrapper
@@ -253,5 +254,42 @@ if (process.env.NODE_ENV === "development") {
 
 
 
-licensePopup();
-statusMessage();
+
+// LICENSE POPUPS
+(async () => {
+
+
+
+        if (!(await License.fire("ProdigyPNP", `
+            <p>
+            <a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/README.md">This is free and open-source software</a>.
+            If you paid for this or accessed this behind a paywall/AdFly link, demand a refund. If you sell this software, or otherwise make a commercial advantage from it, you are violating
+            <a href = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/LICENSE.txt">our license</a>.
+            </p>
+        `)).value) {
+
+            if (!(await NoLicense.fire("ProdigyPNP License", `
+                <p>
+                <strong>You need to agree to our license to use our hacks. If you changed your mind and now agree to our license, reload Prodigy.</strong>
+                </p>
+            `)).value) {
+
+                // Play Prodigy without hacks
+                document.getElementById("cheat-menu")?.remove(); // Remove any existing menu if present
+                document.getElementById("menu-toggler")?.remove(); // Remove any existing menu togglers if present
+
+            } else {
+
+                // Reload Prodigy
+                document.location = "";
+            }
+
+
+        } else {
+
+
+            // Display status message.
+            await statusMessage();
+        }
+
+})();
