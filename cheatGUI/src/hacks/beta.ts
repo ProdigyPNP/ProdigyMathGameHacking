@@ -1,4 +1,3 @@
-// @ts-nocheck
 // Beta Hacks
 
 
@@ -53,7 +52,8 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 
 	// ALSO, fix the battle crash bug
-	_.player.kennel.petTeam.forEach((v: any) => {
+	// @ts-expect-error
+	_.player.kennel.petTeam.forEach(v => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
 	console.log("Fixed battle crash.")
@@ -70,6 +70,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 	// Set the players level to 100
 	const level = 100;
+		// @ts-expect-error
 		const h = level.value - 2;
 		const xpConstant = 1.042;
 		_.player.data.stars = Math.round((1 - Math.pow(xpConstant, h)) / (1 - xpConstant) * 20 + 10);
@@ -156,13 +157,17 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 	const num = 990000;
 
 		ids.forEach(id => {
+			// @ts-expect-error
 			_.player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125,126,127,128,129,134,135,136,137].includes(l.ID) : l), num.value);
 		});
+		// @ts-expect-error
 		_.gameData.dorm.forEach(x =>
+			// @ts-expect-error
 			_.player.house.data.items[x.ID] = { A: [], N: num.value }
 		);
 
 		// Remove bounty notes
+		// @ts-expect-error
 		const bountyIndex = () => _.player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
 		while (bountyIndex() > -1) _.player.backpack.data.item.splice(bountyIndex(), 1);
 		Toast.fire("Success!", "All items added!", "success");
@@ -178,7 +183,9 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 	// Get 990000 of all furniture
 	const amt = 990000;
+		// @ts-expect-error
 		_.gameData.dorm.forEach(x =>
+			// @ts-expect-error
 			_.player.house.data.items[x.ID] = { A: [], N: amt.value }
 		);
 	console.log("Added 990000 of all furniture.");
@@ -193,6 +200,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 	// Get All Pets
 
 		// add pets
+		// @ts-expect-error
 		_.gameData.pet.forEach(x => {
 			_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
 		});
@@ -208,7 +216,8 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 			});
 		});
 		// Fix broken pets
-		_.player.kennel.petTeam.forEach((v: any) => {
+		// @ts-expect-error
+		_.player.kennel.petTeam.forEach(v => {
 			if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 		});
 		console.log("Added all pets.");
@@ -217,12 +226,15 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 
 	// Get all Mythical Epics
+	// @ts-expect-error
 	const mythepics = _.gameData.pet.filter(x => [158, 166, 168].includes(x.ID));
+	// @ts-expect-error
 	mythepics.forEach(x => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
 	});
 	// Fix broken pets
-	_.player.kennel.petTeam.forEach((v: any) => {
+	// @ts-expect-error
+	_.player.kennel.petTeam.forEach(v => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
 	console.log("Added Mythical Epics.");
@@ -230,14 +242,17 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 
 	// Get all Legacy Epics
+	// @ts-expect-error
 	const legepics = _.gameData.pet.filter(x => [125, 126, 127, 128, 129, 130, 131, 132, 133].includes(x.ID));
-		legepics.forEach(x => {
-			_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
-		});
-		// Fix broken pets
-		_.player.kennel.petTeam.forEach((v: any) => {
-			if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
-		});
+	// @ts-expect-error	
+	legepics.forEach(x => {
+		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+	});
+	// Fix broken pets
+	// @ts-expect-error
+	_.player.kennel.petTeam.forEach(v => {
+	if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
+	});
 	console.log("Added Legacy Epics.");
 
 
@@ -264,13 +279,15 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 	const amount = 100;
 		let mod;
-
 		Array.from(_.instance.prodigy.gameContainer._inversifyContainer._bindingDictionary._map).forEach(e => {
 			try {
+				// @ts-expect-error
 				if (_.instance.prodigy.gameContainer.get(e[0]).battleData) {
+					// @ts-expect-error
 					mod = e[0];
 				}
 			} catch {
+				// @ts-expect-error
 				console.log(`Error for ${e[0]}`);
 			}
 		});
@@ -352,12 +369,16 @@ new Hack(category.beta, "Get all Runes [BETA]").setClick(async () => {
 	if (isNaN(amount)) return;
 	let mod;
 
+	
 	Array.from(_.instance.prodigy.gameContainer._inversifyContainer._bindingDictionary._map).forEach(e => {
 		try {
+			// @ts-expect-error
 			if (_.instance.prodigy.gameContainer.get(e[0]).battleData) {
+				// @ts-expect-error
 				mod = e[0];
 			}
 		} catch {
+			// @ts-expect-error
 			console.log(`Error for ${e[0]}`);
 		}
 	});
@@ -462,7 +483,7 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 	// we want it to display a pretty string, and return the petID
 	const morphOptions = {};
 	// fuck you typescript, I'll do what I want
-	// @ts-ignore
+	// @ts-expect-error
 	_.gameData[morphType.value].forEach((morph) => morphOptions[morph.ID] = `${morph.name} (${morph.ID})`);
 
 	const morphID = await Swal.fire({
@@ -494,6 +515,7 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 
 
 // Begin Toggle Close Popups
+// @ts-expect-error
 let popupinterval: misc | null = null;
 
 new Toggler(category.beta, "Toggle Close Popups [BETA]", "Automatically closes popups in Prodigy.").setClick(async () => {

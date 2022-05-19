@@ -1,12 +1,10 @@
-// @ts-nocheck
 // Pet Hacks
 
 
 // BEGIN IMPORTS
-import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal";  // Import Swal, Toast, Confirm, Input, and NumberInput from swal
+import { Swal, Toast, NumberInput, Confirm } from "../utils/swal";  // Import Swal, Toast, Confirm, Input, and NumberInput from swal
 import { Hack, category } from "../index";  // Import the Cheat GUI bases.
 import { _, VERY_LARGE_NUMBER } from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
-import { TODO } from "../../../typings/util"; // Import Prodigy Util typings
 import { getPet } from "../utils/hackify"; // Import getPet
 // END IMPORTS
 
@@ -25,6 +23,7 @@ new Hack (category.pets, "Get All Pets").setClick(async () => {
 
 
 	// add pets
+	// @ts-expect-error
 	_.gameData.pet.forEach(x => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
 	});
@@ -41,7 +40,8 @@ new Hack (category.pets, "Get All Pets").setClick(async () => {
 		});
 	});
 	// Fix broken pets
-	_.player.kennel.petTeam.forEach((v: any) => {
+	// @ts-expect-error
+	_.player.kennel.petTeam.forEach(v => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
 
@@ -59,13 +59,15 @@ new Hack (category.pets, "Get All Legacy Epics").setClick(async () => {
         return console.log("Cancelled");
     }
 
-
+	// @ts-expect-error
 	const epics = _.gameData.pet.filter(x => [125, 126, 127, 128, 129, 130, 131, 132, 133].includes(x.ID));
+	// @ts-expect-error
 	epics.forEach(x => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
 	});
 	// Fix broken pets
-	_.player.kennel.petTeam.forEach((v: any) => {
+	// @ts-expect-error
+	_.player.kennel.petTeam.forEach(v => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
 	return Toast.fire("Success!", "All legacy epics have been added!", "success");
@@ -86,12 +88,15 @@ new Hack (category.pets, "Get All Mythical Epics").setClick(async () => {
 
 
 	// TODO: I need Aura's ID
+	// @ts-expect-error
 	const epics = _.gameData.pet.filter(x => [158, 166, 168].includes(x.ID));
+	// @ts-expect-error
 	epics.forEach(x => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
 	});
-	// Fix broken pets
-	_.player.kennel.petTeam.forEach((v: any) => {
+	// Fix broken pets	
+	// @ts-expect-error
+	_.player.kennel.petTeam.forEach(v => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
 	return Toast.fire("Success!", "All mythical epics have been added!", "success");
@@ -120,8 +125,10 @@ new Hack (category.pets, "Clear Pets").setClick(async () => {
 
 // Begin Add Pet
 new Hack (category.pets, "Add Pet", "Adds a pet from a list.").setClick(async () => {
+	// @ts-expect-error
 	const pet = await Swal.fire({
 		input: "select",
+		// @ts-expect-error
 		inputOptions: new Map(_.gameData.pet.map(x => [x.ID.toString(), `${x.ID}: ${x.data.name}`])),
 		title: "Choose Pet",
 		text: "Which pet do you want to obtain?"
@@ -146,6 +153,7 @@ new Hack (category.pets, "Add Pet", "Adds a pet from a list.").setClick(async ()
 new Hack (category.pets, "Uncap pet level [Client Side]", "Change your pet's level to anything, even over 100. This hack won't save when you reload Prodigy.").setClick(async () => {
 	const petTeam = _.player.kennel.petTeam.slice(0);
 	petTeam.shift();
+	// @ts-expect-error
 	const names = petTeam.map(pet => pet.getName());
 	const pet = await Swal.fire({
 		title: "Which pet would you like to edit?",

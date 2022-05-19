@@ -1,4 +1,3 @@
-// @ts-nocheck
 // Inventory Hacks
 
 
@@ -6,7 +5,7 @@
 // BEGIN IMPORTS
 import { Hack, category } from "../index"; // Import the Cheat GUI bases.
 import { Swal, Toast, Confirm, NumberInput } from "../utils/swal"; // Import Swal, Toast, NumberInput, and Confirm from swal
-import { _, saveCharacter } from "../utils/util"; // Import Prodigy typings
+import { _, saveCharacter, VERY_LARGE_NUMBER } from "../utils/util"; // Import Prodigy typings
 import { names, ids, itemify } from "../utils/hackify"; // Import some conversion functions and arrays
 // END IMPORTS
 
@@ -21,15 +20,17 @@ new Hack(category.inventory, "Item stacker").setClick(async () => {
 	const num = await NumberInput.fire("Amount", "How many of every item would you like?", "question");
 	if (!num.value) return;
 	if (!(await Confirm.fire("Are you sure you want to get all items in the game?")).value) return;
-
-	ids.forEach(id => {
+	ids.forEach(id  => {
+		// @ts-expect-error
 		_.player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125,126,127,128,129,134,135,136,137].includes(l.ID) : l), num.value);
 	});
+	// @ts-expect-error
 	_.gameData.dorm.forEach(x =>
 		_.player.house.data.items[x.ID] = { A: [], N: num.value }
 	);
 
 	// Remove bounty notes... because they're very spammy
+	// @ts-expect-error
 	const bountyIndex = () => _.player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
 	while (bountyIndex() > -1) _.player.backpack.data.item.splice(bountyIndex(), 1);
 
@@ -59,7 +60,8 @@ new Hack(category.inventory, "Selector (Basic)").setClick(async () => {
 		input: "select",
 		inputOptions: names,
 		inputPlaceholder: "Select...",
-		inputValidator: (res: any) => res ? "" : "Please select which you'd like to obtain.",
+		// @ts-expect-error
+		inputValidator: res => res ? "" : "Please select which you'd like to obtain.",
 		showCancelButton: true
 	}).then(async val => {
 		const num = parseInt(val.value);
@@ -69,8 +71,8 @@ new Hack(category.inventory, "Selector (Basic)").setClick(async () => {
 		const amt = await NumberInput.fire("Amount", "How many each object would you like?", "question");
 		if (!amt.value) return;
 		if (!(await Confirm.fire(`Are you sure you want to get all ${name.toLowerCase()}?`)).value) return;
-		// @ts-ignore
-		_.player.backpack.data[id] = itemify(_.gameData[id].filter(a => {return id === 'follow' ? ![125,126,127,128,129,134,135,136,137].includes(a.ID) : a}), amt.value);
+		// @ts-expect-error
+		_.player.backpack.data[id] = itemify(_.gameData[id].filter(a=> {return id === 'follow' ? ![125,126,127,128,129,134,135,136,137].includes(a.ID) : a}), amt.value);
 		Toast.fire(
 			`${name} Added!`,
 			`All ${name.toLowerCase()} have been added to your inventory!`,
@@ -86,34 +88,35 @@ new Hack(category.inventory, "Selector (Basic)").setClick(async () => {
 
 // Begin Selector (Advanced)
 new Hack(category.inventory, "Selector (Advanced)", "Choose a specific object and quantity to obtain.").setClick(async () => {
-	// @ts-ignore
+	// @ts-expect-error
 	const val = await Swal.fire({
 		title: "What would you like to obtain?",
 		input: "select",
 		inputOptions: names,
 		inputPlaceholder: "Select...",
-		inputValidator: (res: any) => res ? "" : "Please select which you'd like to obtain.",
+		// @ts-expect-error
+		inputValidator: res => res ? "" : "Please select which you'd like to obtain.",
 		showCancelButton: true
 	}).then(async val => {
 		if (!_.gameData[ids[val.value]]) return;
 		const objs : [] = [];
-		// @ts-ignore
+		// @ts-expect-error
 		_.gameData[ids[val.value]].forEach(elem => { objs.push(elem.data.name); });
-		// @ts-ignore
+		// @ts-expect-error
 		const spec = await Swal.fire({
 			title: `What specific object categorized as ${names[val.value].toLowerCase()} would you like to get?`,
 			input: "select",
 			inputOptions: objs,
 			inputPlaceholder: "Select...",
-			inputValidator: (res: any) => res ? "" : "Please select which you'd like to get.",
+			// @ts-expect-error
+			inputValidator: res => res ? "" : "Please select which you'd like to get.",
 			showCancelButton: true
 		}).then(async spec => {
 			const correct = parseInt(spec.value);
 			if (!_.gameData[ids[val.value]][correct]) return;
 			const amt = await NumberInput.fire("Amount", "How many of the object would you like?", "question");
 			if (!amt.value) return;
-
-			// @ts-ignore
+			// @ts-expect-error
 			if (_.player.backpack.data[ids[val.value]].findIndex(e => e.ID === _.gameData[ids[val.value]][correct].ID) === -1) {
 				_.player.backpack.data[ids[val.value]].push({
 					ID: _.gameData[ids[val.value]][correct].ID,
@@ -121,7 +124,7 @@ new Hack(category.inventory, "Selector (Advanced)", "Choose a specific object an
 				});
 
 			} else {
-				// @ts-ignore
+				// @ts-expect-error
 				const num = _.player.backpack.data[ids[val.value]].findIndex(e => e.ID === _.gameData[ids[val.value]][correct].ID);
 			}
 
@@ -141,6 +144,7 @@ new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
 	const amt = await NumberInput.fire("Amount", "How many of each piece of furniture would you like?", "question");
 	if (!amt.value) return;
 	if (!(await Confirm.fire("Are you sure you want to get all furniture?")).value) return;
+	// @ts-expect-error
 	_.gameData.dorm.forEach(x =>
 		_.player.house.data.items[x.ID] = { A: [], N: amt.value }
 	);
@@ -162,33 +166,38 @@ new Hack(category.inventory, "Obtain All Mounts", "This gives you all of the mou
 
 // Begin Remove Item
 new Hack(category.inventory, "Remove item").setClick(async () => {
+	// @ts-expect-error
 	const category = await Swal.fire({
 		title: "What category would you like to remove an item from?",
 		input: "select",
 		inputOptions: names,
 		inputPlaceholder: "Select...",
-		inputValidator: (res: any) => res ? "" : "Please select which you'd like to obtain.",
+		// @ts-expect-error
+		inputValidator: res => res ? "" : "Please select which you'd like to obtain.",
 		showCancelButton: true
 	});
 	if (!_.gameData[ids[category.value]]) return;
+	// @ts-expect-error
 	const objs = _.gameData[ids[category.value]].map(elem => elem.data.name);
 	let item = await Swal.fire({
 		title: `What specific object categorized as ${names[category.value].toLowerCase()} would you like to remove?`,
 		input: "select",
 		inputOptions: objs,
 		inputPlaceholder: "Select...",
-		inputValidator: (res: any) => res ? "" : "Please select which you'd like to get.",
+		inputValidator: res => res ? "" : "Please select which you'd like to get.",
 		showCancelButton: true
 	});
+	// @ts-expect-error
 	item = parseInt(item.value);
 	if (!_.gameData[ids[category.value]][item]) return;
 	const amt = await NumberInput.fire("Amount", "How many of the object would you like to remove?", "question");
 	if (!amt.value) return;
+	// @ts-expect-error
 	if (_.player.backpack.data[ids[category.value]].findIndex(e => e.ID === _.gameData[ids[category.value]][item].ID) === -1) {
 		await Swal.fire("Item Does Not Exist", `You do not have any ${_.gameData[ids[category.value]][item].name}.`, "error");
 		return;
 	}
-
+	// @ts-expect-error
 	const num = _.player.backpack.data[ids[category.value]].findIndex(e => e.ID === _.gameData[ids[category.value]][item].ID);
 	_.player.backpack.data[ids[category.value]][num].N -= parseInt(amt.value);
 	if (_.player.backpack.data[ids[category.value]][num].N <= 0) {
@@ -205,10 +214,14 @@ new Hack(category.inventory, "Remove item").setClick(async () => {
 
 // Begin Obtain All Furniture
 new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
-	if (!(await Confirm.fire("Are you sure you want to get all furniture?")).value) return;
+	if (!(await Confirm.fire("Are you sure you want to get all furniture?")).value) {
+		return console.log("Cancelled.");
+	} else {
+		// @ts-expect-error
 		_.gameData.dorm.forEach(x =>
 			_.player.house.data.items[x.ID] = {A: [], N: VERY_LARGE_NUMBER}
-	);
+		);
+	}
 	return Toast.fire("Furniture Added!", "All furniture have been added to your inventory!", "success");
 });
 // End Obtain All Furniture

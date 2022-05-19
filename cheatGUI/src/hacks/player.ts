@@ -1,4 +1,3 @@
-// @ts-nocheck
 // Player Hacks ⬛️🟧
 
 
@@ -6,9 +5,7 @@
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, Confirm, Input, and NumberInput from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
 import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
-import { Item } from "../../../typings/item";  // Import Prodigy Item typings
-import { TODO } from "../../../typings/util"; // Import Prodigy Util typings
-import { getMemberModule, names, ids, itemify } from "../utils/hackify";  // Import useful arrays and functions
+import { getMemberModule, ids, itemify } from "../utils/hackify";  // Import useful arrays and functions
 
 // END IMPORTS
 
@@ -50,7 +47,8 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
 
 	// ALSO, fix the battle crash bug
-	_.player.kennel.petTeam.forEach((v: any) => {
+	// @ts-expect-error
+	_.player.kennel.petTeam.forEach(v => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
 	console.log("Fixed battle crash.")
@@ -67,6 +65,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
 	// Set the players level to 100
 	const level = 100;
+		// @ts-expect-error
 		const h = level.value - 2;
 		const xpConstant = 1.042;
 		_.player.data.stars = Math.round((1 - Math.pow(xpConstant, h)) / (1 - xpConstant) * 20 + 10);
@@ -152,13 +151,17 @@ new Hack(category.player, "Max Account").setClick(async () => {
 	const num = 990000;
 
 		ids.forEach(id => {
+			// @ts-expect-error
 			_.player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125,126,127,128,129,134,135,136,137].includes(l.ID) : l), num.value);
 		});
+		// @ts-expect-error
 		_.gameData.dorm.forEach(x =>
+			// @ts-expect-error
 			_.player.house.data.items[x.ID] = { A: [], N: num.value }
 		);
 
 		// Remove bounty notes
+		// @ts-expect-error
 		const bountyIndex = () => _.player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
 		while (bountyIndex() > -1) _.player.backpack.data.item.splice(bountyIndex(), 1);
 		Toast.fire("Success!", "All items added!", "success");
@@ -174,9 +177,11 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
 	// Get 990000 of all furniture
 	const amt = 990000;
-		_.gameData.dorm.forEach(x =>
-			_.player.house.data.items[x.ID] = { A: [], N: amt.value }
-		);
+	// @ts-expect-error
+	_.gameData.dorm.forEach(x =>
+		// @ts-expect-error
+		_.player.house.data.items[x.ID] = { A: [], N: amt.value }
+	);
 	console.log("Added 990000 of all furniture.");
 
 
@@ -189,6 +194,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
 	// Get All Pets
 
 		// add pets
+		// @ts-expect-error
 		_.gameData.pet.forEach(x => {
 			_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
 		});
@@ -204,7 +210,8 @@ new Hack(category.player, "Max Account").setClick(async () => {
 			});
 		});
 		// Fix broken pets
-		_.player.kennel.petTeam.forEach((v: any) => {
+		// @ts-expect-error
+		_.player.kennel.petTeam.forEach(v => {
 			if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 		});
 		console.log("Added all pets.");
@@ -423,6 +430,7 @@ new Hack (category.player, "Change Name", "Change the name of your wizard.").set
 	};
 	const nameSelect = (type: number, equalityFunc: (num: number) => boolean) =>
 		createSelect(new Map(
+			// @ts-expect-error
 			names.filter(x => x.data.type === type).map(x => [x.ID.toString(), x.name])),
 		val => equalityFunc(+val)
 		);
@@ -432,6 +440,7 @@ new Hack (category.player, "Change Name", "Change the name of your wizard.").set
 	div.append(
 		createSelect(
 			new Map(
+				// @ts-expect-error
 				[["null", "[none]"]].concat(_.gameData.nickname.map(x => [x.ID.toString(), x.name])) as [
 					string,
 					string
@@ -518,6 +527,7 @@ new Hack (category.player, "Permanent Morph", "Makes Your Current Morph Last For
 new Hack (category.player, "Complete Current Task In Quest", "Completes current task in quest. (Use this button a lot to complete a quest.)").setClick(async () => {
 	const zones = {};
 	Object.keys(_.instance.prodigy.world.zones).forEach(element => {
+		// @ts-expect-error
 		zones[element] = _.instance.prodigy.world.zones[element].name;
 	});
 	const questName = (await Input.fire({
@@ -540,9 +550,11 @@ new Hack (category.player, "Complete Current Task In Quest", "Completes current 
 
 // Begin Set Dark Tower Floor
 new Hack (category.player, "Set Dark Tower Floor").setClick(async () => {
+	// @ts-expect-error
 	const floor = await NumberInput.fire({
 		title: "What floor do you want to be on, in the dark tower.",
 		icon: "question",
+		// @ts-expect-error
 		inputValidator: (res) => (res > 100 || res < 1) ? `You can only be on floors from 1-100 not ${res}` : false
 	});
 	if (!floor.value) return;
@@ -557,7 +569,7 @@ new Hack (category.player, "Set Dark Tower Floor").setClick(async () => {
 new Hack (category.player, "Get UserID").setClick(async () => {
 
     const UserID : number = _.player.userID;
-    navigator.clipboard.writeText(UserID).then(function() {
+    navigator.clipboard.writeText(UserID.toString()).then(function() {
 
 
       console.log('Async: Copying to clipboard was successful!');

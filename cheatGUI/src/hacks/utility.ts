@@ -1,10 +1,9 @@
-// @ts-nocheck
 // Utility Hacks
 
 
 // BEGIN IMPORTS
 import { Toast, Input, Confirm, Swal } from "../utils/swal";  // Import Toast and Input from swal
-import { Hack, category, Toggler, dimensions } from "../index"; // Import the Cheat GUI bases and the dimensions to resize the menu
+import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases and the dimensions to resize the menu
 import { _, saveCharacter } from "../utils/util";  // Import Prodigy typings
 // END IMPORTS
 
@@ -99,9 +98,11 @@ new Hack(category.utility, "Disable inactivity kick", "Keeps you from being logg
 
 // Begin Enable menu resize drag
 new Toggler(category.utility, "Enable menu resize", "Allows you to resize the menu via dragging the bottom right corner.").setEnabled(async () => {
+	// @ts-expect-error
 	document.getElementById("cheat-menu").style.resize = "both";
 	return Toast.fire("Success!", "Drag the bottom right corner of the menu to resize it.", "success");
 }).setDisabled(() => {
+	// @ts-expect-error
 	document.getElementById("cheat-menu").style.resize = "none";
 	// document.getElementById("cheat-menu").style.height = dimensions.height;
 	// document.getElementById("cheat-menu").style.width = dimensions.width;
@@ -133,6 +134,7 @@ new Hack(category.utility, "Edit walkspeed", "Lets you set your walkspeed.").set
 let teleportingInterval = -1;
 
 new Toggler(category.utility, "Toggle Click Teleporting").setEnabled(async () => {
+	// @ts-expect-error
 	teleportingInterval = setInterval(() => {
 		try {
 			_.player._playerContainer.walkSpeed = 500;

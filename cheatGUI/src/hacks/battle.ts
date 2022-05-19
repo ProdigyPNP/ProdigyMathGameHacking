@@ -57,19 +57,34 @@ new Hack(category.battle, "PvP Health [PvP]", "Increases your HP in PvP by a hel
 // Begin Escape Battle
 new Hack(category.battle, "Escape Battle [PvP, PvE]", "Escape any battle, PvP or PvE!").setClick(async () => {
 	const currentState = game.state.current;
-	if (currentState === "PVP") Object.fromEntries(_.instance.game.state.states).PVP.endPVP();
-	else if (currentState === "CoOp") prodigy.world.$(_.player.data.zone);
+	if (currentState === "PVP") {
+		Object.fromEntries(_.instance.game.state.states).PVP.endPVP();
+		return Toast.fire(
+			"Escaped!",
+			"You have successfully escaped from the PvP battle.",
+			"success"
+		);
+	}
+	else if (currentState === "CoOp") {
+		prodigy.world.$(_.player.data.zone);
+		return Toast.fire(
+			"Escaped!",
+			"You have successfully escaped from the battle.",
+			"success"
+		);
+	}
 	else if (!["Battle", "SecureBattle"].includes(currentState)) {
 		return Toast.fire(
 			"Invalid State.",
 			"You are currently not in a battle.",
 			"error"
 		);
-	} else {
+	} 
+	else {
 		Object.fromEntries(_.instance.game.state.states)[currentState].runAwayCallback();
 		return Toast.fire(
 			"Escaped!",
-			"You have successfully escaped from the battle.",
+			"You have successfully escaped from the PvE battle.",
 			"success"
 		);
 	}

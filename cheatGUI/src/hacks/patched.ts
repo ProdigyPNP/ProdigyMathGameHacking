@@ -1,13 +1,10 @@
-// @ts-nocheck
 // Patched Hacks
 
 
 // BEGIN IMPORTS
-import { Swal, Confirm } from "../utils/swal";
+import { Swal, Confirm, Toast } from "../utils/swal";
 import { Hack, category} from "../index"; // Import the Cheat GUI bases.
 import { _, prodigy} from "../utils/util"; // Import Prodigy typings and VERY_LARGE_NUMBER
-import { displayPopups } from "../utils/hackify"; // Import popup thing
-
 // END IMPORTS
 
 
@@ -36,6 +33,7 @@ new Hack(category.patched, "Arena Point Increaser [Patched]").setClick(async () 
                     `https://api.prodigygame.com/leaderboard-api/season/${prodigy.pvpNetworkHandler.seasonID}/user/${_.player.userID}/pvp?userID=${_.player.userID}`,
                     {
                         headers: {
+                            // @ts-expect-error
                             authorization: `Bearer ${prodigy.network.jwtAuthProvider.getToken()}`,
                             "content-type":
                                 "application/x-www-form-urlencoded; charset=UTF-8",
@@ -68,6 +66,7 @@ new Hack(category.patched, "Disable Timeout Dialog [Patched]").setClick(async ()
 	if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
 		return console.log("Cancelled");
 	} else {
+        // @ts-expect-error
 	    prodigy.debugMisc.disableTimeoutDialogue();
 	}
 	return Toast.fire("Enabled", "Timeout Dialog has been disabled.", "success");
