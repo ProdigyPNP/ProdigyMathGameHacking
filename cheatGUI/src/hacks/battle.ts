@@ -6,6 +6,7 @@
 import { Toast, NumberInput } from "../utils/swal"; // Import Toast and NumberInput from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
 import { _, prodigy, game, VERY_LARGE_NUMBER } from "../utils/util"; // Import prodigy typings
+import { BattleInfo } from "../utils/log"; // Import Battle logging functions
 // END IMPORTS
 
 
@@ -106,7 +107,7 @@ new Hack(category.battle, "Escape Battle [PvP, PvE]", "Escape any battle, PvP or
 // Begin Win Battle
 new Hack(category.battle, "Win Battle [PvE]", "Instantly win a battle in PvE.").setClick(async () => {
     const currentState = game.state.current;
-    console.log("Current State: " + currentState);
+    BattleInfo("Current State: " + currentState);
 
     if (currentState === "PVP" || currentState === "CoOp") {
         return Toast.fire(

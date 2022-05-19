@@ -4,9 +4,10 @@
 import { io } from "socket.io-client"; // Import socket.io-client
 import "./style.scss"; // Import SCSS style
 import { saveCharacter, _ } from "./utils/util"; // Import Prodigy typings
-import { licensePopup, statusMessage } from "./utils/hackify"; // Import some useful functions
+import { statusMessage } from "./utils/status"; // Import status message
 import Swal from "sweetalert2"; // Import Swal
 import { License, NoLicense } from "./utils/swal";
+import { IndexInfo, IndexSuccess, IndexError } from "./utils/log";
 
 export const menu = document.createElement("div"); // Create cheat menu element
 export const wrapper = document.getElementById("game-wrapper"); // Create game wrapper
@@ -22,9 +23,9 @@ wrapper?.prepend(menu);
 
 export const toggler = document.createElement("button"); // Create toggler class
 toggler.id = "menu-toggler";
-toggler.style.fontSize = "23px"
-toggler.style.height = "26px"
-toggler.style.width = "50px"
+toggler.style.fontSize = "23px";
+toggler.style.height = "26px";
+toggler.style.width = "50px";
 toggler.style.border = "1px solid rgba(0, 0, 0, 0.1)";
 
 
@@ -197,7 +198,7 @@ export const category = {
 
 
 
-
+// If an item called hasTip is defined in the localStorage
 if (!localStorage.hasTip) {
 	(async () => {
 	    await Swal.fire({
@@ -211,28 +212,41 @@ if (!localStorage.hasTip) {
 		    `
        })})();
 	  localStorage.hasTip = true;
+	  IndexInfo("Player was shown the tip.");
+} else {
+	IndexInfo("Player already has tip.");
 };
 
 
-
+// If an item called "level" is defined in the localStorage
 if (localStorage.getItem("level")) {
+	// Then, override _.player.getLevel with the value in localStorage.
 	_.player.getLevel = () => localStorage.getItem("level");
+
+	IndexInfo("Loaded menu from localStorage.");
 }
 
 
-let shownMenu = visible.value;
+let shownMenu : Boolean = visible.value;
 document.addEventListener("keydown", function (event) {
 	if (event.key == "Shift") {
+
+		IndexInfo("Shift key was pressed.");
+
 		if (shownMenu == true) {
 			// Cheats are shown, so let's hide them.
+			IndexInfo("Hiding cheat menu...");
 			document.getElementById("cheat-menu").style.display = "none";
 			document.getElementById("menu-toggler").style.display = "none";
 			shownMenu = false;
+			IndexInfo("Hidden cheat menu.");
 		} else {
 			// Cheats are hidden, so let's show them.
+			IndexInfo("Showing cheat menu...");
 			document.getElementById("cheat-menu").style.display = "block";
 			document.getElementById("menu-toggler").style.display = "block";
             shownMenu = true;
+			IndexInfo("Shown cheat menu.");
 		}
 	}
 });
