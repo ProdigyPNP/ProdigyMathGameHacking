@@ -8,6 +8,8 @@ import { _, prodigy} from "../utils/util"; // Import Prodigy typings and VERY_LA
 // END IMPORTS
 
 
+
+
 // BEGIN PATCHED HACKS
 
 
@@ -18,25 +20,20 @@ let interval: unknown | null = null;
 new Hack(category.patched, "Arena Point Increaser [Patched]").setClick(async () => {
 
 
-	if (interval) {
-		return Swal.fire("Already Enabled", "Arena Point Increaser is already enabled.", "error");
-	}
-
-    else if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
-	   return console.log("Cancelled");
-	}
-	else {
+    if (interval) {
+        return Swal.fire("Already Enabled", "Arena Point Increaser is already enabled.", "error");
+    } else if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
+        return console.log("Cancelled");
+    } else {
 
         interval = setInterval(async () => {
             const data = await (
                 await fetch(
-                    `https://api.prodigygame.com/leaderboard-api/season/${prodigy.pvpNetworkHandler.seasonID}/user/${_.player.userID}/pvp?userID=${_.player.userID}`,
-                    {
+                    `https://api.prodigygame.com/leaderboard-api/season/${prodigy.pvpNetworkHandler.seasonID}/user/${_.player.userID}/pvp?userID=${_.player.userID}`, {
                         headers: {
                             // @ts-expect-error
                             authorization: `Bearer ${prodigy.network.jwtAuthProvider.getToken()}`,
-                            "content-type":
-                                "application/x-www-form-urlencoded; charset=UTF-8",
+                            "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
                         },
                         body: `seasonID=${prodigy.pvpNetworkHandler.seasonID}&action=win`,
                         method: "POST",
@@ -56,22 +53,26 @@ new Hack(category.patched, "Arena Point Increaser [Patched]").setClick(async () 
             } else console.log(`[API] Failed to add points.`);
         }, 60500);
         return Swal.fire("Enabled", "Arena Point Increaser has been enabled.", "success");
-	}
+    }
 });
 // End Arena Point Increaser
 
 
+
+
 // Begin Disable Timeout Dialog
 new Hack(category.patched, "Disable Timeout Dialog [Patched]").setClick(async () => {
-	if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
-		return console.log("Cancelled");
-	} else {
+    if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
+        return console.log("Cancelled");
+    } else {
         // @ts-expect-error
-	    prodigy.debugMisc.disableTimeoutDialogue();
-	}
-	return Toast.fire("Enabled", "Timeout Dialog has been disabled.", "success");
+        prodigy.debugMisc.disableTimeoutDialogue();
+    }
+    return Toast.fire("Enabled", "Timeout Dialog has been disabled.", "success");
 });
 // End Disable Timeout Dialog
+
+
 
 
 
