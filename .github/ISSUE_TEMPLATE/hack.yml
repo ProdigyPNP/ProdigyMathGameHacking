@@ -1,0 +1,34 @@
+name: Hack Request
+description: Request a hack to be added to the cheat GUI
+title: '[FR] title'
+labels: ["Is: Enhancement", "Category: Cheat GUI"]
+body:
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the hack
+      description: |
+        A clear and concise description of what you would like.
+        Please provide as much information as possible.
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date of submittion
+    validations:
+      required: true
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Before submitting a hack request
+      options:
+        - label: |
+            This hack wasn't already requested.
+            (I have checked every hack request on GitHub)
+          required: true
+        - label: |
+            I agree to this repository's prerequisites.
+            (I have read and agree to the License, Code of Conduct, and Contributing Guidelines)
+          required: true

@@ -1,0 +1,33 @@
+name: Other
+description: Submit a blank issue to ProdigyMathGameHacking.
+title: '[O] title'
+body:
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe your issue
+      description: |
+        Make a clear and concise description.
+        Provide as much information as possible.
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date of submittion
+    validations:
+      required: true
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Before submitting an issue
+      options:
+        - label: |
+            This wasn't already submitted.
+            (I have checked every issue on GitHub)
+          required: true
+        - label: |
+            I agree to this repository's prerequisites.
+            (I have read and agree to the License, Code of Conduct, and Contributing Guidelines)
+          required: true
