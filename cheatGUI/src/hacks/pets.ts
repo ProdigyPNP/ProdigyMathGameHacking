@@ -88,21 +88,19 @@ new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
     }
 
 
-
-
-    // TODO: I need Aura's ID
-    // @ts-expect-error
-    const epics = _.gameData.pet.filter(x => [158, 166, 168].includes(x.ID));
-    // @ts-expect-error
-    epics.forEach(x => {
-        _.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
-    });
-    // Fix broken pets	
-    // @ts-expect-error
-    _.player.kennel.petTeam.forEach(v => {
-        if (v && (v as any).assignRandomSpells)(v as any).assignRandomSpells();
-    });
-    return Toast.fire("Success!", "All mythical epics have been added!", "success");
+	// TODO: I need Nebula & Aura's ID
+  // @ts-expect-error
+	const epics = _.gameData.pet.filter(x => [156, 157, 158, 160, 168, 170].includes(x.ID));
+  // @ts-expect-error
+	epics.forEach(x => {
+		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+	});
+	// Fix broken pets
+  // @ts-expect-error
+	_.player.kennel.petTeam.forEach((v: any) => {
+		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
+	});
+	return Toast.fire("Success!", "All mythical epics have been added!", "success");
 }); // btw this hack was made by gemsvidø (afkvido on github)
 // End Get ALl Mythical Epics
 
