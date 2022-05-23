@@ -83,33 +83,36 @@ new Hack(category.battle, "Win Battle [PvE]", "Instantly win a battle in PvE.").
 	const currentState = game.state.current;
 	console.log("Current State: " + currentState);
 
-	if (currentState === "PVP" || currentState === "CoOp") {
-		return Toast.fire(
-			"Invalid State.",
-			"PvP is not supported for this hack.",
-			"error"
-		);
-	} else if (currentState === "Battle") {
-		Object.fromEntries(_.instance.game.state.states).Battle.startVictory();
-		return Toast.fire(
-			"Victory!",
-			"You have successfully won the battle.",
-			"success"
-		);
-	} else if (currentState === "SecureBattle") {
-		Object.fromEntries(_.instance.game.state.states).SecureBattle.battleVictory();
-		return Toast.fire(
-			"Victory!",
-			"You have successfully won the battle.",
-			"success"
-		);
-	} else {
-		return Toast.fire(
-			"Invalid State.",
-			"You are currently not in a battle.",
-			"error"
-		);
+	switch (currentState) {
+	    case "PVP":
+	    case "CoOp":
+	        return Toast.fire(
+        			"Invalid State.",
+        			"PvP is not supported for this hack.",
+        			"error"
+        		);
+        case "Battle":
+            Object.fromEntries(_.instance.game.state.states).Battle.startVictory();
+        	return Toast.fire(
+        		"Victory!",
+        		"You have successfully won the battle.",
+        		"success"
+        	);
+        case "SecureBattle":
+        	Object.fromEntries(_.instance.game.state.states).SecureBattle.battleVictory();
+            return Toast.fire(
+           		"Victory!",
+           		"You have successfully won the battle.",
+           		"success"
+            );
+        default:
+            return Toast.fire(
+                "Invalid State.",
+            	"You are currently not in a battle.",
+            	"error"
+           	);
 	}
+
 });
 // End Win Battle
 
