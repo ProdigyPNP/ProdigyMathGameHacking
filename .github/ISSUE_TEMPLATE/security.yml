@@ -1,0 +1,55 @@
+name: Security issue
+description: Report a security issue to help us improve Prodigy Hacks.
+title: '[SE] title'
+labels: ["Is: Bug", "Priority: High"]
+body:
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the vulnerability
+      description: |
+        A clear and concise description of what the issue is.
+        Provide as much information as possible.
+    validations:
+      required: true
+  - type: textarea
+    id: replication
+    attributes:
+      label: Describe how to replicate the vulnerability
+      description: |
+        Please provide a step-by-step explanation on how to reproduce the bug.
+        Make sure to test your replication steps.
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date of submittion
+    validations:
+      required: true
+  - type: input
+    id: phex
+    attributes:
+      label: Vulerable PHEx versions, type LATEST if this is for the latest version, type ALL if this is for all versions.
+    validations:
+      required: true
+  - type: input
+    id: context
+    attributes:
+      label: Vulnerable operating systems and their versions, type ALL if this is global.
+    validations:
+      required: true
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Before submitting a bug report
+      options:
+        - label: |
+            This vulnerability wasn't already reported.
+            (I have checked every bug report on GitHub)
+          required: true
+        - label: |
+            I agree to this repository's prerequisites.
+            (I have read and agree to the License, Code of Conduct, and Contributing Guidelines)
+          required: true
