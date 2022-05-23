@@ -96,7 +96,6 @@ new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
 	});
 	// Fix broken pets
-  // @ts-expect-error
 	_.player.kennel.petTeam.forEach((v: any) => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
