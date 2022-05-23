@@ -1,8 +1,6 @@
-// @ts-nocheck
-
 import { TODO } from "../../../typings/util"; // Import Prodigy Util typings
 import { _ } from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
-import { Swal } from "../utils/swal";  // Import Swal, Toast, Confirm, Input, and NumberInput from swal
+import { Swal, Toast } from "../utils/swal";  // Import Swal, Toast, Confirm, Input, and NumberInput from swal
 
 
 
@@ -19,6 +17,7 @@ export const ids : String[] = ["boots", "follow", "fossil", "hat", "item", "key"
 
 
 // Convert item to Item ID map
+// @ts-expect-error
 export const itemify = (item: Item[], amount: number) =>
 	item.map(x => ({
 		ID: x.ID,
@@ -27,10 +26,13 @@ export const itemify = (item: Item[], amount: number) =>
 
 
 // Convert rune to Rune ID map
+// @ts-expect-error
 export const runeify = (item, amount) =>
+	// @ts-expect-error
     item.map(x => ({
 	    ID: x.ID,
 		quantity: amount
+		// @ts-expect-error
     })).filter(v => v !== undefined);
 
 
@@ -55,7 +57,7 @@ export function toHouse (userID: number) {
 	}
 	const zone = _.instance.prodigy.world.getZone(_.instance.prodigy.world.getCurrentZone());
 	if (!zone) return Swal.fire({ title: "Error", text: "You are not in a zone!", icon: "error" });
-	zone.handleLeaving(2, () => teleportToHouse(userID));
+	return zone.handleLeaving(2, () => teleportToHouse(userID));
 }
 // End toHouse function
 
@@ -77,7 +79,7 @@ export function teleportToHouse (userID: number) {
 			if (!(playerData.data.allowsHouseVisitors !== undefined && playerData.data.allowsHouseVisitors !== null ? playerData.data.allowsHouseVisitors : false)) {
 				return Swal.fire(`Teleporting to ${userID} is not allowed.`, "Try another user.", "error");
 			}
-			_.instance.prodigy.world._("house", null, null, { house, getAllowsHouseVisitors: () => playerData.data.allowsHouseVisitors !== undefined && playerData.data.allowsHouseVisitors !== null ? playerData.data.allowsHouseVisitors : false, setAllowsHouseVisitors: (v: boolean) => { playerData.data.allowsHouseVisitors = v; } });
+			return _.instance.prodigy.world._("house", null, null, { house, getAllowsHouseVisitors: () => playerData.data.allowsHouseVisitors !== undefined && playerData.data.allowsHouseVisitors !== null ? playerData.data.allowsHouseVisitors : false, setAllowsHouseVisitors: (v: boolean) => { playerData.data.allowsHouseVisitors = v; } });
 		}
 	};
 
@@ -96,6 +98,7 @@ export const getPet = async (text: string): Promise<number | undefined> => {
 		inputOptions: new Map(
 			_.player.kennel.data.map((x: TODO, i: number) => [
 				i.toString(),
+				// @ts-expect-error
 				`Level ${x.level} - ${x.nickname ?? _.gameData.pet.find(y => +y.ID === +x.ID)?.data.name ?? "Unknown"}`
 			]) as [string, string][]
 		),
@@ -103,35 +106,4 @@ export const getPet = async (text: string): Promise<number | undefined> => {
 		text: text
 	});
 	return pet.value;
-};
-
-
-
-
-
-
-// Display status message
-export function statusMessage () {
-
-
-    fetch(`https://raw.githubusercontent.com/ProdigyMathGame/development/master/cheatGUI/statusmessage.json?updated=${Date.now()}`).then(response => response.json()).then(async data => {
-
-            const enabled : boolean = data.enabled;
-
-            if (enabled.value === false) {
-                return console.log("Status message is disabled.");
-            } else {
-
-                await Swal.fire({
-                            title: data.title,
-                    	    html: data.html,
-                    	    icon: data.icon,
-                    });
-
-            }
-
-        });
-
-
-
 };
