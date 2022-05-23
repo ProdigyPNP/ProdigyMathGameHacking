@@ -1,6 +1,6 @@
-name: Hack Request
-description: Request a hack to be added to the cheat GUI
-title: '[FR] title'
+name: "Hack Request"
+description: "Request a hack to be added to the cheat GUI"
+title: "[FR] title"
 labels: ["Is: Enhancement", "Category: Cheat GUI"]
 assignees: ["afkvido", "donaldli2020", "Erisfiregamer1"]
 body:
