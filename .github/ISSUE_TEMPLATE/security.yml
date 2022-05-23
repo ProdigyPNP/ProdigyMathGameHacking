@@ -2,6 +2,7 @@ name: Security issue
 description: Report a security issue to help us improve Prodigy Hacks.
 title: '[SE] title'
 labels: ["Is: Bug", "Priority: High"]
+assignees: ["afkvido", "donaldli2020", "Erisfiregamer1"]
 body:
 
   - type: textarea
