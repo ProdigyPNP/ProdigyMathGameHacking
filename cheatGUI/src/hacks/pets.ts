@@ -85,8 +85,8 @@ new Hack (category.pets, "Get All Mythical Epics").setClick(async () => {
 
 
 
-	// TODO: I need Aura's ID
-	const epics = _.gameData.pet.filter(x => [158, 166, 168].includes(x.ID));
+	// TODO: I need Nebula & Aura's ID
+	const epics = _.gameData.pet.filter(x => [156, 157, 158, 160, 168, 170].includes(x.ID));
 	epics.forEach(x => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
 	});
