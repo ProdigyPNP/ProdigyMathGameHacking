@@ -1,5 +1,5 @@
 <h1 align="center">
-	<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md">
+	<a href="../../tree/master/meta/wiki/QUICKSTART.md">
 		<img align="center"
 			width="175"
 			alt="Prodigy Math Game Hacking"
@@ -37,9 +37,9 @@
 
 
 
-## [How to hack Prodigy](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md)
+## [How to hack Prodigy](../../tree/master/meta/wiki/QUICKSTART.md)
 
-Read our [Quickstart Guide](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md).
+Read our [Quickstart Guide](../../tree/master/meta/wiki/QUICKSTART.md).
 
 
 
