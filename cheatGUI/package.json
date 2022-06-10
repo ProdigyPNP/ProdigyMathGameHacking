@@ -33,7 +33,7 @@
     "autoprefixer": "^10.2.5",
     "babel": "^6.23.0",
     "babel-loader": "^8.2.2",
-    "css-loader": "^5.1.2",
+    "css-loader": "^6.7.1",
     "postcss": "^8.2.10",
     "postcss-loader": "^5.2.0",
     "sass": "^1.32.8",
