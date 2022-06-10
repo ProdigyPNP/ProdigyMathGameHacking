@@ -35,7 +35,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^6.7.1",
     "postcss": "^8.2.10",
-    "postcss-loader": "^5.2.0",
+    "postcss-loader": "^7.0.0",
     "sass": "^1.32.8",
     "sass-loader": "^13.0.0",
     "socket.io": "^4.1.3",
