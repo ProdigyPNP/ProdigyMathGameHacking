@@ -1,0 +1,71 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+
+  # cheatGUI
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/cheatGUI" # Location of package manifests
+    schedule:
+      interval: "daily" # Run Daily
+    commit-message:
+      prefix: "[cheatGUI]"      
+    assignees:
+      - "afkvido"
+      - "donaldli2022"  
+      - "Erisfiregamer1"
+
+
+  # PHEx
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/PHEx" # Location of package manifests
+    schedule:
+      interval: "daily" # Run Daily
+    commit-message:
+      prefix: "[PHEx]"      
+    assignees:
+      - "afkvido"
+      - "donaldli2022"  
+      - "Erisfiregamer1"      
+      
+      
+  # typings
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/typings" # Location of package manifests
+    schedule:
+      interval: "daily" # Run Daily      
+    commit-message:
+      prefix: "[typings]"      
+    assignees:
+      - "afkvido"
+      - "donaldli2022"  
+      - "Erisfiregamer1"
+      
+
+  # docs
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/docs" # Location of package manifests
+    schedule:
+      interval: "daily" # Run Daily     
+    commit-message:
+      prefix: "[docs]"      
+    assignees:
+      - "afkvido"
+      - "donaldli2022"  
+      - "Erisfiregamer1"
+      
+      
+# GitHub Actions      
+  - package-ecosystem: "github-actions" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily" # Run Daily
+    commit-message:
+      prefix: "[Actions]"      
+    assignees:
+      - "afkvido"
+      - "donaldli2022"  
+      - "Erisfiregamer1"      

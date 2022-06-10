@@ -10,8 +10,6 @@ node_modules/
 # Extension Private Key files
 *.pem
 
-# Not sure what this is, i'll probbably remove it soon
-PHEx/src/web-ext-artifacts/prodigy_hacking_extension_phex_-2.0.1.zip
 
 # MacOS
 **/.DS_Store
