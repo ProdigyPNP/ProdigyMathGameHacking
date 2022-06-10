@@ -1,14 +1,17 @@
 {
 	"name": "Prodigy Hacking Extension | PHEx",
-	"version": "2.1.9.0",
+	"version": "2.1.10",
 	"description": "Free and open source hacks for Prodigy Math Game",
 	"permissions": [
 		"webRequest",
-		"webRequestBlocking",
+		"declarativeNetRequest",
+		"storage",
+		""
+	],
+	"host_permissions": [
 		"*://*.prodigygame.com/*",
 		"https://raw.githubusercontent.com/*",
-		"https://p-np.prodigypnp.repl.co/*",
-		"storage"
+		"https://p-np.prodigypnp.repl.co/*"
 	],
 	"icons": {
 		"16": "assets/x16.png",
@@ -16,15 +19,27 @@
 		"128": "assets/x128.png"
 	},
 	"background": {
-		"service_worker": "background.js",
-		"persistent": true
+		"service_worker": "background.js"
+	},
+	"declarative_net_request" : {
+		"rule_resources" : [{
+			"id": "ruleset_1",
+			"enabled": true,
+			"path": "block.json"
+		}]
 	},
 	"content_scripts": [{
 		"matches": ["https://math.prodigygame.com/*"],
 		"js": ["disableIntegrity.js"]
 	}],
-	"browser_action": {
-		"default_popup": "popup.html"
+	"action": {
+		"default_popup": "popup.html",
+		"default_icons": {
+			"16": "assets/x16.png",
+			"48": "assets/x48.png",
+			"128": "assets/x128.png"
+		},
+		"default_title": "Prodigy Hacking Extension | PHEx"
 	},
-	"manifest_version": 2
+	"manifest_version": 3
 }
