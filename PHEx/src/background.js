@@ -47,12 +47,7 @@ browser.webRequest.onBeforeRequest.addListener(async details => {
 			}
 		});
 
-		// Blocking gamemin
-		browser.webRequest.onBeforeRequest.addListener(
-			_ => ({ cancel: true }),
-			{ urls: ["*://code.prodigygame.com/code/*"] },
-			["blocking"]
-		);
+		
 
 		// see disableIntegrity.js, we append the new game.min to the document
 		return { cancel: true };
