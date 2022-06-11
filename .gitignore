@@ -10,7 +10,6 @@ node_modules/
 # Extension Private Key files
 *.pem
 
-
 # MacOS
 **/.DS_Store
 
