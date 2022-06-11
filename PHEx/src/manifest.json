@@ -22,11 +22,18 @@
 		"service_worker": "background.js"
 	},
 	"declarative_net_request" : {
-		"rule_resources" : [{
-			"id": "ruleset_1",
-			"enabled": true,
-			"path": "block.json"
-		}]
+		"rule_resources" : [
+			{
+				"id": "ruleset_1",
+				"enabled": true,
+				"path": "block.json"
+			},
+			{
+				"id": "ruleset_2",
+				"enabled": true,
+				"path": "headers.json"
+			}
+		]
 	},
 	"content_scripts": [{
 		"matches": ["https://math.prodigygame.com/*"],
