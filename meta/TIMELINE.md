@@ -36,7 +36,7 @@ This method worked for longer than the last one, however, it was also quickly pa
 ### Cheat Dashboard Day
 `03/30/2020 - 03/30/2020`
 
-[A cheat dashboard](https://prodigy-dashboard.hostedposted.com/) was developed by [hostedposted](https://github.com/hostedposted). The dashboard was a good concept, however it became very buggy due to some game updates, which caused it to be unsupported the day after.
+[A cheat dashboard](https://prodigy-dashboard.hostedposted.com/) was developed by [melcant](https://github.com/melcant). The dashboard was a good concept, however it became very buggy due to some game updates, which caused it to be unsupported the day after. A new one was created by [hostedposted](https://github.com/hostedposted) much later.
 <br><br><br>
  
 
@@ -91,12 +91,11 @@ On June 10th, Prodigy added content security headers. This caused the addition o
 
 
 ### `hack.instance.prodigy.player` Patch
-`07/05/2020 - 07/05/2020`
+`07/05/2021 - 07/05/2020`
 
 On July 5th, Prodigy implemented a patch for `hack.instance.prodigy.player`. This was unpatched by PMGH about 3 hours later.
 <br><br><br>
  
-
 ### Script based hacks return
 `08/25/2020`
 
@@ -142,7 +141,10 @@ On November 13th, [Prodigy](https://prodigy.com) added extra security via integr
 On November 19th, [Natsumi](https://github.com/Patheticmustan) bypassed the [SHA256 sumcheck](https://help.ubuntu.com/community/HowToSHA256SUM), which fixed the hacks.
 <br><br><br>
 
+### New Dashboard ###
+`07/31/2020 - CURRENT`
 
+[hostedposted](https://github.com/hostedposted) created a new dashboard on July 31, 2021. It still works to this day, actually. [Try it out.](https://prodigy-dashboard.hostedposted.com)
 
 ### The end of PMGH
 `04/06/2022`
