@@ -40,9 +40,27 @@
 <br>
 
 ## Mozilla Firefox
-Coming Soon`TM`
+1. Open **Mozilla Firefox**.
+2. Go to https://addons.mozilla.org/en-US/firefox/addon/phex/ [WILL BE AVAILABLE SOON]
+3. Click **Add to Firefox**.
+4. You should see a new extension called `Prodigy Hacking Extension | PHEx` in your addons.
+5. Go to [Prodigy](https://play.prodigygame.com) (``play.prodigygame.com``).
+6. Log in as usual to Prodigy.
+7. Once you enter a world, wait 5-15 seconds.
+8. In the top left corner of your screen, you should see a dropdown arrow. Click the dropdown arrow to open the hacks.
+9. Congrats, you've successfully achived hacking in the Prodigy Math Game.
+10. Join [our discord server](https://dsc.gg/ProdigyPNP) for more!
 
 <br>
 
 ## Microsoft Edge
-Coming Soon`TM`
+1. Open **Microsoft Edge**
+2. Go to (soonTM) [WILL BE AVAILABLE SOON]
+3. Click **Get**.
+4. You should see a new extension called `Prodigy Hacking Extension | PHEx` in your addons.
+5. Go to [Prodigy](https://play.prodigygame.com) (``play.prodigygame.com``).
+6. Log in as usual to Prodigy.
+7. Once you enter a world, wait 5-15 seconds.
+8. In the top left corner of your screen, you should see a dropdown arrow. Click the dropdown arrow to open the hacks.
+9. Congrats, you've successfully achived hacking in the Prodigy Math Game.
+10. Join [our discord server](https://dsc.gg/ProdigyPNP) for more!
