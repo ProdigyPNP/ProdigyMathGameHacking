@@ -1,4 +1,4 @@
-# PMGH Code of Conduct
+# ProdigyPNP Code of Conduct
 
 Our goal was to improve Prodigy's security, not ruining the game for profit. We won't sell our hacks, or put ads.
 
