@@ -41,7 +41,7 @@
 
 ## Mozilla Firefox
 1. Open **Mozilla Firefox**.
-2. Go to https://addons.mozilla.org/en-US/firefox/addon/phex/ [WILL BE AVAILABLE SOON]
+2. Go to https://addons.mozilla.org/en-US/firefox/addon/phex/
 3. Click **Add to Firefox**.
 4. You should see a new extension called `Prodigy Hacking Extension | PHEx` in your addons.
 5. Go to [Prodigy](https://play.prodigygame.com) (``play.prodigygame.com``).
