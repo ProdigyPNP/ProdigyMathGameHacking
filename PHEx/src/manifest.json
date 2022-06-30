@@ -24,14 +24,9 @@
 	"declarative_net_request" : {
 		"rule_resources" : [
 			{
-				"id": "ruleset_1",
+				"id": "rulesets",
 				"enabled": true,
 				"path": "block.json"
-			},
-			{
-				"id": "ruleset_2",
-				"enabled": true,
-				"path": "headers.json"
 			}
 		]
 	},

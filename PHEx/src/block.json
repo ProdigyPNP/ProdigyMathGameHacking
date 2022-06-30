@@ -1,13 +1,34 @@
 [
   {
-    "id" : 1,
-    "priority": 1,
-    "action" : {
-      "type" : "block"
-    },
-    "condition" : {
-      "urlFilter" : "*://code.prodigygame.com/*",
-      "resourceTypes" : ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "webtransport", "webbundle", "other"]
-    }
+      "id": 1,
+      "priority": 1,
+      "action": {
+        "type": "block"
+      },
+      "condition": {
+        "urlFilter": "https://code.prodigygame.com/code/*/game.min.js?v=*"
+      }
+  },
+
+  {
+      "id": 2,
+      "priority": 1,
+      "action": {
+          "type": "modifyHeaders",
+          "responseHeaders": [
+              {
+                "header": "content-security-policy",
+                "operation": "remove"
+              },
+              {
+                "header": "x-frame-options",
+                "operation": "remove"
+              }
+          ]
+      },
+      "condition": {
+        "urlFilter": "*://*.prodigygame.com/*",
+        "resourceTypes": ["main_frame"]
+      }
   }
 ]
