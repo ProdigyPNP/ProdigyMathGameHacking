@@ -6,6 +6,7 @@
 		"webRequest",
 		"declarativeNetRequest",
 		"storage",
+		"scripting",
 		""
 	],
 	"host_permissions": [

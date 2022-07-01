@@ -1,11 +1,11 @@
 (async () => {
-	function get(key) {
-		return new Promise(resolve => {
-			chrome.storage.local.get([key], result => {
-				resolve(result[key]);
+		function get(key) {
+			return new Promise(resolve => {
+				chrome.storage.local.get([key], result => {
+					resolve(result[key]);
+				});
 			});
-		});
-	}
+		}
 
 	if (!window.scriptIsInjected) {
 		// get options from local
