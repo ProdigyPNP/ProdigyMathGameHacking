@@ -95,9 +95,9 @@ new Hack(category.player, "Max Account").setClick(async () => {
     console.log("Set player's wins to VERY_LARGE_NUMBER");
 
 
-    // Set the player's losses to -9223372036854775808 (Java long limit, ik its irrelevant)
-    _.player.data.loss = -9223372036854775808;
-    console.log("Set player's losses to -9223372036854775808.");
+    // Set the player's losses to VERY_LARGE_NUMBER
+    _.player.data.loss = VERY_LARGE_NUMBER;
+    console.log("Set player's losses to VERY_LARGE_NUMBER.");
 
 
 
@@ -620,7 +620,7 @@ new Hack(category.player, "Get UserID").setClick(async () => {
     navigator.clipboard.writeText(UserID.toString()).then(function() {
 
 
-        console.log('Async: Copying to clipboard was successful!');
+        console.log("Async: Copying to clipboard was successful!");
 
         return Swal.fire({
             title: "User ID",
@@ -631,7 +631,7 @@ new Hack(category.player, "Get UserID").setClick(async () => {
 
     }, function(err) {
 
-        console.error('Async: Could not copy text: ', err);
+        console.error("Async: Could not copy text: ", err);
 
         return Swal.fire({
             title: "User ID",
