@@ -26,12 +26,16 @@
 					// a messy solution for sure, but this should only be a bandaid on a bulletwound
 					const injectedScript = document.createElement("script");
 					injectedScript.innerHTML = response;
+					
+					const nonce = document.createAttribute("nonce");
+					injectedScript.setAttributeNode(nonce);
 
 					document.body.append(injectedScript);
 				})
 				.catch(async (error) => {
 					// If fetch spits out error, trigger dialog box
 					eval(await (await fetch('https://unpkg.com/sweetalert2')).text());
+					
 					if (swal) {
 						swal.fire({
 							title: "Oh no!",
