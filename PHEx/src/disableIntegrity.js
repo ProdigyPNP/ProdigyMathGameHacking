@@ -15,6 +15,27 @@
 
 		window.scriptIsInjected = true;
 
+
+		function getHash () {
+
+			var out;
+
+			fetch(`${redirectorDomain}/hash?updated=${Date.now()}`)
+				.then(res => res.text())
+				.then(response => {
+
+					out = "sha256-" + response;
+					
+
+				});
+
+				return out;
+		}
+
+
+
+
+
 		function redirectorCheck() {
 			fetch(`${redirectorDomain}/game.min.js?updated=${Date.now()}`)
 				.then(res => res.text())
@@ -26,15 +47,27 @@
 					// a messy solution for sure, but this should only be a bandaid on a bulletwound
 					const injectedScript = document.createElement("script");
 					injectedScript.innerHTML = response;
-					
-					const nonce = document.createAttribute("nonce");
-					injectedScript.setAttributeNode(nonce);
+				
 
+
+
+				fetch(`${redirectorDomain}/hash?updated=${Date.now()}`)
+				.then(res => res.text())
+				.then(response => {
+
+					injectedScript.setAttribute("integrity", "sha256-" + response);
 					document.body.append(injectedScript);
+					
+
+				});
+
+
+					
 				})
 				.catch(async (error) => {
 					// If fetch spits out error, trigger dialog box
-					eval(await (await fetch('https://unpkg.com/sweetalert2')).text());
+					
+					/* eval(await (await fetch('https://unpkg.com/sweetalert2')).text());
 					
 					if (swal) {
 						swal.fire({
@@ -42,10 +75,10 @@
 							html: `An error occurred when trying to fetch the hacks, this usually happens when your school blocks <a href="${redirectorDomain}">${redirectorDomain}</a>.<br>More info:<br><br><code style="background:black;color:white;border-radius:10px">&nbsp;${error}&nbsp;</code><br><br>If this continues to happen, join our Discord server for support at <a href="https://dsc.gg/ProdigyPNP">dsc.gg/ProdigyPNP</a>.`,
 							icon: "error"
 						})
-					} else {
+					}  else { */
 						const res = confirm(`Oh No! Something went wrong while trying to connect to the server! Try reloading this page. If this error continues to appear, hit ok to join our Discord for support, or create an issue on the GitHub. More info ${error}. This is normally caused by your school or organization blocking the hacks.`);
 						if (res) location = "https://dsc.gg/ProdigyPNP";
-					}
+					// }
 				});
 		}
 		setTimeout(redirectorCheck, 1000);
