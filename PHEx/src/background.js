@@ -6,7 +6,7 @@ function get(key) {
 			resolve(result[key]);
 		});
 	});
-}
+} 
 
 
 const url = await get("url");
