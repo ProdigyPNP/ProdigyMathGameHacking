@@ -16,25 +16,6 @@ const redirectorDomain = (url && checked) ? url : "https://p-np.prodigypnp.repl.
 
 
 
-const gameFileUrl = {
-	get: async () => (() => { return redirectorDomain + "/game.min.js"; }),
-	set: url => chrome.storage.sync.set({
-		"game-file-url": url
-	})
-};
-
-async function insertCode () {
-	try {
-		const request = await (await fetch(await gameFileUrl.get() || "https://raw.githubusercontent.com/ProdigyAPI/ProdigyGameFilePatchGenerator/master/game-files/current.js")).text();
-		const cheatMenuRequest = await (await fetch(await cheatMenuUrl.get() || "https://raw.githubusercontent.com/ProdigyAPI/ProdigyX/master/dist/extension-bundle.js")).text();
-		document.documentElement.setAttribute("onreset", `${request}\nSW.Load.decrementLoadSemaphore();\n${cheatMenuRequest.replaceAll("new URL", "new window.URL")}`);
-		document.documentElement.dispatchEvent(new CustomEvent("reset"));
-		document.documentElement.removeAttribute("onreset");
-	} catch (e) {
-		alert("Failed to load hack\n" + e.message);
-	}
-}
-
 if (!window.scriptIsInjected) {
 	window.scriptIsInjected = true;
 	setTimeout(insertCode, 1000);
@@ -48,3 +29,32 @@ if (!window.scriptIsInjected) {
 	console.groupEnd();
 }
 // Incomplete but im just commiting it
+
+
+
+const hosts = [
+	"prodigygame.com",
+  ];
+
+  chrome.runtime.onInstalled.addListener(() => {
+	chrome.declarativeNetRequest.updateDynamicRules({
+	  removeRuleIds: hosts.map((h, i) => i + 1),
+	  addRules: hosts.map((h, i) => ({
+		id: i + 1,
+		condition: {
+		  domains: [chrome.runtime.id],
+		  urlFilter: `||${h}/`,
+		  resourceTypes: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "webtransport", "webbundle", "other"],
+		},
+		action: {
+		  type: "modifyHeaders",
+		  responseHeaders: [
+			{header: "X-Frame-Options", operation: "remove"},
+			{header: "Frame-Options", operation: "remove"},
+			{header: "content-security-policy", operation: "remove"},
+			{header: "Content-Security-Policy", operation: "remove"},
+		  ],
+		},
+	  })),
+	});
+  });
