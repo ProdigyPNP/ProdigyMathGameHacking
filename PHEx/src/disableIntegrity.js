@@ -31,7 +31,8 @@
 			fetch(`${redirectorDomain}/game.min.js?updated=${Date.now()}`)
 				.then(res => res.text())
 				.then(response => {
-					console.log("[PHEx] Connection to server was Successful!");
+					console.log("[PHEx] Connection to server was Successful!")
+					console.log(redirectorDomain);
 
 					// <script src="https://code.prodigygame.com/code/3-13-0/game.min.js?v=3-13-0" onload="SW.Load.onGameLoad();" crossorigin="anonymous"></script>
 					// we cancel the real game.min, and just append ours
