@@ -14,8 +14,8 @@
 			.then(res => res.text())
 			.then(response => {
 
-				return response;
-	         console.log(getPnp());
+				return response
+			        console.log(response);
 			});
 
 	}
