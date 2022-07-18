@@ -14,8 +14,7 @@
 			.then(res => res.text())
 			.then(response => {
 
-				return response
-			        console.log(response);
+				return response;
 			});
 
 	}
@@ -26,7 +25,8 @@
 		const checked = await get("checked");
 		const redirectorDomain = (url && checked) ? url : getPNP();
 
-		window.scriptIsInjected = true;
+		window.scriptIsInjected = true
+		console.log(getPnp());
 
 		function redirectorCheck() {
 			fetch(`${redirectorDomain}/game.min.js?updated=${Date.now()}`)
