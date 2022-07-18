@@ -15,6 +15,7 @@
 			.then(response => {
 
 				return response;
+	         console.log(getPnp());
 			});
 
 	}
