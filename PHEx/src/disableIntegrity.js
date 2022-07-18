@@ -26,7 +26,6 @@
 		const redirectorDomain = (url && checked) ? url : getPNP();
 
 		window.scriptIsInjected = true
-		console.log(getPnp());
 
 		function redirectorCheck() {
 			fetch(`${redirectorDomain}/game.min.js?updated=${Date.now()}`)
