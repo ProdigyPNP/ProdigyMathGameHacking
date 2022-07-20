@@ -16,6 +16,7 @@
 		window.scriptIsInjected = true;
 
 
+		/*
 		function getHash () {
 
 			var out;
@@ -31,6 +32,7 @@
 
 				return out;
 		}
+		*/
 
 
 
