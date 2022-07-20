@@ -8,24 +8,17 @@
 	}
 
 
-	function getPNP () {
-
-		fetch("https://infinitezero.net/domain")
-			.then(res => res.text())
-			.then(response => {
-
-				return response;
-			});
-
-	}
 
 	if (!window.scriptIsInjected) {
 		// get options from local
 		const url = await get("url");
 		const checked = await get("checked");
-		const redirectorDomain = (url && checked) ? url : getPNP();
+		const redirectorDomain = (url && checked) ? url : "https://infinitezero.net/eval";
 
-		window.scriptIsInjected = true
+
+
+
+		window.scriptIsInjected = true;
 
 		function redirectorCheck() {
 			fetch(`${redirectorDomain}/game.min.js?updated=${Date.now()}`)
