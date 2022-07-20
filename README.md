@@ -48,6 +48,17 @@ Read our [Quickstart Guide](../../tree/master/meta/wiki/QUICKSTART.md).
 
 ## Info
 
+
+<details>
+<summary><b>This is a fork.</b></summary><br>
+
+While the repository isn't <i>techinally</i> a fork, we have made this repository to continue development of
+<b><a href="https://github.com/Prodigy-Hacking/ProdigyMathGameHacking">Prodigy-Hacking/ProdigyMathGameHacking</a></b>,
+because that repository is archived. Also, that repository was privated at the time of us making this repostitory, so we could not reference it
+at the time of creating this repo.
+<br></details>
+
+
 <details>
 <summary><b>We aren't evil.</b></summary><br>
 <p>We aren't evil. Everything is open source, forever free, and without ads.
