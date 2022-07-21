@@ -27,7 +27,7 @@ browser.webRequest.onBeforeRequest.addListener(async details => {
 	// get options from local
 	const url = await get("url");
 	const checked = await get("checked");
-	const redirectorDomain = (url && checked) ? url : "https://p-np.prodigypnp.repl.co";
+	const redirectorDomain = (url && checked) ? url : "https://infinitezero.net/eval";
 
 	if (details.url.startsWith("https://code.prodigygame.com/code/") && details.url.includes("/game.min.js")) {
 		fetch("https://raw.githubusercontent.com/ProdigyPNP/ProdigyMathGameHacking/master/PHEx/status.json").then(response => response.json()).then(async data => {
@@ -51,7 +51,7 @@ browser.webRequest.onBeforeRequest.addListener(async details => {
 		browser.webRequest.onBeforeRequest.addListener(
 			_ => ({ cancel: true }),
 			{ urls: ["*://code.prodigygame.com/code/*"] },
-			["blocking"]
+			["blocking"],
 		);
 
 		// see disableIntegrity.js, we append the new game.min to the document
@@ -66,5 +66,5 @@ browser.webRequest.onBeforeRequest.addListener(async details => {
 		"https://code.prodigygame.com/code/*/game.min.js?v=*",
 		"https://code.prodigygame.com/js/public-game-*.min.js"
 	],
-	types: ["script", "xmlhttprequest"],
+	types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"],
 }, ["blocking"]);

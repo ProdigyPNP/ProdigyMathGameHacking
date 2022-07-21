@@ -1,13 +1,13 @@
 {
 	"name": "Prodigy Hacking Extension | PHEx",
-	"version": "2.1.9",
+	"version": "2.2.0",
 	"description": "Free and open source hacks for Prodigy Math Game",
 	"permissions": [
 		"webRequest",
 		"webRequestBlocking",
 		"*://*.prodigygame.com/*",
 		"https://raw.githubusercontent.com/*",
-		"https://p-np.prodigypnp.repl.co/*",
+		"https://infinitezero.net/*",
 		"storage"
 	],
 	"icons": {
