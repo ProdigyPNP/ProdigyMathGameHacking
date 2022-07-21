@@ -535,28 +535,27 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 
 // Begin Toggle Close Popups
 // @ts-expect-error
-let popupinterval: misc | null = null;
-
+let popupCloseOn = !1;
 new Toggler(category.beta, "Toggle Close Popups [BETA]", "Automatically closes popups in Prodigy.").setClick(async () => {
 
 
-    if (popupinterval) {
-
-        return Swal.fire("Already Enabled", "Toggle Close Popups is already enabled. To disable popup closer, reload Prodigy.", "error");
+    if (popupCloseOn) {
+        popupCloseOn = !1;
+        return Toast.fire("Enabled", "Toggle Close Popups is now disabled.", "success");
     } else if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
         return console.log("Cancelled");;
     } else {
-
-        popupinterval = setInterval(async () => {
-
-            _.instance.prodigy.open.menuCloseAll();
-
-        }, 200);
-
+        popupCloseOn = !0;
         return Toast.fire("Enabled", "Toggle Close Popups is now enabled.", "success");
     }
 
 });
+
+setInterval(async () => {
+    if (popupCloseOn) {
+        _.instance.prodigy.open.menuCloseAll();
+    }
+}, 200);
 // End Toggle Close Popups
 
 
