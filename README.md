@@ -43,8 +43,14 @@ Read our [Quickstart Guide](../../tree/master/meta/wiki/QUICKSTART.md).
 
 
 
+<h4 id="Webstores">
 
-<br>
+   <a href="https://addons.mozilla.org/en-US/firefox/addon/phex"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png"></img></a>
+   
+
+
+
+</h4>
 
 ## Info
 
