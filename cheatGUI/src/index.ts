@@ -227,7 +227,7 @@ if (localStorage.getItem("level")) {
 }
 
 
-let shownMenu : Boolean = visible.value;
+let shownMenu : boolean = true;
 document.addEventListener("keydown", function (event) {
 	if (event.key == "Shift") {
 

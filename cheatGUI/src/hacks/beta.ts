@@ -8,6 +8,7 @@ import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Imp
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
 import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
 import { ids, itemify, runeify, getPet } from "../utils/hackify"; // Import runeify and some arrays
+import { PopupInterval } from "../utils/popupCloser";
 // END IMPORTS
 
 
@@ -534,32 +535,14 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 
 
 // Begin Toggle Close Popups
-// @ts-expect-error
-let popupinterval: misc | null = null;
-
-new Toggler(category.beta, "Toggle Close Popups [BETA]", "Automatically closes popups in Prodigy.").setClick(async () => {
-
-
-    if (popupinterval) {
-
-        return Swal.fire("Already Enabled", "Toggle Close Popups is already enabled. To disable popup closer, reload Prodigy.", "error");
-    } else if (!(await Confirm.fire("This hack is in BETA", "Expect bugs, and it might not work properly.")).value) {
-        return console.log("Cancelled");;
-    } else {
-
-        popupinterval = setInterval(async () => {
-
-            _.instance.prodigy.open.menuCloseAll();
-
-        }, 200);
-
-        return Toast.fire("Enabled", "Toggle Close Popups is now enabled.", "success");
-    }
-
+new Toggler(category.beta, "Toggle Close Popups [BETA]", "Automatically closes popups in Prodigy.").setEnabled(async () => {
+    PopupInterval(true);
+    return Toast.fire("Enabled", "Toggle Close Popups is now enabled.", "success");
+}).setDisabled(async() => {
+    PopupInterval(false);
+    return Toast.fire("Enabled", "Toggle Close Popups is now disabled.", "success");
 });
 // End Toggle Close Popups
-
-
 
 
 
