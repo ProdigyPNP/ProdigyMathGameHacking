@@ -1,12 +1,35 @@
 import { Swal } from "../utils/swal";  // Import Swal
 
 
+export async function statusMessage () {
+
+
+    const UpdateToInfiniteZero = Swal.mixin({
+        title: "New PHEx Version: v2.2.0",
+        icon: "info",
+        showCancelButton: true,
+        showConfirmButton: true,
+        confirmButtonText: "Update to 2.2.0",
+        cancelButtonText: "I've already updated.",
+        html: "<p>We've released a new version of PHEx! We strongly reccomend updating to PHEx 2.2.0.</p><p><a href=https://github.com/ProdigyPNP/ProdigyMathGameHacking/releases/latest>Update now!</a></p>"
+
+    });
+
+    if (await (await UpdateToInfiniteZero.fire()).value) {
+        window.location.href = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/releases/latest";
+    };
+
+}
+
+
+
+/*
 
 // Display status message
 export function statusMessage () {
 
 
-    fetch(`https://raw.githubusercontent.com/ProdigyMathGame/development/master/cheatGUI/statusmessage.json?updated=${Date.now()}`).then(response => response.json()).then(async data => {
+    fetch(`https://raw.githubusercontent.com/ProdigyPNP/ProdigyMathGameHacking/master/cheatGUI/statusmessage.json?updated=${Date.now()}`).then(response => response.json()).then(async data => {
 
             const enabled = data.enabled;
 
@@ -27,3 +50,5 @@ export function statusMessage () {
 
 
 };
+
+*/
