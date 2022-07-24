@@ -43,8 +43,18 @@ Read our [Quickstart Guide](../../tree/master/meta/wiki/QUICKSTART.md).
 
 
 
+<h4 align="center" id="Webstores">
 
-<br>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/phex"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get PHEx for Mozilla Firefox"></a>
+<a href="https://microsoftedge.microsoft.com/addons/detail/prodigy-hacking-extension/ekoakjipfmjpmlkldiikhoigaflfkjej"><img src="https://user-images.githubusercontent.com/585534/107280673-a5ece780-6a26-11eb-9cc7-9fa9f9f81180.png" alt="Get PHEx for Microsoft Edge"></a>
+<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md#google-chrome"><img width =143 height=64 src="https://user-images.githubusercontent.com/69060894/180571718-e52a4538-044d-4959-9ab4-feaaddc25f2f.jpg" alt="Google Chrome instructions"></img></a>
+<!--- <a href="http://SoonTM/"><img src="https://user-images.githubusercontent.com/585534/107280622-91a8ea80-6a26-11eb-8d07-77c548b28665.png" alt="Get PHEx for Google Chrome"></img></a> ---->
+
+
+
+
+
+</h4>
 
 ## Info
 
