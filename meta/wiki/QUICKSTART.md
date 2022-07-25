@@ -54,7 +54,7 @@
 <br>
 
 ## Microsoft Edge
-1. Open **Microsoft Edge**
+1. Open **Microsoft Edge**.
 2. Go to https://microsoftedge.microsoft.com/addons/detail/prodigy-hacking-extension/ekoakjipfmjpmlkldiikhoigaflfkjej
 3. Click **Get**.
 4. You should see a new extension called `Prodigy Hacking Extension | PHEx` in your addons.
