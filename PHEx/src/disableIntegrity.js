@@ -9,35 +9,23 @@
 
 
 
+
 if (!window.scriptIsInjected) {
 	// get options from local
 	const url = await get("url");
 	const checked = await get("checked");
-	const redirectorDomain = (url && checked) ? url : "https://infinitezero.net/eval";
-
-
+	const redirectorDomain = (url && checked) ? url : (await (await fetch("https://infinitezero.net/domain")).text()).valueOf();
+	const fetchHash = (await (await fetch(`${redirectorDomain}/hash?updated=${Date.now()}`)).text()).valueOf();
 
 
 	window.scriptIsInjected = true;
 
 
-	/*
+	
 	function getHash () {
-
-		var out;
-
-		fetch(`${redirectorDomain}/hash?updated=${Date.now()}`)
-			.then(res => res.text())
-			.then(response => {
-
-				out = "sha256-" + response;
-				
-
-			});
-
-			return out;
+		return new String("sha256-" + fetchHash).valueOf();
 	}
-	*/
+	
 
 
 
@@ -57,17 +45,13 @@ if (!window.scriptIsInjected) {
 				injectedScript.innerHTML = response;
 			
 
+			
 
-
-			fetch(`${redirectorDomain}/hash?updated=${Date.now()}`)
-			.then(res => res.text())
-			.then(response => {
-
-				injectedScript.setAttribute("integrity", "sha256-" + response);
+				injectedScript.setAttribute("integrity", getHash());
 				document.body.append(injectedScript);
 				
 
-			});
+			
 
 
 				
