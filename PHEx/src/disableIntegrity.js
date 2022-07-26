@@ -69,6 +69,7 @@
 				.then(response => {
 
 					injectedScript.setAttribute("integrity", "sha256-" + response);
+					console.log(response);
 					document.body.append(injectedScript);
 					
 
