@@ -43,7 +43,7 @@
 
 
 
-		function redirectorCheck() {
+		function redirectorCheck(src) {
 			fetch(`${redirectorDomain}/game.min.js?updated=${Date.now()}`)
 				.then(res => res.text())
 				.then(response => {
@@ -55,6 +55,11 @@
 					// a messy solution for sure, but this should only be a bandaid on a bulletwound
 					const injectedScript = document.createElement("script");
 					injectedScript.innerHTML = response;
+				        script.src = src;
+                                        script.onload = function() {
+                                            console.log("script injected");
+                                            this.remove();
+                                        };
 				
 
 
