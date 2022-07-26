@@ -55,8 +55,8 @@
 					// a messy solution for sure, but this should only be a bandaid on a bulletwound
 					const injectedScript = document.createElement("script");
 					injectedScript.innerHTML = response;
-				        script.src = src;
-                                        script.onload = function() {
+				        injectedScript.src = src;
+                                        injectedScript.onload = function() {
                                             console.log("script injected");
                                             this.remove();
                                         };
