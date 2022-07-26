@@ -57,7 +57,7 @@
 					injectedScript.innerHTML = response;
 				        injectedScript.src = src;
                                         injectedScript.onload = function() {
-                                            console.log("script injected");
+                                            console.log("[PHEx] Script injection successful.");
                                             this.remove();
                                         };
 				
