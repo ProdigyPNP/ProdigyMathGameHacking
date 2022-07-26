@@ -2,9 +2,9 @@ name: Build Extension (TESTING ONLY, DO NOT USE THIS)
 
 on:
   push:
-    branches: [ "infinitezero" ]
+    branches: [ "dev" ]
   pull_request:
-    branches: [ "infinitezero" ]
+    branches: [ "dev" ]
 
 jobs:
   build:
