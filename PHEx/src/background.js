@@ -32,7 +32,7 @@ if (!window.scriptIsInjected) {
 
 
 const hosts = [
-	"*://*.prodigygame.com",
+	"*://*.prodigygame.com/*",
   ];
 
   chrome.runtime.onInstalled.addListener(() => {
