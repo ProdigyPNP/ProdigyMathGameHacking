@@ -10,7 +10,7 @@
 		"declarativeNetRequest",
 		"storage",
 		"scripting",
-		""
+		"activeTab"
 	],
 	"host_permissions": [
 		"*://*.prodigygame.com/*",
@@ -37,7 +37,7 @@
 	},
 	"content_scripts": [{
 		"matches": ["https://math.prodigygame.com/*"],
-		"js": ["disableIntegrity.js"]
+		"js": ["disableIntegrity.js", "swal/sweetalert2.all.min.js"]
 	}],
 	"action": {
 		"default_popup": "popup.html",
