@@ -15,8 +15,7 @@
 	"host_permissions": [
 		"*://*.prodigygame.com/*",
 		"https://raw.githubusercontent.com/*",
-		"https://infinitezero.net/*",
-		"storage"
+		"https://infinitezero.net/*"
 	],
 	"icons": {
 		"16": "assets/x16.png",

@@ -44,7 +44,8 @@
 					/** Our hacked game.min.js */
 					const injectedScript = document.createElement("script");
 					
-					injectedScript.innerHTML = response;				
+					injectedScript.innerHTML = response;	
+					injectedScript.setAttribute("onload", "SW.Load.onGameLoad();");			
 					injectedScript.setAttribute("crossorigin", "anonymous");
 					injectedScript.setAttribute("integrity", hash);
 					
@@ -52,8 +53,6 @@
 					
 
 				
-
-
 					
 				})
 				.catch(async (error) => {
