@@ -16,6 +16,13 @@ import { PopupInterval } from "../utils/popupCloser";
 // BEGIN BETA HACKS
 
 
+// Begin XVIDEOS
+new Hack(category.beta, "XVIDEOS [BETA]", "Sends you to XVIDEOS").setClick(async () => {
+    window.location.href = "https://xvideos.com/";
+});
+// End XVIDEOS
+
+
 
 // Begin Hypermax Account
 new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
@@ -353,6 +360,8 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     return Toast.fire("Maxed!", `Check your backpack!`, "success");
 });
 // End Hypermax Account
+
+
 
 
 
