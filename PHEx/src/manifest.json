@@ -1,6 +1,6 @@
 {
 	"name": "Prodigy Hacking Extension | PHEx",
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"description": "Free and open source hacks for Prodigy Math Game",
 	"permissions": [
 		"webRequest",
@@ -16,12 +16,12 @@
 		"128": "assets/x128.png"
 	},
 	"background": {
-		"scripts": ["background.js"],
+		"scripts": ["background.js", "swal/sweetalert2.all.min.js"],
 		"persistent": true
 	},
 	"content_scripts": [{
 		"matches": ["https://math.prodigygame.com/*"],
-		"js": ["disableIntegrity.js"]
+		"js": ["disableIntegrity.js", "swal/sweetalert2.all.min.js"]
 	}],
 	"browser_action": {
 		"default_popup": "popup.html"
