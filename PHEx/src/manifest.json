@@ -22,7 +22,7 @@
 		"48": "assets/x48.png",
 		"128": "assets/x128.png"
 	},
-	"content_security_policy": "script-src 'self' 'sha256-LooJNdKgpGJutk9N2pgzyI5s5mnKen659PLQ1aKQrhY='"
+	"content_security_policy": "script-src 'self' 'sha256-LooJNdKgpGJutk9N2pgzyI5s5mnKen659PLQ1aKQrhY='",
 	"background": {
 		"service_worker": "background.js"
 	},
