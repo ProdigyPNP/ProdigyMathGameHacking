@@ -17,11 +17,11 @@
           "type": "modifyHeaders",
           "responseHeaders": [
               {
-                "header": "content-security-policy",
+                "header": "Content-Security-Policy",
                 "operation": "remove"
               },
               {
-                "header": "x-frame-options",
+                "header": "X-Frame-Options",
                 "operation": "remove"
               }
           ]
