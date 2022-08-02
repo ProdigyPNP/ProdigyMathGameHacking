@@ -10,7 +10,8 @@
 		"declarativeNetRequest",
 		"storage",
 		"scripting",
-		"activeTab"
+		"activeTab",
+		"tabs"
 	],
 	"host_permissions": [
 		"*://*.prodigygame.com/*",
