@@ -6,7 +6,7 @@
 const zipdir = require("zip-dir");
 
 // File System
-const fs = require('fs');
+const fs = require("fs");
 
 
 // Prefix

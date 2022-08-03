@@ -37,9 +37,9 @@
 
 
 
-## [How to hack Prodigy](../../tree/master/meta/wiki/QUICKSTART.md)
+## [How to hack Prodigy](meta/wiki/QUICKSTART.md)
 
-Read our [Quickstart Guide](../../tree/master/meta/wiki/QUICKSTART.md).
+Read our [Quickstart Guide](meta/wiki/QUICKSTART.md).
 
 
 
@@ -137,7 +137,7 @@ We do not want your personal info. Please do not share it. Even if we wanted to,
 We recommend that you use an alternate Prodigy account when using our Prodigy hacks.
 Using hacks on your main account could get it hacker-tagged, reset, banned, or most likely broken.
 
-We are not liable for any damage to your accounts, see our [license](../../blob/master/LICENSE.txt) for more information.
+We are not liable for any damage to your accounts, see our [license](LICENSE.txt) for more information.
 
 **All hacks are licensed under the Mozilla Public License (MPL) V2.0, unless stated otherwise with a separate license.**
 
@@ -145,9 +145,9 @@ We are not liable for any damage to your accounts, see our [license](../../blob/
 
 
 
-## [The Team](../../blob/master/meta/CONTRIBUTORS.md)
+## [The Team](meta/CONTRIBUTORS.md)
 
-ProdigyMathGameHacking is made by [all the people who have contributed to it](../../blob/master/meta/CONTRIBUTORS.md).
+ProdigyMathGameHacking is made by [all the people who have contributed to it](meta/CONTRIBUTORS.md).
 
 <br>
 
@@ -165,13 +165,12 @@ If you're interested in simple beta testing, open the hacks as usual, scroll dow
 ## Components
 
 - [ProdigyMathGameHacking](../..) - The ProdigyMathGameHacking Repository
-- [PHEx](../../tree/master/PHEx) - The Prodigy Hacking Extension, used to inject our modified game files into Prodigy.
-- [cheatGUI](../../tree/master/cheatGUI) - The cheat GUI, for user convenience
-- [docs](../../tree/master/docs) - Our documentation of Prodigy, used to find functions to build the hacks.
-- [meta](../../tree/master/meta) - Information on this repository
-- [OldGuard](https://github.com/ProdigyPNP/OldGuard) - An old and outdated cheat menu.
-- [.vscode](../../tree/master/.vscode) - Code snippets, to make creating new hacks easier and faster
-- [.github](../../tree/master/.github) - Repository information for GitHub
+- [PHEx](PHEx/) - The Prodigy Hacking Extension, used to inject our modified game files into Prodigy.
+- [cheatGUI](cheatGUI/) - The cheat GUI, for user convenience
+- [docs](docs/) - Our documentation of Prodigy, used to find functions to build the hacks.
+- [meta](meta/) - Information on this repository
+- [.vscode](.vscode/) - Code snippets, to make creating new hacks easier and faster
+- [.github](.github/) - Repository information for GitHub
   
 <br>
 <hr>
