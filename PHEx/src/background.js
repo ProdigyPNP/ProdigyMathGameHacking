@@ -14,7 +14,7 @@ chrome.runtime.onInstalled.addListener(() => {
 		id: i + 1,
 		condition: {
 		  domains: [chrome.runtime.id],
-		  urlFilter: `*://prodigygame.com*`,
+		  urlFilter: h,
 		  resourceTypes: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "webtransport", "webbundle", "other"],
 		},
 		action: {
