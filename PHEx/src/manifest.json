@@ -37,7 +37,7 @@
 	},
 	"content_scripts": [{
 		"matches": ["https://math.prodigygame.com/*"],
-		"js": ["disableIntegrity.js", "swal/sweetalert2.all.min.js", "loader.js"]
+		"js": ["disableIntegrity.js", "swal/sweetalert2.all.min.js"]
 	}],
 	"action": {
 		"default_popup": "popup.html",

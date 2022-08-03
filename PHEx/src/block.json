@@ -21,7 +21,15 @@
                 "operation": "remove"
               },
               {
+                "header": "content-security-policy",
+                "operation": "remove"
+              },
+              {
                 "header": "X-Frame-Options",
+                "operation": "remove"
+              },
+              {
+                "header": "x-frame-options",
                 "operation": "remove"
               }
           ]
