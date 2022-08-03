@@ -47,7 +47,22 @@ if (!window.scriptIsInjected) {
     });
     console.groupEnd();
 }
+    
+/** User's version of PHEx */
+const pluginVersion = chrome.runtime.getManifest().version;
+
+/** Latest version of PHEx. */
+const supportedVersion = (await (await fetch(`${PNPURL}/version`)).text());
+
+
+/** Checks for plugin version. If outdated, triggers dialog box */
+if (pluginVersion !== supportedVersion) {
+    const res = confirm(`PHEx is outdated. If you experience any errors, please update.\n\Your Version: ${pluginVersion}\nLatest Version: ${supportedVersion}`);
+    if (res) { location = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/UPDATING.md"; }
+}    
+    
+    
 // Code by PMGH
 // Modified by gemsvido, hostedposted, and Eris
 // Functions on MV3
-})()
+})();
