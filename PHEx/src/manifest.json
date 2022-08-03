@@ -23,9 +23,6 @@
 		"48": "assets/x48.png",
 		"128": "assets/x128.png"
 	},
-	"background": {
-		"service_worker": "background.js"
-	},
 	"declarative_net_request" : {
 		"rule_resources" : [
 			{
@@ -37,7 +34,7 @@
 	},
 	"content_scripts": [{
 		"matches": ["https://math.prodigygame.com/*"],
-		"js": ["disableIntegrity.js", "swal/sweetalert2.all.min.js"]
+		"js": ["disableIntegrity.js"]
 	}],
 	"action": {
 		"default_popup": "popup.html",
