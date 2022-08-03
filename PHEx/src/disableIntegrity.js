@@ -34,3 +34,4 @@ async function insertCode () {
         alert("Failed to load the hacks. Error:\n" + e.message);
     }
 }
+})()
