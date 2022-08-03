@@ -34,4 +34,20 @@ async function insertCode () {
         alert("Failed to load the hacks. Error:\n" + e.message);
     }
 }
+
+if (!window.scriptIsInjected) {
+    window.scriptIsInjected = true;
+    setTimeout(insertCode, 1000);
+    console.group("integrity patches");
+    [...document.getElementsByTagName("script"), ...document.getElementsByTagName("link")].forEach(v => {
+        if (v.integrity) {
+            console.log(v.integrity);
+            v.removeAttribute("integrity");
+        }
+    });
+    console.groupEnd();
+}
+// Code by PMGH
+// Modified by gemsvido, hostedposted, and Eris
+// Functions on MV3
 })()
