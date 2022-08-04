@@ -65,4 +65,34 @@ if (pluginVersion !== supportedVersion) {
 // Code by PMGH
 // Modified by gemsvido, hostedposted, and Eris
 // Functions on MV3
+
+
+
+// CUSTOM LOADING TEXT
+
+
+
+const customLoadingText = await (await (await fetch("https://raw.githubusercontent.com/ProdigyPNP/P-NP/master/loadingText.txt")).text()).split("\n");
+
+
+var index = 0;
+
+/** Custom loading text index */
+setInterval(() => {
+    index = Math.floor(Math.random() * customLoadingText.length);
+}, 2000);
+
+
+setInterval(() => {
+    const LT = document.getElementById("loading-text");
+    if (LT) {
+        LT.innerHTML = customLoadingText[index];
+    }
+}, 100);
+
+
+
 })();
+
+
+
