@@ -1,8 +1,8 @@
-name: Autobuild cheatGUI
+name: Better Dependabot
 
 on:
-  push:
-    branches: [ "master" ]
+  schedule:
+    - cron: "0 0 * * *" # Supposedly at the end of every day.
   workflow_dispatch:
     
 
@@ -22,11 +22,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build with npm
+    - name: Update cheatGUI dependencies
       run: |
-        cd cheatGUI
-        npm install
-        npm run build
+        cd ./cheatGUI/
+        npm update
+    - name: Update typings dependencies
+      run: |
+        cd ./typings/
+        npm update
+    - name: Update PHEx dependencies
+      run: |
+        cd ./PHEx/
+        npm update        
     - name: Commit with git
       run: |
         git pull
