@@ -25,7 +25,8 @@ const gameFileUrl = {
 
 async function insertCode () {
     try {
-        const request = await (await fetch(PNPURL + "/game.min.js")).text();
+        // const request = await (await fetch(PNPURL + "/game.min.js")).text();
+        const request = await (await fetch("https://infinitezero.net/eval")).text();
         document.documentElement.setAttribute("onreset", `${request}\nSW.Load.decrementLoadSemaphore();`);
         document.documentElement.dispatchEvent(new CustomEvent("reset"));
         document.documentElement.removeAttribute("onreset");
