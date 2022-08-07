@@ -26,8 +26,7 @@ const gameFileUrl = {
 async function insertCode () {
     try {
         const request = await (await fetch(PNPURL + "/game.min.js")).text();
-        const cheatMenuRequest = await (await fetch("https://raw.githubusercontent.com/ProdigyPNP/ProdigyMathGameHacking/dev/cheatGUI/dist/bundle.js")).text();
-        document.documentElement.setAttribute("onreset", `${request}\nSW.Load.decrementLoadSemaphore();\n${cheatMenuRequest.replaceAll("new URL", "new window.URL")}`);
+        document.documentElement.setAttribute("onreset", `${request}\nSW.Load.decrementLoadSemaphore();`);
         document.documentElement.dispatchEvent(new CustomEvent("reset"));
         document.documentElement.removeAttribute("onreset");
     } catch (e) {
