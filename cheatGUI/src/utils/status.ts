@@ -5,13 +5,13 @@ export async function statusMessage () {
 
 
     const UpdateToInfiniteZero = Swal.mixin({
-        title: "New PHEx Version: v2.2.1",
+        title: "PHEx 3.0.0",
         icon: "info",
         showCancelButton: true,
         showConfirmButton: true,
-        confirmButtonText: "Update to 2.2.1",
+        confirmButtonText: "Update to 3.0.0",
         cancelButtonText: "I've already updated.",
-        html: "<p>EVEN IF YOU HAVE UPDATED TO 2.2.0, 2.2.1 IS NEW.</p> </p>We've released a new version of PHEx! We strongly reccomend updating to PHEx 2.2.1.</p><p><a href=https://github.com/ProdigyPNP/ProdigyMathGameHacking/releases/latest>Update now!</a></p>"
+        html: "<p>WE DID IT!! PHEx 3.0.0 IS NOW RELESED!!!</p> </p>We've released a new version of PHEx! We strongly reccomend updating to PHEx 3.0.0.</p><p><a href=https://github.com/ProdigyPNP/ProdigyMathGameHacking/releases/latest>Update now!</a></p>"
 
     });
 

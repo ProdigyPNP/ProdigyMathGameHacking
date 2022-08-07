@@ -1,18 +1,14 @@
 {
 	"name": "prodigy-declarations",
-	"version": "2.1.9",
+	"version": "3.0.0",
 	"description": "Type declarations for Prodigy, the math game.",
 	"license": "MPL-2.0",
 	"author": "ProdigyPNP",
-
 	"scripts": {
 		"setup": "npm install",
-
 		"start": "npm install",
-
 		"quickstart": "npm install"
 	},
-
 	"dependencies": {
 		"typescript": "^4.7.3"
 	},
