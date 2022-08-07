@@ -76,6 +76,8 @@ at the time of creating this repo.
 
 We're not trying to break the game because we're evil. We wanted to help Prodigy become more secure, but they've ignored our emails and our requests to talk. They've even gone as far as to ban a user from their official Zendesk.
 
+Also they DMCA'd the original hacks, so for that they can go to hell.
+
 Because of that, we're publicly showing hacks! To be honest, it's just fun ;)
 
 All of our hacks are open source, and free. No paywalls, no ads, and no viruses.</p>
