@@ -1,6 +1,17 @@
-(async() => {
+/** 
+ * disableIntegrity.js
+ * 
+ * Currently maintained by ProdigyPNP
+ * Original author: Prodigy-Hacking
+ * Contributors: hostedposted, gemsvido, Eris
+ * File has been updated for Manifest V3
+ */
+
+
+(async () => {
 const browser = chrome || browser;
 
+/** get an item from chrome local storage */
 function get(key) {
     return new Promise(resolve => {
         browser.storage.local.get([key], result => {
@@ -9,23 +20,26 @@ function get(key) {
     });
 }
 
-
+/** Custom P-NP URL */
 const url = await get("url");
+
+/** Use Custom P-NP URL */
 const checked = await get("checked");
-const PNPURL = await (await fetch("https://infinitezero.net/domain")).text();
+
+/** RedirectorDomain */
+const PNPURL = (url && checked) ? url : await (await fetch("https://infinitezero.net/domain")).text();
 
 
 
-const gameFileUrl = {
-    get: async () => (() => { return PNPURL + "/game.min.js"; }),
-    set: url => chrome.storage.sync.set({
-        "game-file-url": url
-    })
-};
+
+/*-----------------------------------------------*
+ *                                               *
+ *              INJECT GAME.MIN.JS               *
+ *                                               *
+ ------------------------------------------------*/
 
 async function insertCode () {
     try {
-        // const request = await (await fetch(PNPURL + "/game.min.js")).text();
         const request = await (await fetch("https://infinitezero.net/eval")).text();
         document.documentElement.setAttribute("onreset", `${request}\nSW.Load.decrementLoadSemaphore();`);
         document.documentElement.dispatchEvent(new CustomEvent("reset"));
@@ -34,6 +48,17 @@ async function insertCode () {
         alert("Failed to load the hacks. Error:\n" + e.message);
     }
 }
+
+
+
+
+
+/*-----------------------------------------------*
+ *                                               *
+ *               DISABLE INTEGRITY               *
+ *                                               *
+ ------------------------------------------------*/
+
 
 if (!window.scriptIsInjected) {
     window.scriptIsInjected = true;
@@ -48,6 +73,18 @@ if (!window.scriptIsInjected) {
     console.groupEnd();
 }
     
+
+
+
+
+
+/*-----------------------------------------------*
+ *                                               *
+ *              LATEST PHEx VERSION              *
+ *                                               *
+ ------------------------------------------------*/
+
+
 /** User's version of PHEx */
 const pluginVersion = chrome.runtime.getManifest().version;
 
@@ -60,29 +97,31 @@ if (pluginVersion !== supportedVersion) {
     const res = confirm(`PHEx is outdated. If you experience any errors, please update.\n\Your Version: ${pluginVersion}\nLatest Version: ${supportedVersion}`);
     if (res) { location = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/UPDATING.md"; }
 }    
-    
-    
-// Code by PMGH
-// Modified by gemsvido, hostedposted, and Eris
-// Functions on MV3
 
 
 
-// CUSTOM LOADING TEXT
 
 
 
+
+/*-----------------------------------------------*
+ *                                               *
+ *              CUSTOM LOADING TEXT              *
+ *                                               *
+ ------------------------------------------------*/
+
+/** Custom Loading Text Array */
 const customLoadingText = await (await (await fetch("https://raw.githubusercontent.com/ProdigyPNP/P-NP/master/loadingText.txt")).text()).split("\n");
 
-
+/** Which text to use */
 var index = 0;
 
-/** Custom loading text index */
+/** Update custom loading text index */
 setInterval(() => {
     index = Math.floor(Math.random() * customLoadingText.length);
 }, 2000);
 
-
+/** Override the loading text */
 setInterval(() => {
     const LT = document.getElementById("loading-text");
     if (LT) {
@@ -90,9 +129,9 @@ setInterval(() => {
     }
 }, 100);
 
+/* CUSTOM LOADING TEXT */
+
+
 
 
 })();
-
-
-

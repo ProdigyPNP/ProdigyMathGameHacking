@@ -32,9 +32,6 @@
 			}
 		]
 	},
-	"background": {
-		"service_worker": "background.js"
-	},
 	"content_scripts": [{
 		"matches": ["https://math.prodigygame.com/*"],
 		"js": ["disableIntegrity.js", "swal/sweetalert2.all.min.js"]
