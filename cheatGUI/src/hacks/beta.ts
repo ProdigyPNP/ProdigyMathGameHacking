@@ -9,6 +9,7 @@ import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI base
 import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
 import { ids, itemify, runeify, getPet } from "../utils/hackify"; // Import runeify and some arrays
 import { PopupInterval } from "../utils/popupCloser";
+import { startFps, stopFps } from "../utils/fps";
 // END IMPORTS
 
 
@@ -16,11 +17,13 @@ import { PopupInterval } from "../utils/popupCloser";
 // BEGIN BETA HACKS
 
 
-// Begin XVIDEOS
-new Hack(category.beta, "XVIDEOS [BETA]", "Sends you to XVIDEOS").setClick(async () => {
-    window.location.href = "https://xvideos.com/";
+// Begin FPS Counter
+new Toggler(category.beta, "FPS Counter [BETA]", "Shows you a framerate counter").setEnabled(async () => {
+    startFps();
+}).setDisabled(async() => {
+    stopFps();
 });
-// End XVIDEOS
+// End FPS Counter
 
 
 

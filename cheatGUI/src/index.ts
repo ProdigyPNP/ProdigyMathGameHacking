@@ -21,12 +21,8 @@ menu.style = "position: fixed;top: -10%;left: 10%;right: 10%;width: 80%;height: 
 
 wrapper?.prepend(menu);
 
-export const toggler = document.createElement("button"); // Create toggler class
+export const toggler = document.createElement("button"); // Create menu toggler
 toggler.id = "menu-toggler";
-toggler.style.fontSize = "23px";
-toggler.style.height = "26px";
-toggler.style.width = "50px";
-toggler.style.border = "1px solid rgba(0, 0, 0, 0.1)";
 
 
 let visible = false;
