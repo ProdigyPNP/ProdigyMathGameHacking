@@ -210,9 +210,10 @@ if (!localStorage.hasTip) {
 		        left top
 		        no-repeat
 		    `
-       })})();
-	  localStorage.hasTip = true;
-	  IndexInfo("Player was shown the tip.");
+       });
+	})();
+	localStorage.hasTip = true;
+	IndexInfo("Player was shown the tip.");
 } else {
 	IndexInfo("Player already has tip.");
 };
