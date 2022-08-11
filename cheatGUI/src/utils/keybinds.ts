@@ -52,18 +52,25 @@ window.addEventListener("keydown", event => {
 
 
         case "w":
-            _.player._playerContainer.y -= 10;
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {  _.player._playerContainer.y -= 2; }, 100);
+            }
             break;
         case "s":
-            _.player._playerContainer.y += 10;
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {  _.player._playerContainer.y += 2; }, 100);
+            }
             break;
         case "a":
-            _.player._playerContainer.x -= 10;
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {  _.player._playerContainer.x -= 2; }, 100);
+            }
             break;
         case "d":
-            _.player._playerContainer.x += 10;
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {  _.player._playerContainer.x += 2; }, 100);
+            }
             break;    
-
     }
 
 
