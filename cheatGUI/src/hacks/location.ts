@@ -96,7 +96,7 @@ new Hack(category.location, "Get Map Location").setClick(async () => {
 
     const Location: string = _.player.data.zone;
 
-    navigator.clipboard.writeText(Location).then(function() {
+    navigator.clipboard.writeText(Location).then(async function() {
 
         console.log("Async: Copying to clipboard was successful!");
 
@@ -107,7 +107,7 @@ new Hack(category.location, "Get Map Location").setClick(async () => {
         });
 
 
-    }, function(err) {
+    }, async function (err) {
 
         console.error("Async: Could not copy text: ", err);
 

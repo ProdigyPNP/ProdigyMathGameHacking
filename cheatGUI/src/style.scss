@@ -31,6 +31,10 @@
         border-radius: 3px;
         background-color: #fffb;
         transition: background-color 0.15s;
+        font-size: 23px;
+        height: 26px;
+        width: 50px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
 
         &:hover {
             background-color: #dddb;
@@ -40,6 +44,29 @@
             background-color: #bbbb;
         }
     }
+    
+    #fps-counter {
+        z-index: 2;
+        position: absolute;
+        border-radius: 3px;
+        background-color: #fffb;
+        transition: background-color 0.15s;
+
+        width: 130px;
+        height: 26px;
+        font-size: 23px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin-left: 83%;
+
+        &:hover {
+            background-color: #dddb;
+        }
+
+        &:active {
+            background-color: #bbbb;
+        }
+    }
+    
 
     .menu-area {
         h1 {
@@ -51,7 +78,7 @@
         }
 
         button {
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.55);
             color: white;
             border-radius: 5px;
             border: 1px solid #eee;

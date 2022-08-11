@@ -4,7 +4,7 @@
 // BEGIN IMPORTS
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, Confirm, Input, and NumberInput from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
-import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
+import { _, getItem, VERY_LARGE_NUMBER, prodigy, saveCharacter} from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
 import { getMemberModule, ids, itemify } from "../utils/hackify";  // Import useful arrays and functions
 
 // END IMPORTS
@@ -31,29 +31,6 @@ new Hack(category.player, "Max Account").setClick(async () => {
     }
 
 
-
-    // FIRST, Escape any battle to prevent random glitching.
-    const currentState = game.state.current;
-    if (currentState === "PVP") Object.fromEntries(_.instance.game.state.states).PVP.endPVP();
-    else if (currentState === "CoOp") prodigy.world.$(_.player.data.zone);
-    else if (!["Battle", "SecureBattle"].includes(currentState)) {} else {
-        Object.fromEntries(_.instance.game.state.states)[currentState].runAwayCallback();
-    }
-    console.log("Escaped any battle.");
-
-
-    // NOW, fix the morph crash bug
-    _.player.getPlayerData().playerTransformation = undefined;
-    _.player.appearanceChanged = true;
-    console.log("Fixed morph crash");
-
-
-    // ALSO, fix the battle crash bug
-    // @ts-expect-error
-    _.player.kennel.petTeam.forEach(v => {
-        if (v && (v as any).assignRandomSpells)(v as any).assignRandomSpells();
-    });
-    console.log("Fixed battle crash.")
 
     // PRE MAXING PROCESS
     // ============================================
@@ -90,35 +67,6 @@ new Hack(category.player, "Max Account").setClick(async () => {
     console.log("Obtained 100 conjure cubes.");
 
 
-    // Set the player's wins to VERY_LARGE_NUMBER
-    _.player.data.win = VERY_LARGE_NUMBER;
-    console.log("Set player's wins to VERY_LARGE_NUMBER");
-
-
-    // Set the player's losses to VERY_LARGE_NUMBER
-    _.player.data.loss = VERY_LARGE_NUMBER;
-    console.log("Set player's losses to VERY_LARGE_NUMBER.");
-
-
-
-    // Set the players damage multiplier to VERY_LARGE_NUMBER
-    _.player.modifiers.damage = VERY_LARGE_NUMBER;
-    console.log("Enabled damage multiplier.");
-
-
-    // Set the players PVP health to VERY_LARGE_NUMBER
-    _.player.pvpHP = VERY_LARGE_NUMBER;
-    _.player.getMaxHearts = () => VERY_LARGE_NUMBER;
-    console.log("PvP health obtained.")
-
-
-    // getMemberModule
-    function getMemberModule() {
-        return _.player.hasMembership.toString().split("\"")[1];
-    }
-    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
-    _.player.appearanceChanged = true;
-    console.log("Premium membership enabled.");
 
 
     // Get all achievements
@@ -134,29 +82,11 @@ new Hack(category.player, "Max Account").setClick(async () => {
     // PLAYER HACKS
     // ============================================
     // ============================================
-    // BATTLE HACKS
-
-
-
-    // Disable Math
-    _.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = false;
-    console.log("Math Disabled.");
-
-    // Max out the players HP
-    _.player.getMaxHearts = () => VERY_LARGE_NUMBER;
-    _.player.pvpHP = VERY_LARGE_NUMBER;
-    _.player.data.hp = VERY_LARGE_NUMBER;
-    console.log("Maxed out PvE health.");
-
-
-    // BATTLE HACKS
-    // ============================================
-    // ============================================
     // INVENTORY HACKS
 
 
-    // Get 990000 of all items
-    const num = 990000;
+    // Get 1 of all items
+    const num : number = 1;
 
     ids.forEach(id => {
         // @ts-expect-error
@@ -182,17 +112,21 @@ new Hack(category.player, "Max Account").setClick(async () => {
     console.log("Added all mounts.");
 
 
-    // Get 990000 of all furniture
-    const amt = 990000;
-    // @ts-expect-error
-    _.gameData.dorm.forEach(x =>
-        // @ts-expect-error
-        _.player.house.data.items[x.ID] = { A: [], N: amt.value }
-    );
-    console.log("Added 990000 of all furniture.");
-
-
     // INVENTORY HACKS
+    // ============================================
+    // ============================================
+    // GET 6,969,420 OF ALL CURRENCIES
+
+        const id : string = "currency";
+        const amt : number = 6969420;
+        // @ts-expect-error
+        _.player.backpack.data[id] = itemify(_.gameData[id].filter(a => {
+            return id === 'follow' ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(a.ID) : a
+        }), amt);
+        
+
+
+    // GET 6,969,420 OF ALL CURRENCIES
     // ============================================
     // ============================================
     // PET HACKS
@@ -231,19 +165,6 @@ new Hack(category.player, "Max Account").setClick(async () => {
     // PET HACKS
     // ============================================
     // ============================================
-    // UTILITY HACKS
-
-
-
-
-    // 20x walkspeed
-    _.player._playerContainer.walkSpeed = 20;
-    console.log("Player walkspeed set to 20.");
-
-
-    // UTILITY HACKS
-    // ============================================
-    // ============================================
     // EQUIP CELESTIAL GEAR
 
 
@@ -262,20 +183,13 @@ new Hack(category.player, "Max Account").setClick(async () => {
     // POST MAXING PROCESS
 
 
-    // Save the player data to make sure that the max worked
-    saveCharacter();
-    console.log("Character Saved.");
 
     // Refresh the players appearance
     _.player.appearanceChanged = true;
     console.log("Appearance Refreshed.");
+    
 
-
-    // Close all popups
-    _.instance.prodigy.open.menuCloseAll();
-    console.log("Popups closed.");
-
-    // Save again after closing popups, for good measure.
+    // Save 
     saveCharacter();
     console.log("Character Saved.");
 
