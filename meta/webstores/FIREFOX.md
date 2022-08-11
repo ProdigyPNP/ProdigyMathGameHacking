@@ -1,4 +1,4 @@
-## How to hack Prodigy: Mozilla Firefox Web Store 
+## How to hack Prodigy: Mozilla Firefox (Firefox Addons Store)
 
 <br>
 

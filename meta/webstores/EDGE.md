@@ -1,4 +1,4 @@
-## How to hack Prodigy: Microsoft Edge Web Store 
+## How to hack Prodigy: Microsoft Edge (Microsoft Addons Store)
 
 <br>
 
