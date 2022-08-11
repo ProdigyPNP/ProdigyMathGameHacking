@@ -6,12 +6,8 @@
 	"author": "ProdigyPNP",
 
 	"permissions": [
-		"webRequest",
 		"declarativeNetRequest",
-		"storage",
-		"scripting",
-		"activeTab",
-		"tabs"
+		"storage"
 	],
 	"host_permissions": [
 		"*://*.prodigygame.com/*",

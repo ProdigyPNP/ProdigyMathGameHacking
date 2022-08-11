@@ -4,7 +4,7 @@ import { Swal } from "../utils/swal";  // Import Swal
 export async function statusMessage () {
 
 
-    const UpdateToInfiniteZero = Swal.mixin({
+    const UpdateToMv3 = Swal.mixin({
         title: "PHEx 3.0.0",
         icon: "info",
         showCancelButton: true,
@@ -15,7 +15,7 @@ export async function statusMessage () {
 
     });
 
-    if (await (await UpdateToInfiniteZero.fire()).value) {
+    if (await (await UpdateToMv3.fire()).value) {
         window.location.href = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/releases/latest";
     };
 
