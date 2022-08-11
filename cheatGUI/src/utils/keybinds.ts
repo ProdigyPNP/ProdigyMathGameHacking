@@ -3,19 +3,29 @@ import { Confirm, Toast } from "../utils/swal"; // Import Swal, Toast, Confirm, 
 
 
 
+
+
+
+
+
+
+
+
+
+
 window.addEventListener("keydown", event => {
 
 
 
 
-    switch (event.which) {
+    switch (event.key) {
 
-        case 192: // --- 192 = ` -- Grave Accent
+        case "`":
             // Close All Popups
             _.instance.prodigy.open.menuCloseAll();
             break;
 
-        case 220: // --- 220 = \ -- Backslash
+        case "\\":
             // Gets you kitted up in Celestial Gear
             const k = async () => {
 
@@ -38,6 +48,22 @@ window.addEventListener("keydown", event => {
             };
             k();
             break;
+
+
+
+        case "w":
+            _.player._playerContainer.y -= 10;
+            break;
+        case "s":
+            _.player._playerContainer.y += 10;
+            break;
+        case "a":
+            _.player._playerContainer.x -= 10;
+            break;
+        case "d":
+            _.player._playerContainer.x += 10;
+            break;    
+
     }
 
 
