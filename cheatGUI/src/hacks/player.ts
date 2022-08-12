@@ -18,7 +18,7 @@ import { getMemberModule, ids, itemify } from "../utils/hackify";  // Import use
 
 
 // Begin Max Account
-new Hack(category.player, "Max Account").setClick(async () => {
+new Hack(category.player, "Max Account", "Gives you everything your account could possibly need.").setClick(async () => {
     // max account made by gemsvidø
 
     // ============================================
@@ -245,6 +245,30 @@ new Hack(category.player, "Set Level").setClick(async () => {
 
 
 
+// Begin Toggle membership
+new Toggler(category.player, "Toggle Membership", "Gives you \"Level Up!\" Membership in Prodigy.").setEnabled(async () => {
+    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
+    _.player.appearanceChanged = true;
+    return Toast.fire("Success!", "You now have Prodigy membership!", "success");
+}).setDisabled(() => {
+    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = false;
+    _.player.appearanceChanged = true;
+    return Toast.fire("Success!", "You no longer have Prodigy membership!", "success");
+});
+// End Toggle membership
+
+
+// Begin Ultimate membership
+new Toggler(category.player, "Ultimate membership", "Gives you \"Ultimate\" Membership in Prodigy.").setEnabled(async () => {
+    
+    _.player.appearanceChanged = true;
+    return Toast.fire("Success!", "You now have Ultimate membership!", "success");
+}).setDisabled(() => {
+   
+    _.player.appearanceChanged = true;
+    return Toast.fire("Success!", "You no longer have Ultimate membership!", "success");
+});
+// End Ultimate membership
 
 
 
@@ -319,23 +343,6 @@ new Hack(category.player, "Set Losses").setClick(async () => {
     return Toast.fire("Success!", `You have set your loss${amount.value != 1 ? "es" : ""} to ${amount.value}.`, "success");
 });
 // End Set Losses
-
-
-
-
-
-
-// Begin Toggle membership
-new Toggler(category.player, "Toggle membership").setEnabled(async () => {
-    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
-    _.player.appearanceChanged = true;
-    return Toast.fire("Success!", "You now have Prodigy membership!", "success");
-}).setDisabled(() => {
-    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = false;
-    _.player.appearanceChanged = true;
-    return Toast.fire("Success!", "You no longer have Prodigy membership!", "success");
-});
-// End Toggle membership
 
 
 
@@ -531,6 +538,7 @@ new Hack(category.player, "Set Dark Tower Floor").setClick(async () => {
 new Hack(category.player, "Get UserID").setClick(async () => {
 
     const UserID: number = _.player.userID;
+
     navigator.clipboard.writeText(UserID.toString()).then(function() {
 
 
