@@ -46,12 +46,11 @@ Read our [Quickstart Guide](meta/wiki/QUICKSTART.md).
 <h4 align="center" id="Webstores">
 
 <a href="https://addons.mozilla.org/en-US/firefox/addon/phex"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get PHEx for Mozilla Firefox"></a>
+<a href=""><img src="https://user-images.githubusercontent.com/585534/107280622-91a8ea80-6a26-11eb-8d07-77c548b28665.png" alt="Get PHEx for Google Chrome"></img></a>
 <a href="https://microsoftedge.microsoft.com/addons/detail/prodigy-hacking-extension/ekoakjipfmjpmlkldiikhoigaflfkjej"><img src="https://user-images.githubusercontent.com/585534/107280673-a5ece780-6a26-11eb-9cc7-9fa9f9f81180.png" alt="Get PHEx for Microsoft Edge"></a>
-<a href="https://addons.opera.com/en/extensions/details/prodigy-hacking-extension-phex-2"><img width=165 height=64 src="https://user-images.githubusercontent.com/69060894/180695682-d7f2772d-c9c5-4ae6-8739-5f316854e39c.png" alt="Get PHEx for Opera"></img></a>
-<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md#google-chrome"><img width=143 height=64 src="https://user-images.githubusercontent.com/69060894/180571718-e52a4538-044d-4959-9ab4-feaaddc25f2f.jpg" alt="Google Chrome instructions"></img></a>
-<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md#brave-browser"><img width=160 height=64 alt="Get PHEx for Brave Browser" src="https://user-images.githubusercontent.com/69060894/180694304-53ee0032-7285-463f-9c1a-c9bbdbb8fa39.jpeg"></img></a>
+<a href="https://addons.opera.com/en/extensions/details/prodigy-hacking-extension-phex-2"><img src="https://user-images.githubusercontent.com/585534/107280692-ac7b5f00-6a26-11eb-85c7-088926504452.png" alt="Get PHEx for Opera"></img></a>
 
-<!--- <a href=""><img src="https://user-images.githubusercontent.com/585534/107280622-91a8ea80-6a26-11eb-8d07-77c548b28665.png" alt="Get PHEx for Google Chrome"></img></a> ---->
+
 
 
 
