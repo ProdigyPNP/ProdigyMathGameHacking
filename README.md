@@ -155,7 +155,7 @@ ProdigyMathGameHacking is made by [all the people who have contributed to it](me
 
 
 ## Development
-You can find our in-development code on an official fork of this repo: [**ProdigyMathGame/development**](https://github.com/ProdigyMathGame/development)
+You can find our in-development code on [different branches of this repository](https://github.com/ProdigyPNP/ProdigyMathGameHacking/branches).
 
 If you're interested in simple beta testing, open the hacks as usual, scroll down to "Beta Testing", and you can find a bunch of beta/WIP hacks.
 
