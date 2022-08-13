@@ -3,7 +3,7 @@
 <br>
 
 1. Open **Google Chrome**.
-2. Go to [chrome.google.com/webstore/detail/nmipcbdicnmjoifanpdcjdmifeioglkm](https://chrome.google.com/webstore/detail/nmipcbdicnmjoifanpdcjdmifeioglk/)
+2. Go to [chrome.google.com/webstore/detail/prodigy-hacking-extension/nmipcbdicnmjoifanpdcjdmifeioglkm](https://chrome.google.com/webstore/detail/prodigy-hacking-extension/nmipcbdicnmjoifanpdcjdmifeioglkm/)
 3. Click **Add to Chrome**.
 4. You should see a new extension called `Prodigy Hacking Extension | PHEx` in your addons.
 5. Go to [Prodigy](https://play.prodigygame.com) (``play.prodigygame.com``).
