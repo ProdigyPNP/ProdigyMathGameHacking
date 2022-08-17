@@ -1,6 +1,5 @@
 const path = require("path");
 const glob = require("glob");
-const autoprefixer = require("autoprefixer");
 module.exports = {
 	mode: "production",
 	//devtool: "inline-source-map",

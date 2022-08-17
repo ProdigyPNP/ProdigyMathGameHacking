@@ -57,7 +57,7 @@ new Hack(category.pets, "Get All Pets").setClick(async () => {
 new Hack(category.pets, "Get All Legacy Epics").setClick(async () => {
 
 
-    if (!(await Confirm.fire("Would you like to add all legacy epics to your team?")).value) {
+    if (!(await Confirm.fire("This may damage your account.", "Attempting to add legacy epics may damage your account. Would you still like to add all legacy epics to your team?", "warning")).value) {
         return console.log("Cancelled");
     }
 
@@ -88,10 +88,20 @@ new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
     }
 
 
-	// TODO: I need Nebula & Aura's ID
-  // @ts-expect-error
-	const epics = _.gameData.pet.filter(x => [156, 157, 158, 160, 168, 170].includes(x.ID));
-  // @ts-expect-error
+    // @ts-expect-error
+	const epics = _.gameData.pet.filter(x => [
+        158, // Magmayhem
+        164, // Blast Star
+        165, // Vegabloom
+        166, // Arcturion
+        167, // Aquadile
+        168, // Shiver & Scorch
+        169, // Riptide
+        170, // Lumanight
+        171, // Nebula
+        189, // B.F. Magmayhem
+    ].includes(x.ID));
+    // @ts-expect-error
 	epics.forEach(x => {
 		_.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
 	});
