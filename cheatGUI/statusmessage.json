@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "title": "New PHEx Version: v3.0.0",
   "icon": "info",
   "html": "<p>We've released a new version of PHEx! We strongly reccomend updating to PHEx 3.0.0.</p><p><a href=https://github.com/ProdigyPNP/ProdigyMathGameHacking/releases/latest>Update now!</a></p>"

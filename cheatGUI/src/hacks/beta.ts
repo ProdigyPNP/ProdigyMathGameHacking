@@ -6,24 +6,14 @@
 // BEGIN IMPORTS
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, NumberInput, Input, and Confirm from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
-import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
+import { _, getItem, VERY_LARGE_NUMBER, prodigy, saveCharacter} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
 import { ids, itemify, runeify, getPet } from "../utils/hackify"; // Import runeify and some arrays
 import { PopupInterval } from "../utils/popupCloser";
-import { startFps, stopFps } from "../utils/fps";
 // END IMPORTS
 
 
 
 // BEGIN BETA HACKS
-
-
-// Begin FPS Counter
-new Toggler(category.beta, "FPS Counter [BETA]", "Shows you a framerate counter").setEnabled(async () => {
-    startFps();
-}).setDisabled(async() => {
-    stopFps();
-});
-// End FPS Counter
 
 
 
@@ -169,7 +159,6 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
     // kinda weird to explain, just look at how morphType does it
     // we want it to display a pretty string, and return the petID
     const morphOptions = {};
-    // fuck you typescript, I'll do what I want
     // @ts-expect-error
     _.gameData[morphType.value].forEach((morph) => morphOptions[morph.ID] = `${morph.name} (${morph.ID})`);
 
@@ -182,9 +171,7 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
         showCancelButton: true
     });
 
-    if (!morphID?.value) return;
-    // shut up typescript, I don't need you on my nuts every time I use Swal
-    // typescript makes me cry
+    if (!morphID.value) return;
     _.player.getPlayerData().playerTransformation = {
         transformType: morphType.value,
         transformID: morphID.value,
@@ -226,7 +213,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
     if (!(await Confirm.fire({
             title: "Hang on!",
-            html: "This hack may damage your account with various bugs, for example you may be unable to do Rune Run.<br><br>Proceed?",
+            html: "This hack will damage your account with various bugs, for example you may be unable to do Rune Run/Arena, amd you will recieve 418s and inavtivity kicks.<br><br>Proceed?",
             icon: "warning"
         })).value) {
         return;
@@ -234,31 +221,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 
 
-    // FIRST, Escape any battle to prevent random glitching.
-    const currentState = game.state.current;
-    if (currentState === "PVP") Object.fromEntries(_.instance.game.state.states).PVP.endPVP();
-    else if (currentState === "CoOp") prodigy.world.$(_.player.data.zone);
-    else if (!["Battle", "SecureBattle"].includes(currentState)) {} else {
-        Object.fromEntries(_.instance.game.state.states)[currentState].runAwayCallback();
-    }
-    console.log("Escaped any battle.");
 
-
-    // NOW, fix the morph crash bug
-    _.player.getPlayerData().playerTransformation = undefined;
-    _.player.appearanceChanged = true;
-    console.log("Fixed morph crash");
-
-
-    // ALSO, fix the battle crash bug
-    // @ts-expect-error
-    _.player.kennel.petTeam.forEach(v => {
-        if (v && (v as any).assignRandomSpells)(v as any).assignRandomSpells();
-    });
-    console.log("Fixed battle crash.")
-
-    // PRE MAXING PROCESS
-    // ============================================
     // ============================================
     // PLAYER HACKS
 
@@ -314,13 +277,6 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     console.log("PvP health obtained.")
 
 
-    // Enable premium membership
-    function getMemberModule() {
-        return _.player.hasMembership.toString().split("\"")[1];
-    }
-    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
-    _.player.appearanceChanged = true;
-    console.log("Premium membership enabled.");
 
 
     // Get all achievements
@@ -338,11 +294,6 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     // ============================================
     // BATTLE HACKS
 
-
-
-    // Disable Math
-    _.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = false;
-    console.log("Math Disabled.");
 
     // Max out the players HP
     _.player.getMaxHearts = () => VERY_LARGE_NUMBER;
