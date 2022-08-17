@@ -6,6 +6,7 @@
 import { Toast, Confirm, Swal } from "../utils/swal"; // Import Toast and Confirm from swal
 import { Hack, category, Toggler } from "../index";  // Import the Cheat GUI bases.
 import { _ } from "../utils/util"; // Import Prodigy typings
+import { startFps, stopFps } from "../utils/fps";
 // END IMPORTS
 
 
@@ -59,6 +60,15 @@ new Toggler(category.misc, "Skip enemy turn").setEnabled(async () => {
 	return Toast.fire("Disabled", "Enemy turns will no longer be skipped.", "success");
 });
 // End Skip enemy turn
+
+
+// Begin FPS Counter
+new Toggler(category.beta, "FPS Counter [BETA]", "Shows you a framerate counter").setEnabled(async () => {
+    startFps();
+}).setDisabled(async() => {
+    stopFps();
+});
+// End FPS Counter
 
 
 // Begin Bobbify

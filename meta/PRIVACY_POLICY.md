@@ -56,8 +56,8 @@
 - We do not allow anyone to read your user data **unless**
     - The data is aggregated and anonymized and used for internal operations in accordance with applicable privacy and other jurisdictional legal requirements;
         - For example, [infinitezero.net/analytics.json](https://infinitezero.net/analytics.json) is aggregated and anonymized to determine regions, operating systems, and browser usage. We only collect this to improve PHEx and estimate how many people use PHEx.
-    - It's necessary for security purposes (e.g., investigating abuse);
-    - To comply with applicable laws.
+    - It's necessary for security purposes (ex. investigating abuse);
+    - We need to do so to comply with applicable laws.
 
 
 
@@ -67,4 +67,4 @@
 
 - Transfer, use, or sell your data for personalized advertisements.
 - Transfer or sell your data to third parties like advertising platforms, data brokers, or other information resellers.
-- Transferring, using, or selling user data to determine credit-worthiness or for lending purposes.
+- Transfer, use, or sell your data to determine credit-worthiness or for lending purposes.
