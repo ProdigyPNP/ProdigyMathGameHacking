@@ -67,4 +67,4 @@
 
 - Transfer, use, or sell your data for personalized advertisements.
 - Transfer or sell your data to third parties like advertising platforms, data brokers, or other information resellers.
-- Transferring, using, or selling user data to determine credit-worthiness or for lending purposes.
+- Transfer, use, or sell your data to determine credit-worthiness or for lending purposes.
