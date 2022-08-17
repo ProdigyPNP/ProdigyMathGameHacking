@@ -1,6 +1,5 @@
 import { _ } from "../utils/util";  // Import Prodigy typings
 import { Confirm, Toast } from "../utils/swal"; // Import Swal, Toast, Confirm, Input, and NumberInput from swal
-import { WASD } from "../hacks/location";
 
 
 
@@ -42,32 +41,6 @@ window.addEventListener("keydown", event => {
             k();
             break;
 
-
-
-        case "w":
-            if (!WASD) break;
-            for (let i = 0; i < 10; i++) {
-                setTimeout(() => {  _.player._playerContainer.y -= 2; }, 100);
-            }
-            break;
-        case "s":
-            if (!WASD) break;
-            for (let i = 0; i < 10; i++) {
-                setTimeout(() => {  _.player._playerContainer.y += 2; }, 100);
-            }
-            break;
-        case "a":
-            if (!WASD) break;
-            for (let i = 0; i < 10; i++) {
-                setTimeout(() => {  _.player._playerContainer.x -= 2; }, 100);
-            }
-            break;
-        case "d":
-            if (!WASD) break;
-            for (let i = 0; i < 10; i++) {
-                setTimeout(() => {  _.player._playerContainer.x += 2; }, 100);
-            }
-            break;    
     }
 
 
