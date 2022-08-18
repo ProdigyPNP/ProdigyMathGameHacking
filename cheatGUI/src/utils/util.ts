@@ -5,6 +5,7 @@ import { Item } from "../../../typings/item";
 import { Prodigy } from "../../../typings/prodigy";
 import { Game } from "../../../typings/game";
 export const _ = window._;
+export const Boot = window.Boot;
 const base: { game: Game, prodigy: Prodigy } = _.instance;
 export const game = base.game;
 export const prodigy = base.prodigy;

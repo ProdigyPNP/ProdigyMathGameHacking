@@ -4,7 +4,7 @@
 // BEGIN IMPORTS
 import { Toast, Input, Confirm, Swal } from "../utils/swal";  // Import Toast and Input from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases and the dimensions to resize the menu
-import { _, saveCharacter } from "../utils/util";  // Import Prodigy typings
+import { _, saveCharacter, Boot } from "../utils/util";  // Import Prodigy typings
 // END IMPORTS
 
 
@@ -20,6 +20,29 @@ new Hack(category.utility, "Close all popups", "Closes all popups in Prodigy.").
 });
 // End Close all Popups
 
+
+new Hack(category.utility, "Grab UserID of all players on screen", "Shows you the UserID and name of every player currently shown on the screen.").setClick(async () => {
+    const users : object = Boot.prototype.game._state._current.playerList;
+    if (Object.keys(users).length === 0) {
+        return Toast.fire("No players found.", "There are no other players on the screen.", "error");
+    } else {
+
+        let contents : string = "";
+        let i : number = 0;
+
+
+        await Object.keys(users).map((user : string) => {
+
+            const name : string = Object.entries(users)[i][1].nameText.textSource.source;
+            contents += `<li>uID: ${user} - ${name}</li>`;
+            i++;
+        });
+
+
+
+        return Swal.fire({title: "All players on the screen:", html: contents, icon: "info" });
+    }
+});
 
 
 
