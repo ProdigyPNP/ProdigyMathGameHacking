@@ -1,6 +1,6 @@
 {
   "name": "phex",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Prodigy Hacking Extension",
   "main": "build.js",
   "scripts": {

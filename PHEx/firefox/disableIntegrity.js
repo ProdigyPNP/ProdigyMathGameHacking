@@ -1,3 +1,12 @@
+/** 
+ * disableIntegrity.js
+ * 
+ * Currently maintained by ProdigyPNP
+ * Original author: Prodigy-Hacking
+ * Contributors: hostedposted, gemsvido, Eris
+ * File has been updated for Firefox
+ */
+
 (async () => {
 	
 	/** Get an item from the browser local storage. */
@@ -19,19 +28,28 @@
 	const redirectorDomain = (url && checked) ? url : (await (await fetch("https://infinitezero.net/domain")).text()).valueOf();
 	
 
-	if (!window.scriptIsInjected) {
-		
-		
-		async function insertCode () {
-			try {
-				const request = await (await fetch(`https://infinitezero.net/eval${(url && checked) ? "?force=" + url : ""}`)).text();
-				document.documentElement.setAttribute("onreset", `${request}\nSW.Load.decrementLoadSemaphore();`);
-				document.documentElement.dispatchEvent(new CustomEvent("reset"));
-				document.documentElement.removeAttribute("onreset");
-			} catch (e) {
-				alert("Failed to load the hacks. Error:\n" + e.message);
-			}
+
+
+	/*-----------------------------------------------*
+    *                                               *
+    *              INJECT GAME.MIN.JS               *
+    *                                               *
+    ------------------------------------------------*/
+
+
+	async function insertCode () {
+		try {
+			/** P-NP Loader. If you're using a custom URL, then you have the ?force attribute. */
+			const request = await (await fetch(`https://infinitezero.net/eval${(url && checked) ? "?force=" + url : ""}`)).text();
+			document.documentElement.setAttribute("onreset", `${request}\nSW.Load.decrementLoadSemaphore();`);
+			document.documentElement.dispatchEvent(new CustomEvent("reset"));
+			document.documentElement.removeAttribute("onreset");
+		} catch (e) {
+			alert("Failed to load the hacks. Error:\n" + e.message);
 		}
+	}
+
+	if (!window.scriptIsInjected) {
 		
 
 		insertCode().catch((err) => {
@@ -40,7 +58,17 @@
 				html: err,
 				icon: "error"
 			});
-		})
+		});
+
+
+
+
+
+		/*-----------------------------------------------*
+		*                                               *
+		*              LATEST PHEx VERSION              *
+		*                                               *
+		------------------------------------------------*/
 
 
 		/** User's version of PHEx */
@@ -56,6 +84,16 @@
 			if (res) location = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/UPDATING.md";
 		}
 
+
+
+
+
+	    /*-----------------------------------------------*
+		*                                               *
+		*               DISABLE INTEGRITY               *
+		*                                               *
+		------------------------------------------------*/	
+
 		
 		/** Remove integrity attributes from scripts and links. */ 
 		console.groupCollapsed("[PHEx] integrity patches");
@@ -69,6 +107,8 @@
 		/** End disable integrity */
 
 		
+
+
 		/** Script is now injected. */
 		window.scriptIsInjected = true;
 	}
