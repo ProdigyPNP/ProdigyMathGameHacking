@@ -27,7 +27,7 @@ rm build/extension.zip && xlog "Deleted extension.zip" || xlog "No extension.zip
 # Delete build/extension.xpi
 xlog "Deleting extension.xpi..."
 rm build/extension.xpi && xlog "Deleted extension.xpi" || xlog "No extension.xpi found"
-
+echo ""
 
 
 
@@ -39,7 +39,7 @@ xlog "Zipping chromium extension..."
 cd ./src/
 
 # Zip ./src/ to ./build.extension.zip
-zip -r ../build/extension.zip ./ && xlog ".ZIP chromium extension built -> extension.zip"
+zip -q -r ../build/extension.zip ./ && xlog ".ZIP chromium extension built -> extension.zip"
 
 # Tell the user that we've build the chromium extension successfully.
 xlog "Chromium extension Success!" && echo ""
@@ -53,7 +53,7 @@ xlog "Chromium extension Success!" && echo ""
 cd ../firefox/
 
 # Zip ./firefox/ to ./build.extension.xpi
-zip -r ../build/extension.xpi ./ && xlog ".XPI file built -> extension.xpi"
+zip -q -r ../build/extension.xpi ./ && xlog ".XPI file built -> extension.xpi"
 
 
 # Tell the user that we've build the firefox extension successfully.
@@ -67,4 +67,4 @@ xlog "Firefox extension Success!" && echo ""
 echo "\033[0;31m" && xlog "IMPORTANT: IF YOU ARE MAKING AN OFFICIAL PHEx RELEASE, THEN PLEASE REMEMBER TO SIGN THE .CRX WITH A PRIVATE KEY FILE." && echo ""
 
 # Tell the user that we're done.
-echo "\033[0m" + xlog "Done!"
+echo "\033[0m" && xlog "Done!"
