@@ -30,15 +30,11 @@ new Hack(category.utility, "Grab UserID of all players on screen", "Shows you th
         let contents : string = "";
         let i : number = 0;
 
-
         await Object.keys(users).map((user : string) => {
-
             const name : string = Object.entries(users)[i][1].nameText.textSource.source;
             contents += `<li>uID: ${user} - ${name}</li>`;
             i++;
         });
-
-
 
         return Swal.fire({title: "All players on the screen:", html: contents, icon: "info" });
     }

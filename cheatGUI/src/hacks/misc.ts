@@ -5,7 +5,7 @@
 // BEGIN IMPORTS
 import { Toast, Confirm, Swal } from "../utils/swal"; // Import Toast and Confirm from swal
 import { Hack, category, Toggler } from "../index";  // Import the Cheat GUI bases.
-import { _ } from "../utils/util"; // Import Prodigy typings
+import { Boot, _ } from "../utils/util"; // Import Prodigy typings
 import { startFps, stopFps } from "../utils/fps";
 // END IMPORTS
 
@@ -69,6 +69,18 @@ new Toggler(category.beta, "FPS Counter [BETA]", "Shows you a framerate counter"
     stopFps();
 });
 // End FPS Counter
+
+
+// Begin Unlimited Spins
+const canSpinBackup = Boot.prototype.game._state._current.user.source.canSpin;
+new Toggler(category.misc, "Unlimited Spins", "Lets you spin the wheel as many times as you want!").setEnabled(async () => {
+	_.player.canSpin = (() => { true; });
+	return Toast.fire("Enabled!", "You can now spin the wheel as many times as you want!", "success");
+}).setDisabled(async() => {
+	_.player.canSpin = canSpinBackup;
+	return Toast.fire("Disabled!", "You can now spin the wheel only when allowed.", "success");
+});
+// End Unlimited Spins
 
 
 // Begin Bobbify
