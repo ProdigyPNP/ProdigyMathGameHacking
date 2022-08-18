@@ -1,9 +1,9 @@
 (async () => {
 	
-	/** Get an item from the chrome local storage. */
+	/** Get an item from the browser local storage. */
 	function get(key) {
 		return new Promise(resolve => {
-			chrome.storage.local.get([key], result => {
+			browser.storage.local.get([key], result => {
 				resolve(result[key]);
 			});
 		});
@@ -63,11 +63,11 @@
 				});
 		}
 
-		/** Run the redirectorCheck() function with a 1-second delay. */
+		/** Run the redirectorCheck() function after a 1-second delay. */
 		setTimeout(redirectorCheck, 1000);
 
 		/** User's version of PHEx */
-		const pluginVersion = chrome.runtime.getManifest().version;
+		const pluginVersion = browser.runtime.getManifest().version;
 
 		/** Latest version of PHEx. */
 		const supportedVersion = (await (await fetch(`${redirectorDomain}/version`)).text());
@@ -76,7 +76,6 @@
 		/** Checks for plugin version. If outdated, triggers dialog box */
 		if (pluginVersion !== supportedVersion) {
 			const res = confirm(`PHEx is outdated. If you experience any errors, please update.\n\Your Version: ${pluginVersion}\nLatest Version: ${supportedVersion}`);
-
 			if (res) location = "https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/UPDATING.md";
 		}
 
