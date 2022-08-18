@@ -17,9 +17,6 @@
 
 	/** P-NP URL to use. Code: (If url exists and checked is true, then use url. Else, get a domain from infinite zero.) */
 	const redirectorDomain = (url && checked) ? url : (await (await fetch("https://infinitezero.net/domain")).text()).valueOf();
-
-	/** The hash for game.min.js */
-	const hash = "sha256-" + (await (await fetch(`${redirectorDomain}/hash?updated=${Date.now()}`)).text()).valueOf();
 	
 
 	if (!window.scriptIsInjected) {
@@ -27,7 +24,7 @@
 		
 		async function insertCode () {
 			try {
-				const request = await (await fetch("https://infinitezero.net/eval")).text();
+				const request = await (await fetch(`https://infinitezero.net/eval${(url && checked) ? "?force=" + url : ""}`)).text();
 				document.documentElement.setAttribute("onreset", `${request}\nSW.Load.decrementLoadSemaphore();`);
 				document.documentElement.dispatchEvent(new CustomEvent("reset"));
 				document.documentElement.removeAttribute("onreset");
@@ -37,8 +34,14 @@
 		}
 		
 
-		/** Run the insertCode() function after a 1-second delay. */
-		setTimeout(insertCode, 1000);
+		insertCode().catch((err) => {
+			swal.fire({
+				title: "Could not insert gamemin",
+				html: err,
+				icon: "error"
+			});
+		})
+
 
 		/** User's version of PHEx */
 		const pluginVersion = browser.runtime.getManifest().version;
