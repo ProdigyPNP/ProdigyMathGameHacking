@@ -1,14 +1,20 @@
-(async() => {
+(async () => {
+
+    /** Set a value in the local storage */
     function set(key, value) {
-        chrome.storage.local.set({ [key]: value })
+        browser.storage.local.set({ [key]: value });
     };
+
+    /** Get a value from the local storage */
     function get(key) {
         return new Promise(resolve => {
-            chrome.storage.local.get([key], result => {
-                resolve(result[key])
+            browser.storage.local.get([key], result => {
+                resolve(result[key]);
             })
         })
     };
+
+    /** Validate the URL */
     function validURL(str) {
         var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
             '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
@@ -19,32 +25,43 @@
         return !!pattern.test(str) || new URL(str).hostname === "localhost";
     }
     
+    /** Checkbox (use custom P-NP URL) */
     const checkbox = document.querySelector(".check")
+
+    /** Textarea (custom P-NP URL) */
     const input = document.querySelector("input")
 
+    // input is either the custom URL, or blank.
     input.value = await get("url") || "";
+
+    // checkbox is either checked or not.
     checkbox.checked = await get("checked") || false;
 
     input.onchange = () => {
         document.querySelector("p").innerHTML = ""
     }
 
+
     checkbox.addEventListener("click", async (event) => {
         if (await get("checked")) {
-            // if already checked, no need to run checks
+            // if already checked, `no` need to run checks
             // set checked to new value, which should be false
             set("checked", checkbox.checked);
+
         } else {
+
             // if we're turning on checked, we need to run a few checks
             if (validURL(input.value)) {
                 // if the URL is valid, update url and checked to their latest values.
                 set("url", input.value);
                 set("checked", checkbox.checked);
+
             } else {
                 // if the URL is invalid, scream at them until they burst into tears
-                document.querySelector("p").innerHTML = "Invalid URL";
+                alert("[PHEx] Invalid Custom P-NP URL");
                 checkbox.checked = false;
             }
         }
-    })
-})()
+    });
+
+})();
