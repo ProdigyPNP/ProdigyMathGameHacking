@@ -1,4 +1,5 @@
 // @ts-nocheck
+
 import { GameItemKey } from "../../../typings/_.gameData";
 import { gameData as GameData } from "../../../typings/gameData";
 import { Item } from "../../../typings/item";
@@ -8,8 +9,11 @@ import { Game } from "../../../typings/game";
 /** The hack variable. */
 export const _ = window._;
 
+/** The player variable */
+export const player = _.player;
+
 /** The alternate hack variable. */
-export const Boot = window.Boot;
+export const current = Boot.prototype.game._state._current;
 
 const base: { game: Game, prodigy: Prodigy } = _.instance;
 
