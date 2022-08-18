@@ -2,6 +2,12 @@
 
 <br>
 
+### WARNING: Sorry, but PHEx currently doesn't work on Firefox. Use a different browser for now.
+
+
+<br>
+
+
 1. Open **Mozilla Firefox**.
 2. Go to [addons.mozilla.org/en-US/firefox/addon/phex](https://addons.mozilla.org/en-US/firefox/addon/phex/)
 3. Click **Add to Firefox**.
