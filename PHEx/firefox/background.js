@@ -18,7 +18,7 @@ browser.webRequest.onHeadersReceived.addListener(
 		responseHeaders: details.responseHeaders.filter(header => !HEADERS_TO_STRIP_LOWERCASE.includes(header.name.toLowerCase()))
 	}),
 	{ urls: ["*://*.prodigygame.com/*"] },
-	["blocking", "responseHeaders", "extraHeaders"]
+	["blocking", "responseHeaders"]
 );
 
 
