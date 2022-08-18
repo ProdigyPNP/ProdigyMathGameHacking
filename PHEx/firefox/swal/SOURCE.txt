@@ -1,0 +1,1 @@
+https://github.com/sweetalert2/sweetalert2
