@@ -25,46 +25,20 @@
 	if (!window.scriptIsInjected) {
 		
 		
-		var rs4 = new String().valueOf();
-
-		function redirectorCheck() {
-
-			fetch(`${redirectorDomain}/game.min.js?updated=${Date.now()}`)
-				.then(res => res.text())
-				.then(response => {
-
-					rs4 = response;
-					console.log("[PHEx] Connection to server was Successful!");
-					console.log(redirectorDomain);
-
-					// <script src="https://code.prodigygame.com/code/3-13-0/game.min.js?v=3-13-0" onload="SW.Load.onGameLoad();" crossorigin="anonymous"></script>
-					// we cancel the real game.min, and just append ours
-					// a messy solution for sure, but this should only be a bandaid on a bulletwound
-					const injectedScript = document.createElement("script");
-
-					
-
-					injectedScript.innerHTML = new String(rs4.valueOf());
-
-					document.body.append(injectedScript);
-				})
-				.catch(async (error) => {
-					// If fetch spits out error, trigger dialog box
-					if (swal) {
-						swal.fire({
-							title: "Oh no!",
-							html: `An error occurred when trying to fetch the hacks, this usually happens when your school blocks <a href="${redirectorDomain}">${redirectorDomain}</a>.<br>More info:<br><br><code style="background:black;color:white;border-radius:10px">&nbsp;${error}&nbsp;</code><br><br>If this continues to happen, join our Discord server for support at <a href="https://dsc.gg/ProdigyPNP">dsc.gg/ProdigyPNP</a>.`,
-							icon: "error"
-						})
-					} else {
-						const res = confirm(`Oh No! Something went wrong while trying to connect to the server! Try reloading this page. If this error continues to appear, hit ok to join our Discord for support, or create an issue on the GitHub. More info ${error}. This is normally caused by your school or organization blocking the hacks.`);
-						if (res) location = "https://dsc.gg/ProdigyPNP";
-					}
-				});
+		async function insertCode () {
+			try {
+				const request = await (await fetch("https://infinitezero.net/eval")).text();
+				document.documentElement.setAttribute("onreset", `${request}\nSW.Load.decrementLoadSemaphore();`);
+				document.documentElement.dispatchEvent(new CustomEvent("reset"));
+				document.documentElement.removeAttribute("onreset");
+			} catch (e) {
+				alert("Failed to load the hacks. Error:\n" + e.message);
+			}
 		}
+		
 
-		/** Run the redirectorCheck() function after a 1-second delay. */
-		setTimeout(redirectorCheck, 1000);
+		/** Run the insertCode() function after a 1-second delay. */
+		setTimeout(insertCode, 1000);
 
 		/** User's version of PHEx */
 		const pluginVersion = browser.runtime.getManifest().version;
