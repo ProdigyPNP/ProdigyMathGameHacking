@@ -11,7 +11,7 @@
 7. Drag and drop the downloaded `PHEx.zip` into ``brave://extensions``.
 8. You should see a new extension called `Prodigy Hacking Extension | PHEx` in your extensions.
 9. Go to [Prodigy](https://play.prodigygame.com) (``play.prodigygame.com``).
-10. Log in as usual to Prodigy.
+10. Log in as usual to Prodigy. REMEMBER THAT WE STILL RECCOMMEND YOU TO LOG IN WITH A SECOND ACCOUNT TO PREVENT ACCEDENTALLY CORRUPTING YOUR MAIN ACCOUNT.
 11. Once you enter a world, wait 5-15 seconds.
 12. In the top left corner of your screen, you should see a dropdown arrow. Click the dropdown arrow to open the hacks.
 13. Congrats, you've successfully achived hacking in the Prodigy Math Game.
