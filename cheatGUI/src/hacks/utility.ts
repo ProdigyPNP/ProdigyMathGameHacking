@@ -28,16 +28,19 @@ new Hack(category.utility, "Grab UserID of all players on screen", "Shows you th
     } else {
 
         let contents : string = "";
+        let i : number = 0;
 
 
-        Object.keys(users).map((user : any) => {
-            contents += `uID: ${user} - ${user.nameText.textSource.source}\n`;
+        await Object.keys(users).map((user : string) => {
+
+            const name : string = Object.entries(users)[i][1].nameText.textSource.source;
+            contents += `<li>uID: ${user} - ${name}</li>`;
+            i++;
         });
 
 
 
-        return Swal.fire({
-            title: "All players on the screen:", html: contents, icon: "info" });
+        return Swal.fire({title: "All players on the screen:", html: contents, icon: "info" });
     }
 });
 
