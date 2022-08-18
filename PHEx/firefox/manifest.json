@@ -1,7 +1,7 @@
 {
 	"name": "Prodigy Hacking Extension | PHEx",
-	"version": "3.0.0",
-	"description": "Free and open source hacks for Prodigy Math Game (Firefox only).",
+	"version": "3.0.1",
+	"description": "Free and open source hacks for Prodigy Math Game (for Firefox).",
 	"permissions": [
 		"webRequest",
 		"webRequestBlocking",
