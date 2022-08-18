@@ -25,7 +25,7 @@ console.log = ((message) => {
 })
 
 
-// Tell the user that the extension is being zipped
+// Tell the user that the chromium extension is being zipped
 console.log("Zipping chromium extension...");
 
 
@@ -59,7 +59,7 @@ zipdir("./src/", { saveTo: "./build/extension.zip" }, function (err, buffer) {
         // Tell the user that extension.xpi has been built.
 		console.log(".XPI file built -> extension.xpi");
 
-		// Tell the user that we've build the extension successfully.
+		// Tell the user that we've build the firefox extension successfully.
 		console.log("Firefox extension Success!\n");
 
 

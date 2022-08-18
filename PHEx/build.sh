@@ -1,19 +1,12 @@
 # PHEx Build Script
 
-echo ""
-echo "This script is currently broken, we'll bring it back soon. For now, just use the build.js script."
-echo ""
-exit 0
-
-
-
 # Prefix
 PREFIX="[PHEx Builder] "
 
 echo ""
 
 # echo with prefix
-log () {
+xlog () {
    echo "$PREFIX$1"
 }
 
@@ -24,59 +17,54 @@ ext () {
 }
 
 
+
+
 # Delete build/extension.zip
-log "Deleting extension.zip..."
-rm build/extension.zip && log "Deleted extension.zip" || log "No extension.zip found"
+xlog "Deleting extension.zip..."
+rm build/extension.zip && xlog "Deleted extension.zip" || xlog "No extension.zip found"
 
 
 # Delete build/extension.xpi
-log "Deleting extension.xpi..."
-rm build/extension.xpi && log "Deleted extension.xpi" || log "No extension.xpi found"
-
-
-# Delete build/extension.crx
-log "Deleting extension.crx..."
-rm build/extension.crx && log "Deleted extension.crx" || log "No extension.crx found"
-
-
-# Tell the user that the extension is being zipped
-log "Zipping extension..."
-
-
-# Zip ./src to ./build.extension.zip
-# If this encounters an error, exit with the message.
-zip -r ./build/extension.zip ./src/ && log ".ZIP file built -> extension.zip" || ext "Failed to zip the extension"
+xlog "Deleting extension.xpi..."
+rm build/extension.xpi && xlog "Deleted extension.xpi" || xlog "No extension.xpi found"
 
 
 
-# Tell the user that the extension is being copied
-log "Copying extension.zip to extension.crx..."
 
 
-# Copy ./build/extension.zip to ./build/extension.crx
-# If this encounters an error, exit with the message.
-cp build/extension.zip build/extension.crx && log ".CRX file built -> extension.crx" || ext "Failed to copy extension.zip to extension.crx"
+# Tell the user that the chromium extension is being zipped
+xlog "Zipping chromium extension..."
 
-# newline
-echo ""
+# Go into ./src/
+cd ./src/
+
+# Zip ./src/ to ./build.extension.zip
+zip -r ../build/extension.zip ./ && xlog ".ZIP chromium extension built -> extension.zip"
+
+# Tell the user that we've build the chromium extension successfully.
+xlog "Chromium extension Success!" && echo ""
+
+
+
+
+
+
+# Go out of ./src/ and into ./firefox/
+cd ../firefox/
+
+# Zip ./firefox/ to ./build.extension.xpi
+zip -r ../build/extension.xpi ./ && xlog ".XPI file built -> extension.xpi"
+
+
+# Tell the user that we've build the firefox extension successfully.
+xlog "Firefox extension Success!" && echo ""
+
+
+
 
 # When making .crx extensions, it needs to be signed with a private key file to work.
 # Tell the user that extension.crx needs to be signed if it's a production-used release.
-log "IMPORTANT: IF YOU ARE MAKING AN OFFICIAL PHEx RELEASE, THEN PLEASE REMEMBER TO SIGN THE .CRX WITH A PRIVATE KEY FILE."
+echo "\033[0;31m" && xlog "IMPORTANT: IF YOU ARE MAKING AN OFFICIAL PHEx RELEASE, THEN PLEASE REMEMBER TO SIGN THE .CRX WITH A PRIVATE KEY FILE." && echo ""
 
-# newline
-echo ""
-
-
-# Tell the user that the extension is being copied
-log "Copying extension.zip to extension.xpi..."
-
-# Copy ./build/extension.zip to ./build/extension.xpi
-# If this encounters an error, exit with the message.
-cp build/extension.zip build/extension.xpi && log ".XPI file built -> extension.xpi" || ext "Failed to copy extension.zip to extension.xpi"
-
-# Tell the user that we've build the extension successfully.
-log "Success!"
-echo ""
-
-log "Done!"
+# Tell the user that we're done.
+echo "\033[0m" + xlog "Done!"
