@@ -3,7 +3,7 @@
 // BEGIN IMPORTS
 import { Hack, category } from "../index"; // Import the Cheat GUI bases.
 import { NumberInput, Swal, Toast } from "../utils/swal"; // Import Swal, Toast, and NumberInput from swal
-import { _, locations, prodigy } from "../utils/util"; // Import Prodigy typings
+import { _, locations, prodigy, player } from "../utils/util"; // Import Prodigy typings
 import { toHouse } from "../utils/hackify"; // Import toHouse
 // END IMPORTS
 
@@ -94,7 +94,7 @@ new Hack(category.location, "Teleport to house by userID").setClick(async () => 
 new Hack(category.location, "Get Map Location").setClick(async () => {
 
 
-    const Location: string = _.player.data.zone;
+    const Location: string = player.data.zone;
 
     navigator.clipboard.writeText(Location).then(async function() {
 
