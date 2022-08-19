@@ -1,7 +1,7 @@
 ## The Team
 
 ## [gemsvidø](https://github.com/afkvido)
-Current Owner of ProdigyMathGameHacking. Successfully implemented [hosted](https://github.com/hostedposted)'s loader into [PHEx 3.0.0](https://github.com/ProdigyPNP/ProdigyMathGameHacking/pull/53#pullrequestreview-1064480572).
+Current Owner of ProdigyPNP. Successfully implemented [hosted](https://github.com/hostedposted)'s loader into [PHEx 3.0.0](https://github.com/ProdigyPNP/ProdigyMathGameHacking/pull/53#pullrequestreview-1064480572).
 <br><br>
 
 ## [Natsumi](https://github.com/PatheticMustan)
