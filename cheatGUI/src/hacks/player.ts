@@ -4,7 +4,7 @@
 // BEGIN IMPORTS
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, Confirm, Input, and NumberInput from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
-import { _, getItem, VERY_LARGE_NUMBER, prodigy, saveCharacter} from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
+import { _, getItem, VERY_LARGE_NUMBER, prodigy, saveCharacter, player} from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
 import { getMemberModule, ids, itemify } from "../utils/hackify";  // Import useful arrays and functions
 
 // END IMPORTS
@@ -38,7 +38,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
     // PLAYER HACKS
 
     // Set the players gold to 09900000
-    _.player.data.gold = 9900000;
+    player.data.gold = 9900000;
     console.log("Set player gold to 9900000.")
 
 
@@ -47,16 +47,16 @@ new Hack(category.player, "Max Account").setClick(async () => {
     // @ts-expect-error
     const h = level.value - 2;
     const xpConstant = 1.042;
-    _.player.data.stars = Math.round((1 - Math.pow(xpConstant, h)) / (1 - xpConstant) * 20 + 10);
-    _.player.data.level = 100;
-    _.player.getLevel = () => {
-        return _.player.data.level;
+    player.data.stars = Math.round((1 - Math.pow(xpConstant, h)) / (1 - xpConstant) * 20 + 10);
+    player.data.level = 100;
+    player.getLevel = () => {
+        return player.data.level;
     };
     console.log("Set player level to 100");
 
 
     // Set the players bounty points to 100 (max)
-    _.player.data.bountyScore = 100;
+    player.data.bountyScore = 100;
     console.log("Set player's bounty points to 100.");
 
 
@@ -71,12 +71,12 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
     // Get all achievements
     for (var i = 0; i < 100; i++) {
-        _.player.achievements.data.progress[i] = 10;
+        player.achievements.data.progress[i] = 10;
     }
     console.log("Obtained all achievements.");
 
     // Set the players dark tower floor to 100
-    _.player.data.tower = 100;
+    player.data.tower = 100;
     console.log("Set tower floor to 100.");
 
     // PLAYER HACKS
@@ -90,17 +90,17 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
     ids.forEach(id => {
         // @ts-expect-error
-        _.player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(l.ID) : l), num.value);
+        player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(l.ID) : l), num.value);
     });
     // @ts-expect-error
     _.gameData.dorm.forEach(x =>
         // @ts-expect-error
-        _.player.house.data.items[x.ID] = { A: [], N: num.value });
+        player.house.data.items[x.ID] = { A: [], N: num.value });
 
     // Remove bounty notes
     // @ts-expect-error
-    const bountyIndex = () => _.player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
-    while (bountyIndex() > -1) _.player.backpack.data.item.splice(bountyIndex(), 1);
+    const bountyIndex = () => player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
+    while (bountyIndex() > -1) player.backpack.data.item.splice(bountyIndex(), 1);
     Toast.fire("Success!", "All items added!", "success");
 
     console.log("All items added!");
@@ -108,7 +108,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
 
     // Get all Mounts
-    _.player.backpack.data.mount = itemify(_.gameData.mount, 1);
+    player.backpack.data.mount = itemify(_.gameData.mount, 1);
     console.log("Added all mounts.");
 
 
@@ -120,7 +120,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
         const id : string = "currency";
         const amt : number = 6969420;
         // @ts-expect-error
-        _.player.backpack.data[id] = itemify(_.gameData[id].filter(a => {
+        player.backpack.data[id] = itemify(_.gameData[id].filter(a => {
             return id === 'follow' ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(a.ID) : a
         }), amt);
         
@@ -137,15 +137,15 @@ new Hack(category.player, "Max Account").setClick(async () => {
     // add pets
     // @ts-expect-error
     _.gameData.pet.forEach(x => {
-        _.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+        player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
     });
 
     // add encounter info
-    _.player.kennel._encounterInfo._data.pets = [];
+    player.kennel._encounterInfo._data.pets = [];
     _.gameData.pet.map((pet: {
         ID: number
     }) => {
-        _.player.kennel._encounterInfo._data.pets.push({
+        player.kennel._encounterInfo._data.pets.push({
             firstSeenDate: Date.now(),
             ID: pet.ID,
             timesBattled: 1,
@@ -154,7 +154,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
     });
     // Fix broken pets
     // @ts-expect-error
-    _.player.kennel.petTeam.forEach(v => {
+    player.kennel.petTeam.forEach(v => {
         if (v && (v as any).assignRandomSpells)(v as any).assignRandomSpells();
     });
     console.log("Added all pets.");
@@ -169,10 +169,10 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
 
 
-    _.player.equipment.setHat(200);
-    _.player.equipment.setBoots(93);
-    _.player.equipment.setOutfit(161);
-    _.player.equipment.setWeapon(196);
+    player.equipment.setHat(200);
+    player.equipment.setBoots(93);
+    player.equipment.setOutfit(161);
+    player.equipment.setWeapon(196);
 
 
 
@@ -185,7 +185,7 @@ new Hack(category.player, "Max Account").setClick(async () => {
 
 
     // Refresh the players appearance
-    _.player.appearanceChanged = true;
+    player.appearanceChanged = true;
     console.log("Appearance Refreshed.");
     
 
@@ -212,7 +212,7 @@ new Hack(category.player, "Set Gold").setClick(async () => {
     const gold = await NumberInput.fire("Gold Amount", "What number do you want to set your gold to?", "question");
     if (gold.value === undefined) return;
     if (gold.value > 10000000) return Toast.fire("Error", "Cannot have more than 10,000,000 gold.", "error");
-    _.player.data.gold = +gold.value;
+    player.data.gold = +gold.value;
     return Toast.fire("Success!", `You now have ${gold.value} gold.`, "success");
 });
 // End Set Gold
@@ -233,10 +233,10 @@ new Hack(category.player, "Set Level").setClick(async () => {
     const i = level.value - 2;
     // xpConstant from 3-16-1.js:8528
     const xpConstant = 1.042;
-    _.player.data.stars = Math.round((1 - Math.pow(xpConstant, i)) / (1 - xpConstant) * 20 + 10);
-    _.player.data.level = +level.value;
-    _.player.getLevel = () => {
-        return _.player.data.level;
+    player.data.stars = Math.round((1 - Math.pow(xpConstant, i)) / (1 - xpConstant) * 20 + 10);
+    player.data.level = +level.value;
+    player.getLevel = () => {
+        return player.data.level;
     };
 
     return Toast.fire("Success!", `You are now level ${level.value}.`, "success");
@@ -252,7 +252,7 @@ new Hack(category.player, "Set Level").setClick(async () => {
 new Hack(category.player, "Get member stars").setClick(async () => {
     const amount = await NumberInput.fire("Stars", "How many member stars do you want?", "question");
     if (amount.value === undefined) return;
-    _.player.data.storedMemberStars = amount.value;
+    player.data.storedMemberStars = amount.value;
     return Toast.fire("Success!", `You have set your member stars to ${amount.value}.`, "success");
 });
 // End Get member stars
@@ -271,8 +271,8 @@ new Hack(category.player, "Set Bounty Points").setClick(async () => {
         "question"
     );
     if (points.value === undefined) return;
-    _.player.data.bountyScore = Math.min(+points.value, 100);
-    return Toast.fire("Success!", `You now have ${_.player.data.bountyScore} bounty point${_.player.data.bountyScore != 1 ? "s" : ""}.`, "success");
+    player.data.bountyScore = Math.min(+points.value, 100);
+    return Toast.fire("Success!", `You now have ${player.data.bountyScore} bounty point${player.data.bountyScore != 1 ? "s" : ""}.`, "success");
 });
 // End Set bounty points
 
@@ -301,7 +301,7 @@ new Hack(category.player, "Obtain Conjure Cubes").setClick(async () => {
 new Hack(category.player, "Set Wins").setClick(async () => {
     const amount = await NumberInput.fire("Wins", "What number do you want to set your wins to?", "question");
     if (amount.value === undefined) return;
-    _.player.data.win = +amount.value;
+    player.data.win = +amount.value;
     return Toast.fire("Success!", `You have set your win${amount.value != 1 ? "s" : ""} to ${amount.value}.`, "success");
 });
 // End Set Wins
@@ -315,7 +315,7 @@ new Hack(category.player, "Set Wins").setClick(async () => {
 new Hack(category.player, "Set Losses").setClick(async () => {
     const amount = await NumberInput.fire("Losses", "What number do you want to set your losses to?", "question");
     if (amount.value === undefined) return;
-    _.player.data.loss = +amount.value;
+    player.data.loss = +amount.value;
     return Toast.fire("Success!", `You have set your loss${amount.value != 1 ? "es" : ""} to ${amount.value}.`, "success");
 });
 // End Set Losses
@@ -328,11 +328,11 @@ new Hack(category.player, "Set Losses").setClick(async () => {
 // Begin Toggle membership
 new Toggler(category.player, "Toggle membership").setEnabled(async () => {
     _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
-    _.player.appearanceChanged = true;
+    player.appearanceChanged = true;
     return Toast.fire("Success!", "You now have Prodigy membership!", "success");
 }).setDisabled(() => {
     _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = false;
-    _.player.appearanceChanged = true;
+    player.appearanceChanged = true;
     return Toast.fire("Success!", "You no longer have Prodigy membership!", "success");
 });
 // End Toggle membership
@@ -346,10 +346,10 @@ new Toggler(category.player, "Toggle membership").setEnabled(async () => {
 new Hack(category.player, "Set name (Client side only)").setClick(async () => {
     const name = await Input.fire("What would you like to set your name to?");
     if (!name.value) return;
-    _.player.getName = () => {
+    player.getName = () => {
         return name.value;
     };
-    _.player.appearanceChanged = true;
+    player.appearanceChanged = true;
     return Toast.fire("Changed!", "Your name was changed.");
 });
 // End Set Name (Client Side only)
@@ -381,9 +381,9 @@ new Hack(category.player, "Change Name", "Change the name of your wizard.").setC
                 names.filter(x => x.data.type === type).map(x => [x.ID.toString(), x.name])),
             val => equalityFunc(+val)
         );
-    div.append(nameSelect(0, x => x === _.player.name.data.firstName));
-    div.append(nameSelect(1, x => x === _.player.name.data.middleName));
-    div.append(nameSelect(2, x => x === _.player.name.data.lastName));
+    div.append(nameSelect(0, x => x === player.name.data.firstName));
+    div.append(nameSelect(1, x => x === player.name.data.middleName));
+    div.append(nameSelect(2, x => x === player.name.data.lastName));
     div.append(
         createSelect(
             new Map(
@@ -396,7 +396,7 @@ new Hack(category.player, "Change Name", "Change the name of your wizard.").setC
                     string
                 ][]
             ),
-            x => +x === _.player.name.data.nickname || String(_.player.name.data.nickname) === x
+            x => +x === player.name.data.nickname || String(player.name.data.nickname) === x
         )
     );
     const name = await Swal.fire({
@@ -413,12 +413,12 @@ new Hack(category.player, "Change Name", "Change the name of your wizard.").setC
     if (name.value === undefined) return;
     if (name.value[3] === "null") name.value[3] = null;
     [
-        _.player.name.data.firstName,
-        _.player.name.data.middleName,
-        _.player.name.data.lastName,
-        _.player.name.data.nickname
+        player.name.data.firstName,
+        player.name.data.middleName,
+        player.name.data.lastName,
+        player.name.data.nickname
     ] = (name.value as string[]).map(x => ((x as unknown) as number) && +x);
-    _.player.appearanceChanged = true;
+    player.appearanceChanged = true;
     return Toast.fire("Name Changed!", "Your name was successfully changed.", "success");
 });
 // End Change Name
@@ -430,7 +430,7 @@ new Hack(category.player, "Uncap player level (client side only)").setClick(asyn
     const level = await NumberInput.fire("Level", "What would you like to set your level to? (Can be >100)", "question");
     if (!level.value) return;
     localStorage.setItem("level", level.value);
-    eval(`_.player.getLevel = () => {return ${level.value}}`);
+    eval(`player.getLevel = () => {return ${level.value}}`);
     return Toast.fire("Updated!", "Your level has been successfully updated", "success");
 });
 // End Uncap player level
@@ -442,7 +442,7 @@ new Hack(category.player, "Uncap player level (client side only)").setClick(asyn
 // Begin get all achievements
 new Hack(category.player, "Get all achievements").setClick(async () => {
     for (var i = 0; i < 100; i++) {
-        _.player.achievements.data.progress[i] = 10;
+        player.achievements.data.progress[i] = 10;
     }
 
     return Toast.fire("Success!", "Obtained all achievements!", "success");
@@ -455,8 +455,8 @@ new Hack(category.player, "Get all achievements").setClick(async () => {
 
 // Begin Fix Morph Crash
 new Hack(category.player, "Fix Morph Crash").setClick(async () => {
-    _.player.getPlayerData().playerTransformation = undefined;
-    _.player.appearanceChanged = true;
+    player.getPlayerData().playerTransformation = undefined;
+    player.appearanceChanged = true;
 
     return Toast.fire("Success!", "Fixed morph crash bug.", "success");
 });
@@ -468,11 +468,11 @@ new Hack(category.player, "Fix Morph Crash").setClick(async () => {
 
 // Begin Permanent Morph
 new Hack(category.player, "Permanent Morph", "Makes Your Current Morph Last Forever.").setClick(async () => {
-    if (!_.player.data.playerTransformation) {
+    if (!player.data.playerTransformation) {
         return Swal.fire("No Morph Active", "Please use a Morph Marble and try again.", "error");
     }
-    _.player.data.playerTransformation.maxTime = Infinity;
-    _.player.data.playerTransformation.timeRemaining = Infinity;
+    player.data.playerTransformation.maxTime = Infinity;
+    player.data.playerTransformation.timeRemaining = Infinity;
     return Toast.fire("Success!", "You're morph will last forever!", "success");
 });
 // End Permanent Morph
@@ -518,7 +518,7 @@ new Hack(category.player, "Set Dark Tower Floor").setClick(async () => {
         inputValidator: (res) => (res > 100 || res < 1) ? `You can only be on floors from 1-100 not ${res}` : false
     });
     if (!floor.value) return;
-    _.player.data.tower = parseInt(floor.value);
+    player.data.tower = parseInt(floor.value);
     return Toast.fire("Success!", `Successfully set dark tower floor to ${floor}!`, "success");
 });
 // End Set Dark Tower Floor
@@ -530,7 +530,7 @@ new Hack(category.player, "Set Dark Tower Floor").setClick(async () => {
 // Begin Get UserID
 new Hack(category.player, "Get UserID").setClick(async () => {
 
-    const UserID: number = _.player.userID;
+    const UserID: number = player.userID;
     navigator.clipboard.writeText(UserID.toString()).then(function() {
 
 
@@ -580,7 +580,7 @@ new Hack(category.player, "Copy Account", "Copy Account From userID").setClick(a
         },
         body: JSON.stringify({
             data: JSON.stringify(playerData[userID]),
-            userID: _.player.userID
+            userID: player.userID
         }),
         method: "POST"
     });
@@ -596,7 +596,7 @@ new Hack(category.player, "Copy Account", "Copy Account From userID").setClick(a
 new Hack(category.player, "Set Grade").setClick(async () => {
     const grade = await NumberInput.fire("What number do you want to set your grade to?");
     if (!grade.value) return;
-    _.player.grade = parseInt(grade.value);
+    player.grade = parseInt(grade.value);
     return Toast.fire("Success", `Successfully changed grade to ${grade}!`, "success");
 });
 // End Set Grade

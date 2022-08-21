@@ -4,7 +4,7 @@
 // BEGIN IMPORTS
 import { Toast, Input, Confirm, Swal } from "../utils/swal";  // Import Toast and Input from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases and the dimensions to resize the menu
-import { _, saveCharacter } from "../utils/util";  // Import Prodigy typings
+import { _, saveCharacter, current, player } from "../utils/util";  // Import Prodigy typings
 // END IMPORTS
 
 
@@ -21,12 +21,31 @@ new Hack(category.utility, "Close all popups", "Closes all popups in Prodigy.").
 // End Close all Popups
 
 
+new Hack(category.utility, "Grab UserID of all players on screen", "Shows you the UserID and name of every player currently shown on the screen.").setClick(async () => {
+    const users : object = current.playerList;
+    if (Object.keys(users).length === 0) {
+        return Toast.fire("No players found.", "There are no other players on the screen.", "error");
+    } else {
+
+        let contents : string = "";
+        let i : number = 0;
+
+        await Object.keys(users).map((user : string) => {
+            const name : string = Object.entries(users)[i][1].nameText.textSource.source;
+            contents += `<li>uID: ${user} - ${name}</li>`;
+            i++;
+        });
+
+        return Swal.fire({title: "All players on the screen:", html: contents, icon: "info" });
+    }
+});
+
 
 
 
 // Begin Save Character Locally
 new Hack(category.utility, "Save Character Locally [Local]", "Saves your character locally.").setClick(async () => {
-    localStorage.setItem("playerData", JSON.stringify(_.player.getUpdatedData(true)));
+    localStorage.setItem("playerData", JSON.stringify(player.getUpdatedData(true)));
     return Toast.fire("Success!", "Note: Load Character will only work on this device.", "success");
 });
 // End Save Character Locally
@@ -42,7 +61,7 @@ new Hack(category.utility, "Load local character [Local]", "Loads your character
         return Toast.fire("Error", "No saved character.", "error");
     } else {
         const playerData = localStorage.getItem("playerData");
-        const req = await fetch(`https://api.prodigygame.com/game-api/v3/characters/${_.player.userID}`, {
+        const req = await fetch(`https://api.prodigygame.com/game-api/v3/characters/${player.userID}`, {
             headers: {
                 accept: "*/*",
                 "accept-language": "en-US,en;q=0.9",
@@ -58,7 +77,7 @@ new Hack(category.utility, "Load local character [Local]", "Loads your character
             referrerPolicy: "strict-origin-when-cross-origin",
             body: JSON.stringify({
                 data: playerData,
-                userID: _.player.userID
+                userID: player.userID
             }),
             method: "POST",
             mode: "cors"
@@ -132,14 +151,14 @@ new Toggler(category.utility, "Enable menu resize", "Allows you to resize the me
 new Hack(category.utility, "Edit walkspeed", "Lets you set your walkspeed.").setClick(async () => {
     const walkSpeed = await Input.fire("What do you want to set your walk speed to?");
     if (!walkSpeed.value) return;
-    if (!_.player._playerContainer) {
+    if (!player._playerContainer) {
         const interval = setInterval(() => {
-            if (_.player._playerContainer) {
+            if (player._playerContainer) {
                 clearInterval(interval);
-                _.player._playerContainer.walkSpeed = parseFloat(walkSpeed.value);
+                player._playerContainer.walkSpeed = parseFloat(walkSpeed.value);
             }
         }, 100);
-    } else _.player._playerContainer.walkSpeed = parseFloat(walkSpeed.value) || 1.5;
+    } else player._playerContainer.walkSpeed = parseFloat(walkSpeed.value) || 1.5;
     return Toast.fire("Success!", `Successfully made walk speed ${parseFloat(walkSpeed.value) || 1.5}!`, "success");
 });
 // End Edit walkSpeed
@@ -155,15 +174,15 @@ new Toggler(category.utility, "Toggle Click Teleporting").setEnabled(async () =>
     // @ts-expect-error
     teleportingInterval = setInterval(() => {
         try {
-            _.player._playerContainer.walkSpeed = 500;
+            player._playerContainer.walkSpeed = 500;
         } catch (e) {
-            // "when switching between scenes, there's a brief moment when _.player._playerContainer.walkSpeed is inaccessible" - Mustan
+            // "when switching between scenes, there's a brief moment when player._playerContainer.walkSpeed is inaccessible" - Mustan
         }
     });
     return Toast.fire("Success!", "Successfully enabled teleport click.", "success");
 }).setDisabled(async () => {
     clearInterval(teleportingInterval);
-    _.player._playerContainer.walkSpeed = 1.5;
+    player._playerContainer.walkSpeed = 1.5;
     return Toast.fire("Success!", "Successfully disabled teleport click.", "success");
 });
 // End Toggle Click Teleporting

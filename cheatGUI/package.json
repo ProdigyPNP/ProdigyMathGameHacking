@@ -1,6 +1,6 @@
 {
   "name": "cheatgui",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Prodigy Hack GUI",
   "main": "dist/bundle.js",
   "scripts": {
