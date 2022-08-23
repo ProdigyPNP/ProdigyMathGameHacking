@@ -72,15 +72,19 @@ new Toggler(category.beta, "FPS Counter [BETA]", "Shows you a framerate counter"
 
 
 // Begin Unlimited Spins
-const canSpinBackup = current.user.source.canSpin;
-new Toggler(category.misc, "Unlimited Spins", "Lets you spin the wheel as many times as you want!").setEnabled(async () => {
-	player.canSpin = (() => { true; });
-	return Toast.fire("Enabled!", "You can now spin the wheel as many times as you want!", "success");
-}).setDisabled(async() => {
-	player.canSpin = canSpinBackup;
-	return Toast.fire("Disabled!", "You can now spin the wheel only when allowed.", "success");
-});
-// End Unlimited Spins
+try {
+	const canSpinBackup = current.user.source.canSpin;
+	new Toggler(category.misc, "Unlimited Spins", "Lets you spin the wheel as many times as you want!").setEnabled(async () => {
+		player.canSpin = (() => { true; });
+		return Toast.fire("Enabled!", "You can now spin the wheel as many times as you want!", "success");
+	}).setDisabled(async() => {
+		player.canSpin = canSpinBackup;
+		return Toast.fire("Disabled!", "You can now spin the wheel only when allowed.", "success");
+	});
+	// End Unlimited Spins
+} catch (error : unknown) {
+	console.error("Unlimited Spins ERROR: " + error);
+}
 
 
 // Begin Bobbify
