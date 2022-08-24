@@ -554,8 +554,6 @@ new Hack(category.player, "Set Dark Tower Floor").setClick(async () => {
 // Begin Get UserID
 new Hack(category.player, "Get UserID").setClick(async () => {
 
-    const UserID: number = _.player.userID;
-
     const UserID: number = player.userID;
     navigator.clipboard.writeText(UserID.toString()).then(function() {
 
