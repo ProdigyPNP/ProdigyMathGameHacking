@@ -17,7 +17,7 @@ window.addEventListener("keydown", event => {
             _.instance.prodigy.open.menuCloseAll();
             break;
 
-        case "\":
+        case "\\":
             // Gets you kitted up in Celestial Gear
             const k = async () => {
 
