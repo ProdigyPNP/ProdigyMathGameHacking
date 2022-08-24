@@ -22,3 +22,9 @@
 ## Microsoft Edge
 - Using Webstore: See [webstores/EDGE.md](../webstores/EDGE.md)
 - Manual Install: See [manual/EDGE.md](../manual/EDGE.md)
+
+<br>
+
+## Opera, Opera GX, Opera Crypto Browser
+- Using Webstore: See [webstores/OPERA.md](../webstores/OPERA.md)
+- Manual Install: See [manual/OPERA.md](../manual/OPERA.md)

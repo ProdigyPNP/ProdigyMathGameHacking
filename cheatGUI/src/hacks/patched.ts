@@ -4,7 +4,7 @@
 // BEGIN IMPORTS
 import { Swal, Confirm, Toast } from "../utils/swal";
 import { Hack, category} from "../index"; // Import the Cheat GUI bases.
-import { _, prodigy} from "../utils/util"; // Import Prodigy typings and VERY_LARGE_NUMBER
+import { _, prodigy, player } from "../utils/util"; // Import Prodigy typings and VERY_LARGE_NUMBER
 // END IMPORTS
 
 
@@ -29,7 +29,7 @@ new Hack(category.patched, "Arena Point Increaser [Patched]").setClick(async () 
         interval = setInterval(async () => {
             const data = await (
                 await fetch(
-                    `https://api.prodigygame.com/leaderboard-api/season/${prodigy.pvpNetworkHandler.seasonID}/user/${_.player.userID}/pvp?userID=${_.player.userID}`, {
+                    `https://api.prodigygame.com/leaderboard-api/season/${prodigy.pvpNetworkHandler.seasonID}/user/${player.userID}/pvp?userID=${player.userID}`, {
                         headers: {
                             // @ts-expect-error
                             authorization: `Bearer ${prodigy.network.jwtAuthProvider.getToken()}`,
@@ -82,7 +82,7 @@ new Hack(category.patched, "Disable Timeout Dialog [Patched]").setClick(async ()
 const inventoryHack = (name: string, id: BackpackItemType, amount: number = 1) => {
 	new Hack(category.inventory, `Obtain All ${name}`).setClick(async () => {
 		if (!(await Confirm.fire(`Are you sure you want to get all ${name}?`)).value) return;
-		_.player.backpack.data[id] = itemify(_.gameData[id], amount);
+		player.backpack.data[id] = itemify(_.gameData[id], amount);
 		Toast.fire(
 			`${name} Added!`,
 			`All ${name.toLowerCase()} have been added to your inventory!`,

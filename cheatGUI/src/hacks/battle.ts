@@ -5,7 +5,7 @@
 // BEGIN IMPORTS
 import { Toast, NumberInput } from "../utils/swal"; // Import Toast and NumberInput from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
-import { _, prodigy, game, VERY_LARGE_NUMBER } from "../utils/util"; // Import prodigy typings
+import { _, prodigy, game, VERY_LARGE_NUMBER, player } from "../utils/util"; // Import prodigy typings
 import { BattleInfo } from "../utils/log"; // Import Battle logging functions
 // END IMPORTS
 
@@ -39,11 +39,11 @@ new Toggler(category.battle, "Disable math [PvP, PvE]", "Disable math in PvP, Pv
 
 // Begin Instant Kill
 new Toggler(category.battle, "Instant Kill [PvE]", "Makes your spells do insane damage in PvE!").setEnabled(async () => {
-    _.player.modifiers.damage = VERY_LARGE_NUMBER;
+    player.modifiers.damage = VERY_LARGE_NUMBER;
     return Toast.fire("Enabled!", "You will now do insane damage in PvE!", "success");
 
 }).setDisabled(() => {
-    _.player.modifiers.damage = 1;
+    player.modifiers.damage = 1;
     return Toast.fire("Disabled!", "You will no longer do insane damage in PvE!", "success");
 });
 // End Instant Kill
@@ -55,8 +55,8 @@ new Toggler(category.battle, "Instant Kill [PvE]", "Makes your spells do insane 
 
 // Begin PvP Health
 new Hack(category.battle, "PvP Health [PvP]", "Increases your HP in PvP by a hell ton.").setClick(async () => {
-    _.player.pvpHP = VERY_LARGE_NUMBER;
-    _.player.getMaxHearts = () => VERY_LARGE_NUMBER;
+    player.pvpHP = VERY_LARGE_NUMBER;
+    player.getMaxHearts = () => VERY_LARGE_NUMBER;
     return Toast.fire("Success!", "You now have lots of health!", "success");
 });
 // End PvP Health
@@ -77,7 +77,7 @@ new Hack(category.battle, "Escape Battle [PvP, PvE]", "Escape any battle, PvP or
             "success"
         );
     } else if (currentState === "CoOp") {
-        prodigy.world.$(_.player.data.zone);
+        prodigy.world.$(player.data.zone);
         return Toast.fire(
             "Escaped!",
             "You have successfully escaped from the battle.",
@@ -153,9 +153,9 @@ new Hack(category.battle, "Win Battle [PvE]", "Instantly win a battle in PvE.").
 new Hack(category.battle, "Set Battle Hearts [PvP, PvE]", "Sets your hearts in battle, automatically raise your max hearts in PvP or PvE.").setClick(async () => {
     const hp = await NumberInput.fire("Health Amount", "How much HP do you want?", "question");
     if (hp.value === undefined) return;
-    _.player.getMaxHearts = () => +hp.value;
-    _.player.pvpHP = +hp.value;
-    _.player.data.hp = +hp.value;
+    player.getMaxHearts = () => +hp.value;
+    player.pvpHP = +hp.value;
+    player.data.hp = +hp.value;
     return Toast.fire("Success!", "Your hearts have been set.", "success");
 });
 // End Set Battle Hearts
@@ -190,7 +190,7 @@ new Hack(category.battle, "Heal Team [PvE]", "Instantly heals you and your pets,
         return Toast.fire("Invalid State.", "PvP is not supported for this hack.", "error");
 
     } else if (["Battle", "SecureBattle"].includes(currentState)) {
-        _.player.heal();
+        player.heal();
         return Toast.fire("Success!", "Your team has been healed successfully!", "success");
     } else {
         return Toast.fire("Invalid State.", "Your are currently not in a battle.", "error");
