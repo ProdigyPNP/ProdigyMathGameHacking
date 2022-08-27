@@ -1,6 +1,6 @@
 import { Swal } from "../utils/swal";  // Import Swal
 
-
+/*
 export async function statusMessage () {
 
 
@@ -20,12 +20,12 @@ export async function statusMessage () {
     };
 
 }
+*/
 
 
 
-/*
 
-// Display status message
+
 export function statusMessage () {
 
 
@@ -38,10 +38,10 @@ export function statusMessage () {
             } else {
 
                 await Swal.fire({
-                            title: data.title,
-                    	    html: data.html,
-                    	    icon: data.icon,
-                    });
+                    title: data.get("title"),
+                    html: data.get("html"),
+                    icon: data.get("icon"),
+                });
 
             }
 
@@ -50,5 +50,3 @@ export function statusMessage () {
 
 
 };
-
-*/

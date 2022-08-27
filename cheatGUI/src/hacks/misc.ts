@@ -5,7 +5,8 @@
 // BEGIN IMPORTS
 import { Toast, Confirm, Swal } from "../utils/swal"; // Import Toast and Confirm from swal
 import { Hack, category, Toggler } from "../index";  // Import the Cheat GUI bases.
-import { _ } from "../utils/util"; // Import Prodigy typings
+import { current, player, _ } from "../utils/util"; // Import Prodigy typings
+import { startFps, stopFps } from "../utils/fps";
 // END IMPORTS
 
 
@@ -24,12 +25,12 @@ new Hack(category.misc, "Skip Tutorial").setClick(async () => {
 
 	setQuest("house", 2);
 	setQuest("academy", 2);
-	_.player.state.set("tutorial-0", 4);
-	_.player.backpack.addKeyItem(13, 0);
-	_.player.tutorial.data.menus[14] = [1];
+	player.state.set("tutorial-0", 4);
+	player.backpack.addKeyItem(13, 0);
+	player.tutorial.data.menus[14] = [1];
 	_.instance.prodigy.open.map(true, []);
-	_.player.onTutorialComplete();
-	_.player.data.level = Math.max(_.player.data.level, 5);
+	player.onTutorialComplete();
+	player.data.level = Math.max(player.data.level, 5);
 });
 // End Skip Tutorial
 
@@ -61,29 +62,54 @@ new Toggler(category.misc, "Skip enemy turn").setEnabled(async () => {
 // End Skip enemy turn
 
 
+// Begin FPS Counter
+new Toggler(category.beta, "FPS Counter [BETA]", "Shows you a framerate counter").setEnabled(async () => {
+    startFps();
+}).setDisabled(async() => {
+    stopFps();
+});
+// End FPS Counter
+
+
+// Begin Unlimited Spins
+try {
+	const canSpinBackup = current.user.source.canSpin;
+	new Toggler(category.misc, "Unlimited Spins", "Lets you spin the wheel as many times as you want!").setEnabled(async () => {
+		player.canSpin = (() => { true; });
+		return Toast.fire("Enabled!", "You can now spin the wheel as many times as you want!", "success");
+	}).setDisabled(async() => {
+		player.canSpin = canSpinBackup;
+		return Toast.fire("Disabled!", "You can now spin the wheel only when allowed.", "success");
+	});
+	// End Unlimited Spins
+} catch (error : unknown) {
+	console.error("Unlimited Spins ERROR: " + error);
+}
+
+
 // Begin Bobbify
 new Hack(category.misc, "Bobbify", "Converts your account into Bobby Fancywoman.").setClick(async () => {
 	if (!(
 		await Confirm.fire("Are you sure you want your account to be turned into Bobby Fancywoman?", "This action is not reversable.")
 	).value) return;
 
-	_.player.name.data.nickname = null;
-	_.player.name.data.firstName = 44;
-	_.player.name.data.middleName = 754;
-	_.player.name.data.lastName = 882;
-	_.player.data.stars = -1e22;
-	_.player.data.level = 69;
+	player.name.data.nickname = null;
+	player.name.data.firstName = 44;
+	player.name.data.middleName = 754;
+	player.name.data.lastName = 882;
+	player.data.stars = -1e22;
+	player.data.level = 69;
 
-	_.player.appearance.setGender("male");
-	_.player.appearance.setEyeColor(1);
-	_.player.appearance.setFace(4);
-	_.player.appearance.setHair(19, 1);
-	_.player.appearance.setSkinColor(1);
-	_.player.equipment.setFollow(19);
-	_.player.equipment.setHat(19);
-	_.player.equipment.setBoots(19);
-	_.player.equipment.setOutfit(19);
-	_.player.equipment.setWeapon(19);
+	player.appearance.setGender("male");
+	player.appearance.setEyeColor(1);
+	player.appearance.setFace(4);
+	player.appearance.setHair(19, 1);
+	player.appearance.setSkinColor(1);
+	player.equipment.setFollow(19);
+	player.equipment.setHat(19);
+	player.equipment.setBoots(19);
+	player.equipment.setOutfit(19);
+	player.equipment.setWeapon(19);
 
 	return Toast.fire("Bobbified!", "You are now Bobby Fancywoman.", "success");
 });
@@ -94,7 +120,7 @@ new Hack(category.misc, "Bobbify", "Converts your account into Bobby Fancywoman.
 // Begin Reset Account
 new Hack(category.misc, "Reset Account", "Completely resets your account.").setClick(async () => {
 	if (!(await Confirm.fire("Are you sure you want to reset your account?", "This action is not reversible.")).value) return;
-	_.player.resetAccount();
+	player.resetAccount();
 	return Swal.fire("Reset!", "Your account has been reset. Reload Prodigy for the full effect.", "success");
 });
 // End Reset Account
@@ -116,7 +142,7 @@ new Hack(category.misc, "Chat Spammer", "Cycles through chat messages pretty fas
 
 	    retard = setInterval(async () => {
 
-		    _.player.chatID = i;
+		    player.chatID = i;
 		    i++;
 
 		    if (i > 1164) {
@@ -156,7 +182,7 @@ new Hack(category.misc, "High Chat Spammer", "Cycles through chat messages hella
 
 	    retards = setInterval(async () => {
 
-    		    _.player.chatID = c;
+    		    player.chatID = c;
     		    c++;
 
     		    if (c > 1164) {
@@ -201,7 +227,7 @@ new Hack(category.misc, "Chat Spammer on Meth", "Cycles through chat messages FA
 
 	    retarded = setInterval(async () => {
 
-    		_.player.chatID = b;
+    		player.chatID = b;
     		b++;
 
     		if (b > 1164) {
@@ -224,7 +250,7 @@ new Hack(category.misc, "Chat Spammer on Meth", "Cycles through chat messages FA
 // Begin Fix Battle Crash
 new Hack(category.misc, "[Fix] Fix Battle Crash").setClick(async () => {
 	// @ts-expect-error
-	_.player.kennel.petTeam.forEach(v => {
+	player.kennel.petTeam.forEach(v => {
 		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
 	});
 

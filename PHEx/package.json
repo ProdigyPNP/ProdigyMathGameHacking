@@ -1,23 +1,18 @@
 {
   "name": "phex",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Prodigy Hacking Extension",
   "main": "build.js",
   "scripts": {
     "setup": "npm install",
-    "start": "node build.js",
-    "build": "node build.js",
-    "package": "node build.js",
-    "zip": "node build.js",
-    "crx": "node build.js",
-    "xpi": "node build.js",
-    "sh:start": "./build.sh",
-    "sh:build": "./build.sh",
-    "sh:package": "./build.sh",
-    "sh:zip": "./build.sh",
-    "sh:crx": "./build.sh",
-    "sh:xpi": "./build.sh",
-    "quickstart": "npm install && node build.js"
+
+    "build": "echo \"Use sh:build if you're on a Unix operating system, or use js:build if not.\"",
+    "start": "npm run build",
+
+    "sh:build": "sh build.sh",
+    "js:build": "node build.js",
+
+    "test": "echo \"well sorry man no auto testing, test it yourself.\""
   },
   "repository": {
     "type": "git",

@@ -1,17 +1,13 @@
 {
 	"name": "Prodigy Hacking Extension | PHEx",
 	"manifest_version": 3,
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Free and open source hacks for Prodigy Math Game",
 	"author": "ProdigyPNP",
 
 	"permissions": [
-		"webRequest",
 		"declarativeNetRequest",
-		"storage",
-		"scripting",
-		"activeTab",
-		"tabs"
+		"storage"
 	],
 	"host_permissions": [
 		"*://*.prodigygame.com/*",

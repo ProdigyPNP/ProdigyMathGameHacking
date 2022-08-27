@@ -6,24 +6,14 @@
 // BEGIN IMPORTS
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, NumberInput, Input, and Confirm from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
-import { _, getItem, VERY_LARGE_NUMBER, prodigy, game, saveCharacter} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
+import { _, getItem, VERY_LARGE_NUMBER, prodigy, saveCharacter, player} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
 import { ids, itemify, runeify, getPet } from "../utils/hackify"; // Import runeify and some arrays
 import { PopupInterval } from "../utils/popupCloser";
-import { startFps, stopFps } from "../utils/fps";
 // END IMPORTS
 
 
 
 // BEGIN BETA HACKS
-
-
-// Begin FPS Counter
-new Toggler(category.beta, "FPS Counter [BETA]", "Shows you a framerate counter").setEnabled(async () => {
-    startFps();
-}).setDisabled(async() => {
-    stopFps();
-});
-// End FPS Counter
 
 
 
@@ -82,7 +72,7 @@ new Hack(category.beta, "Edit Pet [BETA]", "Edit a pet.").setClick(async () => {
 
     const pet = await getPet("Choose the pet to edit.");
     if (pet === undefined) return;
-    const selected = _.player.kennel.data[pet];
+    const selected = player.kennel.data[pet];
     const opt = await Swal.fire({
         input: "select",
         inputOptions: {
@@ -169,7 +159,6 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
     // kinda weird to explain, just look at how morphType does it
     // we want it to display a pretty string, and return the petID
     const morphOptions = {};
-    // fuck you typescript, I'll do what I want
     // @ts-expect-error
     _.gameData[morphType.value].forEach((morph) => morphOptions[morph.ID] = `${morph.name} (${morph.ID})`);
 
@@ -182,16 +171,14 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
         showCancelButton: true
     });
 
-    if (!morphID?.value) return;
-    // shut up typescript, I don't need you on my nuts every time I use Swal
-    // typescript makes me cry
-    _.player.getPlayerData().playerTransformation = {
+    if (!morphID.value) return;
+    player.getPlayerData().playerTransformation = {
         transformType: morphType.value,
         transformID: morphID.value,
         maxTime: 60 * 60 * 1000,
         timeRemaining: 60 * 60 * 1000
     };
-    _.player.appearanceChanged = true;
+    player.appearanceChanged = true;
 
     return Toast.fire("Morphed!", "You've been morphed.", "success");
 });
@@ -226,7 +213,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
     if (!(await Confirm.fire({
             title: "Hang on!",
-            html: "This hack may damage your account with various bugs, for example you may be unable to do Rune Run.<br><br>Proceed?",
+            html: "This hack will damage your account with various bugs, for example you may be unable to do Rune Run/Arena, amd you will recieve 418s and inavtivity kicks.<br><br>Proceed?",
             icon: "warning"
         })).value) {
         return;
@@ -234,36 +221,12 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 
 
-    // FIRST, Escape any battle to prevent random glitching.
-    const currentState = game.state.current;
-    if (currentState === "PVP") Object.fromEntries(_.instance.game.state.states).PVP.endPVP();
-    else if (currentState === "CoOp") prodigy.world.$(_.player.data.zone);
-    else if (!["Battle", "SecureBattle"].includes(currentState)) {} else {
-        Object.fromEntries(_.instance.game.state.states)[currentState].runAwayCallback();
-    }
-    console.log("Escaped any battle.");
 
-
-    // NOW, fix the morph crash bug
-    _.player.getPlayerData().playerTransformation = undefined;
-    _.player.appearanceChanged = true;
-    console.log("Fixed morph crash");
-
-
-    // ALSO, fix the battle crash bug
-    // @ts-expect-error
-    _.player.kennel.petTeam.forEach(v => {
-        if (v && (v as any).assignRandomSpells)(v as any).assignRandomSpells();
-    });
-    console.log("Fixed battle crash.")
-
-    // PRE MAXING PROCESS
-    // ============================================
     // ============================================
     // PLAYER HACKS
 
     // Set the players gold to 09900000
-    _.player.data.gold = 9900000;
+    player.data.gold = 9900000;
     console.log("Set player gold to 9900000.")
 
 
@@ -272,16 +235,16 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     // @ts-expect-error
     const h = level.value - 2;
     const xpConstant = 1.042;
-    _.player.data.stars = Math.round((1 - Math.pow(xpConstant, h)) / (1 - xpConstant) * 20 + 10);
-    _.player.data.level = 100;
-    _.player.getLevel = () => {
-        return _.player.data.level;
+    player.data.stars = Math.round((1 - Math.pow(xpConstant, h)) / (1 - xpConstant) * 20 + 10);
+    player.data.level = 100;
+    player.getLevel = () => {
+        return player.data.level;
     };
     console.log("Set player level to 100");
 
 
     // Set the players bounty points to 100 (max)
-    _.player.data.bountyScore = 100;
+    player.data.bountyScore = 100;
     console.log("Set player's bounty points to 100.");
 
 
@@ -293,44 +256,37 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 
     // Set the player's wins to VERY_LARGE_NUMBER
-    _.player.data.win = VERY_LARGE_NUMBER;
+    player.data.win = VERY_LARGE_NUMBER;
     console.log("Set player's wins to VERY_LARGE_NUMBER");
 
 
     // Set the player's losses to -9223372036854775808 (Java long limit, ik its irrelevant)
-    _.player.data.loss = -9223372036854775808;
+    player.data.loss = -9223372036854775808;
     console.log("Set player's losses to -9223372036854775808.");
 
 
 
     // Set the players damage multiplier to VERY_LARGE_NUMBER
-    _.player.modifiers.damage = VERY_LARGE_NUMBER;
+    player.modifiers.damage = VERY_LARGE_NUMBER;
     console.log("Enabled damage multiplier.");
 
 
     // Set the players PVP health to VERY_LARGE_NUMBER
-    _.player.pvpHP = VERY_LARGE_NUMBER;
-    _.player.getMaxHearts = () => VERY_LARGE_NUMBER;
+    player.pvpHP = VERY_LARGE_NUMBER;
+    player.getMaxHearts = () => VERY_LARGE_NUMBER;
     console.log("PvP health obtained.")
 
 
-    // Enable premium membership
-    function getMemberModule() {
-        return _.player.hasMembership.toString().split("\"")[1];
-    }
-    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
-    _.player.appearanceChanged = true;
-    console.log("Premium membership enabled.");
 
 
     // Get all achievements
     for (var i = 0; i < 100; i++) {
-        _.player.achievements.data.progress[i] = 10;
+        player.achievements.data.progress[i] = 10;
     }
     console.log("Obtained all achievements.");
 
     // Set the players dark tower floor to 100
-    _.player.data.tower = 100;
+    player.data.tower = 100;
     console.log("Set tower floor to 100.");
 
     // PLAYER HACKS
@@ -339,15 +295,10 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     // BATTLE HACKS
 
 
-
-    // Disable Math
-    _.constants.constants["GameConstants.Debug.EDUCATION_ENABLED"] = false;
-    console.log("Math Disabled.");
-
     // Max out the players HP
-    _.player.getMaxHearts = () => VERY_LARGE_NUMBER;
-    _.player.pvpHP = VERY_LARGE_NUMBER;
-    _.player.data.hp = VERY_LARGE_NUMBER;
+    player.getMaxHearts = () => VERY_LARGE_NUMBER;
+    player.pvpHP = VERY_LARGE_NUMBER;
+    player.data.hp = VERY_LARGE_NUMBER;
     console.log("Maxed out PvE health.");
 
 
@@ -363,18 +314,18 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
     ids.forEach(id => {
         // @ts-expect-error
-        _.player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(l.ID) : l), num.value);
+        player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(l.ID) : l), num.value);
     });
     // @ts-expect-error
     _.gameData.dorm.forEach(x =>
         // @ts-expect-error
-        _.player.house.data.items[x.ID] = { A: [], N: num.value }
+        player.house.data.items[x.ID] = { A: [], N: num.value }
     );
 
     // Remove bounty notes
     // @ts-expect-error
-    const bountyIndex = () => _.player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
-    while (bountyIndex() > -1) _.player.backpack.data.item.splice(bountyIndex(), 1);
+    const bountyIndex = () => player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
+    while (bountyIndex() > -1) player.backpack.data.item.splice(bountyIndex(), 1);
     Toast.fire("Success!", "All items added!", "success");
 
     console.log("All items added!");
@@ -382,7 +333,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 
     // Get all Mounts
-    _.player.backpack.data.mount = itemify(_.gameData.mount, 1);
+    player.backpack.data.mount = itemify(_.gameData.mount, 1);
     console.log("Added all mounts.");
 
 
@@ -391,7 +342,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     // @ts-expect-error
     _.gameData.dorm.forEach(x =>
         // @ts-expect-error
-        _.player.house.data.items[x.ID] = { A: [], N: amt.value }
+        player.house.data.items[x.ID] = { A: [], N: amt.value }
     );
     console.log("Added 990000 of all furniture.");
 
@@ -407,15 +358,15 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     // add pets
     // @ts-expect-error
     _.gameData.pet.forEach(x => {
-        _.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+        player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
     });
 
     // add encounter info
-    _.player.kennel._encounterInfo._data.pets = [];
+    player.kennel._encounterInfo._data.pets = [];
     _.gameData.pet.map((pet: {
         ID: number
     }) => {
-        _.player.kennel._encounterInfo._data.pets.push({
+        player.kennel._encounterInfo._data.pets.push({
             firstSeenDate: Date.now(),
             ID: pet.ID,
             timesBattled: 1,
@@ -424,7 +375,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     });
     // Fix broken pets
     // @ts-expect-error
-    _.player.kennel.petTeam.forEach(v => {
+    player.kennel.petTeam.forEach(v => {
         if (v && (v as any).assignRandomSpells)(v as any).assignRandomSpells();
     });
     console.log("Added all pets.");
@@ -437,11 +388,11 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     const mythepics = _.gameData.pet.filter(x => [158, 166, 168].includes(x.ID));
     // @ts-expect-error
     mythepics.forEach(x => {
-        _.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+        player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
     });
     // Fix broken pets
     // @ts-expect-error
-    _.player.kennel.petTeam.forEach(v => {
+    player.kennel.petTeam.forEach(v => {
         if (v && (v as any).assignRandomSpells)(v as any).assignRandomSpells();
     });
     console.log("Added Mythical Epics.");
@@ -453,11 +404,11 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     const legepics = _.gameData.pet.filter(x => [125, 126, 127, 128, 129, 130, 131, 132, 133].includes(x.ID));
     // @ts-expect-error	
     legepics.forEach(x => {
-        _.player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+        player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
     });
     // Fix broken pets
     // @ts-expect-error
-    _.player.kennel.petTeam.forEach(v => {
+    player.kennel.petTeam.forEach(v => {
         if (v && (v as any).assignRandomSpells)(v as any).assignRandomSpells();
     });
     console.log("Added Legacy Epics.");
@@ -474,7 +425,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     console.log("Inactivity Kick Disabled.");
 
     // 20x walkspeed
-    _.player._playerContainer.walkSpeed = 20;
+    player._playerContainer.walkSpeed = 20;
     console.log("Player walkspeed set to 20.");
 
 
@@ -512,10 +463,10 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
 
 
 
-    _.player.equipment.setHat(200);
-    _.player.equipment.setBoots(93);
-    _.player.equipment.setOutfit(161);
-    _.player.equipment.setWeapon(196);
+    player.equipment.setHat(200);
+    player.equipment.setBoots(93);
+    player.equipment.setOutfit(161);
+    player.equipment.setWeapon(196);
 
 
 
@@ -531,7 +482,7 @@ new Hack(category.beta, "Hypermax Account [BETA]").setClick(async () => {
     console.log("Character Saved.");
 
     // Refresh the players appearance
-    _.player.appearanceChanged = true;
+    player.appearanceChanged = true;
     console.log("Appearance Refreshed.");
 
 

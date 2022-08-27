@@ -1,0 +1,136 @@
+<!--  Of course we're using HTML, though it's a good thing to have more typings!   -->
+<!DOCTYPE html>
+
+<!-- Begin HTML content -->
+<html>
+
+    <!-- Headers -->
+    <head>
+
+        <!-- Title of this is PHEx, though it usually isn't visible unless you're viewing this as a webpage. -->
+        <title>PHEx</title>
+
+        <!-- CSS styling  -->
+        <style>
+
+            .content {
+                width: 20em;
+                height: 40em;
+            }
+            .check {
+                -webkit-appearance: none; /*hides the default checkbox*/
+                height: 40px;
+                width: 40px;
+                transition: 0.10s;
+                background-color: #FE0006;
+                border-radius: 3px;
+                outline: none;
+            }
+            .check:checked {
+                background-color: #0E9700;
+            }
+            .check:hover {
+                cursor: pointer; 
+                opacity: 0.8;
+            }
+            .gatekeeper {
+                background-color: pink;
+            }
+
+        </style> <!-- End CSS styling  -->
+
+
+    <!-- End Header Content  -->
+    </head>
+
+    <!-- Page body  -->
+    <body>
+
+        <!-- Content  -->
+        <div class="content">
+
+            <!-- PHEx in very big text :)  -->
+            <h1>PHEx</h1>
+            <h3>Firefox edition</h3>
+
+
+            <!-- The go to Hell button, I mean go to Prodigy  -->
+            <form action="https://play.prodigygame.com" method="get" target="_blank">
+                <button type="submit">Go to Prodigy</button>
+            </form>
+
+            <!-- Paragraph for small spacing  -->
+            <p/>
+
+            <!-- The go to Hell button, I mean go to our Discord server.  -->
+            <form action="https://dsc.gg/ProdigyPNP" method="get" target="_blank">
+                <button type="submit">ProdigyPNP Discord server</button>
+            </form>
+
+            <!-- Break for medium spacing -->
+            <br>
+
+
+            <!--  Text to make skids understand how to use hacks, or give our discord server free members.  -->
+            <p>To use the hack, just go to prodigy. If you need help, go to our Discord server.</p>
+
+
+            <!-- 2 Breaks for large spacing  -->
+            <br><br>
+
+            <!-- Developer Options  -->
+            <details>
+                <summary>Developer Options</summary>
+
+                <!-- Developer Options in large size text  -->
+                <h2>Developer Options</h2>
+
+                <!--  Tell skids to go away and stop asking about the P-NP URL -->
+                <p>Only touch if you know what you're doing! To use the hack, just go to Prodigy. If you need help, go to our Discord server.</p>
+
+                <!--  Custom P-NP URL settings, in medium size text -->
+                <h3>Custom P-NP URL</h3>
+
+                <!-- Textbox for the P-NP URL.  -->
+                <input id="url" type="text">
+
+                <!--  Use Custom URL, in medium size text -->
+                <h3>Use Custom URL</h3>
+
+                <!-- Checkbox if you're using the custom P-NP URL  -->
+                <input id="check" type="checkbox" class="check">
+
+                <!-- Save, in medium size text -->
+                <h3>Save</h3>
+
+                <!-- Little tutorial for the skids :)  -->
+                <p>Only touch if you know what you're doing! To save options, type in "nootnoot", and submit.</p>
+
+                <!-- Textbox to make sure people type in "nootnoot"  -->
+                <input id="gatekeeper" type="text" class="gatekeeper">
+
+                <!-- Confirm button  -->
+                <button id="submit">Confirm</button>
+
+                <!-- Result  -->
+                <p id="result"></p>
+
+
+            <!-- End developer options  -->
+            </details>
+
+
+        <!-- End content div. -->
+        </div>
+
+        <!-- Run the script that validates the P-NP URL, and sets it. -->
+        <script src="popup.js"></script>
+
+
+
+    <!-- End page body  -->
+    </body>
+
+
+<!-- End HTML content.  -->
+</html>

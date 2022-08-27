@@ -5,7 +5,7 @@
 // BEGIN IMPORTS
 import { Hack, category } from "../index"; // Import the Cheat GUI bases.
 import { Swal, Toast, Confirm, NumberInput } from "../utils/swal"; // Import Swal, Toast, NumberInput, and Confirm from swal
-import { _, saveCharacter, VERY_LARGE_NUMBER } from "../utils/util"; // Import Prodigy typings
+import { _, saveCharacter, VERY_LARGE_NUMBER, player } from "../utils/util"; // Import Prodigy typings
 import { names, ids, itemify } from "../utils/hackify"; // Import some conversion functions and arrays
 // END IMPORTS
 
@@ -23,11 +23,11 @@ new Hack(category.inventory, "Item stacker").setClick(async () => {
     if (!(await Confirm.fire("Are you sure you want to get all items in the game?")).value) return;
     ids.forEach(id => {
         // @ts-expect-error
-        _.player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(l.ID) : l), num.value);
+        player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(l.ID) : l), num.value);
     });
     // @ts-expect-error
     _.gameData.dorm.forEach(x =>
-        _.player.house.data.items[x.ID] = {
+        player.house.data.items[x.ID] = {
             A: [],
             N: num.value
         }
@@ -35,8 +35,8 @@ new Hack(category.inventory, "Item stacker").setClick(async () => {
 
     // Remove bounty notes... because they're very spammy
     // @ts-expect-error
-    const bountyIndex = () => _.player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
-    while (bountyIndex() > -1) _.player.backpack.data.item.splice(bountyIndex(), 1);
+    const bountyIndex = () => player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
+    while (bountyIndex() > -1) player.backpack.data.item.splice(bountyIndex(), 1);
 
     return Toast.fire("Success!", "All items added!", "success");
 });
@@ -49,7 +49,7 @@ new Hack(category.inventory, "Item stacker").setClick(async () => {
 // Begin Clear Inventory
 new Hack(category.inventory, "Clear inventory").setClick(async () => {
     if (!(await Confirm.fire("Are you sure you want to clear your inventory?")).value) return;
-    Object.keys(_.player.backpack.data).forEach(d => _.player.backpack.data[d] = [])
+    Object.keys(player.backpack.data).forEach(d => player.backpack.data[d] = [])
     Toast.fire("Success!", "Inventory cleared.", "success");
 });
 // End Clear Inventory
@@ -78,7 +78,7 @@ new Hack(category.inventory, "Selector (Basic)").setClick(async () => {
         if (!amt.value) return;
         if (!(await Confirm.fire(`Are you sure you want to get all ${name.toLowerCase()}?`)).value) return;
         // @ts-expect-error
-        _.player.backpack.data[id] = itemify(_.gameData[id].filter(a => {
+        player.backpack.data[id] = itemify(_.gameData[id].filter(a => {
             return id === 'follow' ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(a.ID) : a
         }), amt.value);
         Toast.fire(
@@ -128,15 +128,15 @@ new Hack(category.inventory, "Selector (Advanced)", "Choose a specific object an
             const amt = await NumberInput.fire("Amount", "How many of the object would you like?", "question");
             if (!amt.value) return;
             // @ts-expect-error
-            if (_.player.backpack.data[ids[val.value]].findIndex(e => e.ID === _.gameData[ids[val.value]][correct].ID) === -1) {
-                _.player.backpack.data[ids[val.value]].push({
+            if (player.backpack.data[ids[val.value]].findIndex(e => e.ID === _.gameData[ids[val.value]][correct].ID) === -1) {
+                player.backpack.data[ids[val.value]].push({
                     ID: _.gameData[ids[val.value]][correct].ID,
                     N: amt.value
                 });
 
             } else {
                 // @ts-expect-error
-                const num = _.player.backpack.data[ids[val.value]].findIndex(e => e.ID === _.gameData[ids[val.value]][correct].ID);
+                const num = player.backpack.data[ids[val.value]].findIndex(e => e.ID === _.gameData[ids[val.value]][correct].ID);
             }
 
             console.log(_.gameData[ids[val.value]][correct].ID);
@@ -157,7 +157,7 @@ new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
     if (!(await Confirm.fire("Are you sure you want to get all furniture?")).value) return;
     // @ts-expect-error
     _.gameData.dorm.forEach(x =>
-        _.player.house.data.items[x.ID] = {
+        player.house.data.items[x.ID] = {
             A: [],
             N: amt.value
         }
@@ -170,7 +170,7 @@ new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
 
 // Begin Obtain All Mounts
 new Hack(category.inventory, "Obtain All Mounts", "This gives you all of the mounts in the game.").setClick(async () => {
-    _.player.backpack.data.mount = itemify(_.gameData.mount, 1);
+    player.backpack.data.mount = itemify(_.gameData.mount, 1);
     return Toast.fire("Mounts Added!", "All mounts have been added to your inventory!");
 });
 // End Obtain All Mounts
@@ -207,15 +207,15 @@ new Hack(category.inventory, "Remove item").setClick(async () => {
     const amt = await NumberInput.fire("Amount", "How many of the object would you like to remove?", "question");
     if (!amt.value) return;
     // @ts-expect-error
-    if (_.player.backpack.data[ids[category.value]].findIndex(e => e.ID === _.gameData[ids[category.value]][item].ID) === -1) {
+    if (player.backpack.data[ids[category.value]].findIndex(e => e.ID === _.gameData[ids[category.value]][item].ID) === -1) {
         await Swal.fire("Item Does Not Exist", `You do not have any ${_.gameData[ids[category.value]][item].name}.`, "error");
         return;
     }
     // @ts-expect-error
-    const num = _.player.backpack.data[ids[category.value]].findIndex(e => e.ID === _.gameData[ids[category.value]][item].ID);
-    _.player.backpack.data[ids[category.value]][num].N -= parseInt(amt.value);
-    if (_.player.backpack.data[ids[category.value]][num].N <= 0) {
-        _.player.backpack.data[ids[category.value]].splice(num, 1); // if the amount is 0 or below then the item should not exist
+    const num = player.backpack.data[ids[category.value]].findIndex(e => e.ID === _.gameData[ids[category.value]][item].ID);
+    player.backpack.data[ids[category.value]][num].N -= parseInt(amt.value);
+    if (player.backpack.data[ids[category.value]][num].N <= 0) {
+        player.backpack.data[ids[category.value]].splice(num, 1); // if the amount is 0 or below then the item should not exist
     }
 
     saveCharacter();
@@ -236,7 +236,7 @@ new Hack(category.inventory, "Obtain All Furniture").setClick(async () => {
     } else {
         // @ts-expect-error
         _.gameData.dorm.forEach(x =>
-            _.player.house.data.items[x.ID] = {
+            player.house.data.items[x.ID] = {
                 A: [],
                 N: VERY_LARGE_NUMBER
             }
