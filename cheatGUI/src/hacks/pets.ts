@@ -190,6 +190,31 @@ new Hack(category.pets, "Delete Pet", "Delete a pet.").setClick(async () => {
 // End Delete Pet
 
 
+// Begin Edit Kennel
+new Hack(category.pets, "Edit Kennel", "Allows you to directly edit your pets.").setClick(async () => {
+
+    const options = new Map<string, string>();
+    const s = ((num : 0 | 1 | 2) : any => { return _.player.kennel._petTeam[num]; });
+    options.set("0", `[0] Center - ${s(0)}`);
+    options.set("1", `[1] Top - ${s(1)}`);
+    options.set("2", `[2] Bottom - ${s(2)}`);
+
+    
+    const KennelSlot = await Swal.fire({
+        input: "select",
+        inputOptions: options,
+        title: "Select Slot",
+        text: "Select a slot to edit",
+    });
+
+    if (!KennelSlot.value) return;
+
+    Swal.fire("result", KennelSlot.value);
+    // @ts-expect-error
+    console.log(s(parseInt(KennelSlot.value)));
+
+});
+// End Kennel
 
 
 // END PET HACKS
