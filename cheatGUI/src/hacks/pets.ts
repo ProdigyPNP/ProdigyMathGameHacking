@@ -217,19 +217,30 @@ new Hack(category.pets, "Edit Kennel", "Allows you to directly edit your pets.")
     console.log(s(parseInt(KennelSlot.value)));
 
 });
-// End Kennel
+// End Edit Kennel
 
 
 // Begin Backup Kennel
 new Hack(category.pets, "Backup Kennel", "Makes a backup of your kennel to your chrome local storage.").setClick(async () => {
-    
+    localStorage.setItem("prodigy-kennel-backup", JSON.stringify(_.player.kennel._petTeam));
+    return Toast.fire("Backed up!", "Your kennel is now backed up to the local storage.", "success");
 });
 // End Backup Kennel
 
 
 // Begin Restore Kennel
 new Hack(category.pets, "Restore Kennel", "Restores a backup of your kennel from the local storage... if you have one.").setClick(async () => {
-    
+    const backup : string | null = localStorage.getItem("prodigy-kennel-backup");
+    if (backup === null) {
+        return Swal.fire({
+            title: "No backup found",
+            html: "There is no backup of your kennel in the local storage. Make sure to back up your kennel before trying to load it.",
+            icon: "error"
+        });
+    } else {
+        _.player.kennel._petTeam = JSON.parse(backup);
+        return Toast.fire("Restored!", "Your kennel backup should be restored", "success");
+    }
 });
 // End Restore Kennel
 
