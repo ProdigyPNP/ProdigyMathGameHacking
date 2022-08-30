@@ -1,11 +1,10 @@
 import { Swal } from "./swal";
 
-export async function GetAction () : Promise<"Copy" | "Remove" | "Restore" | null> {
+export async function GetAction () : Promise<"Copy" | "Remove" | null> {
 
     const options = new Map<string, string>();
     options.set("Copy", `Copy a slot to another slot`);
     options.set("Remove", `Completley empty one slot`);
-    options.set("Restore", ``);
 
     
     const KennelAction = await Swal.fire({

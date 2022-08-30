@@ -220,4 +220,18 @@ new Hack(category.pets, "Edit Kennel", "Allows you to directly edit your pets.")
 // End Kennel
 
 
+// Begin Backup Kennel
+new Hack(category.pets, "Backup Kennel", "Makes a backup of your kennel to your chrome local storage.").setClick(async () => {
+    
+});
+// End Backup Kennel
+
+
+// Begin Restore Kennel
+new Hack(category.pets, "Restore Kennel", "Restores a backup of your kennel from the local storage... if you have one.").setClick(async () => {
+    
+});
+// End Restore Kennel
+
+
 // END PET HACKS
