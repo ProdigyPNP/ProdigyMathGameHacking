@@ -9,9 +9,9 @@
 1. Open **Firefox**.
 2. In Firefox, enter ``about:debugging#/runtime/this-firefox`` in the URL bar.
 4. Next to **Temporary Extensions**, you should see a button that says **Load Temporary Add-on...**.
-5. [Download PHEx.zip](https://github.com/ProdigyPNP/ProdigyMathGameHacking/releases/2.2.1). Only versions 2.x.x will work, because Firefox currently does not support Manifest V3 extensions.
+5. [Download PHEx.zip](https://github.com/ProdigyPNP/ProdigyMathGameHacking/releases/latest).
 6. Go back to the add-on debugging page and click **Load Temporary Add-on...**.
-7. Select `2.x.x-PHEx.zip`.
+7. Select `x.x.x-PHEx.zip`.
 8. You should see a new extension called `Prodigy Hacking Extension | PHEx` in your extensions.
 9. Go to [Prodigy](https://play.prodigygame.com) (``play.prodigygame.com``).
 10. Log in as usual to Prodigy. REMEMBER THAT WE STILL RECCOMMEND YOU TO LOG IN WITH A SECOND ACCOUNT TO PREVENT ACCEDENTALLY CORRUPTING YOUR MAIN ACCOUNT.
