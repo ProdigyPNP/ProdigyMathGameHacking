@@ -7,7 +7,7 @@
 <br>
 
 1. Open **Firefox**.
-2. In Brave, enter ``about:debugging#/runtime/this-firefox`` in the URL bar.
+2. In Firefox, enter ``about:debugging#/runtime/this-firefox`` in the URL bar.
 4. Next to **Temporary Extensions**, you should see a button that says **Load Temporary Add-on...**.
 5. [Download PHEx.zip](https://github.com/ProdigyPNP/ProdigyMathGameHacking/releases/2.2.1). Only versions 2.x.x will work, because Firefox currently does not support Manifest V3 extensions.
 6. Go back to the add-on debugging page and click **Load Temporary Add-on...**.
