@@ -27,7 +27,7 @@ export async function SelectSlot () : Promise<0 | 1 | 2 | null> {
     const s = ((num : 0 | 1 | 2) : any => { return (_.player.kennel._petTeam[num]) ? ((_.player.kennel._petTeam[num].source) ? _.player.kennel._petTeam[num].source.name : ((_.player.kennel._petTeam[num]._userDataPlatform) ? "Player" : "null")) : "null"; });
     options.set("0", `[0] Center - ${s(0)}`);
     options.set("1", `[1] Top - ${s(1)}`);
-    options.set("2", `[2] Bottom - ${s(2)}`);
+    options.set("2", `[2] Bottom - ${s(2)}`); // This doesn't do null checks, because we might want to ASSIGN to a null slot.
 
     
     const KennelSlot = await Swal.fire({

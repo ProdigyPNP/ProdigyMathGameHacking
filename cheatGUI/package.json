@@ -5,7 +5,7 @@
   "main": "dist/bundle.js",
   "scripts": {
     "setup": "npm install",
-    "build": "npx webpack --config webpack.config.js",
+    "build": "npx webpack --config webpack.config.js && rm dist/bundle.js.LICENSE.txt && touch dist/bundle.js.LICENSE.txt && echo \"/*! (c) 2022 ProdigyPNP */\" >> dist/bundle.js.LICENSE.txt",
     "webpack": "npm run build",
     "package": "npm run build",
     "server": "node hot-reload.mjs",
@@ -29,6 +29,7 @@
     "babel": "^6.23.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.7.1",
+    "flatted": "^3.2.7",
     "postcss": "^8.2.10",
     "postcss-loader": "^7.0.0",
     "sass": "^1.32.8",

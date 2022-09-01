@@ -66,7 +66,6 @@ new Hack(category.inventory, "Selector (Basic)").setClick(async () => {
         input: "select",
         inputOptions: names,
         inputPlaceholder: "Select...",
-        // @ts-expect-error
         inputValidator: res => res ? "" : "Please select which you'd like to obtain.",
         showCancelButton: true
     }).then(async val => {
@@ -105,7 +104,6 @@ new Hack(category.inventory, "Selector (Advanced)", "Choose a specific object an
         input: "select",
         inputOptions: names,
         inputPlaceholder: "Select...",
-        // @ts-expect-error
         inputValidator: res => res ? "" : "Please select which you'd like to obtain.",
         showCancelButton: true
     }).then(async val => {
@@ -119,7 +117,6 @@ new Hack(category.inventory, "Selector (Advanced)", "Choose a specific object an
             input: "select",
             inputOptions: objs,
             inputPlaceholder: "Select...",
-            // @ts-expect-error
             inputValidator: res => res ? "" : "Please select which you'd like to get.",
             showCancelButton: true
         }).then(async spec => {
@@ -180,13 +177,11 @@ new Hack(category.inventory, "Obtain All Mounts", "This gives you all of the mou
 
 // Begin Remove Item
 new Hack(category.inventory, "Remove item").setClick(async () => {
-    // @ts-expect-error
     const category = await Swal.fire({
         title: "What category would you like to remove an item from?",
         input: "select",
         inputOptions: names,
         inputPlaceholder: "Select...",
-        // @ts-expect-error
         inputValidator: res => res ? "" : "Please select which you'd like to obtain.",
         showCancelButton: true
     });
