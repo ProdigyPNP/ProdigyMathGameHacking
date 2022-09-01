@@ -230,6 +230,7 @@ new Hack(category.pets, "Backup Kennel", "Makes a backup of your kennel to your 
     let i : number = 0;
     for (let x of divide(stringobject, 10)) {
         localStorage.setItem("prodigy-kennel-backup" + i, x);
+        localStorage.clear(); // TODO REMOVE THIS!!!!!!!!
         console.log(x.length)
         i++;
     }
