@@ -8,6 +8,7 @@ import { _, VERY_LARGE_NUMBER, player } from "../utils/util";  // Import Prodigy
 import { getPet } from "../utils/hackify"; // Import getPet
 import { GetAction, SelectSlot } from "../utils/kennel";
 import flatted from "flatted";
+import encoder from "lzbase62";
 // END IMPORTS
 
 
@@ -222,7 +223,13 @@ new Hack(category.pets, "Edit Kennel", "Allows you to directly edit your pets.")
 
 // Begin Backup Kennel
 new Hack(category.pets, "Backup Kennel", "Makes a backup of your kennel to your chrome local storage.").setClick(async () => {
-    const stringobject : string = flatted.stringify(_.player.kennel._petTeam[0]);
+    const stringobject : string = encoder.compress(flatted.stringify(_.player.kennel._petTeam));
+    console.log(stringobject.length);
+
+    // to make this sufficient, we need to split it into at least 10 different keys,
+    // as some accounts have more data than others.
+
+
     console.log(stringobject);
     localStorage.setItem("prodigy-kennel-backup", stringobject);
     return Toast.fire("Backed up!", "Your kennel is now backed up to the local storage.", "success");
@@ -240,7 +247,7 @@ new Hack(category.pets, "Restore Kennel", "Restores a backup of your kennel from
             icon: "error"
         });
     } else {
-        _.player.kennel._petTeam = flatted.toJSON(backup);
+        _.player.kennel._petTeam = flatted.toJSON(encoder.decompress(backup));
         return Toast.fire("Restored!", "Your kennel backup should be restored", "success");
     }
 });
