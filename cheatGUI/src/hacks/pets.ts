@@ -7,9 +7,6 @@ import { Hack, category } from "../index";  // Import the Cheat GUI bases.
 import { _, VERY_LARGE_NUMBER, player } from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
 import { getPet } from "../utils/hackify"; // Import getPet
 import { GetAction, SelectSlot } from "../utils/kennel";
-import flatted from "flatted";
-import encoder from "lzbase62";
-import divide from "../utils/divide";
 // END IMPORTS
 
 
@@ -222,35 +219,26 @@ new Hack(category.pets, "Edit Kennel", "Allows you to directly edit your pets.")
 // End Edit Kennel
 
 
+let TEMP_BACKUP : any | null = null;
+
 // Begin Backup Kennel
-new Hack(category.pets, "Backup Kennel", "Makes a backup of your kennel to your chrome local storage.").setClick(async () => {
-    const stringobject : string = encoder.compress(flatted.stringify(_.player.kennel._petTeam));
-    console.log(stringobject.length);
-
-    let i : number = 0;
-    for (let x of divide(stringobject, 10)) {
-        localStorage.setItem("prodigy-kennel-backup" + i, x);
-        localStorage.clear(); // TODO REMOVE THIS!!!!!!!!
-        console.log(x.length)
-        i++;
-    }
-
+new Hack(category.pets, "Backup Kennel [No save on reload]", "Makes a backup of your kennel to a variable that doesn't save on reload.").setClick(async () => {
+    TEMP_BACKUP = _.player.kennel._petTeam;
     return Toast.fire("Backed up!", "Your kennel is now backed up to the local storage.", "success");
 });
 // End Backup Kennel
 
 
 // Begin Restore Kennel
-new Hack(category.pets, "Restore Kennel", "Restores a backup of your kennel from the local storage... if you have one.").setClick(async () => {
-    const backup : string | null = localStorage.getItem("prodigy-kennel-backup");
-    if (backup === null) {
+new Hack(category.pets, "Restore Kennel", "Restores a backup of your kennel from a variable... if you have one.").setClick(async () => {
+    if (TEMP_BACKUP === null) {
         return Swal.fire({
             title: "No backup found",
-            html: "There is no backup of your kennel in the local storage. Make sure to back up your kennel before trying to load it.",
+            html: "There is no backup of your kennel currently. Make sure to back up your kennel before trying to load it.",
             icon: "error"
         });
     } else {
-        _.player.kennel._petTeam = flatted.toJSON(encoder.decompress(backup));
+        _.player.kennel._petTeam = TEMP_BACKUP;
         return Toast.fire("Restored!", "Your kennel backup should be restored", "success");
     }
 });
