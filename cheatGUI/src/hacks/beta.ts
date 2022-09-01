@@ -187,9 +187,10 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 
 
 new Toggler(category.beta, "(client side) Toggle Invisibility [BETA]", "Lets you appear invisible on your own screen.").setEnabled(async () => {
-    current.user.alpha = 0;
+    // current.user.alpha = 0;
+    current.user.visible = false;
 }).setDisabled(async() => {
-    current.user.alpha = 1;
+    current.user.visible = true;
 });
 
 
