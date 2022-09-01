@@ -1,4 +1,5 @@
 import { useWASD } from "../hacks/location";
+import { player } from "./util";
 
 export enum WASD {
     None,
@@ -7,15 +8,17 @@ export enum WASD {
 }
 
 
-function ChangeX (x : number) {
+async function ChangeX (x : number) {
     for (let i = 0; i < 100; i++) {
-        setTimeout(() => {  _.player._playerContainer.x -= x/100; }, 50);
+        await new Promise(r => setTimeout(r, 2));
+        player._playerContainer.x -= x/100;;
     }
 }
 
-function ChangeY (y : number) {
+async function ChangeY (y : number) {
     for (let i = 0; i < 100; i++) {
-        setTimeout(() => {  _.player._playerContainer.y -= y/100; }, 50);
+        await new Promise(r => setTimeout(r, 2));
+        player._playerContainer.y -= y/100;;
     }
 }
 
@@ -34,16 +37,16 @@ window.addEventListener("keydown", event => {
         case WASD.Phasing:
             switch (event.key) {
                 case "w":
-                    ChangeY(20);            
+                    ChangeY(40);            
                     break;
                 case "s":
-                    ChangeY(-20);
+                    ChangeY(-40);
                     break;
                 case "a":
-                    ChangeX(20);
+                    ChangeX(40);
                     break;
                 case "d":
-                    ChangeX(-20);
+                    ChangeX(-40);
                     break;    
             }
             break;
