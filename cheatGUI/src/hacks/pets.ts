@@ -9,6 +9,7 @@ import { getPet } from "../utils/hackify"; // Import getPet
 import { GetAction, SelectSlot } from "../utils/kennel";
 import flatted from "flatted";
 import encoder from "lzbase62";
+import divide from "../utils/divide";
 // END IMPORTS
 
 
@@ -226,12 +227,13 @@ new Hack(category.pets, "Backup Kennel", "Makes a backup of your kennel to your 
     const stringobject : string = encoder.compress(flatted.stringify(_.player.kennel._petTeam));
     console.log(stringobject.length);
 
-    // to make this sufficient, we need to split it into at least 10 different keys,
-    // as some accounts have more data than others.
+    let i : number = 0;
+    for (let x of divide(stringobject, 10)) {
+        localStorage.setItem("prodigy-kennel-backup" + i, x);
+        console.log(x.length)
+        i++;
+    }
 
-
-    console.log(stringobject);
-    localStorage.setItem("prodigy-kennel-backup", stringobject);
     return Toast.fire("Backed up!", "Your kennel is now backed up to the local storage.", "success");
 });
 // End Backup Kennel

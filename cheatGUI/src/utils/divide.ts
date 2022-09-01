@@ -1,5 +1,5 @@
 /** divide a string into parts */
-export function divide (target : string, amount : number) : Array<string> {
+export default function divide (target : string, amount : number) : Array<string> {
 
     let output : Array<string> = new Array;
     let parts : number = Math.floor(target.length / amount);
