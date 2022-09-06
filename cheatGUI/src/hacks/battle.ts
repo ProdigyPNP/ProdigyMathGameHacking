@@ -174,6 +174,17 @@ new Hack(category.battle, "Fill Battle Energy [PvP, PvE]", "Fills up your battle
 // End Fill Battle Energy
 
 
+// Begin Skip enemy turn
+new Toggler(category.battle, "Skip enemy turn").setEnabled(async () => {
+	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = true;
+	return Toast.fire("Skipping!", "Enemy turns will now be skipped.", "success");
+}).setDisabled(async () => {
+	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = false;
+	return Toast.fire("Disabled", "Enemy turns will no longer be skipped.", "success");
+});
+// End Skip enemy turn
+
+
 
 
 

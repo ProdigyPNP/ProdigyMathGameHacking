@@ -48,20 +48,6 @@ new Toggler(category.misc, "Disable Monster Encounters").setEnabled(async () => 
 // End Disable Monster Encounters
 
 
-
-// Begin Skip enemy turn
-new Toggler(category.misc, "Skip enemy turn").setEnabled(async () => {
-	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = true;
-	return Toast.fire("Skipping!", "Enemy turns will now be skipped.", "success");
-
-
-}).setDisabled(() => {
-	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = false;
-	return Toast.fire("Disabled", "Enemy turns will no longer be skipped.", "success");
-});
-// End Skip enemy turn
-
-
 // Begin FPS Counter
 new Toggler(category.beta, "FPS Counter [BETA]", "Shows you a framerate counter").setEnabled(async () => {
     startFps();
