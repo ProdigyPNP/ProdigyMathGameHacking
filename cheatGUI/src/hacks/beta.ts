@@ -6,7 +6,7 @@
 // BEGIN IMPORTS
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, NumberInput, Input, and Confirm from swal
 import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
-import { _, getItem, VERY_LARGE_NUMBER, prodigy, saveCharacter, player} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
+import { _, getItem, VERY_LARGE_NUMBER, prodigy, saveCharacter, player, current} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
 import { ids, itemify, runeify, getPet } from "../utils/hackify"; // Import runeify and some arrays
 import { PopupInterval } from "../utils/popupCloser";
 // END IMPORTS
@@ -186,7 +186,12 @@ new Hack(category.beta, "Morph Player [BETA]", "Morph into a pet, furnishing, or
 
 
 
-
+new Toggler(category.beta, "(client side) Toggle Invisibility [BETA]", "Lets you appear invisible on your own screen.").setEnabled(async () => {
+    // current.user.alpha = 0;
+    current.user.visible = false;
+}).setDisabled(async() => {
+    current.user.visible = true;
+});
 
 
 // Begin Toggle Close Popups
