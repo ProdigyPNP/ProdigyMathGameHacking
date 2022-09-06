@@ -45,7 +45,9 @@ menuleft.classList.add("menu-left");
 menu.append(menuleft);
 
 let firstCategory = true;
-const addArea = (title: string) : HTMLDivElement => {
+
+function addArea (title: string) {
+
 	const area = document.createElement("div");
 
     if (firstCategory == false) {

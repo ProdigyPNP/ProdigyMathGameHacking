@@ -12,7 +12,7 @@
 		
 <p align="center">
 	<strong>
-		<a href="https://prodigypnp.github.io/">Website</a>
+		<a href="https://prodigypnp.com">Website</a>
 		•
 		<a href="https://dsc.gg/ProdigyPNP">Discord</a>
 		•
