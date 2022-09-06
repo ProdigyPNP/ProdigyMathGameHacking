@@ -5,50 +5,21 @@ import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI base
 import { NumberInput, Swal, Toast } from "../utils/swal"; // Import Swal, Toast, and NumberInput from swal
 import { _, locations, prodigy, player } from "../utils/util"; // Import Prodigy typings
 import { toHouse } from "../utils/hackify"; // Import toHouse
-import { WASD } from "../utils/wasd";
 // END IMPORTS
 
-export var useWASD : WASD = WASD.None;
-
+export var useWASD : boolean = true;
 
 // BEGIN LOCATION HACKS
 
 
-var wasdN = new Toggler(category.location, "WASD Movement", "Allows you to walk with WASD movement in Prodigy").setEnabled(async () => {
-
-
-    if (useWASD == WASD.Phasing) {
-        wasdP.status = false;
-        useWASD = WASD.Normal;
-    } else if (useWASD == WASD.None) {
-        useWASD = WASD.Normal;
-    } else {
-        return console.error("this shouldnt be happening");
-    }
-    return Toast.fire("Enabled!", "WASD Movement is now enabled.", "success");
-
-}).setDisabled(async() => {
-    useWASD = WASD.None;
-    return Toast.fire("Disabled!", "WASD Movement is now disabled.", "success");
-});;
-
 // WASD Phasing
-var wasdP = new Toggler(category.location, "WASD Phasing", "Allows you to walk through walls or on air with WASD movement in Prodigy").setEnabled(async () => {
-    
-    if (useWASD == WASD.Normal) {
-        wasdN.status = false;
-        useWASD = WASD.Phasing;
-    } else if (useWASD == WASD.None) {
-        useWASD = WASD.Phasing;
-    } else {
-        return console.error("this shouldnt be happening");
-    }
-    return Toast.fire("Enabled!", "WASD Phasing is now enabled.", "success");
-
-}).setDisabled(async() => {
-    useWASD = WASD.None;
-    return Toast.fire("Disabled!", "WASD Phasing is now disabled.", "success");
-});
+new Toggler(category.location, "WASD Movement", "Allows you to walk through walls or on air with WASD movement in Prodigy.").setEnabled(async () => {
+    useWASD = true;
+    return Toast.fire("Enabled!", "WASD Movement is now enabled.", "success");
+}).setDisabled(async () => {
+    useWASD = false;
+    return Toast.fire("Disabled!", "WASD Movement is now disabled.", "success");
+}).status = true;
 
 
 
