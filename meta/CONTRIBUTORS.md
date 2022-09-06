@@ -8,10 +8,6 @@ Alpha Prime of ProdigyPNP. Successfully implemented [hosted](https://github.com/
 Original Creator of [ProdigyMathGameHacking](https://github.com/PatheticMustan/ProdigyMathGameHacking). Natsumi, aka PatheticMustan was the [first Prodigy hacker known to the world](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/0d2b43777c727d8e3cce442fa958ddb05baa5de0).
 <br><br>
 
-## [Eris](https://github.com/Erisfiregamer1)
-One of the ProdigyPNP Alphas. Made the biggest contribution to [fixing P-NP](https://github.com/ProdigyPNP/P-NP/pull/2).
-<br><br>
-
 ## [Arcerion](https://github.com/ArcerionDev)
 Original Collaborator. ArcerionDev is the owner of the original project's Discord server.
 <br><br>
@@ -26,10 +22,6 @@ Original Collaborator. Yama is a very active Admin in the original project's Dis
 
 ## [BoredFish](https://github.com/BoredFishRE)
 Original Collaborator, also the main guy who got fucked by the DMCA.
-<br><br>
-
-### [hostedposted](https://github.com/hostedposted)
-Owner of the Prodigy Cheat Dashboard, and a Contributor. [Also attempted to document Prodigy's API](https://github.com/ProdigyAPI). Helped ProdigyPNP with PHEx Mv3.
 <br><br>
 
 ### [Spacebar](https://github.com/00100000)
@@ -86,4 +78,12 @@ Contributor (if you're reading this, nice username).
 
 ### [Finality](https://github.com/TheFinality)
 Contributor.
+<br><br>
+
+## [Eris](https://github.com/Erisfiregamer1)
+Former one of the ProdigyPNP Alphas. Made the biggest contribution to [fixing P-NP](https://github.com/ProdigyPNP/P-NP/pull/2).
+<br><br>
+
+### [hostedposted](https://github.com/hostedposted)
+Owner of the Prodigy Cheat Dashboard, and a Contributor. [Also attempted to document Prodigy's API](https://github.com/ProdigyAPI). Helped ProdigyPNP with PHEx Mv3.
 <br><br>
