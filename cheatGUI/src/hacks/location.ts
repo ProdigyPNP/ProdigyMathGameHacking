@@ -1,16 +1,25 @@
 // Location Hacks
 
 // BEGIN IMPORTS
-import { Hack, category } from "../index"; // Import the Cheat GUI bases.
+import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
 import { NumberInput, Swal, Toast } from "../utils/swal"; // Import Swal, Toast, and NumberInput from swal
 import { _, locations, prodigy, player } from "../utils/util"; // Import Prodigy typings
 import { toHouse } from "../utils/hackify"; // Import toHouse
 // END IMPORTS
 
-
-
+export var useWASD : boolean = true;
 
 // BEGIN LOCATION HACKS
+
+
+// WASD Phasing
+new Toggler(category.location, "WASD Movement", "Allows you to walk through walls or on air with WASD movement in Prodigy.").setEnabled(async () => {
+    useWASD = true;
+    return Toast.fire("Enabled!", "WASD Movement is now enabled.", "success");
+}).setDisabled(async () => {
+    useWASD = false;
+    return Toast.fire("Disabled!", "WASD Movement is now disabled.", "success");
+}).status = true;
 
 
 
