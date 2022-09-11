@@ -27,13 +27,13 @@ export const itemify = (item: Item[], amount: number) =>
 
 // Convert rune to Rune ID map
 // @ts-expect-error
-export const runeify = ((item, amount) => {
+export const runeify = (item, amount) =>
 	// @ts-expect-error
     item.map(x => ({
 	    ID: x.ID,
 		quantity: amount
 		// @ts-expect-error
-    })).filter(v => v !== undefined)
+    }).filter(v => v !== undefined)
 });
 
 
