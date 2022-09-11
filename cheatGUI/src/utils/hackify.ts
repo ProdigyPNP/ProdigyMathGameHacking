@@ -34,7 +34,7 @@ export const runeify = (item, amount) =>
 		quantity: amount
 		// @ts-expect-error
     }).filter(v => v !== undefined)
-});
+);
 
 
 // Get member module
