@@ -5,7 +5,9 @@
 
 // BEGIN IMPORTS
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, NumberInput, Input, and Confirm from swal
-import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
+import { category } from "../index"; // Import the Cheat GUI bases.
+import Toggler from "../class/Toggler";
+import Hack from "../class/Hack";
 import { _, getItem, VERY_LARGE_NUMBER, prodigy, saveCharacter, player, current} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
 import { ids, itemify, runeify, getPet } from "../utils/hackify"; // Import runeify and some arrays
 import { PopupInterval } from "../utils/popupCloser";

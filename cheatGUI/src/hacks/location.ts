@@ -1,7 +1,9 @@
 // Location Hacks
 
 // BEGIN IMPORTS
-import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
+import { category } from "../index"; // Import the Cheat GUI bases.
+import Toggler from "../class/Toggler";
+import Hack from "../class/Hack";
 import { NumberInput, Swal, Toast } from "../utils/swal"; // Import Swal, Toast, and NumberInput from swal
 import { _, locations, prodigy, player } from "../utils/util"; // Import Prodigy typings
 import { toHouse } from "../utils/hackify"; // Import toHouse

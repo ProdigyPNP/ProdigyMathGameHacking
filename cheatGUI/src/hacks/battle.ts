@@ -4,7 +4,9 @@
 
 // BEGIN IMPORTS
 import { Toast, NumberInput } from "../utils/swal"; // Import Toast and NumberInput from swal
-import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
+import { category } from "../index"; // Import the Cheat GUI bases.
+import Toggler from "../class/Toggler";
+import Hack from "../class/Hack";
 import { _, prodigy, game, VERY_LARGE_NUMBER, player } from "../utils/util"; // Import prodigy typings
 import { BattleInfo } from "../utils/log"; // Import Battle logging functions
 // END IMPORTS

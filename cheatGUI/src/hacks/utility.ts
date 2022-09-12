@@ -3,7 +3,9 @@
 
 // BEGIN IMPORTS
 import { Toast, Input, Confirm, Swal } from "../utils/swal";  // Import Toast and Input from swal
-import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases and the dimensions to resize the menu
+import { category } from "../index"; // Import the Cheat GUI bases and the dimensions to resize the menu
+import Toggler from "../class/Toggler";
+import Hack from "../class/Hack";
 import { _, saveCharacter, current, player } from "../utils/util";  // Import Prodigy typings
 // END IMPORTS
 

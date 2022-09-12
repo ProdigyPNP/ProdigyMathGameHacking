@@ -4,7 +4,9 @@
 
 // BEGIN IMPORTS
 import { Toast, Confirm, Swal } from "../utils/swal"; // Import Toast and Confirm from swal
-import { Hack, category, Toggler } from "../index";  // Import the Cheat GUI bases.
+import { category } from "../index";  // Import the Cheat GUI bases.
+import Toggler from "../class/Toggler";
+import Hack from "../class/Hack";
 import { current, player, _ } from "../utils/util"; // Import Prodigy typings
 import { startFps, stopFps } from "../utils/fps";
 // END IMPORTS
