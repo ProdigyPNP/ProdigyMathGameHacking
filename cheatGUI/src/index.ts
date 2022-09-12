@@ -7,7 +7,7 @@ import { _ } from "./utils/util"; // Import Prodigy typings
 import { statusMessage } from "./utils/status"; // Import status message
 import Swal from "sweetalert2"; // Import Swal
 import { License, NoLicense } from "./utils/swal";
-import addChat from "./utils/chat";
+import openChat from "./utils/chat";
 
 export const menu = document.createElement("div"); // Create cheat menu element
 export const wrapper = document.getElementById("game-wrapper"); // Create game wrapper
@@ -161,9 +161,6 @@ document.addEventListener("keydown", function (event) {
 		}
 	}
 });
-
-// chat
-addChat()
 
 
 if (process.env.NODE_ENV === "development") {

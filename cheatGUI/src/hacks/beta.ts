@@ -11,12 +11,18 @@ import Hack from "../class/Hack";
 import { _, getItem, VERY_LARGE_NUMBER, prodigy, saveCharacter, player, current} from "../utils/util";  // Import prodigy typings, and VERY_LARGE_NUMBER
 import { ids, itemify, runeify, getPet } from "../utils/hackify"; // Import runeify and some arrays
 import { PopupInterval } from "../utils/popupCloser";
+import openChat from "../utils/chat";
 // END IMPORTS
 
 
 
 // BEGIN BETA HACKS
 
+// Begin open chat
+new Hack(category.beta, "Open ProdigyPNP Chat", "Opens a chat for ProdigyPNP users").setClick(async () => {
+    return openChat();
+});
+// end open chat
 
 
 // Begin get all Runes
