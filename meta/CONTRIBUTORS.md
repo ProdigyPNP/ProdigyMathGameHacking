@@ -48,6 +48,10 @@ Original Collaborator.
 Original Collaborator.
 <br><br>
 
+### [ProdigyPNPEnthusiast](https://github.com/ProdigyPNPEnthusiast)
+Made a [really nice pull request](https://github.com/ProdigyPNP/P-NP/pull/19) for P-NP that cleaned up it's code.
+<br><br>
+
 ### [Sacred](https://github.com/sacredofficial)
 Contributor.
 <br><br>
