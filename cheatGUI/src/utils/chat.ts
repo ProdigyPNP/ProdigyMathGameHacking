@@ -1,12 +1,16 @@
-import { category } from "../index";
 
 export default function addChat () {
-    
-    let chatFrame = document.createElement("iframe");
-    chatFrame.setAttribute("src", "https://chat.prodigypnp.com:8443/");
-    chatFrame.setAttribute("class", "chat-frame");
-    chatFrame.setAttribute("id", "chat-frame");
 
-    category.misc.append(chatFrame)
+    // @ts-expect-error
+    window.open("https://chat.prodigypnp.com:8443/", null, `
+        height=800,
+        width=350,
+        status=yes,
+        toolbar=no,
+        menubar=no,
+        location=no
+    `);
+
+
 
 }
