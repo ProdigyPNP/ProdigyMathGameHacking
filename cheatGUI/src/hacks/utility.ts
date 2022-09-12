@@ -20,6 +20,11 @@ new Hack(category.utility, "Close all popups", "Closes all popups in Prodigy.").
 });
 // End Close all Popups
 
+new Hack(category.utility, "Disable Collision").setClick(async () => {
+    _.player._playerContainer.locomotion.screen.area = _.player._playerContainer.locomotion.screen.area.map(e => e.fill(1))
+    return Toast.fire("Success!", "Collision was disable on this screen.", "success");
+});
+
 
 new Hack(category.utility, "Grab UserID of all players on screen", "Shows you the UserID and name of every player currently shown on the screen.").setClick(async () => {
     const users : object = current.playerList;
