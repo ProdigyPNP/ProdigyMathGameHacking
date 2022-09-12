@@ -13,6 +13,7 @@ export default function openChat () {
             menubar=no,
             location=no
         `);
+        // chat?.document.body.setAttribute("style", "zoom: 66%; height: 800px; width: 350px;");
     } else {
         chat.focus()
     }
