@@ -7,7 +7,6 @@ import { _ } from "./utils/util"; // Import Prodigy typings
 import { statusMessage } from "./utils/status"; // Import status message
 import Swal from "sweetalert2"; // Import Swal
 import { License, NoLicense } from "./utils/swal";
-import { IndexInfo, IndexSuccess, IndexError } from "./utils/log";
 
 export const menu = document.createElement("div"); // Create cheat menu element
 export const wrapper = document.getElementById("game-wrapper"); // Create game wrapper
@@ -123,9 +122,9 @@ if (!localStorage.hasTip) {
        });
 	})();
 	localStorage.hasTip = true;
-	IndexInfo("Player was shown the tip.");
+	console.log("Player was shown the tip.");
 } else {
-	IndexInfo("Player already has tip.");
+	console.log("Player already has tip.");
 };
 
 
@@ -134,7 +133,7 @@ if (localStorage.getItem("level")) {
 	// Then, override _.player.getLevel with the value in localStorage.
 	_.player.getLevel = () => localStorage.getItem("level");
 
-	IndexInfo("Loaded menu from localStorage.");
+	console.log("Loaded menu from localStorage.");
 }
 
 
@@ -142,22 +141,22 @@ let shownMenu : boolean = true;
 document.addEventListener("keydown", function (event) {
 	if (event.key == "Shift") {
 
-		IndexInfo("Shift key was pressed.");
+		console.log("Shift key was pressed.");
 
 		if (shownMenu == true) {
 			// Cheats are shown, so let's hide them.
-			IndexInfo("Hiding cheat menu...");
+			console.log("Hiding cheat menu...");
 			document.getElementById("cheat-menu").style.display = "none";
 			document.getElementById("menu-toggler").style.display = "none";
 			shownMenu = false;
-			IndexInfo("Hidden cheat menu.");
+			console.log("Hidden cheat menu.");
 		} else {
 			// Cheats are hidden, so let's show them.
-			IndexInfo("Showing cheat menu...");
+			console.log("Showing cheat menu...");
 			document.getElementById("cheat-menu").style.display = "block";
 			document.getElementById("menu-toggler").style.display = "block";
             shownMenu = true;
-			IndexInfo("Shown cheat menu.");
+			console.log("Shown cheat menu.");
 		}
 	}
 });

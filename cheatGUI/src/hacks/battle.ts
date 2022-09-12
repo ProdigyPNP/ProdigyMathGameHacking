@@ -8,7 +8,6 @@ import { category } from "../index"; // Import the Cheat GUI bases.
 import Toggler from "../class/Toggler";
 import Hack from "../class/Hack";
 import { _, prodigy, game, VERY_LARGE_NUMBER, player } from "../utils/util"; // Import prodigy typings
-import { BattleInfo } from "../utils/log"; // Import Battle logging functions
 // END IMPORTS
 
 
@@ -110,7 +109,7 @@ new Hack(category.battle, "Escape Battle [PvP, PvE]", "Escape any battle, PvP or
 new Hack(category.battle, "Win Battle [PvE]", "Instantly win a battle in PvE.").setClick(async () => {
 
 	const currentState = game.state.current;
-  BattleInfo("Current State: " + currentState);
+    console.log("Current State: " + currentState);
 
 	switch (currentState) {
 	    case "PVP":
