@@ -22,6 +22,13 @@ new Toggler(category.location, "WASD Movement", "Allows you to walk through wall
 }).status = true;
 
 
+// Disable Collision/Click phasing
+new Hack(category.location, "Disable Collision", "Allows you to walk through walls with click movement.").setClick(async () => {
+    // @ts-expect-error
+    _.player._playerContainer.locomotion.screen.area = _.player._playerContainer.locomotion.screen.area.map(e => e.fill(1))
+    return Toast.fire("Success!", "Collision was disable on this screen.", "success");
+});
+
 
 // Begin Teleport To Map (interactive)
 new Hack(category.location, "Teleport To Map (interactive)").setClick(
