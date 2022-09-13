@@ -5,12 +5,9 @@ export default function openChat () : void {
 
     if (chat === null) {
         open()
-        // chat?.document.body.setAttribute("style", "zoom: 66%; height: 800px; width: 350px;");
     } else {
-        if (chat.closed)
-            open()
-        else
-            chat.focus()
+        if (chat.closed) { open() }
+        else { chat.focus() }
     }
     
 
