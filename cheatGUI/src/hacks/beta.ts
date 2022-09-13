@@ -28,6 +28,8 @@ new Hack(category.beta, "Switch Branch", "Loads a different branch of cheatGUI f
 
     const branch = await (await Swal.fire({
         title: "Select Branch",
+        html: `Select which branch of ProdigyPNP you'd like to use.`,
+        input: "select",
         inputOptions: branches,
     })).value;
 
