@@ -137,6 +137,17 @@
     }
 }
 
+#chat-frame {
+    width: 12%;
+    height: 80%;
+    top: -10%;
+    bottom: -10%;
+    left: 80%;
+    right: 0%;
+    position: fixed;
+    z-index: 4;
+}
+
 .radioDiv {
     width: 125px;
     height: 125px;
