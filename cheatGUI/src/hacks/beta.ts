@@ -24,6 +24,29 @@ new Hack(category.beta, "Open ProdigyPNP Chat", "Opens a chat for ProdigyPNP use
 });
 // end open chat
 
+// Begin Switch Branch
+new Hack(category.beta, "Switch Branch", "Loads a different branch of cheatGUI for you.").setClick(async () => {
+
+    const branches_fetch : string = await (await fetch("https://api.github.com/repos/ProdigyPNP/ProdigyMathGameHacking/branches")).text()
+    let branches : Map<string, string> = new Map();
+
+    JSON.parse(branches_fetch).forEach((e : any) => {
+        branches.set(e.name, e.name);
+    });
+
+    const branch = await (await Swal.fire({
+        title: "Select Branch",
+        html: `Select which branch of ProdigyPNP you'd like to use.`,
+        input: "select",
+        inputOptions: branches,
+    })).value;
+
+    if (!branch) return;
+
+    return await eval(await (await fetch(`https://raw.githubusercontent.com/ProdigyPNP/ProdigyMathGameHacking/${branch}/cheatGUI/dist/bundle.js`)).text());
+});
+
+
 
 // Begin get all Runes
 new Hack(category.beta, "Get all Runes [BETA]").setClick(async () => {
