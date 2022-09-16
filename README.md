@@ -3,7 +3,7 @@
 		<img align="center"
 			width="175"
 			alt="Prodigy Math Game Hacking"
-			src="/.github/fixedlogo.png?raw=true">
+			src="/.github/PTB.png?raw=true">
 	</a>
 </h1>
 

@@ -3,7 +3,8 @@
 
 // BEGIN IMPORTS
 import { Swal, Toast, NumberInput, Confirm } from "../utils/swal";  // Import Swal, Toast, Confirm, Input, and NumberInput from swal
-import { Hack, category } from "../index";  // Import the Cheat GUI bases.
+import { category } from "../index";  // Import the Cheat GUI bases.
+import Hack from "../class/Hack";
 import { _, VERY_LARGE_NUMBER, player } from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
 import { getPet } from "../utils/hackify"; // Import getPet
 import { GetAction, SelectSlot } from "../utils/kennel";

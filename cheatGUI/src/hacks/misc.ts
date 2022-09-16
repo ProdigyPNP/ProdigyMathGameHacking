@@ -4,7 +4,9 @@
 
 // BEGIN IMPORTS
 import { Toast, Confirm, Swal } from "../utils/swal"; // Import Toast and Confirm from swal
-import { Hack, category, Toggler } from "../index";  // Import the Cheat GUI bases.
+import { category } from "../index";  // Import the Cheat GUI bases.
+import Toggler from "../class/Toggler";
+import Hack from "../class/Hack";
 import { current, player, _ } from "../utils/util"; // Import Prodigy typings
 import { startFps, stopFps } from "../utils/fps";
 // END IMPORTS
@@ -46,20 +48,6 @@ new Toggler(category.misc, "Disable Monster Encounters").setEnabled(async () => 
 	return Toast.fire("Disabled!", "Monsters will now battle you.", "success");
 });
 // End Disable Monster Encounters
-
-
-
-// Begin Skip enemy turn
-new Toggler(category.misc, "Skip enemy turn").setEnabled(async () => {
-	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = true;
-	return Toast.fire("Skipping!", "Enemy turns will now be skipped.", "success");
-
-
-}).setDisabled(() => {
-	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = false;
-	return Toast.fire("Disabled", "Enemy turns will no longer be skipped.", "success");
-});
-// End Skip enemy turn
 
 
 // Begin FPS Counter

@@ -127,9 +127,7 @@
     /** Override the loading text */
     setInterval(() => {
         const LT = document.getElementById("loading-text");
-        if (LT) {
-            LT.innerHTML = customLoadingText[index];
-        }
+        if (LT) LT.innerHTML = customLoadingText[index];
     }, 100);
 
 

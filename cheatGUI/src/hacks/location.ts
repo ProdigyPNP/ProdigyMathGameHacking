@@ -1,8 +1,10 @@
 // Location Hacks
 
 // BEGIN IMPORTS
-import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
-import { NumberInput, Swal, Toast } from "../utils/swal"; // Import Swal, Toast, and NumberInput from swal
+import { category } from "../index"; // Import the Cheat GUI bases.
+import Toggler from "../class/Toggler";
+import Hack from "../class/Hack";
+import { Input, NumberInput, Swal, Toast } from "../utils/swal"; // Import Swal, Toast, and NumberInput from swal
 import { _, locations, prodigy, player } from "../utils/util"; // Import Prodigy typings
 import { toHouse } from "../utils/hackify"; // Import toHouse
 // END IMPORTS
@@ -22,6 +24,60 @@ new Toggler(category.location, "WASD Movement", "Allows you to walk through wall
 }).status = true;
 
 
+// Begin Edit walkSpeed
+new Hack(category.location, "Edit walkspeed", "Lets you set your walkspeed.").setClick(async () => {
+    const walkSpeed = await Input.fire("What do you want to set your walk speed to?");
+    if (!walkSpeed.value) return;
+    if (!player._playerContainer) {
+        const interval = setInterval(() => {
+            if (player._playerContainer) {
+                clearInterval(interval);
+                player._playerContainer.walkSpeed = parseFloat(walkSpeed.value);
+            }
+        }, 100);
+    } else player._playerContainer.walkSpeed = parseFloat(walkSpeed.value) || 1.5;
+    return Toast.fire("Success!", `Successfully made walk speed ${parseFloat(walkSpeed.value) || 1.5}!`, "success");
+});
+// End Edit walkSpeed
+
+
+
+
+
+// Begin Toggle Click Teleporting
+let teleportingInterval = -1;
+
+new Toggler(category.location, "Toggle Click Teleporting").setEnabled(async () => {
+    // @ts-expect-error
+    teleportingInterval = setInterval(() => {
+        try {
+            player._playerContainer.walkSpeed = 500;
+        } catch (e) {
+            // "when switching between scenes, there's a brief moment when player._playerContainer.walkSpeed is inaccessible" - Mustan
+        }
+    });
+    return Toast.fire("Success!", "Successfully enabled teleport click.", "success");
+}).setDisabled(async () => {
+    clearInterval(teleportingInterval);
+    player._playerContainer.walkSpeed = 1.5;
+    return Toast.fire("Success!", "Successfully disabled teleport click.", "success");
+});
+// End Toggle Click Teleporting
+
+
+
+/*
+const locomotionBackup = _.player._playerContainer.locomotion.screen.area;
+// Disable Collision/Click phasing
+new Toggler(category.location, "Disable Collision", "Allows you to walk through walls with click movement.").setEnabled(async () => {
+    // @ts-expect-error
+    _.player._playerContainer.locomotion.screen.area = _.player._playerContainer.locomotion.screen.area.map(e => e.fill(1))
+    return Toast.fire("Success!", "Collision was disable on this screen.", "success");
+}).setDisabled(async () => {
+    _.player._playerContainer.locomotion.screen.area = locomotionBackup;
+    return Toast.fire("Success!", "Collision is back!", "success");
+});
+*/
 
 // Begin Teleport To Map (interactive)
 new Hack(category.location, "Teleport To Map (interactive)").setClick(

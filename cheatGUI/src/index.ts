@@ -3,11 +3,11 @@
 
 import { io } from "socket.io-client"; // Import socket.io-client
 import "./style.scss"; // Import SCSS style
-import { saveCharacter, _ } from "./utils/util"; // Import Prodigy typings
+import { _ } from "./utils/util"; // Import Prodigy typings
 import { statusMessage } from "./utils/status"; // Import status message
 import Swal from "sweetalert2"; // Import Swal
 import { License, NoLicense } from "./utils/swal";
-import { IndexInfo, IndexSuccess, IndexError } from "./utils/log";
+import openChat from "./utils/chat";
 
 export const menu = document.createElement("div"); // Create cheat menu element
 export const wrapper = document.getElementById("game-wrapper"); // Create game wrapper
@@ -95,92 +95,6 @@ menuleft.append(subtitle);
 
 
 
-export class Hack {
-	public element: HTMLButtonElement;
-	public name: String;
-	private description: String;
-
-	constructor (
-		public parent: HTMLDivElement,
-		name?: string,
-		description?: string
-	) {
-		this.name = "";
-		this.description = "";
-		this.element = document.createElement("button");
-		this.element.classList.add("menu-hack");
-		this.parent.append(this.element);
-
-		if (name) this.setName(name);
-		if (description) this.setDesc(description);
-	}
-
-	setName (name: string) {
-		this.element.innerText = name;
-		this.name = name;
-		return this;
-	}
-
-	setClick (event: () => unknown) {
-		this.element.onclick = async () => {
-			await event();
-			saveCharacter();
-			console.log(`Triggered ${this.name}.`);
-		};
-		return this;
-	}
-
-	setDesc (desc: string) {
-		this.element.title = desc;
-		this.description = desc;
-		return this;
-	}
-}
-
-export class Toggler extends Hack {
-	enabled?: () => unknown;
-	disabled?: () => unknown;
-	constructor (
-		public parent: HTMLDivElement,
-		name?: string,
-		description?: string
-	) {
-		super(parent, name, description);
-		this.element.setAttribute("status", "false");
-		this.setClick(async () => {
-			this.status = !this.status;
-			if (this.status) {
-				localStorage.setItem(this.name, "true");
-				await this.enabled?.();
-			} else {
-				localStorage.setItem(this.name, "false");
-				await this.disabled?.();
-			}
-		});
-	}
-
-	get status () {
-		return JSON.parse(this.element.getAttribute("status")!) as boolean;
-	}
-
-	set status (val) {
-		this.element.setAttribute("status", val.toString());
-	}
-
-	setEnabled (event: () => unknown) {
-		this.enabled = event;
-		if (localStorage.getItem(this.name) === "true") {
-			this.element.click();
-		}
-		return this;
-	}
-
-	setDisabled (event: () => unknown) {
-		this.disabled = event;
-		return this;
-	}
-}
-
 export const category = {
 	player: addArea("Player Hacks"),
 	inventory: addArea("Inventory Hacks"),
@@ -211,9 +125,9 @@ if (!localStorage.hasTip) {
        });
 	})();
 	localStorage.hasTip = true;
-	IndexInfo("Player was shown the tip.");
+	console.log("Player was shown the tip.");
 } else {
-	IndexInfo("Player already has tip.");
+	console.log("Player already has tip.");
 };
 
 
@@ -222,7 +136,7 @@ if (localStorage.getItem("level")) {
 	// Then, override _.player.getLevel with the value in localStorage.
 	_.player.getLevel = () => localStorage.getItem("level");
 
-	IndexInfo("Loaded menu from localStorage.");
+	console.log("Loaded menu from localStorage.");
 }
 
 
@@ -230,26 +144,25 @@ let shownMenu : boolean = true;
 document.addEventListener("keydown", function (event) {
 	if (event.key == "Shift") {
 
-		IndexInfo("Shift key was pressed.");
+		console.log("Shift key was pressed.");
 
 		if (shownMenu == true) {
 			// Cheats are shown, so let's hide them.
-			IndexInfo("Hiding cheat menu...");
+			console.log("Hiding cheat menu...");
 			document.getElementById("cheat-menu").style.display = "none";
 			document.getElementById("menu-toggler").style.display = "none";
 			shownMenu = false;
-			IndexInfo("Hidden cheat menu.");
+			console.log("Hidden cheat menu.");
 		} else {
 			// Cheats are hidden, so let's show them.
-			IndexInfo("Showing cheat menu...");
+			console.log("Showing cheat menu...");
 			document.getElementById("cheat-menu").style.display = "block";
 			document.getElementById("menu-toggler").style.display = "block";
             shownMenu = true;
-			IndexInfo("Shown cheat menu.");
+			console.log("Shown cheat menu.");
 		}
 	}
 });
-
 
 
 if (process.env.NODE_ENV === "development") {

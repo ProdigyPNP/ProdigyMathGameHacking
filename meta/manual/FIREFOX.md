@@ -2,10 +2,6 @@
 
 <br>
 
-### WARNING: Sorry, but PHEx currently doesn't work on Firefox. Use a different browser for now.
-
-<br>
-
 1. Open **Firefox**.
 2. In Firefox, enter ``about:debugging#/runtime/this-firefox`` in the URL bar.
 4. Next to **Temporary Extensions**, you should see a button that says **Load Temporary Add-on...**.
