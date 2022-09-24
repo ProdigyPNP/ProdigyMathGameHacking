@@ -6,7 +6,7 @@ import { Toast, Input, Confirm, Swal } from "../utils/swal";  // Import Toast an
 import { category } from "../index"; // Import the Cheat GUI bases and the dimensions to resize the menu
 import Toggler from "../class/Toggler";
 import Hack from "../class/Hack";
-import { _, current, player } from "../utils/util";  // Import Prodigy typings
+import { _, saveCharacter, current, player } from "../utils/util";  // Import Prodigy typings
 // END IMPORTS
 
 
@@ -15,7 +15,12 @@ import { _, current, player } from "../utils/util";  // Import Prodigy typings
 
 
 
-
+// Begin Close all Popups
+new Hack(category.utility, "Close all popups", "Closes all popups in Prodigy.").setClick(async () => {
+    _.instance.prodigy.open.menuCloseAll();
+    return Toast.fire("Closed!", "All open popups were closed.", "success");
+});
+// End Close all Popups
 
 
 new Hack(category.utility, "Grab UserID of all players on screen", "Shows you the UserID and name of every player currently shown on the screen.").setClick(async () => {
@@ -89,6 +94,12 @@ new Hack(category.utility, "Load local character [Local]", "Loads your character
 
 
 
+// Begin Save Character
+new Hack(category.utility, "Save Character", "Helps fix bugs where not all hacks save.").setClick(async () => {
+    saveCharacter();
+    return Toast.fire("Success!", "Your character has been saved!", "success");
+});
+// End Save Character
 
 
 
@@ -104,6 +115,16 @@ new Hack(category.utility, "Update menu", "Updates menu to the latest version wi
     return Toast.fire("Updated!", "Cheat menu was updated.", "success");
 });
 // End Update menu
+
+
+
+
+// Begin Disable Inactivity Kick
+new Hack(category.utility, "Disable inactivity kick", "Keeps you from being logged out for inactivity.").setClick(async () => {
+    _.constants.constants["GameConstants.Inactivity.LOG_OUT_TIMER_SECONDS"] = 0;
+    return Toast.fire("Success!", "You now will never be logged out!", "success");
+});
+// End Disable Inactivity Kick
 
 
 
@@ -168,6 +189,17 @@ new Toggler(category.utility, "Toggle Click Teleporting").setEnabled(async () =>
 });
 // End Toggle Click Teleporting
 
+
+
+// Begin Pause Game
+new Toggler(category.utility, "Pause Game").setEnabled(async () => {
+    _.network.game._paused = true;
+    return Toast.fire("Success!", "Successfully paused Prodigy.", "success");
+}).setDisabled(async () => {
+    _.network.game._paused = false;
+    return Toast.fire("Success!", "Successfully resumed Prodigy.", "success");
+});
+// End Pause Game
 
 
 

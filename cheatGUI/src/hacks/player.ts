@@ -4,8 +4,10 @@
 // BEGIN IMPORTS
 import { Swal, Toast, NumberInput, Input, Confirm } from "../utils/swal"; // Import Swal, Toast, Confirm, Input, and NumberInput from swal
 import { category } from "../index"; // Import the Cheat GUI bases.
+import Toggler from "../class/Toggler";
 import Hack from "../class/Hack";
-import { _, player} from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
+import { _, getItem, VERY_LARGE_NUMBER, prodigy, saveCharacter, player} from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
+import { getMemberModule, ids, itemify } from "../utils/hackify";  // Import useful arrays and functions
 import openChat from "../utils/chat";
 
 // END IMPORTS
@@ -23,6 +25,192 @@ new Hack(category.player, "Open ProdigyPNP Chat", "Opens a chat for ProdigyPNP u
 });
 // end open chat
 
+
+
+// Begin Max Account
+new Hack(category.player, "Max Account").setClick(async () => {
+    // max account made by gemsvidø
+
+    // ============================================
+    // PRE MAXING PROCESS
+
+
+
+    if (!(await Confirm.fire("Are you sure that you want to max your account?", "We recommend doing this on an alt.")).value) {
+        return console.log("Cancelled");
+    }
+
+
+
+    // PRE MAXING PROCESS
+    // ============================================
+    // ============================================
+    // PLAYER HACKS
+
+    // Set the players gold to 09900000
+    player.data.gold = 9900000;
+    console.log("Set player gold to 9900000.")
+
+
+    // Set the players level to 100
+    const level = 100;
+    // @ts-expect-error
+    const h = level.value - 2;
+    const xpConstant = 1.042;
+    player.data.stars = Math.round((1 - Math.pow(xpConstant, h)) / (1 - xpConstant) * 20 + 10);
+    player.data.level = 100;
+    player.getLevel = () => {
+        return player.data.level;
+    };
+    console.log("Set player level to 100");
+
+
+    // Set the players bounty points to 100 (max)
+    player.data.bountyScore = 100;
+    console.log("Set player's bounty points to 100.");
+
+
+    // Set the players conjure cubes to 100 (max)
+    for (let i = 0; i < Math.min(99, 100); i++) {
+        prodigy.giftBoxController.receiveGiftBox(null, getItem("giftBox", 1));
+    }
+    console.log("Obtained 100 conjure cubes.");
+
+
+
+
+    // Get all achievements
+    for (var i = 0; i < 100; i++) {
+        player.achievements.data.progress[i] = 10;
+    }
+    console.log("Obtained all achievements.");
+
+    // Set the players dark tower floor to 100
+    player.data.tower = 100;
+    console.log("Set tower floor to 100.");
+
+    // PLAYER HACKS
+    // ============================================
+    // ============================================
+    // INVENTORY HACKS
+
+
+    // Get 1 of all items
+    const num : number = 1;
+
+    ids.forEach(id => {
+        // @ts-expect-error
+        player.backpack.data[id] = itemify(_.gameData[id].filter(l => id === "follow" ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(l.ID) : l), num.value);
+    });
+    // @ts-expect-error
+    _.gameData.dorm.forEach(x =>
+        // @ts-expect-error
+        player.house.data.items[x.ID] = { A: [], N: num.value });
+
+    // Remove bounty notes
+    // @ts-expect-error
+    const bountyIndex = () => player.backpack.data.item.findIndex(v => v.ID === 84 || v.ID === 85 || v.ID === 86);
+    while (bountyIndex() > -1) player.backpack.data.item.splice(bountyIndex(), 1);
+    Toast.fire("Success!", "All items added!", "success");
+
+    console.log("All items added!");
+
+
+
+    // Get all Mounts
+    player.backpack.data.mount = itemify(_.gameData.mount, 1);
+    console.log("Added all mounts.");
+
+
+    // INVENTORY HACKS
+    // ============================================
+    // ============================================
+    // GET 6,969,420 OF ALL CURRENCIES
+
+        const id : string = "currency";
+        const amt : number = 6969420;
+        // @ts-expect-error
+        player.backpack.data[id] = itemify(_.gameData[id].filter(a => {
+            return id === 'follow' ? ![125, 126, 127, 128, 129, 134, 135, 136, 137].includes(a.ID) : a
+        }), amt);
+        
+
+
+    // GET 6,969,420 OF ALL CURRENCIES
+    // ============================================
+    // ============================================
+    // PET HACKS
+
+
+    // Get All Pets
+
+    // add pets
+    // @ts-expect-error
+    _.gameData.pet.forEach(x => {
+        player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
+    });
+
+    // add encounter info
+    player.kennel._encounterInfo._data.pets = [];
+    _.gameData.pet.map((pet: {
+        ID: number
+    }) => {
+        player.kennel._encounterInfo._data.pets.push({
+            firstSeenDate: Date.now(),
+            ID: pet.ID,
+            timesBattled: 1,
+            timesRescued: 1
+        });
+    });
+    // Fix broken pets
+    // @ts-expect-error
+    player.kennel.petTeam.forEach(v => {
+        if (v && (v as any).assignRandomSpells)(v as any).assignRandomSpells();
+    });
+    console.log("Added all pets.");
+
+
+
+
+    // PET HACKS
+    // ============================================
+    // ============================================
+    // EQUIP CELESTIAL GEAR
+
+
+
+    player.equipment.setHat(200);
+    player.equipment.setBoots(93);
+    player.equipment.setOutfit(161);
+    player.equipment.setWeapon(196);
+
+
+
+
+    // EQUIP CELESTIAL GEAR
+    // ============================================
+    // ============================================
+    // POST MAXING PROCESS
+
+
+
+    // Refresh the players appearance
+    player.appearanceChanged = true;
+    console.log("Appearance Refreshed.");
+    
+
+    // Save 
+    saveCharacter();
+    console.log("Character Saved.");
+
+
+    // POST MAXING PROCESS
+    // ============================================
+    console.log("Max Account Successful.");
+
+    return Toast.fire("Maxed!", `Check your backpack!`, "success");
+});
+// End Max Account
 
 
 
@@ -103,6 +291,18 @@ new Hack(category.player, "Set Bounty Points").setClick(async () => {
 
 
 
+// Begin Obtain Conjure Cubes
+new Hack(category.player, "Obtain Conjure Cubes").setClick(async () => {
+    const cubes = await NumberInput.fire("Conjure Cubes", "How many conjure cubes do you want to get? (Max 99)", "question");
+    if (cubes.value === undefined) return;
+    for (let i = 0; i < Math.min(99, +cubes.value); i++) {
+        prodigy.giftBoxController.receiveGiftBox(null, getItem("giftBox", 1));
+    }
+    return Toast.fire("Success!", `You have gained ${cubes.value} conjure cube${cubes.value != 1 ? "s" : ""}.`, "success");
+});
+// End Obtain Conjure Cubes
+
+
 
 
 
@@ -135,6 +335,18 @@ new Hack(category.player, "Set Losses").setClick(async () => {
 
 
 
+// Begin Toggle membership
+new Toggler(category.player, "Toggle membership").setEnabled(async () => {
+    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
+    player.appearanceChanged = true;
+    return Toast.fire("Success!", "You now have Prodigy membership!", "success");
+}).setDisabled(() => {
+    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = false;
+    player.appearanceChanged = true;
+    return Toast.fire("Success!", "You no longer have Prodigy membership!", "success");
+});
+// End Toggle membership
+
 
 
 
@@ -155,6 +367,71 @@ new Hack(category.player, "Set name (Client side only)").setClick(async () => {
 
 
 
+
+
+// Begin Change Name
+new Hack(category.player, "Change Name", "Change the name of your wizard.").setClick(async () => {
+    const names = _.gameData.name;
+    const div = document.createElement("div");
+    const createSelect = (arr: Map < string, string > , equalityFunc: (str: string) => boolean) => {
+        const select = document.createElement("select");
+        select.classList.add("selectName");
+        for (const opt of arr.entries()) {
+            const optt = document.createElement("option");
+            [optt.value, optt.innerText] = opt;
+
+            if (equalityFunc(optt.value)) optt.selected = true;
+            select.options.add(optt);
+        }
+        return select;
+    };
+    const nameSelect = (type: number, equalityFunc: (num: number) => boolean) =>
+        createSelect(new Map(
+                // @ts-expect-error
+                names.filter(x => x.data.type === type).map(x => [x.ID.toString(), x.name])),
+            val => equalityFunc(+val)
+        );
+    div.append(nameSelect(0, x => x === player.name.data.firstName));
+    div.append(nameSelect(1, x => x === player.name.data.middleName));
+    div.append(nameSelect(2, x => x === player.name.data.lastName));
+    div.append(
+        createSelect(
+            new Map(
+                
+                [
+                    ["null", "[none]"]
+					// @ts-expect-error
+                ].concat(_.gameData.nickname.map(x => [x.ID.toString(), x.name])) as[
+                    string,
+                    string
+                ][]
+            ),
+            x => +x === player.name.data.nickname || String(player.name.data.nickname) === x
+        )
+    );
+    const name = await Swal.fire({
+        title: "Set Player Name",
+        focusConfirm: false,
+        showCancelButton: true,
+        html: div,
+        preConfirm: () => {
+            return Array.prototype.slice
+                .call(document.querySelectorAll(".selectName"))
+                .map((x: HTMLSelectElement) => x.options[x.selectedIndex].value);
+        }
+    });
+    if (name.value === undefined) return;
+    if (name.value[3] === "null") name.value[3] = null;
+    [
+        player.name.data.firstName,
+        player.name.data.middleName,
+        player.name.data.lastName,
+        player.name.data.nickname
+    ] = (name.value as string[]).map(x => ((x as unknown) as number) && +x);
+    player.appearanceChanged = true;
+    return Toast.fire("Name Changed!", "Your name was successfully changed.", "success");
+});
+// End Change Name
 
 
 
@@ -214,6 +491,28 @@ new Hack(category.player, "Permanent Morph", "Makes Your Current Morph Last Fore
 
 
 
+// Begin Complete Current Task in Quest
+new Hack(category.player, "Complete Current Task In Quest", "Completes current task in quest. (Use this button a lot to complete a quest.)").setClick(async () => {
+    const zones = {};
+    Object.keys(_.instance.prodigy.world.zones).forEach(element => {
+        // @ts-expect-error
+        zones[element] = _.instance.prodigy.world.zones[element].name;
+    });
+    const questName = (await Input.fire({
+        title: "What Quest Do You Want To Complete?",
+        input: "select",
+        inputOptions: zones
+    })).value;
+    if (!questName) return;
+    const questID = _.instance.prodigy.world.zones[questName].getCurrentQuestID();
+    if (_.instance.prodigy.world.zones[questName].completeQuest(questID)) {
+        _.instance.prodigy.world.goToZoneHub(questName);
+        return Toast.fire("Success!", `Completed current task in the ${_.instance.prodigy.world.zones[questName].name} quest successfully!`, "success");
+    } else {
+        return Toast.fire("Could Not Complete Current Task In Quest.", "There was an error completing the quest. Did you already complete it?", "error");
+    }
+});
+// End Complete Current Task in Quest
 
 
 
