@@ -5,7 +5,7 @@
 import { Swal, Toast, NumberInput, Confirm } from "../utils/swal";  // Import Swal, Toast, Confirm, Input, and NumberInput from swal
 import { category } from "../index";  // Import the Cheat GUI bases.
 import Hack from "../class/Hack";
-import { _, VERY_LARGE_NUMBER, player } from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
+import { _, player } from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
 import { getPet } from "../utils/hackify"; // Import getPet
 // END IMPORTS
 
@@ -22,25 +22,11 @@ new Hack(category.pets, "Get All Pets").setClick(async () => {
     }
 
 
-    // add pets
-    // @ts-expect-error
-    _.gameData.pet.forEach(x => {
-        player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
-    });
 
 
     // add encounter info
     player.kennel._encounterInfo._data.pets = [];
-    _.gameData.pet.map((pet: {
-        ID: number
-    }) => {
-        player.kennel._encounterInfo._data.pets.push({
-            firstSeenDate: Date.now(),
-            ID: pet.ID,
-            timesBattled: 1,
-            timesRescued: 1
-        });
-    });
+    
     // Fix broken pets
     // @ts-expect-error
     player.kennel.petTeam.forEach(v => {
@@ -54,65 +40,6 @@ new Hack(category.pets, "Get All Pets").setClick(async () => {
 
 
 
-// Begin Get ALl Legacy Epics
-new Hack(category.pets, "Get All Legacy Epics").setClick(async () => {
-
-
-    if (!(await Confirm.fire("This may damage your account.", "Attempting to add legacy epics may damage your account. Would you still like to add all legacy epics to your team?", "warning")).value) {
-        return console.log("Cancelled");
-    }
-
-    // @ts-expect-error
-    const epics = _.gameData.pet.filter(x => [125, 126, 127, 128, 129, 130, 131, 132, 133].includes(x.ID));
-    // @ts-expect-error
-    epics.forEach(x => {
-        player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
-    });
-    // Fix broken pets
-    // @ts-expect-error
-    player.kennel.petTeam.forEach(v => {
-        if (v && (v as any).assignRandomSpells)(v as any).assignRandomSpells();
-    });
-    return Toast.fire("Success!", "All legacy epics have been added!", "success");
-});
-// End Get ALl Legacy Epics
-
-
-
-
-
-// Begin Get All Mythical Epics
-new Hack(category.pets, "Get All Mythical Epics").setClick(async () => {
-
-    if (!(await Confirm.fire("Would you like to add all mythical epics to your pets?")).value) {
-        return console.log("Cancelled");
-    }
-
-
-    // @ts-expect-error
-	const epics = _.gameData.pet.filter(x => [
-        158, // Magmayhem
-        164, // Blast Star
-        165, // Vegabloom
-        166, // Arcturion
-        167, // Aquadile
-        168, // Shiver & Scorch
-        169, // Riptide
-        170, // Lumanight
-        171, // Nebula
-        189, // B.F. Magmayhem
-    ].includes(x.ID));
-    // @ts-expect-error
-	epics.forEach(x => {
-		player.kennel.addPet(x.ID.toString(), VERY_LARGE_NUMBER, 26376, 100);
-	});
-	// Fix broken pets
-	player.kennel.petTeam.forEach((v: any) => {
-		if (v && (v as any).assignRandomSpells) (v as any).assignRandomSpells();
-	});
-	return Toast.fire("Success!", "All mythical epics have been added!", "success");
-}); // btw this hack was made by gemsvidø (afkvido on github)
-// End Get ALl Mythical Epics
 
 
 
@@ -131,34 +58,6 @@ new Hack(category.pets, "Clear Pets").setClick(async () => {
     return Toast.fire("Success!", "Your pets have been cleared!", "success");
 });
 // End Clear Pets
-
-
-
-
-
-// Begin Add Pet
-new Hack(category.pets, "Add Pet", "Adds a pet from a list.").setClick(async () => {
-    // @ts-expect-error
-    const pet = await Swal.fire({
-        input: "select",
-        // @ts-expect-error
-        inputOptions: new Map(_.gameData.pet.map(x => [x.ID.toString(), `${x.ID}: ${x.data.name}`])),
-        title: "Choose Pet",
-        text: "Which pet do you want to obtain?"
-    });
-    if (pet.value === undefined) return;
-    player.kennel.addPet(pet.value);
-    // add encounter data
-    player.kennel._encounterInfo._data.pets.push({
-        firstSeenDate: Date.now(),
-        ID: pet.value,
-        timesBattled: 1,
-        timesRescued: 1
-    });
-
-    return Toast.fire("Success!", "Your chosen pet has been added to your pets!", "success");
-});
-// End Add Pet
 
 
 

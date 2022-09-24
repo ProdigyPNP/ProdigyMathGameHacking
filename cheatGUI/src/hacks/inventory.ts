@@ -1,5 +1,5 @@
 // Inventory Hacks
-
+// @ts-nocheck
 
 
 // BEGIN IMPORTS
