@@ -14,7 +14,6 @@ window.addEventListener("keydown", event => {
 
         case "`":
             // Close All Popups
-            _.instance.prodigy.open.menuCloseAll();
             break;
 
         case "\\":
