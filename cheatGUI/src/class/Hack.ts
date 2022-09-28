@@ -1,3 +1,4 @@
+import { saveCharacter } from "../utils/util";
 
 
 
@@ -33,6 +34,7 @@ export default class Hack {
 	setClick(event: () => unknown) {
 		this.element.onclick = async () => {
 			await event();
+			saveCharacter();
 			console.log(`Triggered ${this.name}.`);
 		};
 		return this;

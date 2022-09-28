@@ -7,28 +7,40 @@ import { Prodigy } from "../../../typings/prodigy";
 import { Game } from "../../../typings/game";
 
 /** The hack variable. */
-export const _ = window._ || window.Boot.prototype.game._state._current;
+export const _ = window._;
 
 /** The player variable */
-export const player = _.player || window.Boot.prototype.game._state._current.user.source;
+export const player = _.player;
 
 /** The alternate hack variable. */
 export const current = window.Boot.prototype.game._state._current;
 
-// const base: { game: Game, prodigy: Prodigy } = _.instance;
+const base: { game: Game, prodigy: Prodigy } = _.instance;
 
 /** game */
-// export const game = base.game;
+export const game = base.game;
 
 /** prodigy */
-// export const prodigy = base.prodigy;
+export const prodigy = base.prodigy;
 
 /** gameData */
-// export const gameData: GameData = _.instance.game.state.states.get("Boot").gameData;
+export const gameData: GameData = _.instance.game.state.states.get("Boot").gameData;
 
+/** getItem */
+export const getItem = <T extends GameItemKey>(type: T, id: number): Item<T> | null =>
+	(_.gameData[type].find(x => x.ID === id) as null | Item<any>) ?? null;
 
 /** Over 9000000000 */
 export const VERY_LARGE_NUMBER = 9e9;
+
+/**  */
+export const states = Object.fromEntries(_.instance.game.state.states);
+
+/** Attempts to force the charecter to save. */
+export const saveCharacter = () => {
+	_.network.processPlayer = true;
+	_.player.forceSaveCharacter();
+};
 
 /** The URL to the assets directory */
 export const assetURL = "https://raw.githubusercontent.com/ProdigyPNP/ProdigyMathGameHacking/master/cheatGUI/src/assets/";

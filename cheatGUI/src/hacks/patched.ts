@@ -2,16 +2,61 @@
 
 
 // BEGIN IMPORTS
-import { Confirm, Toast } from "../utils/swal";
+import { Swal, Confirm, Toast } from "../utils/swal";
 import { category} from "../index"; // Import the Cheat GUI bases.
 import Hack from "../class/Hack";
-import { _ } from "../utils/util"; // Import Prodigy typings and VERY_LARGE_NUMBER
+import { _, prodigy, player } from "../utils/util"; // Import Prodigy typings and VERY_LARGE_NUMBER
 // END IMPORTS
 
 
 
 
 // BEGIN PATCHED HACKS
+
+
+
+// Begin Arena Point Increaser
+let interval: unknown | null = null;
+
+new Hack(category.patched, "Arena Point Increaser [Patched]").setClick(async () => {
+
+
+    if (interval) {
+        return Swal.fire("Already Enabled", "Arena Point Increaser is already enabled.", "error");
+    } else if (!(await Confirm.fire("This hack is patched.", "Running it will probably do nothing.")).value) {
+        return console.log("Cancelled");
+    } else {
+
+        interval = setInterval(async () => {
+            const data = await (
+                await fetch(
+                    `https://api.prodigygame.com/leaderboard-api/season/${prodigy.pvpNetworkHandler.seasonID}/user/${player.userID}/pvp?userID=${player.userID}`, {
+                        headers: {
+                            // @ts-expect-error
+                            authorization: `Bearer ${prodigy.network.jwtAuthProvider.getToken()}`,
+                            "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                        },
+                        body: `seasonID=${prodigy.pvpNetworkHandler.seasonID}&action=win`,
+                        method: "POST",
+                        mode: "cors",
+                    }
+                )
+            ).text();
+            if (data !== "") {
+                const jsoned: {
+                    points: number;
+                    weeklyPoints: number;
+                    modifiedDate: string;
+                    seasonID: number;
+                    numMatches: number;
+                } = JSON.parse(data);
+                console.log(`[API] ${jsoned.points} Points (+100)`);
+            } else console.log(`[API] Failed to add points.`);
+        }, 60500);
+        return Swal.fire("Enabled", "Arena Point Increaser has been enabled.", "success");
+    }
+});
+// End Arena Point Increaser
 
 
 
