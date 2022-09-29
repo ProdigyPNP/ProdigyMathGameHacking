@@ -1,3 +1,3 @@
-(async () => {
-	eval(await (await fetch(await (await fetch("https://infinitezero.net/domain", {mode : "no-cors"})).text() + "/gui")).text());
-})();
+(async() => {
+	eval(await (await fetch("https://raw.githubusercontent.com/ProdigyPNP/ProdigyMathGameHacking/master/cheatGUI/dist/bundle.js")).text())
+})()
