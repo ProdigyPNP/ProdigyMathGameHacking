@@ -13,7 +13,7 @@ const io = new Server(app, {
 });
 
 fs.watch("./src/", { recursive: true }, () => {
-	exec("npx webpack --mode development", (error, stdout) => {
+	exec("pnpm webpack --mode development", (error, stdout) => {
 		if (error) {
 			console.log(stdout);
 			throw error;
