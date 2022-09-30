@@ -17,23 +17,28 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Install Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2.2.2
+      with:
+        version: 7
+
     - name: Update cheatGUI dependencies
       run: |
         cd ./cheatGUI/
-        npm update
+        pnpm update
     - name: Update typings dependencies
       run: |
         cd ./typings/
-        npm update
+        pnpm update
     - name: Update PHEx dependencies
       run: |
         cd ./PHEx/
-        npm update        
+        pnpm update        
     - name: Commit with git
       run: |
         git pull
