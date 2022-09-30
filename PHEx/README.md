@@ -17,9 +17,15 @@ See our guide: https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/
 
 ## Building
 
+Using Shell
 ```shell
-npm i
-npm run build
+pnpm sh:build
+```
+
+Using Node.js
+```shell
+pnpm install
+pnpm js:build
 ```
 
 The output will be in `/PHEx/build/`. The generated files are `extension.zip`, `extension.xpi`, and `extension.crx`.

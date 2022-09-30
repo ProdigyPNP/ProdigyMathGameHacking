@@ -64,7 +64,7 @@ Requirements:
 
 - Javascript/Typescript knowledge
 - Basic knowledge of how to use the command line
-- Basic knowledge of Node.js/npm syntax
+- Basic knowledge of Node.js & TypeScript syntax
 - A good personality
 
 you can build it from `./cheatGUI` with `webpack`.
@@ -93,7 +93,7 @@ It just edits the game's script so we can bypass any clientside anti-cheats, and
 To build:
 
 ```cmd
-npm tsc
+pnpm run build
 ```
 
 We usually don't require help with [Redirector](https://github.com/Prodigy-Hacking/P-NP), but it's pretty important to know it exists.
