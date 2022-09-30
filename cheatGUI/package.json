@@ -4,15 +4,9 @@
   "description": "Prodigy Hack GUI",
   "main": "dist/bundle.js",
   "scripts": {
-    "setup": "npm install",
-    "build": "npx webpack --config webpack.config.js",
-    "webpack": "npm run build",
-    "package": "npm run build",
-    "server": "node hot-reload.mjs",
-    "start": "npm run server",
-    "dev": "npm run server",
-    "quickstart": "npm run setup && npm run build",
-    "quickserver": "npm run setup && npm run server"
+    "setup": "pnpm install",
+    "build": "pnpm webpack --config webpack.config.js",
+    "server": "node hot-reload.mjs"
   },
   "repository": {
     "type": "git",
