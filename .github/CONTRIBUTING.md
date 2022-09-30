@@ -2,6 +2,9 @@
 
 Hacking Prodigy used to be as easy as `PIXI.game.prodigy.player.gold=999`, but now we need a whole team!
 
+QUICK NOTE FROM gemsvidø: IT IS LITERALLY POSSIBLE TO DO `Boot.prototype.game._state._current.user.source.data.gold=999` AND THAT WORKS LMAO
+
+
 If you'd like to join as an official collaborator, you can message us on [our official Discord server](https://dsc.gg/ProdigyPNP)!
 
 Additionally, please read our [Code of Conduct](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/CODE_OF_CONDUCT.md) before continuing.
