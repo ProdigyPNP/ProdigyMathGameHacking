@@ -2,17 +2,16 @@ const path = require("path");
 const glob = require("glob");
 module.exports = {
 	mode: "production",
-	//devtool: "inline-source-map",
 	entry: ["./src/index.ts", ...glob.sync(path.join(__dirname, "src/@(hacks|utils)/**/*.ts"))],
 	module: {
 		rules: [
 			{
-				test: /\.ts$/,
+				test: /\.ts$/i,
 				use: ["babel-loader", "ts-loader"],
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.(txt|css)$/i,
+				test: /\.txt$/i,
 				use: "raw-loader",
 			},
 			{
@@ -26,16 +25,6 @@ module.exports = {
 					"sass-loader",
 				],
 			},
-			/*{
-				test: /\.(png|jpe?g|gif)$/i,
-				use: [
-					{
-						loader: "url-loader",
-						options: {
-						},
-					},
-				],
-			},*/
 		],
 	},
 	resolve: {
