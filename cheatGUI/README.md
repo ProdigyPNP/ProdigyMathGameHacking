@@ -16,13 +16,13 @@ Install the hacks, the dropdown should appear in the top left corner after a mom
 ## Development
 Install dependencies:
 ```shell
-npm run setup
+pnpm run setup
 ```
 <br>
 
 Compile the menu:
 ```shell
-npm run build
+pnpm run build
 ```
 <br><br>
 
@@ -31,7 +31,7 @@ We are always looking for new contributors to help maintain the hacks and menu!
 
 <br><br>
 
-# npm package
+# Node.js package
 The Cheat GUI is available on npmjs at https://npmjs.com/package/cheatgui.
 
 
@@ -40,9 +40,9 @@ The Cheat GUI is available on npmjs at https://npmjs.com/package/cheatgui.
 ### Installing P-NP
 Shell
 ```shell
-npm install cheatgui
-npm install
-npm update
+pnpm install cheatgui
+pnpm install
+pnpm update
 ```
 
 <br>
@@ -50,25 +50,16 @@ npm update
 ### Uninstalling P-NP
 Shell
 ```shell
-npm uninstall cheatgui
-npm install
-npm update
+pnpm uninstall cheatgui
+pnpm install
+pnpm update
 ```
 
 <br>
 
-### Import in TypeScript
-TypeScript
-```typescript
+### Import
+```es6
 import CheatGUI from "cheatgui";
-```
-
-<br>
-
-### Import in JavaScript
-JavaScript
-```javascript
-const CheatGUI = require("cheatgui");
 ```
 
 <br>

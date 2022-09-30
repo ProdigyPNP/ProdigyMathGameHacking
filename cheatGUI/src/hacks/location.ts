@@ -48,7 +48,6 @@ new Hack(category.location, "Edit walkspeed", "Lets you set your walkspeed.").se
 let teleportingInterval = -1;
 
 new Toggler(category.location, "Toggle Click Teleporting").setEnabled(async () => {
-    // @ts-expect-error
     teleportingInterval = setInterval(() => {
         try {
             player._playerContainer.walkSpeed = 500;

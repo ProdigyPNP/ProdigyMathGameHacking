@@ -1,6 +1,6 @@
 {
-  "enabled": true,
-  "title": "HACKS ARE DOWN FOR A LIL",
-  "icon": "error",
-  "html": "<p>So something broke. Please be patient while we fix it. Thank you.</p>"
+  "enabled": false,
+  "title": "alr",
+  "icon": "info",
+  "html": ""
 }
