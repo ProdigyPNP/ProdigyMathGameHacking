@@ -26,7 +26,7 @@ jobs:
       run: |
         cd cheatGUI
         # Install pnpm:
-        curl -fsSL https://get.pnpm.io/install.sh | sh -
+        brew install pnpm
         pnpm install
         pnpm build
     - name: Commit with git
