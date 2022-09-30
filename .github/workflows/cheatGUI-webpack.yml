@@ -25,8 +25,10 @@ jobs:
     - name: Build with npm
       run: |
         cd cheatGUI
-        npm install
-        npm run build
+        # Install pnpm:
+        curl -fsSL https://get.pnpm.io/install.sh | sh -
+        pnpm install
+        pnpm build
     - name: Commit with git
       run: |
         git pull
