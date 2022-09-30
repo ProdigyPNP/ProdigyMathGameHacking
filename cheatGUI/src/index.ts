@@ -86,11 +86,6 @@ subtitle.style.fontSize = "20px";
 subtitle.innerHTML = `
 <p>Join our Discord <a href='https://dsc.gg/ProdigyPNP'>https://dsc.gg/ProdigyPNP</a>!</p>
 
-
-<p><a href="https://prodigyapi.github.io/ProdigyX/" target="_blank">
-The amazing hack ProdigyX has allowed us to add back hacks!
-It works on all devices, and has a bookmarklet option (works even if extensions are disabled by school)!
-</a></p>
 <hr>
 `;
 subtitle.style.color = "white";
