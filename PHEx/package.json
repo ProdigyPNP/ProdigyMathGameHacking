@@ -5,13 +5,10 @@
   "main": "build.js",
   "scripts": {
     "setup": "npm install",
-
     "build": "echo \"Use sh:build if you're on a Unix operating system, or use js:build if not.\"",
     "start": "npm run build",
-
     "sh:build": "sh build.sh",
     "js:build": "node build.js",
-
     "test": "echo \"well sorry man no auto testing, test it yourself.\""
   },
   "repository": {
@@ -28,7 +25,7 @@
   "dependencies": {
     "dir-archiver": "^2.0.0",
     "simple-archiver": "^1.0.1",
-    "typescript": "^4.7.4",
+    "typescript": "^4.8.4",
     "zip-dir": "^2.0.0"
   }
 }

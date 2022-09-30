@@ -10,7 +10,7 @@
 		"quickstart": "npm install"
 	},
 	"dependencies": {
-		"typescript": "^4.7.3"
+		"typescript": "^4.8.4"
 	},
 	"devDependencies": {
 		"typescript": "^4.7.3"
