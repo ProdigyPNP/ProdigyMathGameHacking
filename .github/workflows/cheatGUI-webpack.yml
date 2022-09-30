@@ -22,11 +22,14 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2.2.2
+      with:
+        version: 7
+
     - name: Build with npm
       run: |
         cd cheatGUI
-        # Install pnpm:
-        brew install pnpm
         pnpm install
         pnpm build
     - name: Commit with git
