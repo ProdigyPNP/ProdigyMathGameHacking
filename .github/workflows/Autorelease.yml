@@ -8,11 +8,9 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
+      tag:
+        # Friendly description to be shown in the UI instead of 'tag'
+        description: 'Tagname of the git tag you are making a release of'
         # Input has to be provided for the workflow to run
         required: true
 
@@ -22,9 +20,50 @@ jobs:
   greet:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
+    
+    
+    - name: GitHub Release
+      uses: marvinpinto/action-automatic-releases@v1.2.1
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "${{ github.event.inputs.tag }}"
+          prerelease: false
+          title: "PHEx ${{ github.event.inputs.tag }}"
+          files: |
+            ./PHEx/build/extension.zip
+            ./PHEx/build/extension.xpi
+            ./PHEx/build/extension.crx
+
+    - name: Chrome Web Store Release
+      uses: mobilefirstllc/cws-publish@latest
+      with:
+        action: 'upload'  # one of: upload, publish, testers
+        client_id: ${{ secrets.CLIENT }}
+        client_secret: ${{ secrets.SECRET }}
+        refresh_token: ${{ secrets.TOKEN }}
+        extension_id: 'nmipcbdicnmjoifanpdcjdmifeioglkm' 
+        zip_file: './PHEx/build/extension.zip'
+        
+        
+    - name: Edge Addons Store Release
+      uses: wdzeng/edge-addon@v1
+      with:
+        product-id: '5f5dd37a-2075-4f20-baa7-1c6b611b8efc'
+        zip-path: './PHEx/build/extension.zip'
+        client-id: ${{ secrets.EDGE_CLIENT_ID }}
+        client-secret: ${{ secrets.EDGE_CLIENT_SECRET }}
+        access-token-url: ${{ secrets.EDGE_ACCESS_TOKEN_URL }}
+        
+    - name: Firefox Addons Store Release
+      uses: wdzeng/firefox-addon@v1
+      with:
+        addon-guid: ''
+        xpi-path: './PHEx/build/extension.xpi'
+        self-hosted: false
+        jwt-issuer: ${{ secrets.FIREFOX_JWT_ISSUER }}
+        jwt-secret: ${{ secrets.FIREFOX_JWT_SECRET }}
+
