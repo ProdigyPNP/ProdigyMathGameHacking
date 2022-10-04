@@ -30,7 +30,7 @@ export const gameData: GameData = _.instance.game.state.states.get("Boot").gameD
 export const getItem = <T extends GameItemKey>(type: T, id: number): Item<T> | null =>
 	(_.gameData[type].find(x => x.ID === id) as null | Item<any>) ?? null;
 
-/** Over 9000000000 */
+/** 9000000000 */
 export const VERY_LARGE_NUMBER = 9e9;
 
 /**  */
