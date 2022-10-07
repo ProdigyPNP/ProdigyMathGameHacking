@@ -20,7 +20,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.18.9",
     "@babel/preset-env": "^7.19.3",
     "babel": "^6.23.0",
-    "sweetalert2": "^11.4.37"
+    "sweetalert2": "^11.4.38"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.39.0",
@@ -33,7 +33,7 @@
     "postcss": "^8.4.17",
     "postcss-loader": "^7.0.1",
     "sass": "^1.55.0",
-    "sass-loader": "^13.0.2",
+    "sass-loader": "^13.1.0",
     "socket.io": "^4.5.2",
     "socket.io-client": "^4.5.2",
     "style-loader": "^3.3.1",
