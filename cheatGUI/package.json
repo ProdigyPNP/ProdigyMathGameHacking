@@ -18,13 +18,13 @@
   "dependencies": {
     "@babel/core": "^7.19.3",
     "@babel/plugin-proposal-optional-chaining": "^7.18.9",
-    "@babel/preset-env": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
     "babel": "^6.23.0",
-    "sweetalert2": "^11.4.38"
+    "sweetalert2": "^11.5.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.39.0",
-    "@typescript-eslint/parser": "^5.39.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
     "autoprefixer": "^10.4.12",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
