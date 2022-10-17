@@ -36,7 +36,7 @@ This method worked for longer than the last one, however, it was also quickly pa
 ### Cheat Dashboard Day
 `03/30/2020 - 03/30/2020`
 
-[A cheat dashboard](URL unknown) was developed by [melcant](https://github.com/melcant). The dashboard was a good concept, however it became very buggy due to some game updates, which caused it to be unsupported the day after. A new one was created by [hostedposted](https://github.com/hostedposted) much later.
+A cheat dashboard (URL unknown) was developed by [melncat](https://github.com/melncat). The dashboard was a good concept, however it became very buggy due to some game updates, which caused it to be unsupported the day after. A new one was created by [hostedposted](https://github.com/hostedposted) much later.
 <br><br><br>
  
 

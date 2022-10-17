@@ -2,6 +2,9 @@
 
 Hacking Prodigy used to be as easy as `PIXI.game.prodigy.player.gold=999`, but now we need a whole team!
 
+QUICK NOTE FROM gemsvidø: IT IS LITERALLY POSSIBLE TO DO `Boot.prototype.game._state._current.user.source.data.gold=999` AND THAT WORKS LMAO
+
+
 If you'd like to join as an official collaborator, you can message us on [our official Discord server](https://dsc.gg/ProdigyPNP)!
 
 Additionally, please read our [Code of Conduct](https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/.github/CODE_OF_CONDUCT.md) before continuing.
@@ -61,7 +64,7 @@ Requirements:
 
 - Javascript/Typescript knowledge
 - Basic knowledge of how to use the command line
-- Basic knowledge of Node.js/npm syntax
+- Basic knowledge of Node.js & TypeScript syntax
 - A good personality
 
 you can build it from `./cheatGUI` with `webpack`.
@@ -90,7 +93,7 @@ It just edits the game's script so we can bypass any clientside anti-cheats, and
 To build:
 
 ```cmd
-npm tsc
+pnpm run build
 ```
 
 We usually don't require help with [Redirector](https://github.com/Prodigy-Hacking/P-NP), but it's pretty important to know it exists.

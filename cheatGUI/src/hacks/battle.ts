@@ -4,9 +4,10 @@
 
 // BEGIN IMPORTS
 import { Toast, NumberInput } from "../utils/swal"; // Import Toast and NumberInput from swal
-import { Hack, category, Toggler } from "../index"; // Import the Cheat GUI bases.
+import { category } from "../index"; // Import the Cheat GUI bases.
+import Toggler from "../class/Toggler";
+import Hack from "../class/Hack";
 import { _, prodigy, game, VERY_LARGE_NUMBER, player } from "../utils/util"; // Import prodigy typings
-import { BattleInfo } from "../utils/log"; // Import Battle logging functions
 // END IMPORTS
 
 
@@ -108,7 +109,7 @@ new Hack(category.battle, "Escape Battle [PvP, PvE]", "Escape any battle, PvP or
 new Hack(category.battle, "Win Battle [PvE]", "Instantly win a battle in PvE.").setClick(async () => {
 
 	const currentState = game.state.current;
-  BattleInfo("Current State: " + currentState);
+    console.log("Current State: " + currentState);
 
 	switch (currentState) {
 	    case "PVP":
@@ -172,6 +173,17 @@ new Hack(category.battle, "Fill Battle Energy [PvP, PvE]", "Fills up your battle
     return Toast.fire("Success!", "Your battle energy has been filled.", "success");
 });
 // End Fill Battle Energy
+
+
+// Begin Skip enemy turn
+new Toggler(category.battle, "Skip enemy turn").setEnabled(async () => {
+	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = true;
+	return Toast.fire("Skipping!", "Enemy turns will now be skipped.", "success");
+}).setDisabled(async () => {
+	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = false;
+	return Toast.fire("Disabled", "Enemy turns will no longer be skipped.", "success");
+});
+// End Skip enemy turn
 
 
 

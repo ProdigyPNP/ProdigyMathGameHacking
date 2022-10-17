@@ -17,30 +17,35 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Install Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2.2.3
+      with:
+        version: 7
+
     - name: Update cheatGUI dependencies
       run: |
         cd ./cheatGUI/
-        npm update
+        pnpm update
     - name: Update typings dependencies
       run: |
         cd ./typings/
-        npm update
+        pnpm update
     - name: Update PHEx dependencies
       run: |
         cd ./PHEx/
-        npm update        
+        pnpm update        
     - name: Commit with git
       run: |
         git pull
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
         git add .
-        git commit --allow-empty -s -m "AutoBuild cheatGUI"
+        git commit --allow-empty -s -m "Update dependencies"
     - name: Push changes to GitHub
       uses: ad-m/github-push-action@master
       with:

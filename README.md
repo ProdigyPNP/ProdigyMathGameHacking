@@ -3,7 +3,7 @@
 		<img align="center"
 			width="175"
 			alt="Prodigy Math Game Hacking"
-			src="/.github/fixedlogo.png?raw=true">
+			src="/.github/PTB.png?raw=true">
 	</a>
 </h1>
 
@@ -12,7 +12,7 @@
 		
 <p align="center">
 	<strong>
-		<a href="https://prodigypnp.github.io/">Website</a>
+		<a href="https://prodigypnp.com">Website</a>
 		•
 		<a href="https://dsc.gg/ProdigyPNP">Discord</a>
 		•

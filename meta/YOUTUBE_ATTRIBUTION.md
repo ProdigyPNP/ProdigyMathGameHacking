@@ -5,7 +5,7 @@ If you're posting a video with our hacks, please make sure to add this to your v
 ```tx
 Hacks are by ProdigyPNP - https://github.com/ProdigyPNP
 ProdigyPNP Discord - https://dsc.gg/ProdigyPNP
-ProdigyPNP Website - https://ProdigyPNP.github.io
+ProdigyPNP Website - https://ProdigyPNP.com
 ```
 
 *If you'd like an exception, please contact us on [our Discord server](https://dsc.gg/ProdigyPNP). We're friendly, we promise!*

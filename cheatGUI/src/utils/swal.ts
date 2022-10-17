@@ -67,3 +67,6 @@ export const NoLicense = Swal.mixin({
 	cancelButtonText: "Play without hacks"
 });
 // Disagreed to license popup
+
+// @ts-expect-error allow accessing swal from devtools
+window.Swal = Swal;

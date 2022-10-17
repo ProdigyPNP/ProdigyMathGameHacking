@@ -4,7 +4,9 @@
 
 // BEGIN IMPORTS
 import { Toast, Confirm, Swal } from "../utils/swal"; // Import Toast and Confirm from swal
-import { Hack, category, Toggler } from "../index";  // Import the Cheat GUI bases.
+import { category } from "../index";  // Import the Cheat GUI bases.
+import Toggler from "../class/Toggler";
+import Hack from "../class/Hack";
 import { current, player, _ } from "../utils/util"; // Import Prodigy typings
 import { startFps, stopFps } from "../utils/fps";
 // END IMPORTS
@@ -46,20 +48,6 @@ new Toggler(category.misc, "Disable Monster Encounters").setEnabled(async () => 
 	return Toast.fire("Disabled!", "Monsters will now battle you.", "success");
 });
 // End Disable Monster Encounters
-
-
-
-// Begin Skip enemy turn
-new Toggler(category.misc, "Skip enemy turn").setEnabled(async () => {
-	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = true;
-	return Toast.fire("Skipping!", "Enemy turns will now be skipped.", "success");
-
-
-}).setDisabled(() => {
-	_.constants.constants["GameConstants.Battle.SKIP_ENEMY_TURN"] = false;
-	return Toast.fire("Disabled", "Enemy turns will no longer be skipped.", "success");
-});
-// End Skip enemy turn
 
 
 // Begin FPS Counter
@@ -124,126 +112,6 @@ new Hack(category.misc, "Reset Account", "Completely resets your account.").setC
 	return Swal.fire("Reset!", "Your account has been reset. Reload Prodigy for the full effect.", "success");
 });
 // End Reset Account
-
-
-
-
-
-// Begin Chat Spammer
-let retard: unknown | null = null;
-let i : number = 0;
-
-new Hack(category.misc, "Chat Spammer", "Cycles through chat messages pretty fast!").setClick(async () => {
-
-	if (retard) {
-        return Swal.fire("Already Enabled", "Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.","error");
-    } else {
-
-
-	    retard = setInterval(async () => {
-
-		    player.chatID = i;
-		    i++;
-
-		    if (i > 1164) {
-			    i = 0;
-		    }
-
-	    }, 90);
-
-	    return Toast.fire("Spamming!", "You're now sending a chat message every 90 milliseconds!", "success");
-
-	}
-
-
-
-});
-// End Chat Spammer
-
-
-
-
-
-
-// Begin High Chat Spammer
-let retards: unknown | null = null;
-let c : number = 0;
-
-new Hack(category.misc, "High Chat Spammer", "Cycles through chat messages hella fast!").setClick(async () => {
-
-	if (retards) {
-	    return Swal.fire("Already Enabled", "High Chat Spammer is already enabled. To disable chat spammer, reload Prodigy.", "error")
-
-    }
-    else if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
-			   return console.log("Cancelled");
-
-	} else {
-
-	    retards = setInterval(async () => {
-
-    		    player.chatID = c;
-    		    c++;
-
-    		    if (c > 1164) {
-    			    c = 0;
-    		    }
-
-    	}, 30);
-
-        return Toast.fire("Spamming!", "You're now sending a chat message every 30 milliseconds!", "success");
-
-
-	}
-
-
-
-
-
-
-
-});
-// End High Chat Spammer
-
-
-
-
-
-
-
-// Begin Chat Spammer on Meth
-let retarded: unknown | null = null;
-let b : number = 0;
-
-new Hack(category.misc, "Chat Spammer on Meth", "Cycles through chat messages FAST ASF!").setClick(async () => {
-
-	if (retarded) {
-	    return Swal.fire("Already Enabled", "Chat Spammer on Meth is already enabled. To disable chat spammer, reload Prodigy.", "error")
-	}
-    else if (!(await Confirm.fire("Warning", "This hack may cause lag on weak computers (ex. School Chromebooks).")).value) {
-	    return console.log("Cancelled");
-
-	} else {
-
-	    retarded = setInterval(async () => {
-
-    		player.chatID = b;
-    		b++;
-
-    		if (b > 1164) {
-    			b = 0;
-    		}
-
-    	}, 1);
-
-        return Toast.fire("Spamming!", "You're now sending a chat message every 1 millisecond!", "success");
-
-	}
-
-
-
-});
-// End Chat Spammer on Meth
 
 
 
