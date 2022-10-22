@@ -20,7 +20,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.18.9",
     "@babel/preset-env": "^7.19.4",
     "babel": "^6.23.0",
-    "sweetalert2": "^11.6.0"
+    "sweetalert2": "^11.6.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.40.1",
@@ -28,7 +28,7 @@
     "autoprefixer": "^10.4.12",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
-    "eslint": "^8.25.0",
+    "eslint": "^8.26.0",
     "eslint-config-standard": "^17.0.0",
     "postcss": "^8.4.18",
     "postcss-loader": "^7.0.1",
