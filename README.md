@@ -1,3 +1,6 @@
+# Hacks are currently DEAD.
+# See https://discord.gg/2qzTbdXSg9
+
 <h1 align="center">
 	<a href="../../tree/master/meta/wiki/QUICKSTART.md">
 		<img align="center"
