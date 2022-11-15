@@ -23,11 +23,11 @@
     "sweetalert2": "^11.6.8"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.42.1",
-    "@typescript-eslint/parser": "^5.42.1",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.0",
-    "css-loader": "^6.7.1",
+    "css-loader": "^6.7.2",
     "eslint": "^8.27.0",
     "eslint-config-standard": "^17.0.0",
     "postcss": "^8.4.19",
