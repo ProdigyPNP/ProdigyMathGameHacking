@@ -31,7 +31,7 @@
     "eslint": "^8.28.0",
     "eslint-config-standard": "^17.0.0",
     "postcss": "^8.4.19",
-    "postcss-loader": "^7.0.1",
+    "postcss-loader": "^7.0.2",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "socket.io": "^4.5.4",
