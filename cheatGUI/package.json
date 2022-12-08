@@ -20,7 +20,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.18.9",
     "@babel/preset-env": "^7.20.2",
     "babel": "^6.23.0",
-    "sweetalert2": "^11.6.15"
+    "sweetalert2-neutral": "11.6.15-neutral"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.45.1",
