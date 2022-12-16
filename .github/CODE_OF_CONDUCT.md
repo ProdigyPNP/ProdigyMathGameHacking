@@ -1,3 +1,8 @@
+<h1 align="center"><a href="/.github/ANNOUNCEMENT.md">Hacks are being shut down. Thanks for everything.</a></h1>
+
+<h2 align="center"><a href="https://discord.gg/2qzTbdXSg9">Our Discord server: discord.gg/2qzTbdXSg9</a></h1>
+
+
 # ProdigyPNP Code of Conduct
 
 Our goal was to improve Prodigy's security, not ruining the game for profit. We won't sell our hacks, or put ads.

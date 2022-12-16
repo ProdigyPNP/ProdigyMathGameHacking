@@ -19,7 +19,7 @@
 	<strong>
 		<a href="https://prodigypnp.com">Website</a>
 		•
-		<a href="https://dsc.gg/ProdigyPNP">Discord</a>
+		<a href="https://discord.gg/2qzTbdXSg9">Discord</a>
 		•
 		<a href="https://github.com/ProdigyPNP/ProdigyMathGameHacking/blob/master/meta/wiki/QUICKSTART.md">Installation</a>
 		•
@@ -28,7 +28,7 @@
 </p>
 
 	
-<a href="https://dsc.gg/ProdigyPNP">
+<a href="https://dsc.gg/2qzTbdXSg9">
 	<img alt="Discord Members" src="https://img.shields.io/discord/962479557439549450.svg?color=7289da&label=Discord&logo=discord&style=flat-square">
 </a>
 
@@ -40,7 +40,7 @@
 
 
 
-
+<!-- 
 
 ## [How to hack Prodigy](meta/wiki/QUICKSTART.md)
 
@@ -56,7 +56,7 @@ Read our [Quickstart Guide](meta/wiki/QUICKSTART.md).
 <a href="/meta/wiki/QUICKSTART.md"><img src="https://user-images.githubusercontent.com/69060894/184510500-c0c005f3-023a-4961-bfad-0d0faf055220.png" alt="Manual Install PHEx"></img></a>
 
 
-
+-->
 
 
 </h4>
@@ -153,30 +153,31 @@ We are not liable for any damage to your accounts, see our [license](LICENSE.txt
 
 ## [The Team](meta/CONTRIBUTORS.md)
 
-ProdigyMathGameHacking is made by [all the people who have contributed to it](meta/CONTRIBUTORS.md).
+ProdigyMathGameHacking was made by [all the people who have contributed to it](meta/CONTRIBUTORS.md).
 
 <br>
 
 
 
 ## Development
+This organization and repo is done for. We're not maintaining anything anymore, since we've shut down. If you're interested in developing with us, join us at [@ProdigyPXP](https://github.com/ProdigyPXP)- where we'll make new software, and perhaps one day new Prodigy hacks.
+
+<!--
 You can find our in-development code on [different branches of this repository](https://github.com/ProdigyPNP/ProdigyMathGameHacking/branches).
 
 If you're interested in simple beta testing, open the hacks as usual, scroll down to "Beta Testing", and you can find a bunch of beta/WIP hacks.
-
+-->
 <br>
 
 
 
 ## Components
-
+- [P-NP](https://github.com/ProdigyPNP/P-NP) - The serverside part of ProdigyPNP, the reason why we could modify the game code we loaded.
 - [ProdigyMathGameHacking](../..) - The ProdigyMathGameHacking Repository
 - [PHEx](PHEx/) - The Prodigy Hacking Extension, used to inject our modified game files into Prodigy.
-- [cheatGUI](cheatGUI/) - The cheat GUI, for user convenience
-- [docs](docs/) - Our documentation of Prodigy, used to find functions to build the hacks.
-- [meta](meta/) - Information on this repository
-- [.vscode](.vscode/) - Code snippets, to make creating new hacks easier and faster
-- [.github](.github/) - Repository information for GitHub
+- [cheatGUI](cheatGUI/) - The cheat GUI, for user convenience, and it's pretty.
+- [docs](docs/) - Our documentation of Prodigy, used to find functions to build the hacks. However, it may be slightly outdated, since it's not maintained.
+- [meta](meta/) - Information on this repository.
   
 <br>
 <hr>
