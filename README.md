@@ -1,6 +1,6 @@
 <h1 align="center"><a href="/.github/ANNOUNCEMENT.md">Hacks are being shut down. Thanks for everything.</a></h1>
 
-<h2 align="center"><a href="https://discord.gg/2qzTbdXSg9">Our Discord server: discord.gg/2qzTbdXSg9</a></h1>
+<h2 align="center"><a href="https://discord.gg/2qzTbdXSg9">Our Discord server: discord.gg/2qzTbdXSg9</a></h2>
 
 
 <h1 align="center">
