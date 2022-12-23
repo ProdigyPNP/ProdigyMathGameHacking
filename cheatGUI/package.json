@@ -16,8 +16,8 @@
   "author": "ProdigyPNP",
   "license": "MPL-2.0",
   "dependencies": {
-    "@babel/core": "^7.20.5",
-    "@babel/plugin-proposal-optional-chaining": "^7.18.9",
+    "@babel/core": "^7.20.7",
+    "@babel/plugin-proposal-optional-chaining": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
     "babel": "^6.23.0",
     "sweetalert2-neutral": "11.6.15-neutral"
