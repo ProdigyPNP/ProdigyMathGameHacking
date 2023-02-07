@@ -2,7 +2,7 @@ name: "Bug Report"
 description: "Report a bug to help us improve Prodigy Hacks."
 title: "[B] title"
 labels: ["Is: Bug", "Priority: Medium"]
-assignees: ["afkvido", "donaldli2020", "Erisfiregamer1"]
+assignees: ["afkvido"]
 body:
 
   - type: textarea
