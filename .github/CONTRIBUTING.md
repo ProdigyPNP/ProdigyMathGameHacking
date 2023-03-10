@@ -1,6 +1,18 @@
+<h1 align="center"><a href="/.github/ANNOUNCEMENT.md">Hacks are being shut down. Thanks for everything.</a></h1>
+
+<h2 align="center"><a href="https://discord.gg/2qzTbdXSg9">Our Discord server: discord.gg/2qzTbdXSg9</a></h1>
+
+
+
 # Contributing
 
+This organization and repo is done for. We're not maintaining anything anymore, since we've shut down. If you're interested in developing with us, join us at [@ProdigyPXP](https://github.com/ProdigyPXP)- where we'll make new software, and perhaps one day new Prodigy hacks.
+
+
 Hacking Prodigy used to be as easy as `PIXI.game.prodigy.player.gold=999`, but now we need a whole team!
+
+QUICK NOTE FROM gemsvidø: IT IS LITERALLY POSSIBLE TO DO `Boot.prototype.game._state._current.user.source.data.gold=999` AND THAT WORKS LMAO LLLLLL
+
 
 If you'd like to join as an official collaborator, you can message us on [our official Discord server](https://dsc.gg/ProdigyPNP)!
 
@@ -18,6 +30,8 @@ Since we've started this repository, Prodigy's security has improved by leaps an
 once you get to the player variable, you can easily change anything you want.
 
 Ideally everything would be handled server side. For example, arena points are already handled properly. The only way to increment arena points is by sending a "win" event, which is rate limited to once per minute.
+
+We've sort-of achived our goal. See [ANNOUNCEMENT](./ANNOUNCEMENT.md).
 
 ## Tasks
 
@@ -38,7 +52,7 @@ Requirements:
 - Basic understanding of what an API is (the bar is super low huh)
 - Reading skills ;p
 
-Anybody can do this! If you want to help with any of these, you can post your findings in [Discussions](https://github.com/ProdigyPNP/ProdigyMathGameHacking/discussions), or [our official Discord](https://dsc.gg/ProdigyPNP).
+Anybody can do this! If you want to help with any of these, you can post your findings in [Discussions](https://github.com/ProdigyPNP/ProdigyMathGameHacking/discussions), or [our official Discord](https://dsc.gg/2qzTbdXSg9).
 
 ### Typings
 
@@ -53,20 +67,20 @@ If you make a PR with Typings, [Will](https://github.com/MelnCat) will will you 
 
 
 
-### [The Hack GUI](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/cheatGUI)
+### [The Hack GUI](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/cheatGUI)
 
-[The Hack GUI](https://github.com/Prodigy-Hacking/ProdigyMathGameHacking/tree/master/cheatGUI)! Written in Typescript, it gives a visual cheat menu, with tons of handy dandy hacks in one place. No more copy pasting required!
+[The Hack GUI](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/cheatGUI)! Written in Typescript, it gives a visual cheat menu, with tons of handy dandy hacks in one place. No more copy pasting required!
 
 Requirements:
 
 - Javascript/Typescript knowledge
 - Basic knowledge of how to use the command line
-- Basic knowledge of Node.js/npm syntax
+- Basic knowledge of Node.js & TypeScript syntax
 - A good personality
 
 you can build it from `./cheatGUI` with `webpack`.
 
-### [Browser Extension](https://chrome.google.com/webstore/detail/prodigy-hacking-extension/gjabpajagbgoifbkflgojeojmnlmioea)
+### [Browser Extension](../PHEx/README.md)
 
 We used to rely on the Chrome extension "Redirector", and "Anti-CSP", but due to some extra anti-cheats from Prodigy, we've decided to roll our own extension.
 
@@ -89,11 +103,11 @@ It just edits the game's script so we can bypass any clientside anti-cheats, and
 
 To build:
 
-```cmd
-npm tsc
+```sh
+pnpm build
 ```
 
-We usually don't require help with [Redirector](https://github.com/Prodigy-Hacking/P-NP), but it's pretty important to know it exists.
+Really, if anyone can help with Redirector type shit, for the love of god, join us. ProdigyPNP is done for, though please email [gemsvido@gmail.com](mailto:gemsvido@gmail.com) if you know it, since we're making a new Prodigy hack in 2023.
 
 Because we can edit the game script, we can also import external scripts, such as the [Cheat GUI](https://github.com/ProdigyPNP/ProdigyMathGameHacking/tree/master/cheatGUI).
 

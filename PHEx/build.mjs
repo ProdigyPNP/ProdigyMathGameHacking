@@ -3,10 +3,7 @@
 
 
 /** Directory Zipper */ 
-const zipdir = require("zip-dir");
-
-/** File System */
-const fs = require("fs");
+import zipdir from "zip-dir";
 
 
 /** console.log prefix */

@@ -1,4 +1,12 @@
+<h1 align="center"><a href="/.github/ANNOUNCEMENT.md">Hacks are being shut down. Thanks for everything.</a></h1>
+
+<h2 align="center"><a href="https://discord.gg/2qzTbdXSg9">Our Discord server: discord.gg/2qzTbdXSg9</a></h1>
+
+
+
 <h1 align=center>ProdigyPNP's Contributors</h1>
+<p>Thank you to everyone who made ProdigyPNP possible. It wouldn't be possible without y'all.</p>
+
 
 ## [gemsvidø](https://github.com/afkvido)
 Alpha Prime of ProdigyPNP. Successfully implemented [hosted](https://github.com/hostedposted)'s loader into [PHEx 3.0.0](https://github.com/ProdigyPNP/ProdigyMathGameHacking/pull/53#pullrequestreview-1064480572).
@@ -12,7 +20,7 @@ Original Creator of [ProdigyMathGameHacking](https://github.com/PatheticMustan/P
 Original Collaborator. ArcerionDev is the owner of the original project's Discord server.
 <br><br>
 
-## [donaldli2020](https://github.com/donaldli2020)
+### [donaldli2020](https://github.com/donaldli2020)
 One of the ProdigyPNP Alphas, also an original Contributor.
 <br><br>
 

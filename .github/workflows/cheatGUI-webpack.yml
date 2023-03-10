@@ -17,16 +17,21 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Install Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build with npm
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2.2.4
+      with:
+        version: 7
+
+    - name: Build with pnpm
       run: |
         cd cheatGUI
-        npm install
-        npm run build
+        pnpm install
+        pnpm build
     - name: Commit with git
       run: |
         git pull
