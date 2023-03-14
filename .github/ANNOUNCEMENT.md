@@ -4,7 +4,7 @@
 
 First we'd like to thank everyone for being with us. For the past 6 months, we've maintained the largest Prodigy hack, all while keepings things open source and ad-free.
 
-Our goal, of bringing back Prodigy hacks, has somewhat been accomplished! While our hacks have fallen, [Prodigy X](https://github.com/ProdigyAPI/ProdigyX), a different cheat menu for Prodigy, has rose (It's partially closed source and does have ads and analytics. Always use [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)). Costs of keeping alive Prodigy Hack servers have also been up to $20 a month, in the past few months, and that's all from my, @afkvido's wallet. I make zero money from these hacks, and am going broke from them sometimes. Also, there have been trade negotiations of sorts with 
+Our goal, of bringing back Prodigy hacks, has somewhat been accomplished! Costs of keeping alive Prodigy Hack servers have also been up to $20 a month, in the past few months, and that's all from my, @afkvido's wallet. I make zero money from these hacks, and am going broke from them sometimes.
 
 For these reasons, as of November 4, 2022, all official publications of our extension on webstores, and instances of P-NP servers, will all be closed down.
 
