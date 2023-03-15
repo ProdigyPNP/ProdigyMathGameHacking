@@ -2,7 +2,7 @@
 
 If you're posting a video with our hacks, please make sure to add this to your video description.
 
-```tx
+```txt
 Hacks are by ProdigyPNP - https://github.com/ProdigyPNP
 ProdigyPNP Discord - https://dsc.gg/ProdigyPNP
 ProdigyPNP Website - https://ProdigyPNP.com

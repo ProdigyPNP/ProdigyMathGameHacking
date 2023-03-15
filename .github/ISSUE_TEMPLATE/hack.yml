@@ -2,7 +2,7 @@ name: "Hack Request"
 description: "Request a hack to be added to the cheat GUI"
 title: "[HR] title"
 labels: ["Is: Enhancement", "Category: Cheat GUI"]
-assignees: ["afkvido", "donaldli2020", "Erisfiregamer1"]
+assignees: ["afkvido"]
 body:
 
   - type: textarea

@@ -1,3 +1,12 @@
+<h1 align="center"><a href="/.github/ANNOUNCEMENT.md">Hacks are being shut down. Thanks for everything.</a></h1>
+
+<h2 align="center"><a href="https://discord.gg/2qzTbdXSg9">Our Discord server: discord.gg/2qzTbdXSg9</a></h1>
+
+
+<h1>If you're here because PHEx complained about being outdated, please read the announcement.</h1>
+<h1><a href="./github/ANNOUNCEMENT.md">Click here to read the announcement</a></h1>
+
+
 # How to update PHEx
 
 ## Google Chrome
