@@ -23,6 +23,7 @@ new Hack(category.utility, "Close all popups", "Closes all popups in Prodigy.").
 // End Close all Popups
 
 
+// userID grabber
 new Hack(category.utility, "Grab UserID of all players on screen", "Shows you the UserID and name of every player currently shown on the screen.").setClick(async () => {
     const users : object = current.playerList;
     if (Object.keys(users).length === 0) {
@@ -41,7 +42,7 @@ new Hack(category.utility, "Grab UserID of all players on screen", "Shows you th
         return Swal.fire({title: "All players on the screen:", html: contents, icon: "info" });
     }
 });
-
+// End userID grabber
 
 
 

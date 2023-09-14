@@ -421,6 +421,7 @@ new Hack(category.player, "Change Name", "Change the name of your wizard.").setC
         }
     });
     if (name.value === undefined) return;
+    // @ts-expect-error
     if (name.value[3] === "null") name.value[3] = null;
     [
         player.name.data.firstName,

@@ -4,9 +4,10 @@
   "description": "Prodigy Hack GUI",
   "main": "dist/bundle.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js && rm dist/bundle.js.LICENSE.txt && touch dist/bundle.js.LICENSE.txt && echo \"/*! (c) 2023 ProdigyPNP */\" >> dist/bundle.js.LICENSE.txt",
+    "dev": "node hot-reload.mjs",
     "setup": "pnpm install",
-    "build": "pnpm webpack --config webpack.config.js",
-    "server": "node hot-reload.mjs"
+    "postinstall": "cp -r ./node_modules/sweetalert2-neutral ./node_modules/sweetalert2"
   },
   "repository": {
     "type": "git",
