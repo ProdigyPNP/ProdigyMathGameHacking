@@ -28,7 +28,7 @@ new Hack(category.player, "Open ProdigyPNP Chat", "Opens a chat for ProdigyPNP u
 
 
 // Begin Max Account
-new Hack(category.player, "Max Account").setClick(async () => {
+new Hack(category.player, "Max Account", "Gives you everything your account could possibly need.").setClick(async () => {
     // max account made by gemsvidø
 
     // ============================================
@@ -254,7 +254,31 @@ new Hack(category.player, "Set Level").setClick(async () => {
 // End Set Level
 
 
+// Begin Toggle membership
+new Toggler(category.player, "Toggle Membership", "Gives you \"Level Up!\" Membership in Prodigy.").setEnabled(async () => {
+    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = true;
+    _.player.appearanceChanged = true;
+    return Toast.fire("Success!", "You now have Prodigy membership!", "success");
+}).setDisabled(() => {
+    _.instance.prodigy.gameContainer.get(getMemberModule()).data.membership.active = false;
+    _.player.appearanceChanged = true;
+    return Toast.fire("Success!", "You no longer have Prodigy membership!", "success");
+});
+// End Toggle membership
 
+
+// Begin Ultimate membership
+new Toggler(category.player, "Ultimate membership", "Gives you \"Ultimate\" Membership in Prodigy.").setEnabled(async () => {
+    player.hasLegacyMembership = () => false
+    player.appearanceChanged = true;
+    // prodigy.gameContainer.get(getMemberModule())._data.membership.__proto__.active
+    return Toast.fire("Success!", "You now have Ultimate membership!", "success");
+}).setDisabled(() => {
+    player.hasLegacyMembership = () => true;
+    player.appearanceChanged = true;
+    return Toast.fire("Success!", "You no longer have Ultimate membership!", "success");
+});
+// End Ultimate membership
 
 
 
