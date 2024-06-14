@@ -33,11 +33,12 @@ export const runeify = (item, amount) =>
 	    ID: x.ID,
 		quantity: amount
 		// @ts-expect-error
-    })).filter(v => v !== undefined);
+    }).filter(v => v !== undefined)
+);
 
 
 // Get member module
-export function getMemberModule () {
+export function getMemberModule () : string {
     return _.player.hasMembership.toString().split("\"")[1];
 }
 

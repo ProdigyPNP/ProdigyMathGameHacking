@@ -7,6 +7,7 @@ import { category } from "../index";  // Import the Cheat GUI bases.
 import Hack from "../class/Hack";
 import { _, VERY_LARGE_NUMBER, player } from "../utils/util";  // Import Prodigy typings and VERY_LARGE_NUMBER
 import { getPet } from "../utils/hackify"; // Import getPet
+import { GetAction, SelectSlot } from "../utils/kennel";
 // END IMPORTS
 
 
@@ -138,7 +139,6 @@ new Hack(category.pets, "Clear Pets").setClick(async () => {
 
 // Begin Add Pet
 new Hack(category.pets, "Add Pet", "Adds a pet from a list.").setClick(async () => {
-    // @ts-expect-error
     const pet = await Swal.fire({
         input: "select",
         // @ts-expect-error
@@ -201,6 +201,49 @@ new Hack(category.pets, "Delete Pet", "Delete a pet.").setClick(async () => {
 // End Delete Pet
 
 
+// Begin Edit Kennel
+new Hack(category.pets, "Edit Kennel", "Allows you to directly edit your pets.").setClick(async () => {
+
+
+    const action = await GetAction();
+    if (action === null) return;
+
+
+    const slot = await SelectSlot();
+    if (slot === null) return;
+
+    
+    // @ts-expect-error
+    console.log(s(parseInt(KennelSlot.value)));
+
+});
+// End Edit Kennel
+
+
+let TEMP_BACKUP : any | null = null;
+
+// Begin Backup Kennel
+new Hack(category.pets, "Backup Kennel [No save on reload]", "Makes a backup of your kennel to a variable that doesn't save on reload.").setClick(async () => {
+    TEMP_BACKUP = _.player.kennel._petTeam;
+    return Toast.fire("Backed up!", "Your kennel is now backed up to the local storage.", "success");
+});
+// End Backup Kennel
+
+
+// Begin Restore Kennel
+new Hack(category.pets, "Restore Kennel", "Restores a backup of your kennel from a variable... if you have one.").setClick(async () => {
+    if (TEMP_BACKUP === null) {
+        return Swal.fire({
+            title: "No backup found",
+            html: "There is no backup of your kennel currently. Make sure to back up your kennel before trying to load it.",
+            icon: "error"
+        });
+    } else {
+        _.player.kennel._petTeam = TEMP_BACKUP;
+        return Toast.fire("Restored!", "Your kennel backup should be restored", "success");
+    }
+});
+// End Restore Kennel
 
 
 // END PET HACKS
