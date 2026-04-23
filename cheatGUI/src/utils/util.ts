@@ -15,13 +15,13 @@ export const player = _.player;
 /** The alternate hack variable. */
 export const current = window.Boot.prototype.game._state._current;
 
-const base: { game: Game, prodigy: Prodigy } = _.instance;
+const base : { game: Game, prodigy: Prodigy } = _.instance;
 
 /** game */
-export const game = base.game;
+export const game : Game = base.game;
 
 /** prodigy */
-export const prodigy = base.prodigy;
+export const prodigy : Prodigy = base.prodigy;
 
 /** gameData */
 export const gameData: GameData = _.instance.game.state.states.get("Boot").gameData;
